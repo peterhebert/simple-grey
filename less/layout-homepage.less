@@ -1,0 +1,53 @@
+
+/* = Home Page Template layout
+----------------------------------------------- */
+
+.page-template-homepage-php {
+
+    .site-content {
+        &:extend(.clearfix all);
+
+        .content-primary, .content-secondary, .content-featured {
+            .mg-both();
+            .wrap;
+        }
+
+      .content-primary {
+        .row;
+        max-width: @bp-container-1col;
+        margin-left: auto;
+        margin-right: auto;
+        .site-main {
+          .column(1);
+        }
+      }
+      .content-featured {
+            &:extend(.clearfix all);
+            .widget {
+  
+                 .widget-content, .textwidget {
+                    &:extend(.row all);
+
+                    article { 
+                        .even-columns(4, "-widgets");
+                    }
+
+                }
+
+            }
+
+        }
+
+        // .content-featured
+
+        .content-secondary {
+
+          .widget {
+              .even-columns(4, "-widgets");
+          }
+        }
+        // .content-secondary
+
+    }
+
+}

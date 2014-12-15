@@ -1,0 +1,66 @@
+/* = Common Styles - Content Area Layout
+----------------------------------------------- */
+.site-content {  background: @col-bg; }
+
+.archive,
+.blog,
+.page:not(.page-template-homepage-php),
+.single {
+    .site-content {
+ 
+      .content-primary, .content-secondary {
+        .mg-both();
+      }
+
+      .content-primary {
+            article {
+                .post-meta {
+                    list-style: none;
+                }
+                .entry-meta {
+                    .baseline-size(0.875);
+                    .edit-link:before {
+                        font-family: 'dashicons';
+                        content: "\f327";
+                        margin-right: 0.5em;
+                    }
+                    //.edit-link:before
+                    .comments-link:before {
+                        font-family: 'FontAwesome';
+                        content: "\f0e5";
+                        margin: 0 .75em;
+                    }
+                    // .comments-link:before
+
+                }
+                .post-thumbnail {
+                    margin-bottom: 1.5em;
+                }
+                // .post-thumbnail
+
+            }
+            // article
+
+        }
+        // .content-primary
+        .content-secondary {
+             .widget {
+                 .even-columns(3, "-widgets");
+            }
+        }
+        // .content-secondary
+        // move sidebar to second column
+        @media only screen and (min-width: @bp-float-sidebar) {
+            .content-primary {
+                .column(@ga); //.push(@gb);
+
+            }
+            .content-secondary {
+                .column(@gb); //.pull(@ga);
+
+            }
+        }
+    }
+    //.site-content
+
+}

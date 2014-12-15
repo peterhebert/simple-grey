@@ -1,0 +1,61 @@
+@mq-density-125:  ~"only screen and (-webkit-min-device-pixel-ratio: 1.25)",
+                  ~"only screen and ( min--moz-device-pixel-ratio: 1.25)",
+                  ~"only screen and ( -o-min-device-pixel-ratio: 125/100)",
+                  ~"only screen and ( min-device-pixel-ratio: 1.25)",
+                  ~"only screen and ( min-resolution: 120dpi)",
+                  ~"only screen and ( min-resolution: 1.25dppx)";
+
+@mq-density-150:  ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+                  ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+                  ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+                  ~"only screen and (min-device-pixel-ratio: 1.5)",
+                  ~"only screen and ( min-resolution: 150dpi)",
+                  ~"only screen and ( min-resolution: 1.5dppx)";
+
+@mq-density-200:  ~"only screen and (-webkit-min-device-pixel-ratio: 2)",
+                  ~"only screen and (min--moz-device-pixel-ratio: 2)",
+                  ~"only screen and (-o-min-device-pixel-ratio: 2/1)",
+                  ~"only screen and (min-device-pixel-ratio: 2)",
+                  ~"only screen and ( min-resolution: 200dpi)",
+                  ~"only screen and ( min-resolution: 2dppx)";
+
+// media queries to make text larger on lo-dpi displays the higher the device width
+
+@mq-text-size-125: ~"only screen and (-webkit-max-device-pixel-ratio: 1.25) and (min-width: @{bp-text-125})",
+                   ~"only screen and ( max--moz-device-pixel-ratio: 1.25) and (min-width: @{bp-text-125})",
+                   ~"only screen and ( -o-max-device-pixel-ratio: 125/100) and (min-width: @{bp-text-125})",
+                   ~"only screen and ( max-device-pixel-ratio: 1.25) and (min-width: @{bp-text-125})",
+                   ~"only screen and ( max-resolution: 120dpi) and (min-width: @{bp-text-125})",
+                   ~"only screen and ( max-resolution: 1.25dppx) and (min-width: @{bp-text-125})";
+
+@mq-text-size-150:  ~"only screen and (-webkit-max-device-pixel-ratio: 1.5) and (min-width: @{bp-text-150})",
+                    ~"only screen and (max--moz-device-pixel-ratio: 1.5) and (min-width: @{bp-text-150})",
+                    ~"only screen and (-o-max-device-pixel-ratio: 3/2) and (min-width: @{bp-text-150})",
+                    ~"only screen and (max-device-pixel-ratio: 1.5) and (min-width: @{bp-text-150})",
+                    ~"only screen and ( max-resolution: 150dpi) and (min-width: @{bp-text-150})",
+                    ~"only screen and ( max-resolution: 1.5dppx) and (min-width: @{bp-text-150})";
+
+@mq-text-size-200:  ~"only screen and (-webkit-max-device-pixel-ratio: 2) and (min-width: @{bp-text-200})",
+                  ~"only screen and (max--moz-device-pixel-ratio: 2) and (min-width: @{bp-text-200})",
+                  ~"only screen and (-o-max-device-pixel-ratio: 2/1) and (min-width: @{bp-text-200})",
+                  ~"only screen and (max-device-pixel-ratio: 2) and (min-width: @{bp-text-200})",
+                  ~"only screen and ( max-resolution: 200dpi) and (min-width: @{bp-text-200})",
+                  ~"only screen and ( max-resolution: 2dppx) and (min-width: @{bp-text-200})";
+
+
+/* Increased body size for legibility on for low-dpi, high-res displays */
+
+@media @mq-text-size-125
+{ 
+  body { font-size: 125%; }
+}
+
+@media @mq-text-size-150
+{ 
+  body { font-size: 150%; }
+}
+@media @mq-text-size-200
+{ 
+  body { font-size: 200%; }
+}
+

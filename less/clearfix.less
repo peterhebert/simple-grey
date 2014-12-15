@@ -1,0 +1,9 @@
+// MICRO CLEARFIX HACK
+// converted for LESS
+.clearfix {
+	// For IE 6/7 (trigger hasLayout)
+	zoom:1;
+	// For modern browsers
+	&:before, &:after{ content:""; display:table; }
+	&:after{ clear: both; }
+}

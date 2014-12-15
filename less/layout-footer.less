@@ -1,0 +1,22 @@
+
+/* = Footer Layout
+----------------------------------------------- */
+.site-footer { 
+  color: @col-footer-text;
+  padding-top: .75em;
+  padding-bottom: .75em;
+  .footer-widgets,
+  .footer-credits
+   {
+    .row();
+     .mg-top;
+  }
+  .footer-credits { text-align: center; }
+  .widget
+  {
+    .even-columns(3, "-widgets");
+    .icons;
+    text-align: center;
+    .widget-title { color: #333; }
+  }
+}
