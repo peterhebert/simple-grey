@@ -1,5 +1,7 @@
 .main-navigation {
+
     .menu { 
+    &:extend(.clearfix all);
         .mg-both();
 
         background: @col-menu-bg;
@@ -99,4 +101,9 @@
   }
   
 }
+@media screen and (min-width: @bp-full-menu) {
 
+    .menu-toggle {
+      display: none;
+    }
+}

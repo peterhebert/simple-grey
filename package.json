@@ -18,5 +18,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/peterhebert/simple-grey.git"
+  },
+  "dependencies": {
+    "font-awesome": "^4.2.0"
   }
 }

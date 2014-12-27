@@ -293,3 +293,7 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://automattic.com/"
 msgstr ""
+
+#: header.php:34
+msgid "Menu"
+msgstr ""
