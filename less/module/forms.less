@@ -6,25 +6,16 @@ form {
   margin: 1.5em auto;
 }
 
-// Normalize non-controls
-//
-// Restyle and baseline non-control form elements.
-
 fieldset {
-  padding: 0;
-  margin: 0;
-  border: 0;
+  border-color: @col-border;
 }
 
 legend {
   display: block;
   width: 100%;
-  padding: 0;
   .baseline-size(1.5);
   line-height: inherit;
   color: @col-border;
-  border: 0;
-  border-bottom: .0625em solid @col-border;
 }
 
 label {
@@ -46,7 +37,6 @@ input[type="radio"],
 input[type="checkbox"] {
   margin: .25em 0 0;
   margin-top: 0.0625em \9; /* IE8-9 */
-  line-height: normal;
 }
 
 // Set the height of select and file controls to match text inputs
@@ -160,7 +150,7 @@ input[type="color"]
  background-color: @input-bg;
 }
 
-textarea { .sans-text; width: 94%; }
+textarea { font-family: @fonts-sans; width: 94%; }
 
 button,
 input[type="submit"] {

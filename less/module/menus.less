@@ -1,0 +1,102 @@
+.main-navigation {
+    .menu { 
+        .mg-both();
+
+        background: @col-menu-bg;
+        ul li { background: @col-menu-bg; }
+    }
+    .menu-flat {
+        ul {
+            list-style: none;
+            display: inline; 
+            margin: 0; 
+        
+
+          li {
+            margin-right: .75em;
+            display: inline;
+            line-height: 2em;
+            ul { 
+              margin-left: .75em;  
+              li:last-child { margin-right: 0; }
+            }
+
+
+          }
+        }
+    }
+
+    .menu-drop-down {
+        ul {	 
+            list-style: none;	
+            margin: 0;	
+            padding-left: 0;
+            ul {
+                box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+                display: none;
+                float: left;
+                left: 0;
+                position: absolute;
+                top: 2em;
+                z-index: 99999;
+                a { width: 14em; }
+              ul {
+                    left: 100%;
+                    top: 0;  
+                }
+            }
+        }
+        li { float: left;	  position: relative;   }
+        a {
+            display: block;
+            text-decoration: none;
+            padding: .25em .75em;
+            color: @col-menu-text;
+        }
+        li:hover > a {
+            color: @col-menu-text-hover;
+            background: @col-menu-bg-hover;
+        }
+        ul ul:hover > a {
+            color: @col-menu-text-hover;
+            background: @col-menu-bg-hover;
+        }
+        ul ul a:hover {}
+        ul li:hover > ul {
+            display: block;
+        }
+        .current_page_item a,
+        .current-menu-item a {
+            font-weight: bold;
+            font-weight: 700;
+        }
+    }
+    
+
+}
+
+@media screen and (max-width: @bp-full-menu) {
+    .menu-toggle {
+      display: block; 
+       .button; 
+      //.button-color( @col-masthead-txt; @col-masthead-bg; @col-masthead-txt; @col-masthead-bg; @col-masthead-bg );
+      font-weight: 600;
+      margin-bottom: 1.55em;
+
+      i { 
+        margin-right: .75em;
+      }
+    }
+  .main-navigation {
+    .menu {
+      display: none;
+    }
+  }
+  .main-navigation.toggled {
+    .menu {
+      display: block;
+    }
+  }
+  
+}
+

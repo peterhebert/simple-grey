@@ -1,3 +1,19 @@
+// CORE MIXIN for generating block elements adhering to vertical baseline rythm
+.baseline-size( @size: @base, @bline: @baseline, @context: @base, @bdr: 0 ) {
+
+	@sizeMultiple: (@size / @context);
+	@blMultiple: (@bline / @context);
+
+	@blAdd: ceil((@size/@bline) - floor(@size/@bline));
+	@nextBaseline: (floor((@size/@bline)+@blAdd)*@bline);
+
+	@lineHeight: ((@nextBaseline/@context)/@sizeMultiple) + 0em;
+
+	font-size: @sizeMultiple + 0em;
+	line-height: @lineHeight;
+	margin: 0 0 ((@blMultiple/@sizeMultiple) - ((@bdr*@bdr-width)/@sizeMultiple) + 0em);
+}
+
 // optional mixins to use if you like
 
 // borders and corners
@@ -45,10 +61,10 @@
 }
 
 // Box sizing
-.box-sizing(@boxmodel) {
-  -webkit-box-sizing: @boxmodel;
-     -moz-box-sizing: @boxmodel;
-          box-sizing: @boxmodel;
+.box-sizing(@model) {
+  -webkit-box-sizing: @model;
+     -moz-box-sizing: @model;
+          box-sizing: @model;
 }
 
 // WebKit-style focus
@@ -209,21 +225,12 @@
   }
 }
 
-
-.box-model(@model: content-box) { 
-	-webkit-box-sizing: @model; /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: @model;    /* Firefox, other Gecko */
-	box-sizing: @model;         /* Opera/IE 8+ */
-}
-
 .thumbnail(@bdrw: 1px, @bcol: @col-border, @radius: .25em) {
   .bordered(@bdrw, solid, @bcol);
   .rounded-corners(@radius);
   margin:0;
   padding: @radius;
-  .box-model(border-box);
 }
-
 
 /* set top and bottom margins */
 .mg-top(@multiple: 1) {

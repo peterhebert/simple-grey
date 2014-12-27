@@ -5,11 +5,11 @@
  * @package Simple Grey
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'sidebar-secondary' ) ) {
 	return;
 }
 ?>
 
-<div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</div><!-- #secondary -->
+<section id="secondary" class="widget-area" role="complementary">
+	<?php dynamic_sidebar( 'sidebar-secondary' ); ?>
+</section><!-- #secondary -->

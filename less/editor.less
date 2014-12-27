@@ -1,17 +1,22 @@
 /* base CSS to be loaded into WYSWYG editor */
 
+// normalize.css
+@import "base/normalize";
+
+// core - required files
 @import "variables";
-@import "base";
-
-// clearfix
-@import "clearfix";
-
-// optional grid generators
-@import "grid";
-
-// optional mixins
 @import "mixins";
 
+// base styles
+@import "base/base";
+@import "module/forms";
+
+// clearfix
+@import "module/clearfix";
+
+// LAYOUT
+@import "layout/grid";
+
 @import "media";
-@import "icons";
+@import "module/icons";
 

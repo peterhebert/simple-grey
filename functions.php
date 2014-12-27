@@ -94,8 +94,8 @@ add_action( 'after_setup_theme', 'simple_grey_setup' );
  */
 function simple_grey_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'simple-grey' ),
-		'id'            => 'sidebar-1',
+		'name'          => __( 'Secondary', 'simple-grey' ),
+		'id'            => 'sidebar-secondary',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -104,7 +104,7 @@ function simple_grey_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Featured Sidebar', 'simple-grey' ),
+		'name'          => __( 'Featured', 'simple-grey' ),
 		'id'            => 'sidebar-featured',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -114,7 +114,7 @@ function simple_grey_widgets_init() {
   
 	register_sidebar( array(
 		'name'          => __( 'Footer', 'simple-grey' ),
-		'id'            => 'footer-widgets',
+		'id'            => 'sidebar-footer',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -131,8 +131,12 @@ function simple_grey_scripts() {
 
 	wp_enqueue_style( 'dashicons' );
 
-	wp_enqueue_script( 'simple-grey-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20140817', true );
+	//wp_enqueue_script( 'simple-grey-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20140817', true );
 
+    wp_enqueue_script( 'simple-grey-jq-navigation', get_template_directory_uri() . '/js/jq-navigation.js', array( 'jquery' ) );
+
+    
+    
 	wp_enqueue_script( 'simple-grey-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
