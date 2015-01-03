@@ -8,10 +8,9 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
+<div id="content" class="wrap">
+  <div class="row">
+    <main id="main" role="main">
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
@@ -43,7 +42,7 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+      <?php get_sidebar(); ?>
+  </div>
+</div>
 <?php get_footer(); ?>

@@ -1,50 +1,66 @@
 /* = Header Layout
 ----------------------------------------------- */
 
-.site-header {
-	background-color: @col-masthead-bg;
+#masthead { 
+    background-color: @col-masthead-bg;
 	color: @col-masthead-txt;
 
-	 a {
+    .mg-bottom();
+
+    .menu-toggle { 
+        .column();
+        .mg-bottom();
+        button {
+            .button;
+            font-weight: 600;
+            i { margin-right: .75em; }
+        }
+    }
+
+    .site-branding {  
+        padding-top: .75em;
+        position: relative;
+        z-index:2;
+        a {
 		  text-decoration: none; color: @col-masthead-txt; 
 		  &:visited { color: @col-masthead-txt; }
 		  &:hover { color: @col-masthead-hover; }
 	  }
-  .site-branding { 
-    .row(); 
-    padding-top: .75em ; 
-    position: relative;
-    z-index:2;
-      
-  }
-  .site-logo { 
-      img {
-       max-width: 100%; 
-         .rounded-corners (.25em);
-        .box-shadow;
-      }
-  }
-  .site-title { 
-    .baseline-size( 1.75 ); 
-    margin-bottom: .5em;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-    padding-left: 16px;
-    padding-left: 1rem;
-  }
-  .site-description {
-    .baseline-size( 1 );
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-    font-weight: normal;
-    padding-left: 16px;
-    padding-left:  1rem;
-  }
-
-}
-
-@media screen and (min-width: @bp-float-logo) {
-  .site-logo {
-    .float;
-    margin-top: .75em;
-   }
+    }
+    .site-logo {
+        img {
+            max-width: 100%; 
+            .rounded-corners (.25em);
+            .box-shadow;
+        }
+    }
+    .site-title { 
+        .baseline-size( 1.75 ); 
+        margin-bottom: .5em;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    }
+    .site-description {
+        .baseline-size( 1 );
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        font-weight: normal;
+    }
+        
+   
+    .site-logo, .site-info { .column(); }
+    
+    @media screen and (min-width: @bp-float-logo) {
+        .with-logo {
+            padding: 0;
+            .site-logo { 
+                .column(2/12); 
+                margin-top: .75em;
+            }
+            .site-info { .column(10/12); }
+        }
+    }
+    @media screen and (min-width: @bp-full-menu) {
+        #menu-toggle { display: none; }
+    }
+    
 }
 

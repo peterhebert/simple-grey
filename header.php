@@ -6,7 +6,8 @@
  *
  * @package Simple Grey
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -16,24 +17,45 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'simple-grey' ); ?></a>
+<!--<div id="page" class="hfeed site">--> 
+<a class="skip-link screen-reader-text" href="#content">
+<?php _e( 'Skip to content', 'simple-grey' ); ?>
+</a>
+<header id="masthead" class="site-header" role="banner">
+  <div class="wrap">
+      <?php
+$brand_class = '';
+if ( get_theme_mod( 'simple_grey_logo' ) ) : 
+$brand_class .= ' with-logo';
+endif; ?>
+      <div class="site-branding row<?php echo $brand_class; ?>">
+      <?php if ( get_theme_mod( 'simple_grey_logo' ) ) : ?>
+      <div class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'simple_grey_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a></div>
+      <?php endif; ?>
+      <div class="site-info">
+        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+        <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+      </div>
+      <div id="menu-toggle" class="menu-toggle"><button aria-controls="menu" aria-expanded="false"><i class="fa fa-bars"></i><?php _e( 'Menu', 'simple-grey' ); ?></button></div>
+    </div>
+      <!-- .site-branding -->
+  </div>
+  <?php 
+$menu_classes = array('nav-main');
+if ( get_theme_mod( 'simple_grey_nav_style' ) ) : 
+  $menu_classes[] = get_theme_mod( 'simple_grey_nav_style' ); 
+else:
+  $menu_classes[] = 'menu-flat'; 
+endif; 
+$container_class = implode(' ', $menu_classes);
+?>
+  <nav id="site-navigation" class="main-navigation" role="navigation">
+       <div class="menu-wrap">
+        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu' => 'primary', 'container_class' => $container_class ) ); ?>
+     </div>
+  </nav>
+  <!-- #site-navigation --> 
+  
+</header>
+<!-- #masthead --> 
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-         <?php if ( get_theme_mod( 'simple_grey_logo' ) ) : ?>
-          <div class="site-logo">
-              <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'simple_grey_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
-           </div>
-          <?php endif; ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><i class="fa fa-bars"></i><?php _e( 'Menu', 'simple-grey' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu' => 'primary', 'container_class' => 'menu menu-drop-down' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">

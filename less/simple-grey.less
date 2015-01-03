@@ -17,10 +17,10 @@
 
 /* wrapper to center content and provide a base margin on left and right sides */
 .wrap {
-    .container();
-    width: 92%;
+    .container;
+    max-width: @bp-max-container-width;
 }
-
+.col {.column(1);}
 
 // navigation
 @import "module/accessibility";
@@ -28,24 +28,28 @@
 
 // required WordPress classes
 @import "module/wordpress-required";
+@import "module/widgets";
 
+// pagination
+@import "module/pagination";
 
-//@import "layout-content";
-//@import "layout/header";
-//@import "layout-footer";
-//@import "layout-homepage";
+// layout
+@import "layout/header";
+@import "layout/layout-content";
+@import "layout/footer";
+
+.col { .column(); }
 
 // icons
 @import "module/glyphicons";
 @import "../node_modules/font-awesome/css/font-awesome.css";
 @import "../fonts/morevectors/morevectors.css";
 @import "module/icons";
-
-
+@import "module/media";
 
 // suggested print media stylesheet
 @import "print";
 
 // hi-res media queries
-//@import "mq-hi-density";
+@import "mq-hi-density";
 

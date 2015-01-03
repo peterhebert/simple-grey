@@ -94,8 +94,8 @@
     @bp-end: "bp@{t}-@{end}col";
 
     @media only screen and (min-width: @@bp-start) and (max-width: @@bp-end) {
-      .percentColumn(1, @n);
-      &:nth-of-type(@{n}n+1) {
+      .percentColumn(1, @i);
+      &:nth-of-type(@{i}n+1) {
           clear: left;
       }
     }
@@ -107,8 +107,8 @@
     @bp-start: "bp@{t}-@{i}col";
 
     @media only screen and (min-width: @@bp-start) {
-      .percentColumn(1, @n);
-      &:nth-of-type(@{n}n+1) {
+      .percentColumn(1, @i);
+      &:nth-of-type(@{i}n+1) {
           clear: left;
       }
     }

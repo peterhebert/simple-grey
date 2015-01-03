@@ -1,16 +1,12 @@
 // Pagination
 // -------------------------
 
-@font-size-base: (@base + 0em);
-@line-height-computed:    floor(@font-size-base * @baseline);
-
 //
 // Pagination (multiple pages)
 // --------------------------------------------------
 .pagination {
   display: inline-block;
   padding-left: 0;
-  margin: @line-height-computed 0;
   border-radius: ;
 
   > li {
@@ -95,15 +91,16 @@
 .post-navigation,
 .paging-navigation {
     &:extend(.clearfix all);
-    margin-bottom: @gutter;
+    margin: @margin 0;
     .nav-links {
       &:extend(.clearfix all);
       .baseline-size(.875);
+        margin: 0;
       a {
         .button;
         .form-control-focus();
         text-decoration: none;
-        margin: .75em @margin;
+        margin: .75em 0;
         &[rel="prev"] i { margin-right: @margin; }
         &[rel="next"] i { margin-left: @margin; }
 

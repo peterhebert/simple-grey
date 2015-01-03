@@ -20,7 +20,7 @@ function simple_grey_customize_register( $wp_customize ) {
    * Create Textarea Control.
    */
 
-  class peterhebert_Customize_Textarea_Control extends WP_Customize_Control {
+  class simple_grey_Customize_Textarea_Control extends WP_Customize_Control {
       public $type = 'textarea';
    
       public function render_content() {
@@ -35,7 +35,7 @@ function simple_grey_customize_register( $wp_customize ) {
 
   // Site Description
   $wp_customize->add_setting( 'simple_grey_site_description' );
-  $wp_customize->add_control( new peterhebert_Customize_Textarea_Control( $wp_customize, 'simple_grey_site_description', array(
+  $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'simple_grey_site_description', array(
       'label' => __( 'Site Description', 'simple-grey' ),
       'section' => 'title_tagline',
       'settings' => 'simple_grey_site_description',
@@ -54,20 +54,41 @@ function simple_grey_customize_register( $wp_customize ) {
     'settings' => 'simple_grey_logo',
   ) ) );
 
+// navigation style
+    $wp_customize->add_setting(
+        'simple_grey_nav_style',
+        array(
+            'default' => 'menu-flat',
+        )
+    );
+
+$wp_customize->add_control(
+    'simple_grey_nav_style',
+    array(
+        'type' => 'select',
+        'label' => __( 'Navigation Style', 'simple-grey' ),
+        'section' => 'nav',
+        'choices' => array(
+            'menu-flat' => 'Flat',
+            'menu-drop-down' => 'Drop-down',
+        ),
+    )
+);
+    
   // footer text
   $wp_customize->add_section( 'simple_grey_footer_section' , array(
     'title' => __( 'Footer', 'simple-grey' ),
     'priority' => 90,
   ) );
   $wp_customize->add_setting( 'simple_grey_footer_text' );
-  $wp_customize->add_control( new peterhebert_Customize_Textarea_Control( $wp_customize, 'simple_grey_footer_text', array(
+  $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'simple_grey_footer_text', array(
     'label' => __( 'Footer Text', 'simple-grey' ),
     'section' => 'simple_grey_footer_section',
     'settings' => 'simple_grey_footer_text',
   ) ) );
 
   $wp_customize->add_setting( 'simple_grey_copyright_info' );
-  $wp_customize->add_control( new peterhebert_Customize_Textarea_Control( $wp_customize, 'simple_grey_copyright_info', array(
+  $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'simple_grey_copyright_info', array(
     'label' => __( 'Copyright Information', 'simple-grey' ),
     'section' => 'simple_grey_footer_section',
     'settings' => 'simple_grey_copyright_info',

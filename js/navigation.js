@@ -4,14 +4,18 @@
  * Handles toggling the navigation menu for small screens.
  */
 ( function() {
-	var container, button, menu;
+	var container, toggle, button, menu;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
 		return;
 	}
+	toggle = document.getElementById( 'menu-toggle' );
+	if ( ! toggle ) {
+		return;
+	}
 
-	button = container.getElementsByTagName( 'button' )[0];
+	button = toggle.getElementsByTagName( 'button' )[0];
 	if ( 'undefined' === typeof button ) {
 		return;
 	}

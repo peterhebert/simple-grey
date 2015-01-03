@@ -1,66 +1,69 @@
-/* = Common Styles - Content Area Layout
------------------------------------------------ */
-.site-content {  background: @col-bg; }
+#main, #secondary, #featured {
+    .column();
+}
+@media only screen and (max-width: @bp-float-sidebar) {
+    #secondary { .mg-top(); }
+}
 
-.archive,
-.blog,
-.page:not(.page-template-homepage-php),
-.single {
-    .site-content {
- 
-      .content-primary, .content-secondary {
-        .mg-both();
-      }
+#featured {
+    .mg-bottom();
+    .featured.widget {
+        .widget-title { .column(); }
+        article { .even-columns(4, "-widgets"); };
+    }
+}
 
-      .content-primary {
-            article {
-                .post-meta {
-                    list-style: none;
-                }
-                .entry-meta {
-                    .baseline-size(0.875);
-                    .edit-link:before {
-                        font-family: 'dashicons';
-                        content: "\f327";
-                        margin-right: 0.5em;
-                    }
-                    //.edit-link:before
-                    .comments-link:before {
-                        font-family: 'FontAwesome';
-                        content: "\f0e5";
-                        margin: 0 .75em;
-                    }
-                    // .comments-link:before
-
-                }
-                .post-thumbnail {
-                    margin-bottom: 1.5em;
-                }
-                // .post-thumbnail
-
-            }
-            // article
-
+#main {
+    article {
+        .post-meta {
+            list-style: none;
         }
-        // .content-primary
-        .content-secondary {
-             .widget {
-                 .even-columns(3, "-widgets");
+        .entry-meta {
+            .baseline-size(0.875);
+            .edit-link:before {
+                font-family: 'dashicons';
+                content: "\f327";
+                margin-right: 0.5em;
             }
+            //.edit-link:before
+            .comments-link:before {
+                font-family: 'FontAwesome';
+                content: "\f0e5";
+                margin: 0 .75em;
+            }
+            // .comments-link:before
         }
-        // .content-secondary
-        // move sidebar to second column
-        @media only screen and (min-width: @bp-float-sidebar) {
-            .content-primary {
-                .column(@ga); //.push(@gb);
+        .post-thumbnail {
+            margin-bottom: 1.5em;
+        }
+        // .post-thumbnail
+        .entry-footer {
+            .cat-links, .tags-links { margin-right: .75em; }
+        }
+        .mg-bottom();
+    }
+    // article
 
-            }
-            .content-secondary {
-                .column(@gb); //.pull(@ga);
+}
+#secondary {
+    .widget {
+        .even-columns(3, "-widgets");
+    }
+}
 
-            }
+// move sidebar to second column
+@media only screen and (min-width: @bp-float-sidebar) {
+    .blog, .archive, .single {
+        #main {
+            .column(@ga); 
+        }
+        #secondary {
+        .column(@gb);
+            .widget { float:none; width: 100%; padding: 0; }
         }
     }
-    //.site-content
-
+}
+.page {
+    .wrap, #site-navigation .menu-wrap { max-width: @bp-05; }
+    #secondary { .mg-top(); }
 }

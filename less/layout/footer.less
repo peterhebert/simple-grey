@@ -1,0 +1,27 @@
+
+/* = Footer Layout
+----------------------------------------------- */
+.site-footer { 
+    color: @col-footer-text;
+    background-color: @col-footer-bg;
+    padding-top: .75em;
+    padding-bottom: .75em;
+    .widget-area,
+    .footer-credits
+    {
+        //.row();
+        .mg-top;
+    }
+    .footer-credits { text-align: center; }
+    .widget {
+        .icons;
+        .widget-title { .baseline-size( 1.5 ); color: #333; }
+        @media screen and (max-width: @bp-widgets-2col) {
+            .column(1);
+        }
+        .even-columns(3, "-widgets");
+        //}
+
+    }
+
+}
