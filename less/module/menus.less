@@ -64,6 +64,7 @@
         ul li:hover > ul {
             display: block;
             margin-top: .5em;
+            li ul { margin-top: 0; }
         }
         .current_page_item,
         .current-menu-item {
@@ -71,7 +72,9 @@
                 font-weight: bold;
                 font-weight: 700;
             }
-            .sub-menu a { font-weight: normal }
+            .sub-menu {
+                a { font-weight: normal }
+            }
         }
         
     }

@@ -2,6 +2,14 @@ module.exports = function (grunt) {
     // load all grunt tasks
     
     grunt.initConfig({
+        copy: {
+            main: {
+                cwd: 'node_modules/',
+                expand: true,
+                src: 'font-awesome/**',
+                dest: 'fonts/', 
+            },
+        },
         less: {
             development: {
                 options: {
@@ -28,6 +36,7 @@ module.exports = function (grunt) {
         }
         
     });
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
