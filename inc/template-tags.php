@@ -161,34 +161,96 @@ function simple_grey_comment( $comment, $args, $depth ) {
 }
 endif; // ends check for simple_grey_comment()
 
-if ( ! function_exists( 'simple_grey_posted_on' ) ) :
+if ( ! function_exists( 'simple-grey_posted_on' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with meta information for the current post-date/time, author and taxonomy.
  */
 function simple_grey_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	$time_published_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+
+	$time_published_string = sprintf( $time_published_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() )
+	);
+
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_updated_string = '<time class="updated" datetime="%1$s">%2$s</time>';
+
+	  $time_updated_string = sprintf( $time_updated_string,
+		  esc_attr( get_the_modified_date( 'c' ) ),
+		  esc_html( get_the_modified_date() )
+	  );
+
 	}
 
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
+	/* print posted date and time */
+	echo '<p class="posted-on">';
+	printf( __( 'Posted on %1$s by %2$s', 'simple-grey' ).' ',
+		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
+			esc_url( get_permalink() ),
+			$time_published_string
+		),
+		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			esc_html( get_the_author() )
+		)
+		
 
-	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'simple-grey' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
+	
+	// taxonomy
+  $category_list = simple_grey_get_the_category_list( get_the_ID() );
 
-	$byline = sprintf(
-		_x( 'by %s', 'post author', 'simple-grey' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
+  /* translators: used between list items, there is a space after the comma */
+  $category_list_filtered = implode( __( ', ', 'simple-grey' ), $category_list );
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+	/* translators: used between list items, there is a space after the comma */
+	$tag_list = get_the_tag_list( '', __( ', ', 'simple-grey' ) );
+
+	if ( count($category_list) == 0 ) {
+
+		// This post only has no categories so we just need to worry about tags in the meta text
+		if ( '' != $tag_list ) {
+			$meta_text = __( 'and tagged %2$s.', 'simple-grey' );
+		} else {
+			$meta_text = '';
+		}
+
+	} else {
+		// But this post has categories so we should probably display them here
+		if ( '' != $tag_list ) {
+			$meta_text = __( 'in %1$s and tagged %2$s.', 'simple-grey' );
+		} else {
+			$meta_text = __( 'in %1$s.', 'simple-grey' );
+		}
+
+	} // end check for categories on this blog
+
+	if ( '' != $meta_text && 'post' == get_post_type() ) : 
+    echo ' <span class="post-taxonomy">';
+    printf(
+      $meta_text,
+      $category_list_filtered,
+      $tag_list
+    ); 
+    echo '</span>';
+  endif; 
+  echo "</p>\r";
+
+	// print updated time and date
+	if ( isset($time_updated_string) && get_theme_mod( 'simple_grey_show_updated' ) == 1 ) {
+		echo '<p class="post-updated">';
+  	printf( __( 'Last updated on %1$s by %2$s', 'simple-grey' ).' ',
+  	  $time_updated_string,
+		  sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+			  esc_url( get_author_posts_url( get_the_modified_author_id() ) ),
+			  esc_html( get_the_modified_author() )
+		  )
+	  );
+	  echo "</p>\r";
+	}
+	
+	
 
 }
 endif;

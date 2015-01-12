@@ -7,14 +7,13 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php simple_grey_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
 	</header><!-- .entry-header -->
 
+	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
+	<div class="entry-summary">
+		<?php the_excerpt(); ?>
+	</div><!-- .entry-summary -->
+	<?php else : ?>
 	<div class="entry-content">
 		<?php
 			/* translators: %s: Name of current post */
@@ -31,8 +30,12 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+	<?php endif; ?>
 
-	<footer class="entry-footer">
-		<?php simple_grey_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php if ( 'post' == get_post_type() ) : ?>
+	<footer class="entry-meta">
+        <?php simple_grey_posted_on(); ?>
+		<?php edit_post_link( __( 'Edit', 'simple-grey' ), '<span class="edit-link">', '</span>' ); ?>
+	</footer><!-- .entry-meta -->
+    <?php endif; ?>
 </article><!-- #post-## -->
