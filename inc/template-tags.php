@@ -163,46 +163,49 @@ endif; // ends check for simple_grey_comment()
 
 if ( ! function_exists( 'simple-grey_posted_on' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time, author and taxonomy.
- */
+* Prints HTML with meta information for the current post-date/time, author and taxonomy.
+*/
 function simple_grey_posted_on() {
 	$time_published_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 
-	$time_published_string = sprintf( $time_published_string,
+	$time_published_string = sprintf( 
+		$time_published_string,
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
 	);
 
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_updated_string = '<time class="updated" datetime="%1$s">%2$s</time>';
-
-	  $time_updated_string = sprintf( $time_updated_string,
-		  esc_attr( get_the_modified_date( 'c' ) ),
-		  esc_html( get_the_modified_date() )
-	  );
+		
+		$time_updated_string = sprintf( 
+			$time_updated_string, 
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
 
 	}
 
 	/* print posted date and time */
 	echo '<p class="posted-on">';
 	printf( __( 'Posted on %1$s by %2$s', 'simple-grey' ).' ',
-		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
+		sprintf( 
+			'<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
-			$time_published_string
+			$time_published_string 
 		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+		sprintf( 
+			'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_html( get_the_author() )
 		)
-		
 
 	);
 	
 	// taxonomy
-  $category_list = simple_grey_get_the_category_list( get_the_ID() );
+	$category_list = simple_grey_get_the_category_list( get_the_ID() );
 
-  /* translators: used between list items, there is a space after the comma */
-  $category_list_filtered = implode( __( ', ', 'simple-grey' ), $category_list );
+	/* translators: used between list items, there is a space after the comma */
+	$category_list_filtered = implode( __( ', ', 'simple-grey' ), $category_list );
 
 	/* translators: used between list items, there is a space after the comma */
 	$tag_list = get_the_tag_list( '', __( ', ', 'simple-grey' ) );
@@ -227,31 +230,31 @@ function simple_grey_posted_on() {
 	} // end check for categories on this blog
 
 	if ( '' != $meta_text && 'post' == get_post_type() ) : 
-    echo ' <span class="post-taxonomy">';
-    printf(
-      $meta_text,
-      $category_list_filtered,
-      $tag_list
-    ); 
-    echo '</span>';
-  endif; 
-  echo "</p>\r";
+		echo ' <span class="post-taxonomy">';
+		printf(
+			$meta_text,
+			$category_list_filtered,
+			$tag_list
+		); 
+		echo '</span>';
+	endif; 
+	echo "</p>\r";
 
 	// print updated time and date
 	if ( isset($time_updated_string) && get_theme_mod( 'simple_grey_show_updated' ) == 1 ) {
 		echo '<p class="post-updated">';
-  	printf( __( 'Last updated on %1$s by %2$s', 'simple-grey' ).' ',
-  	  $time_updated_string,
-		  sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-			  esc_url( get_author_posts_url( get_the_modified_author_id() ) ),
-			  esc_html( get_the_modified_author() )
-		  )
-	  );
-	  echo "</p>\r";
+		printf( 
+			__( 'Last updated on %1$s by %2$s', 'simple-grey' ).' ',
+			$time_updated_string,
+			sprintf( 
+				'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+				esc_url( get_author_posts_url( get_the_modified_author_id() ) ),
+				esc_html( get_the_modified_author() )
+			)
+		);
+		echo "</p>\r";
 	}
 	
-	
-
 }
 endif;
 
