@@ -29,25 +29,29 @@
     }
     .site-logo {
         img {
-            max-width: 100%; 
-            .rounded-corners (.25em);
-            .box-shadow;
+            max-width: 100%;
         }
+         
     }
+    .rounded img { .rounded-corners (.25em); }
+
     .site-title { 
         .baseline-size( 1.75 ); 
         margin-bottom: .5em;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     }
     .site-description {
         .baseline-size( 1 );
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-        font-weight: normal;
+         font-weight: normal;
     }
         
    
     .site-logo, .site-info { .column(); }
-    
+    .drop-shadow {
+        .site-logo img { .box-shadow; }
+        .site-title, site-description {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+    }
     @media screen and (min-width: @bp-float-logo) {
         .with-logo {
             //padding: 0;

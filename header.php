@@ -23,18 +23,27 @@
 </a>
 <header id="masthead" class="site-header" role="banner">
   <div class="wrap">
-      <?php
+<?php
 $brand_class = '';
+$logo_class = '';
 if ( get_theme_mod( 'simple_grey_logo' ) ) : 
-$brand_class .= ' with-logo';
-endif; ?>
+    $brand_class .= ' with-logo';
+endif; 
+if ( get_theme_mod( 'simple_grey_header_drop_shadow' ) ) : 
+    $brand_class .= ' drop-shadow';
+endif;
+if ( get_theme_mod( 'simple_grey_logo_rounded_corners' ) ) : 
+    $logo_class .= ' rounded';
+endif;
+      ?>
       <div class="site-branding row<?php echo $brand_class; ?>">
       <?php if ( get_theme_mod( 'simple_grey_logo' ) ) : ?>
-      <div class="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'simple_grey_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a></div>
+      <div class="site-logo<?php echo $logo_class; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'simple_grey_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a></div>
       <?php endif; ?>
       <div class="site-info">
         <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
         <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+          <?php echo get_theme_mod( 'simple_grey_site_description' ); ?>
       </div>
       <div id="menu-toggle" class="menu-toggle"><button aria-controls="menu" aria-expanded="false"><i class="fa fa-bars"></i><?php _e( 'Menu', 'simple-grey' ); ?></button></div>
     </div>

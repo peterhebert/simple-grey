@@ -33,28 +33,93 @@ function simple_grey_customize_register( $wp_customize ) {
       }
   }
 
-  // Site Description
-  $wp_customize->add_setting( 'simple_grey_site_description' );
-  $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'simple_grey_site_description', array(
+    /**
+     * Customize Image Control Class
+     *
+     * Extend WP_Customize_Image_Control allowing access to uploads made within
+     * the same context
+     * credit: https://gist.github.com/eduardozulian/4739075
+     */
+    class simple_grey_Customize_Image_Control extends WP_Customize_Image_Control {
+        /**
+         * Constructor.
+         *
+         * @since 3.4.0
+         * @uses WP_Customize_Image_Control::__construct()
+         *
+         * @param WP_Customize_Manager $manager
+         */
+        public function __construct( $manager, $id, $args = array() ) {
+            parent::__construct( $manager, $id, $args );
+        }
+
+        /**
+         * Search for images within the defined context
+         */
+        public function tab_uploaded() {
+            $my_context_uploads = get_posts( array(
+                'post_type'  => 'attachment',
+                'meta_key'   => '_wp_attachment_context',
+                'meta_value' => $this->context,
+                'orderby'    => 'post_date',
+                'nopaging'   => true,
+            ) );
+            ?>
+
+            <div class="uploaded-target"></div>
+
+            <?php
+            if ( empty( $my_context_uploads ) )
+                return;
+
+            foreach ( (array) $my_context_uploads as $my_context_upload ) {
+                $this->print_tab_image( esc_url_raw( $my_context_upload->guid ) );
+            }
+        }
+    }
+    
+    
+    // Change Tagline (blogdescription) to textarea control
+  $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'blogdescription', array(
       'label' => __( 'Site Description', 'simple-grey' ),
       'section' => 'title_tagline',
-      'settings' => 'simple_grey_site_description',
+      'settings' => 'blogdescription',
   ) ) );
 
-  // Logo upload
-  $wp_customize->add_section( 'simple_grey_logo_section' , array(
-    'title' => __( 'Logo', 'simple-grey' ),
-    'priority' => 30,
-    'description' => 'Upload a logo or avatar to be placed in the header',
-  ) );
+    
+    $wp_customize->get_section( 'title_tagline' )->title = __( 'Site Branding', 'simple-grey' );
+   
+    // Logo upload
   $wp_customize->add_setting( 'simple_grey_logo' );
-  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'simple_grey_logo', array(
+  $wp_customize->add_control( new simple_grey_Customize_Image_Control( $wp_customize, 'simple_grey_logo', array(
     'label' => __( 'Logo', 'simple-grey' ),
-    'section' => 'simple_grey_logo_section',
+    'section' => 'title_tagline',
     'settings' => 'simple_grey_logo',
   ) ) );
 
-// navigation style
+   // toggle rounded corners on logo
+    $wp_customize->add_setting( 'simple_grey_logo_rounded_corners', array( 'default' => 1 ) );
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simple_grey_logo_rounded_corners', array(
+    'label' => __( 'Add rounded corners to logo', 'simple-grey' ),
+    'section' => 'title_tagline',
+    'settings' => 'simple_grey_logo_rounded_corners',
+    'type' => 'checkbox'
+  ) ) );
+ 
+    
+   // toggle shadow on logo and text
+    $wp_customize->add_setting( 'simple_grey_header_drop_shadow', array( 'default' => 1 ) );
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simple_grey_header_drop_shadow', array(
+    'label' => __( 'Add drop shadow to header elements', 'simple-grey' ),
+    'section' => 'title_tagline',
+    'settings' => 'simple_grey_header_drop_shadow',
+    'type' => 'checkbox'
+  ) ) );
+
+    //remove color section
+    $wp_customize->remove_section('colors');
+    
+    // navigation style
     $wp_customize->add_setting(
         'simple_grey_nav_style',
         array(
@@ -62,18 +127,18 @@ function simple_grey_customize_register( $wp_customize ) {
         )
     );
 
-$wp_customize->add_control(
-    'simple_grey_nav_style',
-    array(
-        'type' => 'select',
-        'label' => __( 'Navigation Style', 'simple-grey' ),
-        'section' => 'nav',
-        'choices' => array(
-            'menu-flat' => 'Flat',
-            'menu-drop-down' => 'Drop-down',
-        ),
-    )
-);
+    $wp_customize->add_control(
+        'simple_grey_nav_style',
+        array(
+            'type' => 'select',
+            'label' => __( 'Navigation Style', 'simple-grey' ),
+            'section' => 'nav',
+            'choices' => array(
+                'menu-flat' => 'Flat',
+                'menu-drop-down' => 'Drop-down',
+            ),
+        )
+    );
     
   // footer text
   $wp_customize->add_section( 'simple_grey_footer_section' , array(
