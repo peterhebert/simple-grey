@@ -26,8 +26,9 @@ function simple_grey_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'simple_grey_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => 'EEEEEE',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'width'                  => 1600,
+		'height'                 => 400,
+		'flex-width'            => true,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'simple_grey_header_style',
 		'admin-head-callback'    => 'simple_grey_admin_header_style',
@@ -43,37 +44,7 @@ if ( ! function_exists( 'simple_grey_header_style' ) ) :
  * @see simple_grey_custom_header_setup().
  */
 function simple_grey_header_style() {
-	$header_text_color = get_header_textcolor();
-
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == $header_text_color ) {
-		return;
-	}
-
-	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-	<?php
-		// Has the text been hidden?
-		if ( 'blank' == $header_text_color ) :
-	?>
-		.site-title,
-		.site-description {
-			position: absolute;
-			clip: rect(1px, 1px, 1px, 1px);
-		}
-	<?php
-		// If the user has set a custom color for the text use that
-		else :
-	?>
-		#masthead,
-        .site-title a {
-			color: #<?php echo esc_attr( $header_text_color ); ?>;
-		}
-	<?php endif; ?>
-	</style>
-	<?php
+	/* nothing here as no custom color capabilitites have been defined for this theme */
 }
 endif; // simple_grey_header_style
 
@@ -86,20 +57,10 @@ if ( ! function_exists( 'simple_grey_admin_header_style' ) ) :
 function simple_grey_admin_header_style() {
 ?>
 	<style type="text/css">
-		.appearance_page_custom-header #headimg {
-			border: none;
-		}
-		#headimg h1,
-		#desc {
-		}
-		#headimg h1 {
-		}
-		#headimg h1 a {
-		}
-		#desc {
-		}
-		#headimg img {
-		}
+		#masthead .headimg {
+            
+            width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
+        }
 	</style>
 <?php
 }
@@ -112,15 +73,9 @@ if ( ! function_exists( 'simple_grey_admin_header_image' ) ) :
  * @see simple_grey_custom_header_setup().
  */
 function simple_grey_admin_header_image() {
-	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
-?>
-	<div id="headimg">
-		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-		<?php if ( get_header_image() ) : ?>
-		<img src="<?php header_image(); ?>" alt="">
-		<?php endif; ?>
-	</div>
+	if ( get_header_image() ) : ?>
+		<div class="headimg"><img src="<?php header_image(); ?>" alt=""></div>
+<?php endif; ?>
 <?php
 }
 endif; // simple_grey_admin_header_image

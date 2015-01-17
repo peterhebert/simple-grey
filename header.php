@@ -22,6 +22,9 @@
 <?php _e( 'Skip to content', 'simple-grey' ); ?>
 </a>
 <header id="masthead" class="site-header" role="banner">
+<?php if ( get_header_image() ) : ?>
+		<div class="headimg"><img src="<?php header_image(); ?>" alt=""></div>
+<?php endif; ?>
   <div class="wrap">
 <?php
 $brand_class = '';

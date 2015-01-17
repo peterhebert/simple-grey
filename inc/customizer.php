@@ -14,7 +14,6 @@ function simple_grey_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-    $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
 
   /**
    * Create Textarea Control.
@@ -116,8 +115,8 @@ function simple_grey_customize_register( $wp_customize ) {
     'type' => 'checkbox'
   ) ) );
 
-    //remove color section
-    $wp_customize->remove_section('colors');
+    // remove color section
+    $wp_customize->remove_section( 'colors' );
     
     // navigation style
     $wp_customize->add_setting(
@@ -187,6 +186,15 @@ add_action( 'customize_register', 'simple_grey_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function simple_grey_customize_preview_js() {
-	wp_enqueue_script( 'simple_grey_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+	wp_enqueue_script( 'simple_grey_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20150116', true );
 }
 add_action( 'customize_preview_init', 'simple_grey_customize_preview_js' );
+
+/**
+ * remove custom background feature
+ */
+function simple_grey_remove_custom_background()
+{
+    remove_custom_background();
+}
+add_action( 'after_setup_theme', 'simple_grey_remove_custom_background' );

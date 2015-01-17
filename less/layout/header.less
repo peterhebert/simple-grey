@@ -4,12 +4,23 @@
 #masthead { 
     background-color: @col-masthead-bg;
 	color: @col-masthead-txt;
+    overflow: hidden;
+    position: relative;
 
     .mg-bottom();
+    
+    .headimg {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        text-align: center;
+        img { border: none; width: 100%  }
+    }
 
     .menu-toggle { 
         .column();
         .mg-bottom();
+        text-align: center;
         button {
             .button;
             font-weight: 600;
@@ -25,7 +36,11 @@
 		  text-decoration: none; color: @col-masthead-txt; 
 		  &:visited { color: @col-masthead-txt; }
 		  &:hover { color: @col-masthead-hover; }
-	  }
+        }
+        &.drop-shadow {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            .site-logo img { .box-shadow; }
+        }
     }
     .site-logo {
         img {
@@ -44,27 +59,24 @@
          font-weight: normal;
     }
         
-   
     .site-logo, .site-info { .column(); }
-    .drop-shadow {
-        .site-logo img { .box-shadow; }
-        .site-title, site-description {
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-        }
-    }
-    @media screen and (min-width: @bp-float-logo) {
-        .with-logo {
-            //padding: 0;
-            .site-logo { 
-                .column(2/12);
-                max-width: 7.5em;
-                margin-top: .75em;
-            }
-            .site-info { .column(10/12); }
-        }
+
+    @media screen and (max-width: @bp-full-menu) {
+        .site-logo, .site-title { text-align: center }
+        .site-logo img { width: 4.5em }
     }
     @media screen and (min-width: @bp-full-menu) {
         #menu-toggle { display: none; }
+        .site-title { text-align: left }
+       .with-logo {
+            //padding: 0;
+            .site-logo { 
+                .column(5/24);
+                max-width: 7.5em;
+                margin-top: .75em;
+            }
+            .site-info { .column(19/24); }
+        }
     }
     
 }
