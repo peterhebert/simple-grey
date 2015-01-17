@@ -2,19 +2,22 @@
     .column();
 }
 #featured {
-    .mg-bottom();
-    .featured.widget {
-        .widget-title { width: 100%; }
+    .featured {
+        
         article { .even-columns(4, "-widgets"); };
     }
+    .widget:not(.featured) {
+         .even-columns(4, "-widgets"); 
+   }
 }
 
 @media only screen and (min-width: @bp-widgets-2col) {
     #secondary, #featured {
         .sidebar-row { .row; }
     }
-    #featured .featured.widget .widget-title { .column(); }
+    #featured .featured .widget-title { .column(); }
 }
+
 
 @media only screen and (max-width: @bp-float-sidebar) {
     #secondary { .mg-top(); }
