@@ -8,8 +8,7 @@
  */
 
 get_header(); ?>
-<div id="content" class="wrap">
-  <div class="row">
+
     <main id="main" role="main">
 		<?php if ( have_posts() ) : ?>
 
@@ -43,6 +42,5 @@ get_header(); ?>
 
 		</main><!-- #main -->
       <?php get_sidebar(); ?>
-  </div>
-</div>
+
 <?php get_footer(); ?>

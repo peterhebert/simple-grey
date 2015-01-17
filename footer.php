@@ -7,6 +7,8 @@
  * @package Simple Grey
  */
 ?>
+  </div>
+</div>
 
 <footer class="site-footer" role="contentinfo">
   <div class="wrap">

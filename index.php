@@ -13,8 +13,6 @@
 
 get_header(); ?>
 
-<div id="content" class="wrap">
-  <div class="row">
     <main id="main" role="main">
       <?php if ( have_posts() ) : ?>
         <?php /* Start the Loop */ ?>
@@ -33,6 +31,5 @@ get_header(); ?>
         <?php endif; ?>
       </main>
       <?php get_sidebar(); ?>
-  </div>
-</div>
+
 <?php get_footer(); ?>

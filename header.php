@@ -70,4 +70,6 @@ $container_class = implode(' ', $menu_classes);
   
 </header>
 <!-- #masthead --> 
+<div id="content" class="wrap">
+  <div class="row">
 

@@ -16,7 +16,7 @@
     
     ?><a href="<?php echo $thumb_url[0]; ?>"><?php the_post_thumbnail('large'); ?></a>
     </div><!-- .post-thumbnail -->
-  <?php } ?>
+<?php } ?>
 
  <?php the_meta(); ?> 
 

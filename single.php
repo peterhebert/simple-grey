@@ -6,8 +6,7 @@
  */
 
 get_header(); ?>
-<div id="content" class="wrap">
-  <div class="row">
+
     <main id="main" role="main">
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -26,6 +25,5 @@ get_header(); ?>
 
 		</main><!-- #main -->
       <?php get_sidebar(); ?>
-  </div>
-</div>
+
 <?php get_footer(); ?>

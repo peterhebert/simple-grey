@@ -5,9 +5,10 @@
  * @package peterhebert
  */
 
+if ( ! is_active_sidebar( 'sidebar-featured' ) ) {
+	return;
+}
 ?>
-    <section id="featured" class="widget-area" role="complementary">
-        <?php do_action( 'before_sidebar' ); ?>
-        <?php if ( ! dynamic_sidebar( 'sidebar-featured' ) ) : ?>
-        <?php endif; // end sidebar widget area ?>
-    </section>
+<section id="featured" class="widget-area" role="complementary">
+ 	<div class="sidebar-row"><?php dynamic_sidebar( 'sidebar-featured' ); ?></div>
+</section><!-- #featured -->
