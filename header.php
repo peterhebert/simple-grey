@@ -22,9 +22,6 @@
 <?php _e( 'Skip to content', 'simple-grey' ); ?>
 </a>
 <header id="masthead" class="site-header" role="banner">
-<?php if ( get_header_image() ) : ?>
-		<div class="headimg"><img src="<?php header_image(); ?>" alt=""></div>
-<?php endif; ?>
   <div class="wrap">
 <?php
 $brand_class = '';
@@ -35,8 +32,8 @@ endif;
 if ( get_theme_mod( 'simple_grey_header_drop_shadow' ) ) : 
     $brand_class .= ' drop-shadow';
 endif;
-if ( get_theme_mod( 'simple_grey_logo_rounded_corners' ) ) : 
-    $logo_class .= ' rounded';
+if ( get_theme_mod( 'simple_grey_logo_style' ) !== '') : 
+    $logo_class .= ' '.get_theme_mod( 'simple_grey_logo_style' );
 endif;
       ?>
       <div class="site-branding row<?php echo $brand_class; ?>">
@@ -52,24 +49,28 @@ endif;
     </div>
       <!-- .site-branding -->
   </div>
-  <?php 
-$menu_classes = array('nav-main');
-if ( get_theme_mod( 'simple_grey_nav_style' ) ) : 
-  $menu_classes[] = get_theme_mod( 'simple_grey_nav_style' ); 
-else:
-  $menu_classes[] = 'menu-flat'; 
-endif; 
-$container_class = implode(' ', $menu_classes);
-?>
-  <nav id="site-navigation" class="main-navigation" role="navigation">
-       <div class="menu-wrap">
-        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu' => 'primary', 'container_class' => $container_class ) ); ?>
-     </div>
-  </nav>
-  <!-- #site-navigation --> 
-  
 </header>
-<!-- #masthead --> 
-<div id="content" class="wrap">
+<!-- #masthead -->
+    <nav id="site-navigation"><div class="wrap">
+  <?php 
+$params = array(
+	'theme_location'  => 'primary',
+	'menu'            => 'primary',
+	'container'       => 'div',
+	'container_class'    => 'row',
+);
+
+if ( get_theme_mod( 'simple_grey_nav_style' ) == 'menu-flat') : 
+  $params['depth'] = -1; 
+endif; 
+
+wp_nav_menu( $params );
+
+?>
+        </div>
+</nav>
+
+<div id="content">
+    <div class="wrap">
   <div class="row">
 

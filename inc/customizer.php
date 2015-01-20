@@ -1,8 +1,8 @@
 <?php
 /**
- * Simple Grey Theme Customizer
+ * simple_grey Theme Customizer
  *
- * @package Simple Grey
+ * @package simple_grey
  */
 
 /**
@@ -15,13 +15,13 @@ function simple_grey_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-  /**
-   * Create Textarea Control.
-   */
-
-  class simple_grey_Customize_Textarea_Control extends WP_Customize_Control {
+    /**
+     * Add Textarea Control
+     *
+    */
+    class simple_grey_Customize_Textarea_Control extends WP_Customize_Control {
       public $type = 'textarea';
-   
+
       public function render_content() {
           ?>
           <label>
@@ -30,7 +30,7 @@ function simple_grey_customize_register( $wp_customize ) {
           </label>
           <?php
       }
-  }
+    }
 
     /**
      * Customize Image Control Class
@@ -76,7 +76,9 @@ function simple_grey_customize_register( $wp_customize ) {
             }
         }
     }
-    
+
+     //rename "Site Title & Tagline' to 'Site Branding'
+    $wp_customize->get_section( 'title_tagline' )->title = __( 'Site Branding', 'simple-grey' );
     
     // Change Tagline (blogdescription) to textarea control
   $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'blogdescription', array(
@@ -85,27 +87,6 @@ function simple_grey_customize_register( $wp_customize ) {
       'settings' => 'blogdescription',
   ) ) );
 
-    
-    $wp_customize->get_section( 'title_tagline' )->title = __( 'Site Branding', 'simple-grey' );
-   
-    // Logo upload
-  $wp_customize->add_setting( 'simple_grey_logo' );
-  $wp_customize->add_control( new simple_grey_Customize_Image_Control( $wp_customize, 'simple_grey_logo', array(
-    'label' => __( 'Logo', 'simple-grey' ),
-    'section' => 'title_tagline',
-    'settings' => 'simple_grey_logo',
-  ) ) );
-
-   // toggle rounded corners on logo
-    $wp_customize->add_setting( 'simple_grey_logo_rounded_corners', array( 'default' => 1 ) );
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simple_grey_logo_rounded_corners', array(
-    'label' => __( 'Add rounded corners to logo', 'simple-grey' ),
-    'section' => 'title_tagline',
-    'settings' => 'simple_grey_logo_rounded_corners',
-    'type' => 'checkbox'
-  ) ) );
- 
-    
    // toggle shadow on logo and text
     $wp_customize->add_setting( 'simple_grey_header_drop_shadow', array( 'default' => 1 ) );
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simple_grey_header_drop_shadow', array(
@@ -115,8 +96,32 @@ function simple_grey_customize_register( $wp_customize ) {
     'type' => 'checkbox'
   ) ) );
 
-    // remove color section
-    $wp_customize->remove_section( 'colors' );
+    // Logo upload
+  $wp_customize->add_setting( 'simple_grey_logo' );
+  $wp_customize->add_control( new simple_grey_Customize_Image_Control( $wp_customize, 'simple_grey_logo', array(
+    'label' => __( 'Logo', 'simple-grey' ),
+    'section' => 'title_tagline',
+    'settings' => 'simple_grey_logo',
+  ) ) );
+
+   // logo style
+    $wp_customize->add_setting( 'simple_grey_logo_style', array( 'default' => '' ) );
+
+    $wp_customize->add_control(
+        'simple_grey_logo_style',
+        array(
+            'type' => 'select',
+            'label' => __( 'Logo Style', 'simple-grey' ),
+            'section' => 'title_tagline',
+            'choices' => array(
+                '' => 'no effects',
+                'rounded' => 'rounded corners',
+                'circle' => 'circle',
+            ),
+        )
+    );
+
+
     
     // navigation style
     $wp_customize->add_setting(
@@ -138,33 +143,6 @@ function simple_grey_customize_register( $wp_customize ) {
             ),
         )
     );
-    
-  // footer text
-  $wp_customize->add_section( 'simple_grey_footer_section' , array(
-    'title' => __( 'Footer', 'simple-grey' ),
-    'priority' => 90,
-  ) );
-  $wp_customize->add_setting( 'simple_grey_footer_text' );
-  $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'simple_grey_footer_text', array(
-    'label' => __( 'Footer Text', 'simple-grey' ),
-    'section' => 'simple_grey_footer_section',
-    'settings' => 'simple_grey_footer_text',
-  ) ) );
-
-  $wp_customize->add_setting( 'simple_grey_copyright_info' );
-  $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'simple_grey_copyright_info', array(
-    'label' => __( 'Copyright Information', 'simple-grey' ),
-    'section' => 'simple_grey_footer_section',
-    'settings' => 'simple_grey_copyright_info',
-  ) ) );
-
-  $wp_customize->add_setting( 'simple_grey_show_footer_credits', array( 'default' => 1 ) );
-  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simple_grey_show_footer_credits', array(
-    'label' => __( 'Show WordPress and Theme Credits', 'simple-grey' ),
-    'section' => 'simple_grey_footer_section',
-    'settings' => 'simple_grey_show_footer_credits',
-    'type' => 'checkbox'
-  ) ) );
 
   // display options
   $wp_customize->add_section( 'simple_grey_reading' , array(
@@ -178,7 +156,34 @@ function simple_grey_customize_register( $wp_customize ) {
     'settings' => 'simple_grey_show_updated',
     'type' => 'checkbox'
   ) ) );
- 
+    
+  // footer text
+  $wp_customize->add_section( 'simple_grey_footer_section' , array(
+    'title' => __( 'Footer', 'simple-grey' ),
+    'priority' => 90,
+  ) );
+  $wp_customize->add_setting( 'simple_grey_footer_text_top' );
+  $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'simple_grey_footer_text', array(
+    'label' => __( 'Footer Top Text', 'simple-grey' ),
+    'section' => 'simple_grey_footer_section',
+    'settings' => 'simple_grey_footer_text_top',
+  ) ) );
+
+  $wp_customize->add_setting( 'simple_grey_footer_text_bottom' );
+  $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'simple_grey_copyright_info', array(
+    'label' => __( 'Footer Bottom Text', 'simple-grey' ),
+    'section' => 'simple_grey_footer_section',
+    'settings' => 'simple_grey_footer_text_bottom',
+  ) ) );
+
+  $wp_customize->add_setting( 'simple_grey_show_footer_credits', array( 'default' => 1 ) );
+  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simple_grey_show_footer_credits', array(
+    'label' => __( 'Show WordPress and Theme Credits', 'simple-grey' ),
+    'section' => 'simple_grey_footer_section',
+    'settings' => 'simple_grey_show_footer_credits',
+    'type' => 'checkbox'
+  ) ) );
+
 }
 add_action( 'customize_register', 'simple_grey_customize_register' );
 
@@ -186,15 +191,7 @@ add_action( 'customize_register', 'simple_grey_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function simple_grey_customize_preview_js() {
-	wp_enqueue_script( 'simple_grey_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20150116', true );
+	wp_enqueue_script( 'simple_grey_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
 add_action( 'customize_preview_init', 'simple_grey_customize_preview_js' );
 
-/**
- * remove custom background feature
- */
-function simple_grey_remove_custom_background()
-{
-    remove_custom_background();
-}
-add_action( 'after_setup_theme', 'simple_grey_remove_custom_background' );

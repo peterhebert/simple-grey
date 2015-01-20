@@ -4,18 +4,7 @@
 #masthead { 
     background-color: @col-masthead-bg;
 	color: @col-masthead-txt;
-    overflow: hidden;
     position: relative;
-
-    .mg-bottom();
-    
-    .headimg {
-        position: absolute;
-        z-index: 0;
-        width: 100%;
-        text-align: center;
-        img { border: none; width: 100%  }
-    }
 
     .menu-toggle { 
         .column();
@@ -49,6 +38,7 @@
          
     }
     .rounded img { .rounded-corners (.25em); }
+    .circle img { .rounded-corners (50%); }
 
     .site-title { 
         .baseline-size( 1.75 ); 

@@ -9,12 +9,12 @@
 ?>
   </div>
 </div>
-
+</div>
 <footer class="site-footer" role="contentinfo">
   <div class="wrap">
     <div class="row">
-      <?php if ( get_theme_mod( 'simple_grey_footer_text' ) ) : ?>
-      <p><?php echo get_theme_mod( 'simple_grey_footer_text' ); ?></p>
+      <?php if ( get_theme_mod( 'simple_grey_footer_text_top' ) ) : ?>
+      <div class="footer-text"><?php echo get_theme_mod( 'simple_grey_footer_text_top' ); ?></div>
       <?php endif; ?>
       <?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
       <div class="widget-area">
@@ -23,14 +23,11 @@
       </div>
        <!-- .widget-area -->
       <?php endif; ?>
-    </div>
 
-     <?php if ( get_theme_mod( 'simple_grey_copyright_info' ) || get_theme_mod( 'simple_grey_show_footer_credits' ) ) : ?>
-    <div class="footer-credits">
-      
-      
-      <?php if ( get_theme_mod( 'simple_grey_copyright_info' ) ) : ?>
-      <p><?php echo get_theme_mod( 'simple_grey_copyright_info' ); ?></p>
+     <?php if ( get_theme_mod( 'simple_grey_footer_text_bottom' ) || get_theme_mod( 'simple_grey_show_footer_credits' ) ) : ?>
+    <div class="footer-text">
+      <?php if ( get_theme_mod( 'simple_grey_footer_text_bottom' ) ) : ?>
+        <p><?php echo get_theme_mod( 'simple_grey_footer_text_bottom' ); ?></p>
       <?php endif; ?>
       <?php if ( get_theme_mod( 'simple_grey_show_footer_credits' ) != '' ) : ?>
       <?php do_action( 'simple_grey_credits' ); ?>
@@ -38,6 +35,7 @@
       <?php endif; ?>
     </div>
     <?php endif; ?>
+    </div>
   </div>
 </footer>
 <!-- #site-footer -->

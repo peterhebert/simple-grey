@@ -13,20 +13,11 @@
     .baseline-size( 1.25 );
     &:before { font-family: 'FontAwesome'; content: "\f112"; margin-right: .5em; } 
   }
-  ol.comment-list {
-    list-style-position: outside;
-    margin-left: 3.5em;
-    .comment-body { 
-      .comment-author,
-      .comment-metadata
-      {
-        margin-bottom: .75em;
+  ol {
+      list-style-type: none; 
+      li { 
+          .mg-both(.75);
       }
-      .edit-link { margin-left: .5em }
-    
-    
-    }
-  }
-
+   }
+ 
 }
-

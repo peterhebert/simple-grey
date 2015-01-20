@@ -1,41 +1,26 @@
 <?php
-/**
- * Sample implementation of the Custom Header feature
- * http://codex.wordpress.org/Custom_Headers
- *
- * You can add an optional custom header image to header.php like so ...
+// Register Theme Features
+function simple_grey_custom_theme_features() {
 
-	<?php if ( get_header_image() ) : ?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
-	</a>
-	<?php endif; // End header image check. ?>
-
- *
- * @package Simple Grey
- */
-
-/**
- * Set up the WordPress core custom header feature.
- *
- * @uses simple_grey_header_style()
- * @uses simple_grey_admin_header_style()
- * @uses simple_grey_admin_header_image()
- */
-function simple_grey_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'simple_grey_custom_header_args', array(
+    // Add theme support for Custom Header
+	$header_args = array(
 		'default-image'          => '',
 		'default-text-color'     => 'EEEEEE',
-		'width'                  => 1600,
-		'height'                 => 400,
-		'flex-width'            => true,
+		'width'                  => 1000,
+		'height'                 => 250,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'simple_grey_header_style',
 		'admin-head-callback'    => 'simple_grey_admin_header_style',
 		'admin-preview-callback' => 'simple_grey_admin_header_image',
-	) ) );
+	);
+	add_theme_support( 'custom-header', $header_args );
+
+	// remove custom background feature
+    remove_theme_support( 'custom-background' );
+    
 }
-add_action( 'after_setup_theme', 'simple_grey_custom_header_setup' );
+add_action( 'after_setup_theme', 'simple_grey_custom_theme_features' );
+
 
 if ( ! function_exists( 'simple_grey_header_style' ) ) :
 /**
@@ -44,7 +29,44 @@ if ( ! function_exists( 'simple_grey_header_style' ) ) :
  * @see simple_grey_custom_header_setup().
  */
 function simple_grey_header_style() {
-	/* nothing here as no custom color capabilitites have been defined for this theme */
+	$header_text_color = get_header_textcolor();
+    $header_image = get_header_image();
+
+	// If no custom options for text are set, let's bail
+	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
+	if ( HEADER_TEXTCOLOR == $header_text_color && $header_image === '') {
+		return;
+	}
+
+	// If we get this far, we have custom styles. Let's do this.
+	?>
+	<style type="text/css">
+	<?php
+		// Has the text been hidden?
+		if ( 'blank' == $header_text_color ) :
+	?>
+		.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+	<?php
+		// If the user has set a custom color for the text use that
+		else :
+	?>
+		.site-title a,
+		.site-description {
+			color: #<?php echo esc_attr( $header_text_color ); ?>;
+		}
+	<?php endif; ?>
+	<?php if ( get_header_image() ) : ?>
+		.site-header {
+            background: url(<?php header_image(); ?>) no-repeat 0 center;
+            background-size: 100%;
+		}
+	<?php endif; // End header image check. ?>
+    </style>
+	<?php
 }
 endif; // simple_grey_header_style
 
@@ -57,10 +79,12 @@ if ( ! function_exists( 'simple_grey_admin_header_style' ) ) :
 function simple_grey_admin_header_style() {
 ?>
 	<style type="text/css">
-		#masthead .headimg {
-            
-            width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-        }
+		.appearance_page_custom-header #headimg {
+			border: none;
+		}
+		.site-header {
+		  background: url(<?php header_image(); ?>) no-repeat 0 center;
+		}
 	</style>
 <?php
 }
@@ -73,9 +97,5 @@ if ( ! function_exists( 'simple_grey_admin_header_image' ) ) :
  * @see simple_grey_custom_header_setup().
  */
 function simple_grey_admin_header_image() {
-	if ( get_header_image() ) : ?>
-		<div class="headimg"><img src="<?php header_image(); ?>" alt=""></div>
-<?php endif; ?>
-<?php
 }
 endif; // simple_grey_admin_header_image

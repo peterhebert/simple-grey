@@ -7,6 +7,56 @@
  * @package Simple Grey
  */
 
+if ( ! function_exists( 'simple_grey_get_the_category_list' ) ) :
+/**
+ * get a list of categories by post id.
+ */
+function simple_grey_get_the_category_list( $id )
+ {
+
+    $categories = get_the_category( $id );
+    $category_list = array();
+    foreach ($categories as $category) {
+      // exclude Uncategorized from lists
+      if($category->name != 'Uncategorized') {
+        $category_list[] = '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s", 'simple-grey' ), $category->name ) ) . '" rel="category tag">'. $category->name.'</a>';
+      }
+    }
+
+	return $category_list;
+}
+endif;
+
+if ( ! function_exists( 'simple_grey_list_categories_without_uncategorized' ) ) :
+/**
+ * list post categories without 'Uncategorized' category.
+ */
+function simple_grey_list_categories_without_uncategorized($args=array())
+ {
+    if(get_category_by_slug('uncategorized')) {
+      $uncatObj = get_category_by_slug('uncategorized');
+    	$args['exclude'] = strval($uncatObj->term_id);
+    }
+    $args['title_li'] = '';
+  	return wp_list_categories($args);
+
+}
+endif;
+
+
+if ( ! function_exists( 'get_the_modified_author_id' ) ) :
+/**
+ * get the modified author id and meta
+ */
+function get_the_modified_author_id() {
+    if ( $last_id = get_post_meta( get_post()->ID, '_edit_last', true) ) {
+      return $last_id;
+    }
+}
+endif; // get_the_modified_author_id
+
+
+
 if ( ! function_exists( 'simple_grey_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
