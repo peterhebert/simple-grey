@@ -45,31 +45,34 @@ endif;
         <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
           <?php echo get_theme_mod( 'simple_grey_site_description' ); ?>
       </div>
+<?php if ( has_nav_menu( 'primary' ) ) : ?>
       <div id="menu-toggle" class="menu-toggle"><button aria-controls="menu" aria-expanded="false"><i class="fa fa-bars"></i><?php _e( 'Menu', 'simple-grey' ); ?></button></div>
-    </div>
+<?php endif; ?>
+      </div>
       <!-- .site-branding -->
   </div>
-</header>
 <!-- #masthead -->
+<?php if ( has_nav_menu( 'primary' ) ) : ?>
     <nav id="site-navigation"><div class="wrap">
   <?php 
-$params = array(
-	'theme_location'  => 'primary',
-	'menu'            => 'primary',
-	'container'       => 'div',
-	'container_class'    => 'row',
-);
+    $params = array(
+        'theme_location'  => 'primary',
+        'menu'            => 'primary',
+        'container'       => 'div',
+        'container_class'    => 'row',
+    );
 
-if ( get_theme_mod( 'simple_grey_nav_style' ) == 'menu-flat') : 
-  $params['depth'] = -1; 
-endif; 
+    if ( get_theme_mod( 'simple_grey_nav_style' ) == 'menu-flat') : 
+      $params['depth'] = -1; 
+    endif; 
 
-wp_nav_menu( $params );
+    wp_nav_menu( $params );
 
 ?>
         </div>
 </nav>
-
+<?php endif; ?>
+</header>
 <div id="content">
     <div class="wrap">
   <div class="row">
