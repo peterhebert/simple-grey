@@ -76,19 +76,19 @@ function simple_grey_customize_register( $wp_customize ) {
             }
         }
     }
-
-     //rename "Site Title & Tagline' to 'Site Branding'
+    
+    //rename "Site Title & Tagline' to 'Site Branding'
     $wp_customize->get_section( 'title_tagline' )->title = __( 'Site Branding', 'simple-grey' );
     
     // Change Tagline (blogdescription) to textarea control
-  $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'blogdescription', array(
-      'label' => __( 'Site Description', 'simple-grey' ),
-      'section' => 'title_tagline',
-      'settings' => 'blogdescription',
+    $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'blogdescription', array(
+        'label' => __( 'Site Description', 'simple-grey' ),
+        'section' => 'title_tagline',
+        'settings' => 'blogdescription'
   ) ) );
 
    // toggle shadow on logo and text
-    $wp_customize->add_setting( 'simple_grey_header_drop_shadow', array( 'default' => 1 ) );
+    $wp_customize->add_setting( 'simple_grey_header_drop_shadow', array( 'default' => 1, 'sanitize_callback' => 'simple_grey_sanitize_int' ) );
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simple_grey_header_drop_shadow', array(
     'label' => __( 'Add drop shadow to header elements', 'simple-grey' ),
     'section' => 'title_tagline',
@@ -97,15 +97,15 @@ function simple_grey_customize_register( $wp_customize ) {
   ) ) );
 
     // Logo upload
-  $wp_customize->add_setting( 'simple_grey_logo' );
+  $wp_customize->add_setting( 'simple_grey_logo', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
   $wp_customize->add_control( new simple_grey_Customize_Image_Control( $wp_customize, 'simple_grey_logo', array(
-    'label' => __( 'Logo', 'simple-grey' ),
-    'section' => 'title_tagline',
-    'settings' => 'simple_grey_logo',
+      'label' => __( 'Logo', 'simple-grey' ),
+      'section' => 'title_tagline',
+      'settings' => 'simple_grey_logo'      
   ) ) );
 
    // logo style
-    $wp_customize->add_setting( 'simple_grey_logo_style', array( 'default' => '' ) );
+    $wp_customize->add_setting( 'simple_grey_logo_style', array( 'default' => '', 'sanitize_callback' => 'simple_grey_sanitize_text' ) );
 
     $wp_customize->add_control(
         'simple_grey_logo_style',
@@ -128,6 +128,7 @@ function simple_grey_customize_register( $wp_customize ) {
         'simple_grey_nav_style',
         array(
             'default' => 'menu-flat',
+            'sanitize_callback' => 'simple_grey_sanitize_text'
         )
     );
 
@@ -149,7 +150,7 @@ function simple_grey_customize_register( $wp_customize ) {
     'title' => __( 'Reading', 'peterhebert'),
     'priority' => 60,
   ) );
-  $wp_customize->add_setting( 'simple_grey_show_updated', array( 'default' => 1 ) );
+  $wp_customize->add_setting( 'simple_grey_show_updated', array( 'default' => 1, 'sanitize_callback' => 'simple_grey_sanitize_int' ) );
   $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simple_grey_show_updated', array(
     'label' => __( 'Show Date Updated', 'simple-grey' ),
     'section' => 'simple_grey_reading',
@@ -162,21 +163,21 @@ function simple_grey_customize_register( $wp_customize ) {
     'title' => __( 'Footer', 'simple-grey' ),
     'priority' => 90,
   ) );
-  $wp_customize->add_setting( 'simple_grey_footer_text_top' );
+  $wp_customize->add_setting( 'simple_grey_footer_text_top', array( 'default' => '', 'sanitize_callback' => 'simple_grey_sanitize_textarea') );
   $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'simple_grey_footer_text', array(
     'label' => __( 'Footer Top Text', 'simple-grey' ),
     'section' => 'simple_grey_footer_section',
     'settings' => 'simple_grey_footer_text_top',
   ) ) );
 
-  $wp_customize->add_setting( 'simple_grey_footer_text_bottom' );
+  $wp_customize->add_setting( 'simple_grey_footer_text_bottom', array( 'default' => '', 'sanitize_callback' => 'simple_grey_sanitize_textarea') );
   $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'simple_grey_copyright_info', array(
     'label' => __( 'Footer Bottom Text', 'simple-grey' ),
     'section' => 'simple_grey_footer_section',
     'settings' => 'simple_grey_footer_text_bottom',
   ) ) );
 
-  $wp_customize->add_setting( 'simple_grey_show_footer_credits', array( 'default' => 1 ) );
+  $wp_customize->add_setting( 'simple_grey_show_footer_credits', array( 'default' => 1, 'sanitize_callback' => 'simple_grey_sanitize_int' ) );
   $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'simple_grey_show_footer_credits', array(
     'label' => __( 'Show WordPress and Theme Credits', 'simple-grey' ),
     'section' => 'simple_grey_footer_section',
@@ -195,3 +196,15 @@ function simple_grey_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'simple_grey_customize_preview_js' );
 
+// options sanitizer callbacks
+function simple_grey_sanitize_text( $str ) {
+	return sanitize_text_field( $str );
+} 
+
+function simple_grey_sanitize_textarea( $text ) {
+	return esc_textarea( $text );
+} 
+
+function simple_grey_sanitize_int( $int ) {
+	return absint( $int );
+} 

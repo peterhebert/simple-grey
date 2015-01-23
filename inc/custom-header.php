@@ -14,9 +14,6 @@ function simple_grey_custom_theme_features() {
 		'admin-preview-callback' => 'simple_grey_admin_header_image',
 	);
 	add_theme_support( 'custom-header', $header_args );
-
-	// remove custom background feature
-    remove_theme_support( 'custom-background' );
     
 }
 add_action( 'after_setup_theme', 'simple_grey_custom_theme_features' );
@@ -45,24 +42,23 @@ function simple_grey_header_style() {
 		// Has the text been hidden?
 		if ( 'blank' == $header_text_color ) :
 	?>
-		.site-title,
-		.site-description {
+		.site-info {
 			position: absolute;
 			clip: rect(1px, 1px, 1px, 1px);
 		}
 	<?php
 		// If the user has set a custom color for the text use that
-		else :
+		elseif ( HEADER_TEXTCOLOR !== $header_text_color ) :
 	?>
-		.site-title a,
-		.site-description {
+		#masthead .site-branding {
 			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
-	<?php endif; ?>
+	<?php else:
+    endif; ?>
 	<?php if ( get_header_image() ) : ?>
 		.site-header {
-            background: url(<?php header_image(); ?>) no-repeat 0 center;
-            background-size: 100%;
+            background: url(<?php header_image(); ?>) no-repeat center top;
+            background-size: cover;
 		}
 	<?php endif; // End header image check. ?>
     </style>

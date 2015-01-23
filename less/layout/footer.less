@@ -1,7 +1,9 @@
 
 /* = Footer Layout
 ----------------------------------------------- */
-.site-footer { 
+.site-footer {
+    color: @col-menu-text;
+    background-color: @col-menu-bg;
     margin: 0;
     padding-top: .75em;
     padding-bottom: .75em;
@@ -13,11 +15,12 @@
     }
     .widget {
         .icons;
-        .widget-title { .baseline-size( 1.5 ); color: #333; }
+        .widget-title { .baseline-size( 1.5 ); }
         @media screen and (max-width: @bp-widgets-2col) {
             .column(1);
         }
         .even-columns(3, "-widgets");
     }
+    ul { li { line-height: 1.75; } }
 
 }

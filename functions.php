@@ -41,7 +41,11 @@ function simple_grey_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
+	// remove custom background feature
+    remove_theme_support( 'custom-background' );
+
+    
+    /*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
@@ -149,12 +153,6 @@ function simple_grey_add_editor_styles() {
 	add_editor_style( 'css/editor.css' );
 }
 add_action( 'init', 'simple_grey_add_editor_styles' );
-
-
-/**
- * clean up nav menus.
- */
-//require get_template_directory() . '/inc/menus.php';
 
 /**
  * Implement the Custom Header feature.

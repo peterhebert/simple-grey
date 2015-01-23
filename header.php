@@ -51,7 +51,7 @@ endif;
       </div>
       <!-- .site-branding -->
   </div>
-<!-- #masthead -->
+</header><!-- #masthead -->
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
     <nav id="site-navigation"><div class="wrap">
   <?php 
@@ -72,7 +72,7 @@ endif;
         </div>
 </nav>
 <?php endif; ?>
-</header>
+
 <div id="content">
     <div class="wrap">
   <div class="row">
