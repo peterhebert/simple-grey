@@ -15,6 +15,16 @@ function simple_grey_custom_theme_features() {
 	);
 	add_theme_support( 'custom-header', $header_args );
     
+	// add support for custom backgrounds	
+	$bg_args = array(
+		'default-color'          => '',
+		'default-image'          => '',
+		'wp-head-callback'       => '_custom_background_cb',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => ''
+	);
+	add_theme_support( 'custom-background', $bg_args );
+
 }
 add_action( 'after_setup_theme', 'simple_grey_custom_theme_features' );
 

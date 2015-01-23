@@ -41,10 +41,6 @@ function simple_grey_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	// remove custom background feature
-    remove_theme_support( 'custom-background' );
-
-    
     /*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -155,9 +151,9 @@ function simple_grey_add_editor_styles() {
 add_action( 'init', 'simple_grey_add_editor_styles' );
 
 /**
- * Implement the Custom Header feature.
+ * Implement the Custom Header and Custom Background features.
  */
-require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-theme-features.php';
 
 /**
  * Custom template tags for this theme.
