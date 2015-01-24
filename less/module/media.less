@@ -19,9 +19,13 @@
 .thumb {
    .thumbnail();
 }
-.image-left { float: left; margin: 0 @margin @margin 0; }
-.image-right { float: right; margin: 0 0 @margin @margin; }
+.image-left, .image-right { margin-bottom: @margin; }
 
+@media screen and (min-width: @bp-01) {
+.image-left, .image-right { max-width: 48%; height:auto; }
+.image-left { float: left; margin-right: @margin; }
+.image-right { float: right; margin-left: @margin; }
+}
 
 // GALLERIES
 
