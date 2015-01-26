@@ -150,6 +150,11 @@ function simple_grey_add_editor_styles() {
 add_action( 'init', 'simple_grey_add_editor_styles' );
 
 /**
+ * Post Format customizations
+ */
+require get_template_directory() . '/inc/post-formats.php';
+
+/**
  * Implement the Custom Header and Custom Background features.
  */
 require get_template_directory() . '/inc/custom-theme-features.php';
