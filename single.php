@@ -12,7 +12,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php simple_grey_post_nav(); ?>
+            <?php simple_grey_post_nav(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

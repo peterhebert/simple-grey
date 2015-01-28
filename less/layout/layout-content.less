@@ -36,6 +36,14 @@ body {
 
 #main {
     article {
+
+        h1 { .baseline-size( 2 ); }
+        h2 { .baseline-size( 1.75 ); }
+        h3 { .baseline-size( 1.5 ); }
+        h4 { .baseline-size( 1.25 ); }
+        h5 { .baseline-size( 1.125 ); }
+        h6 { .baseline-size( 1 ); }
+        
         .post-meta {
             list-style: none;
         }
@@ -85,7 +93,7 @@ body {
         }
         #secondary {
         .column(@gb);
-            .widget { float:none; width: 100%; padding: 0; }
+            .widget { float:none; .column(1); }
         }
     }
 }

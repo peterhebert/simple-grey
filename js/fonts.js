@@ -1,5 +1,5 @@
   WebFontConfig = {
-    google: { families: [ 'Open+Sans:400italic,700italic,400,700:latin' ] }
+    google: { families: [ 'Open+Sans:400italic,600italic,400,600:latin' ] }
   };
   (function() {
     var wf = document.createElement('script');
