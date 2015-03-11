@@ -31,7 +31,7 @@
       <?php endif; ?>
       <?php if ( get_theme_mod( 'simple_grey_show_footer_credits' ) != '' ) : ?>
       <?php do_action( 'simple_grey_credits' ); ?>
-      <p><i class="mv mv-wordpress icon-large"></i> <a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'simple-grey' ), 'WordPress' ); ?></a>. <?php printf( __( 'Theme: %1$s by %2$s.', 'simple-grey' ), sprintf( __( '<a href="%1$s">%2$s</a>', 'simple-grey' ), __( 'http://peterhebert.com/', 'simple-grey' ), __( 'Simple Grey', 'simple-grey' ) ), sprintf( __( '<a href="%1$s" rel="designer">%2$s</a>', 'simple-grey' ), __( 'http://peterhebert.com/', 'simple-grey' ), __( 'Peter Hebert', 'simple-grey' ) ) ); ?></p>
+      <p><i class="mv mv-wordpress icon-large"></i> <a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'simple-grey' ), 'WordPress' ); ?></a>. <?php printf( __( 'Theme: %1$s by %2$s.', 'simple-grey' ), sprintf( __( '<a href="%1$s">%2$s</a>', 'simple-grey' ), __( 'https://github.com/peterhebert/simple-grey', 'simple-grey' ), __( 'Simple Grey', 'simple-grey' ) ), sprintf( __( '<a href="%1$s" rel="designer">%2$s</a>', 'simple-grey' ), __( 'http://peterhebert.com/', 'simple-grey' ), __( 'Peter Hebert', 'simple-grey' ) ) ); ?></p>
       <?php endif; ?>
     </div>
     <?php endif; ?>
