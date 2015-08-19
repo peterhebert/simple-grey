@@ -12,9 +12,12 @@ body {
     .column();
 }
 #featured {
-    .featured {
+    .featured, .cards {
         
-        article { .even-columns(4, "-widgets"); };
+        article { .even-columns(4, "-widgets"); 
+          .article-title { margin-bottom: 0; }
+        }
+      
     }
     .widget:not(.featured) {
          .even-columns(4, "-widgets"); 
@@ -32,7 +35,6 @@ body {
 @media only screen and (max-width: @bp-float-sidebar) {
     #secondary { .mg-top(); }
 }
-
 
 #main {
     article {
