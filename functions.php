@@ -97,7 +97,7 @@ function simple_grey_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
-  
+
 	register_sidebar( array(
 		'name'          => __( 'Footer', 'simple-grey' ),
 		'id'            => 'sidebar-footer',
@@ -116,7 +116,7 @@ add_action( 'widgets_init', 'simple_grey_widgets_init' );
 function simple_grey_scripts() {
 
 	// load fonts
-	wp_enqueue_script( 'open-sans', get_template_directory_uri() . '/js/fonts.js');
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic', false );
 	wp_enqueue_style( 'dashicons' );
 
     // load theme stylesheets
@@ -129,10 +129,10 @@ function simple_grey_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-    
+
 	// fix issues with oEmbeds
-    wp_enqueue_script ( 'simple-grey-oembed-adjust', get_template_directory_uri() . '/js/oembed-adjust.js', array( 'jquery' ), null, true );
-    
+  wp_enqueue_script ( 'simple-grey-oembed-adjust', get_template_directory_uri() . '/js/oembed-adjust.js', array( 'jquery' ), null, true );
+
 }
 add_action( 'wp_enqueue_scripts', 'simple_grey_scripts' );
 

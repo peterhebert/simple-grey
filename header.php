@@ -17,7 +17,6 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<!--<div id="page" class="hfeed site">--> 
 <a class="skip-link screen-reader-text" href="#content">
 <?php _e( 'Skip to content', 'simple-grey' ); ?>
 </a>
@@ -26,13 +25,13 @@
 <?php
 $brand_class = '';
 $logo_class = '';
-if ( get_theme_mod( 'simple_grey_logo' ) ) : 
+if ( get_theme_mod( 'simple_grey_logo' ) ) :
     $brand_class .= ' with-logo';
-endif; 
-if ( get_theme_mod( 'simple_grey_header_drop_shadow' ) ) : 
+endif;
+if ( get_theme_mod( 'simple_grey_header_drop_shadow' ) ) :
     $brand_class .= ' drop-shadow';
 endif;
-if ( get_theme_mod( 'simple_grey_logo_style' ) !== '') : 
+if ( get_theme_mod( 'simple_grey_logo_style' ) !== '') :
     $logo_class .= ' '.get_theme_mod( 'simple_grey_logo_style' );
 endif;
       ?>
@@ -54,7 +53,7 @@ endif;
 </header><!-- #masthead -->
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
     <nav id="site-navigation"><div class="wrap">
-  <?php 
+  <?php
     $params = array(
         'theme_location'  => 'primary',
         'menu'            => 'primary',
@@ -62,9 +61,9 @@ endif;
         'container_class'    => 'row',
     );
 
-    if ( get_theme_mod( 'simple_grey_nav_style' ) == 'menu-flat') : 
-      $params['depth'] = -1; 
-    endif; 
+    if ( get_theme_mod( 'simple_grey_nav_style' ) == 'menu-flat') :
+      $params['depth'] = -1;
+    endif;
 
     wp_nav_menu( $params );
 
@@ -76,4 +75,3 @@ endif;
 <div id="content">
     <div class="wrap">
   <div class="row">
-
