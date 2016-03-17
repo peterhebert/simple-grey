@@ -57,7 +57,7 @@
 .box-shadow (@rules: 2px 2px 5px rgba(0, 0, 0, 0.6) ) {
   -webkit-box-shadow: @rules;
   -moz-box-shadow:    @rules;
-  box-shadow:         @rules; 
+  box-shadow:         @rules;
 }
 
 // Box sizing
@@ -174,15 +174,15 @@
   border-radius: @border-radius;
 }
 .button-color(
-  @txt: @col-button-txt; 
-  @bg: @col-button-bg; 
-  @txt-active: @col-button-txt-active; 
-  @bg-active: @col-button-bg-active; 
-  @bg-hover: @col-button-bg-hover; 
-  @bdr: @col-button-border; 
+  @txt: @col-button-txt;
+  @bg: @col-button-bg;
+  @txt-active: @col-button-txt-active;
+  @bg-active: @col-button-bg-active;
+  @bg-hover: @col-button-bg-hover;
+  @bdr: @col-button-border;
   @bdr-focus: @col-focus-border
 ) {
-  
+
   background-color: @bg;
   color: @txt;
   .bordered (@bdr-width; solid; @bdr);
@@ -200,7 +200,9 @@
   }
 
 }
-
+.button-wrap {
+	white-space: normal;
+}
 // Pagination
 // -------------------------
 .pagination-size(@padding-vertical; @padding-horizontal; @font-size; @border-radius) {

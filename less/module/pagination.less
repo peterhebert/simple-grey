@@ -96,20 +96,34 @@
       &:extend(.clearfix all);
       .baseline-size(.875);
         margin: 0;
+
       a {
         .button;
+        .button-wrap;
         .form-control-focus();
         text-decoration: none;
+        text-align: inherit;
         margin: .75em 0;
-        &[rel="prev"] i { margin-right: @margin; }
-        &[rel="next"] i { margin-left: @margin; }
-
       }
-      
+
+      .nav-previous a .meta-nav
+      {
+        margin-right: (@margin/2);
+      }
+      .nav-next a .meta-nav
+      {
+        margin-left: (@margin/2);
+      }
+
     }
     @media only screen and (min-width: 320px) {
-      .nav-previous { float: left; }
-      .nav-next { float: right; }
+      .nav-previous, .nav-next { max-width: 47%;  }
+      .nav-previous {
+        float: left;
+      }
+      .nav-next {
+        float: right;
+      }
     }
 }
 .numbered-pagination {
@@ -120,27 +134,27 @@
   ul {
     list-style: none;
     margin: @margin 0;
-    li { 
+    li {
       display: inline-block;
       .bordered(1px);
       padding: .25em .75em;
       margin-left: -1px;
       color: @col-pagination-txt;
-      &.current { 
-        background-color: @col-pagination-bg-active; color: @col-pagination-bg; 
+      &.current {
+        background-color: @col-pagination-bg-active; color: @col-pagination-bg;
         &:hover { background-color: @col-pagination-bg-active; color: @col-pagination-bg; }
       }
       &:hover {
-        background-color: @col-pagination-bg-hover; 
+        background-color: @col-pagination-bg-hover;
         color: @col-pagination-txt-hover;
         a { color: @col-pagination-txt-hover; }
       }
 
-      &:first-child { 
-        .border-left-radius(.25em); 
+      &:first-child {
+        .border-left-radius(.25em);
       }
-      &:last-child { 
-        .border-right-radius(.25em); 
+      &:last-child {
+        .border-right-radius(.25em);
       }
     }
   }

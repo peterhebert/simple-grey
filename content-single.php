@@ -13,20 +13,20 @@
 <?php
     $thumb_id = get_post_thumbnail_id();
     $thumb_url = wp_get_attachment_image_src($thumb_id, 'full');
-    
+
     ?><a href="<?php echo $thumb_url[0]; ?>"><?php the_post_thumbnail('large'); ?></a>
     </div><!-- .post-thumbnail -->
 <?php } ?>
 
- <?php the_meta(); ?> 
+ <?php the_meta(); ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'simple-grey' ),
-				'after'  => '</div>',
-			) );
+		wp_link_pages(array(
+		  'before' => '<div class="page-links">'.__('Pages:', 'simple-grey'),
+		  'after' => '</div>',
+		));
 		?>
 	</div><!-- .entry-content -->
 

@@ -90,7 +90,7 @@ if ( ! function_exists( 'simple_grey_numbered_pagingation' ) ) :
  * Display numbered pagination links
  */
 function simple_grey_numbered_pagingation($pages = '', $range = 2)
-{  
+{
   $showitems = ($range * 2)+1;
 
   global $paged;
@@ -142,8 +142,8 @@ function simple_grey_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'simple-grey' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'simple-grey' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'simple-grey' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>%title', 'Previous post link', 'simple-grey' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title<span class="meta-nav">&rarr;</span>', 'Next post link',     'simple-grey' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -218,7 +218,7 @@ if ( ! function_exists( 'simple-grey_posted_on' ) ) :
 function simple_grey_posted_on() {
 	$time_published_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 
-	$time_published_string = sprintf( 
+	$time_published_string = sprintf(
 		$time_published_string,
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
@@ -226,9 +226,9 @@ function simple_grey_posted_on() {
 
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_updated_string = '<time class="updated" datetime="%1$s">%2$s</time>';
-		
-		$time_updated_string = sprintf( 
-			$time_updated_string, 
+
+		$time_updated_string = sprintf(
+			$time_updated_string,
 			esc_attr( get_the_modified_date( 'c' ) ),
 			esc_html( get_the_modified_date() )
 		);
@@ -236,21 +236,21 @@ function simple_grey_posted_on() {
 	}
 
 	/* print posted date and time */
-	echo '<p class="posted-on">';
+	echo '<span class="posted-on">';
 	printf( __( 'Posted on %1$s by %2$s', 'simple-grey' ).' ',
-		sprintf( 
+		sprintf(
 			'<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
-			$time_published_string 
+			$time_published_string
 		),
-		sprintf( 
+		sprintf(
 			'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_html( get_the_author() )
 		)
 
 	);
-	
+
 	// taxonomy
 	$category_list = simple_grey_get_the_category_list( get_the_ID() );
 
@@ -279,32 +279,32 @@ function simple_grey_posted_on() {
 
 	} // end check for categories on this blog
 
-	if ( '' != $meta_text && 'post' == get_post_type() ) : 
+	if ( '' != $meta_text && 'post' == get_post_type() ) :
 		echo ' <span class="post-taxonomy">';
 		printf(
 			$meta_text,
 			$category_list_filtered,
 			$tag_list
-		); 
+		);
 		echo '</span>';
-	endif; 
-	echo "</p>\r";
+	endif;
+	echo "</span>\r";
 
 	// print updated time and date
 	if ( isset($time_updated_string) && get_theme_mod( 'simple_grey_show_updated' ) == 1 ) {
-		echo '<p class="post-updated">';
-		printf( 
-			__( 'Last updated on %1$s by %2$s', 'simple-grey' ).' ',
+		echo '<span class="post-updated">';
+		printf(
+			__( 'Last updated on %1$s by %2$s.', 'simple-grey' ).' ',
 			$time_updated_string,
-			sprintf( 
+			sprintf(
 				'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 				esc_url( get_author_posts_url( get_the_modified_author_id() ) ),
 				esc_html( get_the_modified_author() )
 			)
 		);
-		echo "</p>\r";
+		echo "</span>\r";
 	}
-	
+
 }
 endif;
 
@@ -491,11 +491,11 @@ function simple_grey_get_posts_page_url() {
   } else {
     $posts_page_url = site_url();
   }
-  
+
   if(strlen($siteurl) > strlen($homeurl)) {
   	$posts_page_url = str_replace($siteurl, $homeurl, $posts_page_url);
   }
-  
+
   return $posts_page_url;
 }
 
@@ -508,6 +508,3 @@ function simple_grey_get_posts_page_title() {
   }
   return $posts_page_title;
 }
-
-
-
