@@ -54,7 +54,7 @@ endif;
   </div>
 </header><!-- #masthead -->
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
-    <nav id="navigation">
+    <nav id="navigation" role="navigation">
       <div class="wrap"><?php simple_grey_main_menu(); ?></div>
     </nav>
 <?php endif; ?>
