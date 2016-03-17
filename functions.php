@@ -49,25 +49,6 @@ function simple_grey_setup() {
 	add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 220, 220 );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'simple-grey' ),
-	) );
-
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-	) );
-
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio' ) );
-
 }
 endif; // simple_grey_setup
 add_action( 'after_setup_theme', 'simple_grey_setup' );
@@ -133,6 +114,9 @@ function simple_grey_scripts() {
 	// fix issues with oEmbeds
   wp_enqueue_script ( 'simple-grey-oembed-adjust', get_template_directory_uri() . '/js/oembed-adjust.js', array( 'jquery' ), null, true );
 
+	// accessibility features
+  wp_enqueue_script ( 'accessibility', get_template_directory_uri() . '/js/accessibility.js', array( 'jquery' ), null, true );
+
 }
 add_action( 'wp_enqueue_scripts', 'simple_grey_scripts' );
 
@@ -176,3 +160,9 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Menu functions and walkers
+ */
+ require get_template_directory() . '/inc/menu.php';
+require get_template_directory() . '/inc/aria-walker-nav-menu.php';

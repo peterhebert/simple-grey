@@ -10,7 +10,7 @@
   </div>
 </div>
 </div>
-<footer class="site-footer" role="contentinfo">
+<footer id="footer" class="site-footer" role="contentinfo">
   <div class="wrap">
     <div class="row">
       <?php if ( get_theme_mod( 'simple_grey_footer_text_top' ) ) : ?>
@@ -38,7 +38,7 @@
     </div>
   </div>
 </footer>
-<!-- #site-footer -->
+<!-- #footer -->
 
 <?php wp_footer(); ?>
 </body></html>

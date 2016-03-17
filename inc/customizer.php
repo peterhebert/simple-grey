@@ -76,10 +76,10 @@ function simple_grey_customize_register( $wp_customize ) {
             }
         }
     }
-    
+
     //rename "Site Title & Tagline' to 'Site Branding'
     $wp_customize->get_section( 'title_tagline' )->title = __( 'Site Branding', 'simple-grey' );
-    
+
     // Change Tagline (blogdescription) to textarea control
     $wp_customize->add_control( new simple_grey_Customize_Textarea_Control( $wp_customize, 'blogdescription', array(
         'label' => __( 'Site Description', 'simple-grey' ),
@@ -101,7 +101,7 @@ function simple_grey_customize_register( $wp_customize ) {
   $wp_customize->add_control( new simple_grey_Customize_Image_Control( $wp_customize, 'simple_grey_logo', array(
       'label' => __( 'Logo', 'simple-grey' ),
       'section' => 'title_tagline',
-      'settings' => 'simple_grey_logo'      
+      'settings' => 'simple_grey_logo'
   ) ) );
 
    // logo style
@@ -122,8 +122,13 @@ function simple_grey_customize_register( $wp_customize ) {
     );
 
 
-    
+
     // navigation style
+		$wp_customize->add_section( 'simple_grey_navigation' , array(
+	    'title' => __( 'Navigation', 'peterhebert'),
+	    'priority' => 60,
+	  ) );
+
     $wp_customize->add_setting(
         'simple_grey_nav_style',
         array(
@@ -137,11 +142,13 @@ function simple_grey_customize_register( $wp_customize ) {
         array(
             'type' => 'select',
             'label' => __( 'Navigation Style', 'simple-grey' ),
-            'section' => 'nav',
+            'section' => 'simple_grey_navigation',
             'choices' => array(
-                'menu-flat' => 'Flat',
-                'menu-drop-down' => 'Drop-down',
+                'flat' => 'Flat',
+                'hierarchical' => 'Hierarchical',
+								'drop-down' => 'Drop Down',
             ),
+						'description' => __( 'Navigation style applied to the primary menu.', 'simple-grey' ),
         )
     );
 
@@ -157,7 +164,7 @@ function simple_grey_customize_register( $wp_customize ) {
     'settings' => 'simple_grey_show_updated',
     'type' => 'checkbox'
   ) ) );
-    
+
   // footer text
   $wp_customize->add_section( 'simple_grey_footer_section' , array(
     'title' => __( 'Footer', 'simple-grey' ),
@@ -199,12 +206,12 @@ add_action( 'customize_preview_init', 'simple_grey_customize_preview_js' );
 // options sanitizer callbacks
 function simple_grey_sanitize_text( $str ) {
 	return sanitize_text_field( $str );
-} 
+}
 
 function simple_grey_sanitize_textarea( $text ) {
 	return esc_textarea( $text );
-} 
+}
 
 function simple_grey_sanitize_int( $int ) {
 	return absint( $int );
-} 
+}

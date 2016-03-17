@@ -17,9 +17,11 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<a class="skip-link screen-reader-text" href="#content">
-<?php _e( 'Skip to content', 'simple-grey' ); ?>
-</a>
+  <div id="skiplinks">
+    <a href="#content"><?php _e( 'Skip to Content', 'simple-grey' ); ?></a>
+    <a href="#navigation"><?php _e( 'Skip to Navigation', 'simple-grey' ); ?></a>
+    <a href="#footer"><?php _e( 'Skip to Footer', 'simple-grey' ); ?></a>
+  </div>
 <header id="masthead" class="site-header" role="banner">
   <div class="wrap">
 <?php
@@ -52,24 +54,9 @@ endif;
   </div>
 </header><!-- #masthead -->
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
-    <nav id="site-navigation"><div class="wrap">
-  <?php
-    $params = array(
-        'theme_location'  => 'primary',
-        'menu'            => 'primary',
-        'container'       => 'div',
-        'container_class'    => 'row',
-    );
-
-    if ( get_theme_mod( 'simple_grey_nav_style' ) == 'menu-flat') :
-      $params['depth'] = -1;
-    endif;
-
-    wp_nav_menu( $params );
-
-?>
-        </div>
-</nav>
+    <nav id="navigation">
+      <div class="wrap"><?php simple_grey_main_menu(); ?></div>
+    </nav>
 <?php endif; ?>
 
 <div id="content">
