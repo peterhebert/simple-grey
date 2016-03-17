@@ -4,7 +4,7 @@ Theme URI: https://github.com/peterhebert/simple-grey
 Author: Peter Hebert
 Author URI: http://peterhebert.com/
 Description: A responsive wordpress theme with a simple grey color palette.
-Version: 1.0.2
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: simple-grey
@@ -15,7 +15,7 @@ Simple Grey is based on Underscores http://underscores.me/, (C) 2012-2014 Automa
 The theme is using the  for css normalization and grid generation
 The theme is using normalize.css Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/ for css normalization.
 Grid generation and base style framework is Fluid Baseline Grid Redux
-https://github.com/peterhebert/Fluid-Baseline-Grid-Redux 
+https://github.com/peterhebert/Fluid-Baseline-Grid-Redux
 
 Note this file style.css is only used to identify the theme, and is not enqueued.
 
