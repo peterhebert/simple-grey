@@ -1,6 +1,6 @@
 {
   "name": "simple-grey",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A responsive wordpress theme with a simple grey color palette.",
   "main": "gulpfile.js",
   "engines": {
@@ -14,6 +14,8 @@
     "gulp-less": "^3.0.5",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
+    "gulp-rtlcss": "^1.0.0",
+    "gulp-sort": "^2.0.0",
     "gulp-wp-pot": "^1.1.1",
     "merge-stream": "^1.0.0"
   },

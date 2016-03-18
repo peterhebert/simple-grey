@@ -125,7 +125,7 @@ function simple_grey_customize_register( $wp_customize ) {
 
     // navigation style
 		$wp_customize->add_section( 'simple_grey_navigation' , array(
-	    'title' => __( 'Navigation', 'peterhebert'),
+	    'title' => __( 'Navigation', 'simple-grey'),
 	    'priority' => 60,
 	  ) );
 
@@ -154,7 +154,7 @@ function simple_grey_customize_register( $wp_customize ) {
 
   // display options
   $wp_customize->add_section( 'simple_grey_reading' , array(
-    'title' => __( 'Reading', 'peterhebert'),
+    'title' => __( 'Reading', 'simple-grey'),
     'priority' => 60,
   ) );
   $wp_customize->add_setting( 'simple_grey_show_updated', array( 'default' => 1, 'sanitize_callback' => 'simple_grey_sanitize_int' ) );

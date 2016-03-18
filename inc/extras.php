@@ -156,7 +156,7 @@ add_filter('get_the_excerpt', 'simple_grey_trim_excerpt');
  * custom read more link for the Excerpt.
  */
 function simple_grey_excerpt_more( $more ) {
-	return '&hellip; <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">'.__('Read More', 'peterhebert').'</a>';
+	return '&hellip; <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">'.__('Read More', 'simple-grey').'</a>';
 }
 add_filter( 'excerpt_more', 'simple_grey_excerpt_more' );
 

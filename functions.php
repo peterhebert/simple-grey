@@ -100,8 +100,14 @@ function simple_grey_scripts() {
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic', false );
 	wp_enqueue_style( 'dashicons' );
 
-    // load theme stylesheets
-	wp_enqueue_style( 'simple-grey-style', get_template_directory_uri() . '/css/simple-grey.css' );
+  // load theme stylesheets
+	if ( is_rtl() )
+	{
+		wp_enqueue_style( 'simple-grey-style-rtl', get_template_directory_uri() . '/css/simple-grey-rtl.css' );
+	}
+	else {
+		wp_enqueue_style( 'simple-grey-style', get_template_directory_uri() . '/css/simple-grey.css' );
+	}
 
 	wp_enqueue_script( 'simple-grey-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20140817', true );
 
