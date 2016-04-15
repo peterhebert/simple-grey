@@ -1206,6 +1206,25 @@ input[type="submit"]:focus {
     left: 100%;
     top: 0;
   }
+  #navigation .nav-menu.flat {
+    zoom: 1;
+  }
+  #navigation .nav-menu.flat:before,
+  #navigation .nav-menu.flat:after {
+    content: "";
+    display: table;
+  }
+  #navigation .nav-menu.flat:after {
+    clear: both;
+  }
+  #navigation .nav-menu.flat li {
+    display: inline;
+    line-height: 2.25;
+  }
+  #navigation .nav-menu.flat a {
+    display: inline;
+    white-space: nowrap;
+  }
 }
 /* =Widgets
 ----------------------------------------------- */
