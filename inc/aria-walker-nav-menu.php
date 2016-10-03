@@ -67,7 +67,7 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 			$indent,
 			$id,
 			$class_names,
-			in_array( 'menu-item-has-children', $item->classes ) ? ' aria-haspopup="true" aria-expanded="false" tabindex="0"' : ''
+			in_array( 'menu-item-has-children', $item->classes ) ? ' aria-haspopup="true" aria-expanded="false"' : ''
 		);
 
 		$atts = array();
