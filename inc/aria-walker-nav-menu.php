@@ -2,6 +2,7 @@
 /**
  * WAI-ARIA Navigation Menu template functions
  * @see wp-includes/nav-menu-template.php
+ * @link https://github.com/proteusthemes/WAI-ARIA-Walker_Nav_Menu
  */
 
 /**
@@ -12,30 +13,6 @@
  * @uses Walker_Nav_Menu
  */
 class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
-
-	/**
-	 * Starts the list before the elements are added.
-	 *
-	 * @see Walker::start_lvl()
-	 *
-	 * @since 3.0.0
-	 *
-	 * @param string $output Passed by reference. Used to append additional content.
-	 * @param int    $depth  Depth of menu item. Used for padding.
-	 * @param array  $args   An array of arguments. @see wp_nav_menu()
-	 */
-	public function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat("\t", $depth);
-		$class = 'sub-menu';
-		if($depth > 0) {
-			$class .= ' menu-side';
-		}
-		$output .= "\n$indent<ul aria-hidden=\"true\" class=\"{$class}\">\n";
-	}
-
-
-
-
 	/**
 	 * Start the element output.
 	 *
@@ -46,6 +23,17 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
+
+		/**
+		 * Filter the arguments for a single nav menu item.
+		 *
+		 * @since 4.4.0
+		 *
+		 * @param array  $args  An array of arguments.
+		 * @param object $item  Menu item data object.
+		 * @param int    $depth Depth of menu item. Used for padding.
+		 */
+		$args = apply_filters( 'nav_menu_item_args', $args, $item, $depth );
 
 		/**
 		 * Filter the CSS class(es) applied to a menu item's list item element.
@@ -116,10 +104,24 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 			}
 		}
 
+		/** This filter is documented in wp-includes/post-template.php */
+		$title = apply_filters( 'the_title', $item->title, $item->ID );
+
+		/**
+		 * Filter a menu item's title.
+		 *
+		 * @since 4.4.0
+		 *
+		 * @param string $title The menu item's title.
+		 * @param object $item  The current menu item.
+		 * @param array  $args  An array of {@see wp_nav_menu()} arguments.
+		 * @param int    $depth Depth of menu item. Used for padding.
+		 */
+		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
+
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
-		/** This filter is documented in wp-includes/post-template.php */
-		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+		$item_output .= $args->link_before . $title . $args->link_after;
 		$item_output .= '</a>';
 		$item_output .= $args->after;
 
