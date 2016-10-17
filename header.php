@@ -19,7 +19,7 @@
 <body <?php body_class(); ?>>
   <div id="skiplinks">
     <a href="#content"><?php _e( 'Skip to Content', 'simple-grey' ); ?></a>
-    <a href="#navigation"><?php _e( 'Skip to Navigation', 'simple-grey' ); ?></a>
+    <a href="#navigation"><?php _e( 'Skip to Main Navigation', 'simple-grey' ); ?></a>
     <a href="#footer"><?php _e( 'Skip to Footer', 'simple-grey' ); ?></a>
   </div>
 <header id="masthead" class="site-header" role="banner">
@@ -47,7 +47,7 @@ endif;
           <?php echo get_theme_mod( 'simple_grey_site_description' ); ?>
       </div>
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
-      <div id="menu-toggle" class="menu-toggle"><button aria-controls="menu" aria-expanded="false"><i class="fa fa-bars"></i><?php _e( 'Menu', 'simple-grey' ); ?></button></div>
+      <div id="menu-toggle" class="menu-toggle"><button aria-controls="navigation" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i><?php _e( 'Menu', 'simple-grey' ); ?></button></div>
 <?php endif; ?>
       </div>
       <!-- .site-branding -->

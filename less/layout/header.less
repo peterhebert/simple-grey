@@ -4,6 +4,18 @@
   background-color: @col-masthead-bg;
   color: @col-masthead-txt;
   position: relative;
+
+  a {
+    text-decoration: none;
+    color: @col-masthead-txt;
+    &:visited {
+      color: @col-masthead-txt;
+    }
+    &:hover {
+      color: @col-masthead-hover;
+    }
+  }
+
   .menu-toggle {
     .column();
     .mg-bottom();
@@ -22,16 +34,6 @@
     padding-top: 0.75em;
     position: relative;
     z-index: 2;
-    a {
-      text-decoration: none;
-      color: @col-masthead-txt;
-      &:visited {
-        color: @col-masthead-txt;
-      }
-      &:hover {
-        color: @col-masthead-hover;
-      }
-    }
     &.drop-shadow {
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
       .site-logo img {

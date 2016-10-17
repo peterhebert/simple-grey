@@ -1111,15 +1111,7 @@ input[type="submit"]:focus {
 /* main navigation menu */
 #skiplinks {
   margin: 0;
-  padding: 0;
   background: #f5f5f5;
-}
-#skiplinks a {
-  display: inline-block;
-  background: #f5f5f5;
-  color: #222;
-  padding: 0.25em 0.5em;
-  text-decoration: none;
   position: absolute;
   width: 1px;
   height: 1px;
@@ -1129,13 +1121,20 @@ input[type="submit"]:focus {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+#skiplinks a {
+  display: inline-block;
+  background: #f5f5f5;
+  color: #222;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+}
 #skiplinks a:hover,
 #skiplinks a:focus {
   color: #f5f5f5;
   background: #222;
 }
-#skiplinks a:active,
-#skiplinks a:focus {
+#skiplinks:active,
+#skiplinks:focus {
   position: static;
   width: auto;
   height: auto;
@@ -1574,6 +1573,16 @@ fieldset[disabled] .paging-navigation .nav-links a {
   color: #EEEEEE;
   position: relative;
 }
+#masthead a {
+  text-decoration: none;
+  color: #EEEEEE;
+}
+#masthead a:visited {
+  color: #EEEEEE;
+}
+#masthead a:hover {
+  color: #FFCC00;
+}
 #masthead .menu-toggle {
   position: relative;
   float: left;
@@ -1646,16 +1655,6 @@ fieldset[disabled] #masthead .menu-toggle button {
   padding-top: 0.75em;
   position: relative;
   z-index: 2;
-}
-#masthead .site-branding a {
-  text-decoration: none;
-  color: #EEEEEE;
-}
-#masthead .site-branding a:visited {
-  color: #EEEEEE;
-}
-#masthead .site-branding a:hover {
-  color: #FFCC00;
 }
 #masthead .site-branding.drop-shadow {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);

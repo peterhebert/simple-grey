@@ -62,8 +62,8 @@ function simple_grey_widgets_init()
 		'name' => __( 'Secondary', 'simple-grey' ),
 		'id' => 'sidebar-secondary',
 		'description' => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>',
 	));
@@ -71,8 +71,8 @@ function simple_grey_widgets_init()
 	register_sidebar(array(
 		'name' => __( 'Featured', 'simple-grey' ),
 		'id' => 'sidebar-featured',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>',
 	));
@@ -95,7 +95,7 @@ function simple_grey_scripts()
 {
 
 	// load fonts
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic', false );
+	wp_enqueue_style( 'simple-grey-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic', false );
 	wp_enqueue_style( 'dashicons' );
 
 	// load theme stylesheets
