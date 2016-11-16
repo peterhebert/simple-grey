@@ -29,16 +29,8 @@ function simple_grey_custom_theme_features() {
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio' ) );
 
-	/*
-	 * Remove support for unused theme features.
-	 * See https://codex.wordpress.org/Theme_Features
-	 * See https://codex.wordpress.org/Function_Reference/remove_theme_support
-	 */
-	 remove_theme_support( 'custom-background' );
-
 }
 add_action( 'after_setup_theme', 'simple_grey_custom_theme_features' );
-
 
 if ( ! function_exists( 'simple_grey_header_style' ) ) :
 /**
