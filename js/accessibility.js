@@ -10,4 +10,6 @@ jQuery( function ( $ ) {
 	$( 'nav > ul' ).on( 'blur.wparia  mouseleave.wparia', '[aria-haspopup="true"]', function ( ev ) {
 		$( ev.currentTarget ).attr( 'aria-expanded', false );
 	} );
+
+	
 } );

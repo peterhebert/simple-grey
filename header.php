@@ -17,11 +17,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <div id="skiplinks">
-    <a href="#content"><?php _e( 'Skip to Content', 'simple-grey' ); ?></a>
-    <a href="#navigation"><?php _e( 'Skip to Main Navigation', 'simple-grey' ); ?></a>
-    <a href="#footer"><?php _e( 'Skip to Footer', 'simple-grey' ); ?></a>
-  </div>
+<a href="#content" class="screen-reader-text" aria-role="navigation"><?php _e( 'Skip to Content', 'simple-grey' ); ?></a>
 <header id="masthead" class="site-header" role="banner">
   <div class="wrap">
 <?php
@@ -54,9 +50,13 @@ endif;
   </div>
 </header><!-- #masthead -->
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
-    <nav id="navigation" role="navigation">
-      <div class="wrap"><?php simple_grey_main_menu(); ?></div>
-    </nav>
+    <div id="navigation" role="navigation">
+      <div class="wrap">
+        <nav class="row">
+          <?php simple_grey_main_menu(); ?>
+        </nav>
+      </div>
+    </div>
 <?php endif; ?>
 
 <div id="content">

@@ -13,6 +13,27 @@
  * @uses Walker_Nav_Menu
  */
 class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
+
+	/**
+	 * Starts the list before the elements are added.
+	 *
+	 * @since 3.0.0
+	 *
+	 * @see Walker::start_lvl()
+	 *
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @param int    $depth  Depth of menu item. Used for padding.
+	 * @param array  $args   An array of wp_nav_menu() arguments.
+	 */
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
+			$indent = str_repeat("\t", $depth);
+			$lvl_class = "sub-menu";
+			if( 1 < $depth ) {
+				$lvl_class .= " menu-side";
+			}
+			$output .= "\n$indent<ul class=\"{$lvl_class}\">\n";
+	}
+
 	/**
 	 * Start the element output.
 	 *
@@ -22,7 +43,7 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-		$classes[] = 'menu-item-' . $item->ID;
+		$classes[] = 'menu-item-' . $item->ID . ' depth-' . $depth;
 
 		/**
 		 * Filter the arguments for a single nav menu item.

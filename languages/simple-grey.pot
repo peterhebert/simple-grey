@@ -122,19 +122,11 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: header.php:21
+#: header.php:20
 msgid "Skip to Content"
 msgstr ""
 
-#: header.php:22
-msgid "Skip to Main Navigation"
-msgstr ""
-
-#: header.php:23
-msgid "Skip to Footer"
-msgstr ""
-
-#: header.php:50
+#: header.php:46
 msgid "Menu"
 msgstr ""
 
