@@ -17,7 +17,9 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<a href="#content" class="screen-reader-text" aria-role="navigation"><?php _e( 'Skip to Content', 'simple-grey' ); ?></a>
+<nav role="navigation">
+  <a href="#content" class="screen-reader-text" aria-role="navigation"><?php _e( 'Skip to Content', 'simple-grey' ); ?></a>
+</nav>
 <header id="masthead" class="site-header" role="banner">
   <div class="wrap">
 <?php
