@@ -117,7 +117,7 @@ function simple_grey_scripts()
 	wp_enqueue_script( 'simple-grey-oembed-adjust', get_template_directory_uri().'/js/oembed-adjust.js', array( 'jquery' ), null, true );
 
 	// accessibility features
-	wp_enqueue_script( 'accessibility', get_template_directory_uri().'/js/accessibility.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'simple-grey-accessibility', get_template_directory_uri().'/js/accessibility.js', array( 'jquery' ), null, true );
 }
 add_action( 'wp_enqueue_scripts', 'simple_grey_scripts' );
 
