@@ -37,7 +37,7 @@ This theme defines the following widget areas:
 The footer has two text fields (Top and Bottom), for displaying credits, copyright info and the like in the footer.
 - **Footer Top Text** is displayed at the top of the footer, above the Footer Widgets.
 - **Footer Bottom Text** is displayed under the Footer Widgets.
-You can also choose whether or not to Display the WordPress and Theme credits at the bottom of the footer.
+- You can also choose whether or not to Display the WordPress and Theme credits at the bottom of the footer.
 
 ### Web fonts
 This theme uses the [Open Sans](https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans) web font via Google Fonts. In addition, it includes the following icon fonts:
