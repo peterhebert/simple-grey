@@ -1,4 +1,4 @@
-simple-grey
+Simple Grey
 ===========
 
 A responsive WordPress theme with a simple grey color palette.
