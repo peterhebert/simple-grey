@@ -50,11 +50,11 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-aside.php:22, content-gallery.php:16, content-page.php:27, content-single.php:27, content.php:32
+#: content-aside.php:22, content-gallery.php:16, content-page.php:27, content-single.php:27, content.php:31
 msgid "Pages:"
 msgstr ""
 
-#: content-aside.php:31, content-gallery.php:25, content-page.php:34, content-single.php:35, content.php:42, inc/template-tags.php:167, inc/template-tags.php:186, inc/template-tags.php:337
+#: content-aside.php:31, content-gallery.php:25, content-page.php:34, content-single.php:35, content.php:41, inc/template-tags.php:167, inc/template-tags.php:186, inc/template-tags.php:337
 msgid "Edit"
 msgstr ""
 
@@ -75,39 +75,27 @@ msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searc
 msgstr ""
 
 #: content.php:26
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgid "Continue reading &ldquo;%s&rdquo; <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: footer.php:34
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:34
-msgid "Theme: %1$s by %2$s."
+#: footer.php:36
+msgid "Theme: %1$s."
 msgstr ""
 
-#: footer.php:34
+#: footer.php:38
 msgid "<a href=\"%1$s\">%2$s</a>"
 msgstr ""
 
-#: footer.php:34
+#: footer.php:39
 msgid "https://github.com/peterhebert/simple-grey"
 msgstr ""
 
-#: footer.php:34
+#: footer.php:40
 msgid "Simple Grey"
-msgstr ""
-
-#: footer.php:34
-msgid "<a href=\"%1$s\" rel=\"designer\">%2$s</a>"
-msgstr ""
-
-#: footer.php:34
-msgid "http://peterhebert.com/"
-msgstr ""
-
-#: footer.php:34
-msgid "Peter Hebert"
 msgstr ""
 
 #: functions.php:62
@@ -122,11 +110,11 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: header.php:20
+#: header.php:21
 msgid "Skip to Content"
 msgstr ""
 
-#: header.php:46
+#: header.php:48
 msgid "Menu"
 msgstr ""
 
@@ -186,7 +174,7 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: inc/extras.php:167
+#: inc/extras.php:166
 msgid "Read More"
 msgstr ""
 
