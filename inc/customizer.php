@@ -159,6 +159,30 @@ function simple_grey_customize_register($wp_customize)
 			)
 		);
 
+		// add 'Background Size' option to Custom Background
+		$wp_customize->add_setting(
+			'simple_grey_background_size',
+			array(
+				'default' => 'auto',
+				'sanitize_callback' => 'simple_grey_sanitize_text',
+			)
+		);
+		$wp_customize->add_control(
+		    'simple_grey_background_size',
+		    array(
+					'type'         => 'radio',
+		        'label'   => __('Background Size', 'simple-grey'),
+		        'section' => 'background_image',
+		        'choices' => array(
+							'auto'       => __('Auto', 'simple-grey'),
+							'cover'      => __('Cover', 'simple-grey'),
+							'contain'    => __('Contain', 'simple-grey'),
+							'initial'    => __('Initial', 'simple-grey'),
+							'inherit'    => __('Inherit', 'simple-grey'),
+		        ),
+		    )
+		);
+
 		// display options
 		$wp_customize->add_section('simple_grey_reading', array(
 			'title' => __( 'Reading', 'simple-grey' ),

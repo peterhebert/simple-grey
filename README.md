@@ -4,7 +4,7 @@ Simple Grey
 A responsive WordPress theme with a simple grey color palette.
 
 ## Theme Features
-This theme has support for all of the built-in WordPress [Theme Features](https://codex.wordpress.org/Theme_Features) except for custom page backgrounds.
+This theme has support for all of the built-in WordPress [Theme Features](https://codex.wordpress.org/Theme_Features).
 
 ## Customization
 You can use the Theme Customizer for easy modification of the following theme settings:
@@ -18,6 +18,9 @@ In addition to the Site Title and Description, you can:
 
 #### Header Image
 This section allows you to upload an image to be used as the background for the Header
+
+#### Background Image
+This section allows you to upload an image to be used as the background for the main content area.
 
 #### Menus
 This theme includes one Primary Navigation menu area, which is displayed right under the page Header.

@@ -106,7 +106,7 @@ msgstr ""
 msgid "Featured"
 msgstr ""
 
-#: functions.php:81, inc/customizer.php:177
+#: functions.php:81, inc/customizer.php:201
 msgid "Footer"
 msgstr ""
 
@@ -150,23 +150,47 @@ msgstr ""
 msgid "Navigation style applied to the primary menu."
 msgstr ""
 
-#: inc/customizer.php:164
+#: inc/customizer.php:174
+msgid "Background Size"
+msgstr ""
+
+#: inc/customizer.php:177
+msgid "Auto"
+msgstr ""
+
+#: inc/customizer.php:178
+msgid "Cover"
+msgstr ""
+
+#: inc/customizer.php:179
+msgid "Contain"
+msgstr ""
+
+#: inc/customizer.php:180
+msgid "Initial"
+msgstr ""
+
+#: inc/customizer.php:181
+msgid "Inherit"
+msgstr ""
+
+#: inc/customizer.php:188
 msgid "Reading"
 msgstr ""
 
-#: inc/customizer.php:169
+#: inc/customizer.php:193
 msgid "Show Date Updated"
 msgstr ""
 
-#: inc/customizer.php:182
+#: inc/customizer.php:206
 msgid "Footer Top Text"
 msgstr ""
 
-#: inc/customizer.php:189
+#: inc/customizer.php:213
 msgid "Footer Bottom Text"
 msgstr ""
 
-#: inc/customizer.php:196
+#: inc/customizer.php:220
 msgid "Show WordPress and Theme Credits"
 msgstr ""
 

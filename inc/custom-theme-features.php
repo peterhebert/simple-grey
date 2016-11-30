@@ -2,7 +2,7 @@
 // Register Theme Features
 function simple_grey_custom_theme_features() {
 
-    // Add theme support for Custom Header
+  // Add theme support for Custom Header
 	$header_args = array(
 		'header-text'            => false,
 		'default-text-color'     => '',
@@ -14,6 +14,18 @@ function simple_grey_custom_theme_features() {
 		'admin-head-callback'    => 'simple_grey_admin_header_style',
 	);
 	add_theme_support( 'custom-header', $header_args );
+
+	// Add theme support for Custom Background
+	$background_args = array(
+		'default-color'          => '',
+		'default-image'          => '',
+		'default-repeat'         => '',
+		'default-position-x'     => '',
+		'wp-head-callback'       => 'simple_grey_custom_background_cb',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
+	);
+	add_theme_support( 'custom-background', $background_args );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -80,3 +92,57 @@ function simple_grey_admin_header_style() {
 <?php
 }
 endif; // simple_grey_admin_header_style
+
+if ( ! function_exists( 'simple_grey_custom_background_cb' ) ) :
+/**
+ * Implements styles for the Custom Background theme feature
+ *
+ * @see simple_grey_custom_header_setup().
+ */
+function simple_grey_custom_background_cb() {
+		$style = '';
+
+		/* Get the background color. */
+		$color = get_background_color();
+		if( !empty($color)) {
+			/* Use 'background' instead of 'background-color'. */
+			$style .= " background: #{$color};";
+		}
+
+		/* Get the background image. */
+		$image = get_background_image();
+		if( !empty($image)) {
+			$style .= " background-image: url('$image');";
+
+			$size = get_theme_mod('simple_grey_background_size');
+			if(!empty($size)){
+				$style .= " background-size: $size;";
+			}
+
+      $repeat = get_theme_mod( 'background_repeat', 'repeat' );
+      if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) ) {
+				$repeat = 'repeat';
+			}
+      $style .= " background-repeat: $repeat;";
+
+      $position = get_theme_mod( 'background_position_x', 'left' );
+      if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) ) {
+				$position = 'left';
+			}
+      $style .= " background-position: top $position;";
+
+      $attachment = get_theme_mod( 'background_attachment', 'scroll' );
+      if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) ) {
+				$attachment = 'scroll';
+			}
+      $style .= " background-attachment: $attachment;";
+}
+		/* If no styles, return. */
+		if ( '' == trim( $style ) )
+			return;
+
+	?>
+	<style type="text/css">#content { <?php echo trim( $style ); ?> }</style>
+	<?php
+}
+endif; // simple_grey_header_style
