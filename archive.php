@@ -32,7 +32,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_post_navigation; ?>
+			<?php the_posts_pagination(); ?>
 
 		<?php else : ?>
 
