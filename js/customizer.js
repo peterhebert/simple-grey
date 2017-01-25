@@ -33,4 +33,11 @@
 			}
 		} );
 	} );
+	// Header background color.
+		wp.customize( 'simple_grey_header_bg_color', function( value ) {
+			value.bind( function( newval ) {
+				$('#masthead').css('background-color', newval );
+			} );
+		} );
+
 } )( jQuery );

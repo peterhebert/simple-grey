@@ -14,7 +14,7 @@ var gulp  = require('gulp'),
 
 // Create a default task
 gulp.task('default', function() {
-  gulp.start('styles', 'font-awesome');
+  gulp.start('styles', 'font-awesome', 'watch');
 });
 
 // Watch files for changes

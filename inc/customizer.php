@@ -13,6 +13,8 @@ function simple_grey_customize_register($wp_customize)
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$header_bg_color = (object) $wp_customize->get_setting( 'simple_grey_header_bg_color' );
+	$header_bg_color->transport = 'postMessage';
 
 	//rename "Site Title & Tagline' to 'Site Branding'
 	$wp_customize->get_section( 'title_tagline' )->title = __( 'Site Branding', 'simple-grey' );
@@ -42,7 +44,6 @@ function simple_grey_customize_register($wp_customize)
 
 	// logo style
 	$wp_customize->add_setting( 'simple_grey_logo_style', array('default' => '', 'sanitize_callback' => 'simple_grey_sanitize_text') );
-
 	$wp_customize->add_control(
 		'simple_grey_logo_style',
 		array(
@@ -70,7 +71,6 @@ function simple_grey_customize_register($wp_customize)
 			'sanitize_callback' => 'simple_grey_sanitize_text',
 			)
 		);
-
 		$wp_customize->add_control(
 			'simple_grey_nav_style',
 			array(
@@ -85,6 +85,16 @@ function simple_grey_customize_register($wp_customize)
 						'description' => __( 'Navigation style applied to the primary menu.', 'simple-grey' ),
 			)
 		);
+
+		// add Header background color setting
+		$wp_customize->add_setting( 'simple_grey_header_bg_color', array(
+		  'default' => null,
+		  'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'simple_grey_header_bg_color', array(
+		  'label' => __( 'Header Background Color', 'theme_textdomain' ),
+		  'section' => 'colors',
+		) ) );
 
 		// add 'Background Size' option to Custom Background
 		$wp_customize->add_setting(
@@ -207,3 +217,14 @@ function simple_grey_sanitize_html($input)
 
 	return wp_kses( $input, $allowedposttags );
 }
+
+function simple_grey_customizer_css() {
+	if ( get_theme_mod( 'simple_grey_header_bg_color' ) ):
+    ?>
+    <style type="text/css">
+			#masthead { background-color: <?php echo get_theme_mod( 'simple_grey_header_bg_color' ); ?>; }
+    </style>
+    <?php
+	endif;
+}
+add_action( 'wp_head', 'simple_grey_customizer_css' );
