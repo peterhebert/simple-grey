@@ -6,13 +6,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php if ( has_post_thumbnail() ) { ?>
-    <div class="post-thumbnail">
-<?php
-    $thumb_id = get_post_thumbnail_id();
-    $thumb_url = wp_get_attachment_image_src($thumb_id, 'full');
-    
-    ?><a href="<?php echo $thumb_url[0]; ?>"><?php the_post_thumbnail('large'); ?></a>
-    </div><!-- .post-thumbnail -->
+      <div class="post-thumbnail">
+  			<a href="<?php the_post_thumbnail_url( 'full' ); ?>"><?php the_post_thumbnail('large'); ?></a>
+      </div><!-- .post-thumbnail -->
 <?php } ?>
 
     <div class="entry-content">
@@ -23,7 +19,7 @@
 				'after'  => '</div>',
 			) );
 		?>
-        <?php the_meta(); ?> 
+        <?php the_meta(); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">

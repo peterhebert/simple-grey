@@ -9,14 +9,10 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 <?php if ( has_post_thumbnail() && !has_post_format('gallery') ) { ?>
-    <div class="post-thumbnail">
-<?php
-    $thumb_id = get_post_thumbnail_id();
-    $thumb_url = wp_get_attachment_image_src($thumb_id, 'full');
-
-    ?><a href="<?php echo $thumb_url[0]; ?>"><?php the_post_thumbnail('large'); ?></a>
-    </div><!-- .post-thumbnail -->
-<?php } ?>
+	      <div class="post-thumbnail">
+	  			<a href="<?php the_post_thumbnail_url( 'full' ); ?>"><?php the_post_thumbnail('large'); ?></a>
+	      </div><!-- .post-thumbnail -->
+	<?php } ?>
 
  <?php the_meta(); ?>
 
@@ -31,7 +27,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-        <?php simple_grey_posted_on(); ?>
+    <?php simple_grey_posted_on(); ?>
 		<?php edit_post_link( __( 'Edit', 'simple-grey' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
