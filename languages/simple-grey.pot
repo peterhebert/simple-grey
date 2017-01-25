@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Peter Hebert
+# Copyright (C) 2017 Peter Hebert
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Peter Hebert <peter@peterhebert.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 
@@ -50,11 +50,11 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-aside.php:22, content-gallery.php:16, content-page.php:27, content-single.php:27, content.php:31
+#: content-aside.php:18, content-gallery.php:16, content-page.php:23, content-single.php:23, content.php:31
 msgid "Pages:"
 msgstr ""
 
-#: content-aside.php:31, content-gallery.php:25, content-page.php:34, content-single.php:35, content.php:41, inc/template-tags.php:167, inc/template-tags.php:186, inc/template-tags.php:337
+#: content-aside.php:27, content-gallery.php:25, content-page.php:30, content-single.php:31, content.php:41, inc/template-tags.php:98, inc/template-tags.php:117, inc/template-tags.php:268
 msgid "Edit"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Featured"
 msgstr ""
 
-#: functions.php:81, inc/customizer.php:201
+#: functions.php:81, inc/customizer.php:141
 msgid "Footer"
 msgstr ""
 
@@ -114,91 +114,83 @@ msgstr ""
 msgid "Skip to Content"
 msgstr ""
 
-#: header.php:48
+#: header.php:43
 msgid "Menu"
 msgstr ""
 
-#: inc/customizer.php:90
+#: inc/customizer.php:20
 msgid "Site Branding"
 msgstr ""
 
-#: inc/customizer.php:94
+#: inc/customizer.php:26
 msgid "Site Description"
 msgstr ""
 
-#: inc/customizer.php:102
+#: inc/customizer.php:38
 msgid "Add drop shadow to header elements"
 msgstr ""
 
-#: inc/customizer.php:111
-msgid "Logo"
-msgstr ""
-
-#: inc/customizer.php:123
+#: inc/customizer.php:51
 msgid "Logo Style"
 msgstr ""
 
-#: inc/customizer.php:135
+#: inc/customizer.php:63
 msgid "Navigation"
 msgstr ""
 
-#: inc/customizer.php:151
+#: inc/customizer.php:78
 msgid "Navigation Style"
 msgstr ""
 
-#: inc/customizer.php:158
+#: inc/customizer.php:85
 msgid "Navigation style applied to the primary menu."
 msgstr ""
 
-#: inc/customizer.php:174
+#: inc/customizer.php:111
 msgid "Background Size"
 msgstr ""
 
-#: inc/customizer.php:177
+#: inc/customizer.php:114
 msgid "Auto"
 msgstr ""
 
-#: inc/customizer.php:178
+#: inc/customizer.php:115
 msgid "Cover"
 msgstr ""
 
-#: inc/customizer.php:179
+#: inc/customizer.php:116
 msgid "Contain"
 msgstr ""
 
-#: inc/customizer.php:180
+#: inc/customizer.php:117
 msgid "Initial"
 msgstr ""
 
-#: inc/customizer.php:181
+#: inc/customizer.php:118
 msgid "Inherit"
 msgstr ""
 
-#: inc/customizer.php:188
+#: inc/customizer.php:125
 msgid "Reading"
 msgstr ""
 
-#: inc/customizer.php:193
+#: inc/customizer.php:132
 msgid "Show Date Updated"
 msgstr ""
 
-#: inc/customizer.php:206
+#: inc/customizer.php:148
 msgid "Footer Top Text"
 msgstr ""
 
-#: inc/customizer.php:213
+#: inc/customizer.php:159
 msgid "Footer Bottom Text"
 msgstr ""
 
-#: inc/customizer.php:220
+#: inc/customizer.php:170
 msgid "Show WordPress and Theme Credits"
 msgstr ""
 
-#: inc/extras.php:69
-msgid "Page %s"
-msgstr ""
-
-#: inc/extras.php:166
+#: inc/extras.php:111
 msgid "Read More"
 msgstr ""
 
@@ -210,186 +202,174 @@ msgstr ""
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:71
-msgid "Posts navigation"
-msgstr ""
-
-#: inc/template-tags.php:75
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
-
-#: inc/template-tags.php:79
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: inc/template-tags.php:142
+#: inc/template-tags.php:73
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:145
+#: inc/template-tags.php:76
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span>%title"
 msgstr ""
 
-#: inc/template-tags.php:146
+#: inc/template-tags.php:77
 msgctxt "Next post link"
 msgid "%title<span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:167
+#: inc/template-tags.php:98
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:177
+#: inc/template-tags.php:108
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: inc/template-tags.php:183
+#: inc/template-tags.php:114
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:190
+#: inc/template-tags.php:121
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:240
+#: inc/template-tags.php:171
 msgid "Posted on %1$s by %2$s"
 msgstr ""
 
-#: inc/template-tags.php:258, inc/template-tags.php:261, inc/template-tags.php:319, inc/template-tags.php:325
+#: inc/template-tags.php:189, inc/template-tags.php:192, inc/template-tags.php:250, inc/template-tags.php:256
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:267
+#: inc/template-tags.php:198
 msgid "and tagged %2$s."
 msgstr ""
 
-#: inc/template-tags.php:275
+#: inc/template-tags.php:206
 msgid "in %1$s and tagged %2$s."
 msgstr ""
 
-#: inc/template-tags.php:277
+#: inc/template-tags.php:208
 msgid "in %1$s."
 msgstr ""
 
-#: inc/template-tags.php:297
+#: inc/template-tags.php:228
 msgid "Last updated on %1$s by %2$s."
 msgstr ""
 
-#: inc/template-tags.php:321
+#: inc/template-tags.php:252
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:327
+#: inc/template-tags.php:258
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:333
+#: inc/template-tags.php:264
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:333
+#: inc/template-tags.php:264
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:333
+#: inc/template-tags.php:264
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:354
+#: inc/template-tags.php:285
 msgid "Category: %s"
 msgstr ""
 
-#: inc/template-tags.php:356
+#: inc/template-tags.php:287
 msgid "Tag: %s"
 msgstr ""
 
-#: inc/template-tags.php:358
+#: inc/template-tags.php:289
 msgid "Author: %s"
 msgstr ""
 
-#: inc/template-tags.php:360
+#: inc/template-tags.php:291
 msgid "Year: %s"
 msgstr ""
 
-#: inc/template-tags.php:360
+#: inc/template-tags.php:291
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/template-tags.php:362
+#: inc/template-tags.php:293
 msgid "Month: %s"
 msgstr ""
 
-#: inc/template-tags.php:362
+#: inc/template-tags.php:293
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/template-tags.php:364
+#: inc/template-tags.php:295
 msgid "Day: %s"
 msgstr ""
 
-#: inc/template-tags.php:364
+#: inc/template-tags.php:295
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: inc/template-tags.php:366
+#: inc/template-tags.php:297
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-#: inc/template-tags.php:368
+#: inc/template-tags.php:299
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-#: inc/template-tags.php:370
+#: inc/template-tags.php:301
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-#: inc/template-tags.php:372
+#: inc/template-tags.php:303
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
 
-#: inc/template-tags.php:374
+#: inc/template-tags.php:305
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-#: inc/template-tags.php:376
+#: inc/template-tags.php:307
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-#: inc/template-tags.php:378
+#: inc/template-tags.php:309
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-#: inc/template-tags.php:380
+#: inc/template-tags.php:311
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-#: inc/template-tags.php:382
+#: inc/template-tags.php:313
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
-#: inc/template-tags.php:384
+#: inc/template-tags.php:315
 msgid "Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:388
+#: inc/template-tags.php:319
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: inc/template-tags.php:390
+#: inc/template-tags.php:321
 msgid "Archives"
 msgstr ""
 
