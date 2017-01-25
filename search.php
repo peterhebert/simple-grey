@@ -29,7 +29,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php simple_grey_paging_nav(); ?>
+			<?php the_post_navigation; ?>
 
 		<?php else : ?>
 

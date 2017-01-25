@@ -41,6 +41,16 @@ function simple_grey_custom_theme_features() {
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio' ) );
 
+	/*
+	 * Add Theme Support for Custom Logo (starting with WordPress 4.5).
+	 * See https://make.wordpress.org/core/2016/03/10/custom-logo/
+	 */
+	 if ( function_exists( 'the_custom_logo' ) ) {
+		 add_theme_support( 'custom-logo' );
+	 }
+
+	 add_image_size( 'custom-logo', 90, 90 );
+
 }
 add_action( 'after_setup_theme', 'simple_grey_custom_theme_features' );
 
@@ -146,3 +156,19 @@ function simple_grey_custom_background_cb() {
 	<?php
 }
 endif; // simple_grey_header_style
+
+// call the custom logo
+function simple_grey_the_custom_logo() {
+   if ( function_exists( 'has_custom_logo' ) && has_custom_logo( $blog_id = 0 ) ) :
+		 $logo_class = '';
+		 if ( get_theme_mod( 'simple_grey_logo_style' ) !== '') :
+		 		$logo_class .= ' '.get_theme_mod( 'simple_grey_logo_style' );
+		 endif;
+
+		 $custom_logo_id = get_theme_mod( 'custom_logo' );
+		 $custom_logo_image_src = wp_get_attachment_image_src( $custom_logo_id , 'custom-logo' );
+		 ?>
+		 <div class="site-logo<?php echo esc_attr($logo_class); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( $custom_logo_image_src[0] ); ?>" width="<?php echo esc_attr( $custom_logo_image_src[1] ); ?>" height="<?php echo esc_attr( $custom_logo_image_src[2] ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a></div>
+		 <?php
+	 endif;
+}
