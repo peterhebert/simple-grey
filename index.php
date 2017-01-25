@@ -25,7 +25,7 @@ get_header(); ?>
 					get_template_part( 'content', get_post_format() );
 				?>
         <?php endwhile; ?>
-        <?php the_post_navigation; ?>
+        <?php the_posts_pagination(); ?>
         <?php else : ?>
         <?php get_template_part( 'content', 'none' ); ?>
         <?php endif; ?>
