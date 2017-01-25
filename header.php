@@ -24,25 +24,20 @@
   <div class="wrap">
 <?php
 $brand_class = '';
-$logo_class = '';
-if ( get_theme_mod( 'simple_grey_logo' ) ) :
+if ( has_custom_logo() || get_theme_mod( 'simple_grey_logo' ) ) :
     $brand_class .= ' with-logo';
 endif;
 if ( get_theme_mod( 'simple_grey_header_drop_shadow' ) ) :
     $brand_class .= ' drop-shadow';
 endif;
-if ( get_theme_mod( 'simple_grey_logo_style' ) !== '') :
-    $logo_class .= ' '.get_theme_mod( 'simple_grey_logo_style' );
-endif;
       ?>
       <div class="site-branding row<?php echo $brand_class; ?>">
-      <?php if ( get_theme_mod( 'simple_grey_logo' ) ) : ?>
-      <div class="site-logo<?php echo esc_attr($logo_class); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'simple_grey_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a></div>
-      <?php endif; ?>
+      <!-- begin custom logo -->
+      <?php simple_grey_the_custom_logo( ); ?>
+      <!-- end custom logo -->
       <div class="site-info">
         <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
         <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-          <?php echo get_theme_mod( 'simple_grey_site_description' ); ?>
       </div>
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
       <div id="menu-toggle" class="menu-toggle"><button aria-controls="navigation" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i><?php _e( 'Menu', 'simple-grey' ); ?></button></div>
