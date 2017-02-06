@@ -2,7 +2,7 @@
 // Register Theme Features
 function simple_grey_custom_theme_features() {
 
-  // Add theme support for Custom Header
+	// Add theme support for Custom Header
 	$header_args = array(
 		'header-text'            => false,
 		'default-text-color'     => '',
@@ -45,34 +45,39 @@ function simple_grey_custom_theme_features() {
 	 * Add Theme Support for Custom Logo (starting with WordPress 4.5).
 	 * See https://make.wordpress.org/core/2016/03/10/custom-logo/
 	 */
-	 if ( function_exists( 'the_custom_logo' ) ) {
-		 add_theme_support( 'custom-logo' );
-	 }
+	if ( function_exists( 'the_custom_logo' ) ) {
 
-	 add_image_size( 'custom-logo', 90, 90 );
+		add_theme_support( 'custom-logo', array(
+			'height'      => 90, // set to your dimensions
+			'width'       => 90,
+			'flex-height' => true,
+			'flex-width'  => true,
+		) );
+
+	}
 
 }
 add_action( 'after_setup_theme', 'simple_grey_custom_theme_features' );
 
 if ( ! function_exists( 'simple_grey_header_style' ) ) :
-/**
+	/**
  * Styles the header image and text displayed on the blog
  *
  * @see simple_grey_custom_header_setup().
  */
-function simple_grey_header_style() {
-	$header_text_color = get_header_textcolor();
-    $header_image = get_header_image();
+	function simple_grey_header_style() {
+		$header_text_color = get_header_textcolor();
+		$header_image = get_header_image();
 
-	// If no custom header image is set, let's bail
-	if ( $header_image === '') {
-		return;
-	}
+		// If no custom header image is set, let's bail
+		if ( $header_image === '' ) {
+			return;
+		}
 
-	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-	<?php if ( get_header_image() ) : ?>
+		// If we get this far, we have custom styles. Let's do this.
+		?>
+		<style type="text/css">
+		<?php if ( get_header_image() ) : ?>
 		.site-header {
         background: url(<?php header_image(); ?>) no-repeat center top;
         background-size: cover;
@@ -80,17 +85,17 @@ function simple_grey_header_style() {
 	<?php endif; // End header image check. ?>
     </style>
 	<?php
-}
+	}
 endif; // simple_grey_header_style
 
 if ( ! function_exists( 'simple_grey_admin_header_style' ) ) :
-/**
+	/**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
  * @see simple_grey_custom_header_setup().
  */
-function simple_grey_admin_header_style() {
-?>
+	function simple_grey_admin_header_style() {
+	?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
 			border: none;
@@ -100,75 +105,92 @@ function simple_grey_admin_header_style() {
 		}
 	</style>
 <?php
-}
+	}
 endif; // simple_grey_admin_header_style
 
 if ( ! function_exists( 'simple_grey_custom_background_cb' ) ) :
-/**
+	/**
  * Implements styles for the Custom Background theme feature
  *
  * @see simple_grey_custom_header_setup().
  */
-function simple_grey_custom_background_cb() {
+	function simple_grey_custom_background_cb() {
 		$style = '';
 
 		/* Get the background color. */
 		$color = get_background_color();
-		if( !empty($color)) {
+		if ( ! empty( $color ) ) {
 			/* Use 'background' instead of 'background-color'. */
 			$style .= " background: #{$color};";
 		}
 
 		/* Get the background image. */
 		$image = get_background_image();
-		if( !empty($image)) {
+		if ( ! empty( $image ) ) {
 			$style .= " background-image: url('$image');";
 
-			$size = get_theme_mod('simple_grey_background_size');
-			if(!empty($size)){
+			$size = get_theme_mod( 'simple_grey_background_size' );
+			if ( ! empty( $size ) ){
 				$style .= " background-size: $size;";
 			}
 
-      $repeat = get_theme_mod( 'background_repeat', 'repeat' );
-      if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) ) {
+			$repeat = get_theme_mod( 'background_repeat', 'repeat' );
+			if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) ) {
 				$repeat = 'repeat';
 			}
-      $style .= " background-repeat: $repeat;";
+			$style .= " background-repeat: $repeat;";
 
-      $position = get_theme_mod( 'background_position_x', 'left' );
-      if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) ) {
+			$position = get_theme_mod( 'background_position_x', 'left' );
+			if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) ) {
 				$position = 'left';
 			}
-      $style .= " background-position: top $position;";
+			$style .= " background-position: top $position;";
 
-      $attachment = get_theme_mod( 'background_attachment', 'scroll' );
-      if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) ) {
+			$attachment = get_theme_mod( 'background_attachment', 'scroll' );
+			if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) ) {
 				$attachment = 'scroll';
 			}
-      $style .= " background-attachment: $attachment;";
-}
-		/* If no styles, return. */
-		if ( '' == trim( $style ) )
-			return;
+			$style .= " background-attachment: $attachment;";
+		}
+		$style = trim( $style );
 
-	?>
-	<style type="text/css">#content { <?php echo trim( $style ); ?> }</style>
+		/* If no styles, return. */
+		if ( '' == $style ) {
+			return;
+		}
+
+		?>
+		<style type="text/css">#content { <?php echo esc_attr( $style ); ?> }</style>
 	<?php
-}
+	}
 endif; // simple_grey_header_style
 
-// call the custom logo
+// filter the output of the_custom_logo
+
 function simple_grey_the_custom_logo() {
-   if ( function_exists( 'has_custom_logo' ) && has_custom_logo( $blog_id = 0 ) ) :
+	if ( function_exists( 'has_custom_logo' ) && has_custom_logo( $blog_id = 0 ) ) :
 		 $logo_class = '';
-		 if ( get_theme_mod( 'simple_grey_logo_style' ) !== '') :
-		 		$logo_class .= ' '.get_theme_mod( 'simple_grey_logo_style' );
+		if ( get_theme_mod( 'simple_grey_logo_style' ) !== '' ) :
+			   $logo_class .= ' '.get_theme_mod( 'simple_grey_logo_style' );
 		 endif;
 
 		 $custom_logo_id = get_theme_mod( 'custom_logo' );
 		 $custom_logo_image_src = wp_get_attachment_image_src( $custom_logo_id , 'custom-logo' );
-		 ?>
-		 <div class="site-logo<?php echo esc_attr($logo_class); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( $custom_logo_image_src[0] ); ?>" width="<?php echo esc_attr( $custom_logo_image_src[1] ); ?>" height="<?php echo esc_attr( $custom_logo_image_src[2] ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a></div>
-		 <?php
+		 $custom_logo = wp_get_attachment_image( $custom_logo_id, 'custom-logo', false, array(
+			 'class'    => 'custom-logo',
+			 'itemprop' => 'logo',
+			 'alt'      => esc_attr( get_bloginfo( 'name', 'display' ) ),
+		 ) );
+
+		 $html = sprintf( ' <div class="site-logo%1$s"><a href="%2$s" title="%3$s" rel="home" itemprop="url">%4$s</a></div>',
+			 esc_attr( $logo_class ),
+			 esc_url( home_url( '/' ) ),
+			 esc_attr( get_bloginfo( 'name', 'display' ) ),
+			 $custom_logo
+		 );
+		 return $html;
+else :
+	return '';
 	 endif;
 }
+add_filter( 'get_custom_logo', 'simple_grey_the_custom_logo' );

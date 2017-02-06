@@ -24,7 +24,7 @@
   <div class="wrap">
 <?php
 $brand_class = '';
-if ( has_custom_logo() || get_theme_mod( 'simple_grey_logo' ) ) :
+if ( has_custom_logo() ) :
     $brand_class .= ' with-logo';
 endif;
 if ( get_theme_mod( 'simple_grey_header_drop_shadow' ) ) :
@@ -32,9 +32,7 @@ if ( get_theme_mod( 'simple_grey_header_drop_shadow' ) ) :
 endif;
       ?>
       <div class="site-branding row<?php echo $brand_class; ?>">
-      <!-- begin custom logo -->
-      <?php simple_grey_the_custom_logo( ); ?>
-      <!-- end custom logo -->
+      <?php the_custom_logo( ); ?>
       <div class="site-info">
         <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
         <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>

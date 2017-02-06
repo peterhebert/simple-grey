@@ -1,30 +1,13 @@
 /*
 Theme Name: Simple Grey
-Theme URI: https://github.com/peterhebert/simple-grey
+Theme URI: https://rexrana.ca/code/simple-grey-wordpress-theme
 Author: Peter Hebert
 Author URI: http://peterhebert.com/
 Description: A responsive wordpress theme with a simple grey color palette.
-Version: 1.4.0
+Version: 1.4.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: simple-grey
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, threaded-comments, editor-style, featured-images, post-formats, accessibility-ready, rtl-language-support, theme-options
-
-Simple Grey is built on top of Underscores, (C) 2012-2014 Automattic, Inc.
-Licenced GNU General Public License v2 or later
-Source: http://underscores.me/
-
-Simple Grey bundles the following third-party resources:
-
-Font Awesome icon font licensed under SIL OFL 1.1, code licensed under MIT License.
-Source: http://fontawesome.io/license/
-
-CSS normalization is achieved using normalize.css Nicolas Gallagher and Jonathan Neal
-Source: http://necolas.github.com/normalize.css/
-
-Grid generation and base style framework is Fluid Baseline Grid Redux, licenced under the Unlicense http://unlicense.org/
-Source: https://github.com/peterhebert/Fluid-Baseline-Grid-Redux
-
-Note this file 'style.css' is only used to identify the theme, and is not enqueued.
 
 */

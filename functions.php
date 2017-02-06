@@ -89,6 +89,24 @@ function simple_grey_widgets_init()
 add_action( 'widgets_init', 'simple_grey_widgets_init' );
 
 /**
+ * backwards compatibility for get_theme_file_uri(), for versions pre 4.7.
+ */
+
+if ( ! function_exists( 'get_theme_file_uri' ) ){
+	function get_theme_file_uri( $file = '' ) {
+		$file = ltrim( $file, '/' );
+		if ( empty( $file ) ) {
+			$url = get_stylesheet_directory_uri();
+		} elseif ( file_exists( get_stylesheet_directory() . '/' . $file ) ) {
+			$url = get_stylesheet_directory_uri() . '/' . $file;
+		} else {
+			$url = get_template_directory_uri() . '/' . $file;
+		}
+		return apply_filters( 'theme_file_uri', $url, $file );
+	}
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function simple_grey_scripts()
@@ -100,24 +118,28 @@ function simple_grey_scripts()
 
 	// load theme stylesheets
 	if ( is_rtl() ) {
-		wp_enqueue_style( 'simple-grey-style-rtl', get_template_directory_uri().'/css/simple-grey-rtl.css' );
+		wp_enqueue_style( 'simple-grey-main-rtl', get_theme_file_uri( 'css/simple-grey-rtl.css' ) );
 	} else {
-		wp_enqueue_style( 'simple-grey-style', get_template_directory_uri().'/css/simple-grey.css' );
+		wp_enqueue_style( 'simple-grey-main', get_theme_file_uri( 'css/simple-grey.css' ) );
 	}
 
-	wp_enqueue_script( 'simple-grey-navigation', get_template_directory_uri().'/js/navigation.js', array(), '20140817', true );
+	wp_enqueue_script( 'simple-grey-navigation', get_theme_file_uri( 'js/navigation.js' ), array(), '20140817', true );
 
-	wp_enqueue_script( 'simple-grey-skip-link-focus-fix', get_template_directory_uri().'/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'simple-grey-skip-link-focus-fix', get_theme_file_uri( 'js/skip-link-focus-fix.js' ), array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	// fix issues with oEmbeds
-	wp_enqueue_script( 'simple-grey-oembed-adjust', get_template_directory_uri().'/js/oembed-adjust.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'simple-grey-oembed-adjust', get_theme_file_uri( 'js/oembed-adjust.js' ), array( 'jquery' ), null, true );
 
 	// accessibility features
-	wp_enqueue_script( 'simple-grey-accessibility', get_template_directory_uri().'/js/accessibility.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'simple-grey-accessibility', get_theme_file_uri( 'js/accessibility.js' ), array( 'jquery' ), null, true );
+
+	// and finally, enqueue theme stylesheet (style.css)
+	wp_enqueue_style( 'simple-grey-style', get_stylesheet_uri() );
+
 }
 add_action( 'wp_enqueue_scripts', 'simple_grey_scripts' );
 
@@ -166,5 +188,5 @@ require get_template_directory().'/inc/jetpack.php';
 	/**
 	* Menu functions and walkers.
 	*/
-	require get_template_directory().'/inc/menu.php';
+require get_template_directory().'/inc/menu.php';
 require get_template_directory().'/inc/aria-walker-nav-menu.php';
