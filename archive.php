@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * The template for displaying archive pages.
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
@@ -10,14 +10,14 @@
 get_header(); ?>
 
     <main id="main" role="main">
-		<?php if ( have_posts() ) : ?>
+      <header class="page-header">
+        <?php
+		the_archive_title( '<h1 class="page-title">', '</h1>' );
+		the_archive_description( '<div class="archive-description">', '</div>' );
+		?>
+      </header><!-- .page-header -->
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -41,6 +41,6 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</main><!-- #main -->
-      <?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

@@ -9,14 +9,23 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'simple-grey' ); ?></h1>
+	<header class="no-results-header">
+		<h3 class="no-results-title"><?php _e( 'Nothing Found', 'simple-grey' ); ?></h3>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
 			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'simple-grey' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+
+		<?php elseif ( is_tag() || is_category() || is_tax() ) : ?>
+			<?php
+			  $qobj = get_queried_object();
+				$tax_obj = get_taxonomy( $qobj->taxonomy );
+			?>
+			<p><?php printf( __( 'Sorry, but no content was found matching the %1$s <em>%2$s</em>. Perhaps searching can help.', 'simple-grey' ), strtolower( $tax_obj->labels->singular_name ), single_tag_title( '', false ) ); ?></p>
+
+			<?php get_search_form(); ?>
 
 		<?php elseif ( is_search() ) : ?>
 

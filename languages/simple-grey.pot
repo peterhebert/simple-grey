@@ -66,11 +66,15 @@ msgstr ""
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: content-none.php:23
+#: content-none.php:26
+msgid "Sorry, but no content was found matching the %1$s <em>%2$s</em>. Perhaps searching can help."
+msgstr ""
+
+#: content-none.php:32
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: content-none.php:28
+#: content-none.php:37
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
@@ -114,7 +118,7 @@ msgstr ""
 msgid "Skip to Content"
 msgstr ""
 
-#: header.php:43
+#: header.php:41
 msgid "Menu"
 msgstr ""
 
@@ -144,6 +148,10 @@ msgstr ""
 
 #: inc/customizer.php:85
 msgid "Navigation style applied to the primary menu."
+msgstr ""
+
+#: inc/customizer.php:95
+msgid "Header Background Color"
 msgstr ""
 
 #: inc/customizer.php:111
@@ -202,16 +210,16 @@ msgstr ""
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:73
+#: inc/template-tags.php:73, single.php:25
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:76
+#: inc/template-tags.php:76, single.php:28
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span>%title"
 msgstr ""
 
-#: inc/template-tags.php:77
+#: inc/template-tags.php:77, single.php:29
 msgctxt "Next post link"
 msgid "%title<span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
@@ -275,102 +283,6 @@ msgstr ""
 
 #: inc/template-tags.php:264
 msgid "% Comments"
-msgstr ""
-
-#: inc/template-tags.php:285
-msgid "Category: %s"
-msgstr ""
-
-#: inc/template-tags.php:287
-msgid "Tag: %s"
-msgstr ""
-
-#: inc/template-tags.php:289
-msgid "Author: %s"
-msgstr ""
-
-#: inc/template-tags.php:291
-msgid "Year: %s"
-msgstr ""
-
-#: inc/template-tags.php:291
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: inc/template-tags.php:293
-msgid "Month: %s"
-msgstr ""
-
-#: inc/template-tags.php:293
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: inc/template-tags.php:295
-msgid "Day: %s"
-msgstr ""
-
-#: inc/template-tags.php:295
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr ""
-
-#: inc/template-tags.php:297
-msgctxt "post format archive title"
-msgid "Asides"
-msgstr ""
-
-#: inc/template-tags.php:299
-msgctxt "post format archive title"
-msgid "Galleries"
-msgstr ""
-
-#: inc/template-tags.php:301
-msgctxt "post format archive title"
-msgid "Images"
-msgstr ""
-
-#: inc/template-tags.php:303
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr ""
-
-#: inc/template-tags.php:305
-msgctxt "post format archive title"
-msgid "Quotes"
-msgstr ""
-
-#: inc/template-tags.php:307
-msgctxt "post format archive title"
-msgid "Links"
-msgstr ""
-
-#: inc/template-tags.php:309
-msgctxt "post format archive title"
-msgid "Statuses"
-msgstr ""
-
-#: inc/template-tags.php:311
-msgctxt "post format archive title"
-msgid "Audio"
-msgstr ""
-
-#: inc/template-tags.php:313
-msgctxt "post format archive title"
-msgid "Chats"
-msgstr ""
-
-#: inc/template-tags.php:315
-msgid "Archives: %s"
-msgstr ""
-
-#: inc/template-tags.php:319
-msgid "%1$s: %2$s"
-msgstr ""
-
-#: inc/template-tags.php:321
-msgid "Archives"
 msgstr ""
 
 #: maintenance.php:21
