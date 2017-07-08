@@ -68,5 +68,8 @@ The following tools and code libraries have ben used in the development of Simpl
 - [Fluid Baseline Grid Redux](https://github.com/peterhebert/Fluid-Baseline-Grid-Redux) is the framework for grid generation and base styles
 - [node.js](https://nodejs.org/en/) and [Gulp](http://gulpjs.com/) are used to compile LESS into CSS, to create POT file for translation, and to build the theme.
 
+## Development, Issues and Contributions
+All development of this theme is done on [GitHub](https://github.com/peterhebert/simple-grey). Please file any issues with the theme against the GitHub repository. Contributions are welcome, feel free to fork the project and make pull requests.
+
 ## More information
-For further information on this theme, please visit the documentation on the [Rex Rana website](https://rexrana.ca/code/simple-grey-wordpress-theme).
+More information about this theme is available on the [Rex Rana](https://rexrana.ca/code/simple-grey-wordpress-theme) website.
