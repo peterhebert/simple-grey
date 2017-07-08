@@ -121,11 +121,11 @@ body {
   }
 }
 
-// move sidebar to second column
+// move secondary sidebar to second column if active
 @media only screen and (min-width: @bp-float-sidebar) {
-  .blog,
-  .archive,
-  .single {
+  .blog.has-sidebar-secondary,
+  .archive.has-sidebar-secondary,
+  .single.has-sidebar-secondary {
     #main {
       .column(@ga);
     }
