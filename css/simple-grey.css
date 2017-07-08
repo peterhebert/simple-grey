@@ -1993,9 +1993,9 @@ body {
   }
 }
 @media only screen and (min-width: 60em) {
-  .blog #main,
-  .archive #main,
-  .single #main {
+  .blog.has-sidebar-secondary #main,
+  .archive.has-sidebar-secondary #main,
+  .single.has-sidebar-secondary #main {
     position: relative;
     float: left;
     width: 61.80339887%;
@@ -2005,9 +2005,9 @@ body {
     padding-right: 16px;
     padding-right: 1rem;
   }
-  .blog #secondary,
-  .archive #secondary,
-  .single #secondary {
+  .blog.has-sidebar-secondary #secondary,
+  .archive.has-sidebar-secondary #secondary,
+  .single.has-sidebar-secondary #secondary {
     position: relative;
     float: left;
     width: 38.19660113%;
@@ -2017,9 +2017,9 @@ body {
     padding-right: 16px;
     padding-right: 1rem;
   }
-  .blog #secondary .widget,
-  .archive #secondary .widget,
-  .single #secondary .widget {
+  .blog.has-sidebar-secondary #secondary .widget,
+  .archive.has-sidebar-secondary #secondary .widget,
+  .single.has-sidebar-secondary #secondary .widget {
     float: none;
     position: relative;
     float: left;

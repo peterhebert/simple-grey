@@ -34,6 +34,15 @@ function simple_grey_body_classes($classes)
 		$classes[] = 'group-blog';
 	}
 
+	// add classes for each active sidebar
+	if(is_array($GLOBALS['wp_registered_sidebars']) && count($GLOBALS['wp_registered_sidebars']) > 0) {
+		foreach( $GLOBALS['wp_registered_sidebars'] as $sidebar ) {
+			if ( is_active_sidebar(  $sidebar['id'] ) ) {
+				$classes[] = sanitize_html_class('has-' . $sidebar['id']);
+			}
+		}
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'simple_grey_body_classes' );
