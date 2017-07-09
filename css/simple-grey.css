@@ -1995,7 +1995,8 @@ body {
 @media only screen and (min-width: 60em) {
   .blog.has-sidebar-secondary #main,
   .archive.has-sidebar-secondary #main,
-  .single.has-sidebar-secondary #main {
+  .single.has-sidebar-secondary #main,
+  .page-template-default.has-sidebar-secondary #main {
     position: relative;
     float: left;
     width: 61.80339887%;
@@ -2007,7 +2008,8 @@ body {
   }
   .blog.has-sidebar-secondary #secondary,
   .archive.has-sidebar-secondary #secondary,
-  .single.has-sidebar-secondary #secondary {
+  .single.has-sidebar-secondary #secondary,
+  .page-template-default.has-sidebar-secondary #secondary {
     position: relative;
     float: left;
     width: 38.19660113%;
@@ -2019,7 +2021,8 @@ body {
   }
   .blog.has-sidebar-secondary #secondary .widget,
   .archive.has-sidebar-secondary #secondary .widget,
-  .single.has-sidebar-secondary #secondary .widget {
+  .single.has-sidebar-secondary #secondary .widget,
+  .page-template-default.has-sidebar-secondary #secondary .widget {
     float: none;
     position: relative;
     float: left;
@@ -2031,11 +2034,14 @@ body {
     padding-right: 1rem;
   }
 }
-.page .wrap,
-.page #site-navigation .menu-wrap {
+.page-template-feature-page #secondary {
+  margin-top: 1.5em;
+}
+.page-template-single-column-narrow .wrap,
+.page-template-single-column-narrow #site-navigation .menu-wrap {
   max-width: 60em;
 }
-.page #secondary {
+.page-template-single-column-narrow #secondary {
   margin-top: 1.5em;
 }
 /* = Footer Layout
