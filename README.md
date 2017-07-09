@@ -73,3 +73,6 @@ All development of this theme is done on [GitHub](https://github.com/peterhebert
 
 ## More information
 More information about this theme is available on the [Rex Rana](https://rexrana.ca/code/simple-grey-wordpress-theme) website.
+
+## Changelog 
+1.4.4 - added fix to not display secondary sidebar if not active
