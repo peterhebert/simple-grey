@@ -1,7 +1,7 @@
 Simple Grey
 ===========
 
-A responsive wordpress theme with a simple grey color palette. Clean and simple, this theme is optimized for legibility. It is well suited to blogs and portfolio sites.
+A responsive WordPress theme with a simple grey color palette. Clean and simple, this theme is optimized for legibility. It is well suited to blogs and portfolio sites.
 
 ## Theme Features
 This theme has support for all of the built-in WordPress [Theme Features](https://codex.wordpress.org/Theme_Features).
