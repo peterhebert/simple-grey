@@ -15,7 +15,6 @@ get_header(); ?>
         <?php while ( have_posts() ) : the_post(); ?>
           <?php get_template_part( 'content', 'page' ); ?>
         <?php endwhile; ?>
-        <?php the_post_navigation(); ?>
         <?php else : ?>
         <?php get_template_part( 'content', 'none' ); ?>
         <?php endif; ?>
