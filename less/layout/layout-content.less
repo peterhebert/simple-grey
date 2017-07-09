@@ -125,7 +125,8 @@ body {
 @media only screen and (min-width: @bp-float-sidebar) {
   .blog.has-sidebar-secondary,
   .archive.has-sidebar-secondary,
-  .single.has-sidebar-secondary {
+  .single.has-sidebar-secondary,
+  .page-template-default.has-sidebar-secondary {
     #main {
       .column(@ga);
     }
@@ -139,11 +140,18 @@ body {
   }
 }
 
-.page {
+.page-template-feature-page {
+  #secondary {
+    .mg-top();
+  }
+}
+
+.page-template-single-column-narrow {
   .wrap, #site-navigation .menu-wrap {
     max-width: @bp-05;
   }
   #secondary {
     .mg-top();
   }
+  
 }
