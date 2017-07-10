@@ -1,0 +1,151 @@
+// BASE CSS
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+	.box-sizing(border-box);
+}
+
+/*
+	Base stylesheet with CSS normalization, typographic baseline grid and progressive responsiveness
+*/
+
+/* BASE */
+html {
+    font-size: @basepct; 
+    margin: 0; padding: 0; 
+    overflow-y: scroll; /* Force scrollbar in non-IE */
+} 
+
+body {
+    -webkit-font-smoothing:antialiased; 
+    font-smoothing:antialiased; 
+    text-rendering:optimizeLegibility; 
+    font-family: @fonts-sans;
+} /* Improve default text rendering, handling of kerning pairs and ligatures */
+
+/* DEFAULT FONT SETTINGS */
+/* 16px base font size with 150% (24px) friendly, unitless line height and margin for vertical rhythm */
+/* Font-size percentage is based on 16px browser default size */
+body, button, input, select, textarea { 
+    font-size: @basepct; 
+    line-height: @baseline; 
+    *font-size: (@base + 0em); 
+} /* IE7 and older can't resize px based text */
+
+p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldset, menu {
+    margin: 0 0 (@baseline + 0em); 
+    padding: 0
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 { .headlines }
+
+h1 { .baseline-size( 2.25 ); }
+h2 { .baseline-size( 2 ); }
+h3 { .baseline-size( 1.75 ); }
+h4 { .baseline-size( 1.5 ); }
+h5 { .baseline-size( 1.25 ); }
+h6 { .baseline-size( 1.125 ); }
+p, .p, ol, ul, blockquote, pre, td, th, label { .baseline-size( 1 ); }
+small, .small { .baseline-size( 0.75 ); }
+
+/* TABLES */
+table {
+    border-collapse: collapse; 
+    border-spacing: 0; 
+    .baseline-size(@base, @baseline, @base, 2); 
+    border-bottom: (@bdr-width + 0em) solid @col-border; 
+}
+th {
+    text-align: left
+}
+
+@cellpad: (@baseline/2);
+th, td { 
+    padding: (@cellpad + 0em) (@cellpad + 0em) (@cellpad - @bdr-width + 0em) (@cellpad + 0em); .bordered(@bdr-width + 0em); 
+    border-bottom: 0 solid @col-border; 
+}
+
+/* FORMS */
+form {margin: 0}
+fieldset {border: 0;padding: 0}
+textarea {overflow: auto; vertical-align: top}
+legend {*margin-left: -.75em}
+button, input, select, textarea {vertical-align: baseline; *vertical-align: middle} /* IE7 and older */
+button, input {line-height: normal; *overflow: visible}
+button, input[type="button"], input[type="reset"], input[type="submit"] {cursor: pointer;-webkit-appearance: button}
+input[type="checkbox"], input[type="radio"] {box-sizing: border-box}
+input[type="search"] {-webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box;	box-sizing: content-box}
+input[type="search"]::-webkit-search-decoration {-webkit-appearance: none}
+button::-moz-focus-inner, input::-moz-focus-inner {border: 0; padding: 0}
+
+/* QUOTES */
+blockquote {quotes: none}
+blockquote:before, blockquote:after {content: ''; content: none}
+q { quotes: '“' '”' '"' '"' "'" "'" }
+q:before { content: open-quote }
+q:after  { content: close-quote }
+cite:before { content: "— "; }
+blockquote, q, cite {font-style: italic}
+blockquote {padding-left: 1.5em; border-left: ((3 * @bdr-width) + 0em) solid @col-border; }
+blockquote > p {padding: 0}
+
+/* LISTS */
+ul, ol {list-style-position: inside; padding: 0}
+li ul, li ol {margin: 0 1.5em}
+dl dd {margin-left: 1.5em}
+
+/* HYPERLINKS */
+a { 
+	text-decoration: none; 
+	color: @col-link; 
+	&:link { color: @col-link }
+	&:visited { color: @col-link-visited }
+	&:hover, &:link:hover { color: @col-link-hover; text-decoration: underline }
+	&:focus {outline: thin dotted; color: @col-link-hover }
+	&:active { color: @col-link-active }
+}
+/* Better CSS Outline Suppression */
+a:hover, a:active {
+	outline: none
+}
+
+/* Fluid images and rich media */
+img, object, embed, video { 
+    max-width: 100%; 
+    height: auto; 
+    _width: 100%
+}
+
+
+img { 
+    margin:0; 
+    padding: 0; 
+    /* Improve IE's resizing of images */
+    -ms-interpolation-mode: bicubic
+}
+figure {
+    margin: 1em auto;
+    padding: 0 40px;
+}
+
+
+/* ABBREVIATION */
+abbr {
+    border-color: @col-border; 
+}
+
+abbr[title], 
+dfn[title] {
+    cursor: help
+}
+
+/* MARKED/INSERTED/DELETED AND SELECTED TEXT */
+ins, mark { text-decoration: none }
+del { text-decoration: line-through }
+
+/* selected text */
+::-moz-selection, ::selection {background: @col-bg-inv; color: @col-text-inv; text-shadow: none}
+
+/* OTHERS */
+var, address {font-style: normal}
