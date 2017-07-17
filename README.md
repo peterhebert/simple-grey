@@ -74,7 +74,12 @@ All development of this theme is done on [GitHub](https://github.com/peterhebert
 ## More information
 More information about this theme is available on the [Rex Rana](https://rexrana.ca/code/simple-grey-wordpress-theme) website.
 
-## Changelog 
+## Changelog
+
+1.5.1
+- fixed [bug](https://github.com/peterhebert/simple-grey/issues/5) where comments and admin bar would not display if only one post exists
+- Renamed page template single-column-narrow.php to page-single-column-narrow.php, so that it is not confused by WordPress as a single post template.
+
 1.5.0
 - Added new page template "Single Column Narrow", which uses a single column layout with the secondary sidebar displayed below instead of to the right. The maximum content with would be 60em for this template, designed for optimum line length. This was previously the behaviour of the default page template. The default page template now uses the same behaviour as the posts and archive pages, of displaying the secondary sidebar to the right if active.
 - Added comments to all page templates. Enable the "Discussion" checkbox under Screen Options to enable the discussion settings on Pages. Then you can enable comments on a page if you so choose.
