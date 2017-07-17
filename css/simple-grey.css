@@ -2037,11 +2037,11 @@ body {
 .page-template-feature-page #secondary {
   margin-top: 1.5em;
 }
-.page-template-single-column-narrow .wrap,
-.page-template-single-column-narrow #site-navigation .menu-wrap {
+.page-template-page-single-column-narrow .wrap,
+.page-template-page-single-column-narrow #site-navigation .menu-wrap {
   max-width: 60em;
 }
-.page-template-single-column-narrow #secondary {
+.page-template-page-single-column-narrow #secondary {
   margin-top: 1.5em;
 }
 /* = Footer Layout
