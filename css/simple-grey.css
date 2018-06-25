@@ -953,6 +953,9 @@ input[type="submit"]:focus {
 .paging-navigation .nav-links,
 .numbered-pagination,
 #content,
+#main,
+#secondary,
+#featured,
 #featured .cards,
 .glyph-demo,
 .glyph-demo ul,
@@ -979,6 +982,12 @@ input[type="submit"]:focus {
 .numbered-pagination:after,
 #content:before,
 #content:after,
+#main:before,
+#main:after,
+#secondary:before,
+#secondary:after,
+#featured:before,
+#featured:after,
 #featured .cards:before,
 #featured .cards:after,
 .glyph-demo:before,
@@ -1000,6 +1009,9 @@ input[type="submit"]:focus {
 .paging-navigation .nav-links:after,
 .numbered-pagination:after,
 #content:after,
+#main:after,
+#secondary:after,
+#featured:after,
 #featured .cards:after,
 .glyph-demo:after,
 .glyph-demo ul:after,
@@ -1748,10 +1760,8 @@ body {
 #main,
 #secondary,
 #featured {
-  position: relative;
-  float: left;
-  width: 100%;
-  min-height: 1px;
+  margin-right: auto;
+  margin-left: auto;
   padding-left: 16px;
   padding-left: 1rem;
   padding-right: 16px;
@@ -2063,12 +2073,32 @@ body {
 .page-template-feature-page #secondary {
   margin-top: 1.5em;
 }
-.page-template-page-single-column-narrow .wrap,
-.page-template-page-single-column-narrow #site-navigation .menu-wrap {
+.page-template-page-single-column-narrow #masthead .wrap,
+.page-template-page-single-column-narrow #navigation .wrap,
+.page-template-page-single-column-narrow #footer .wrap {
   max-width: 60em;
+}
+.page-template-page-single-column-narrow #content .wrap {
+  max-width: 48em;
+}
+@media only screen and (min-width: 48em) {
+  .page-template-page-single-column-narrow #content .wrap .alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: auto;
+    max-width: 100vw;
+  }
+  .page-template-page-single-column-narrow #content .wrap .alignwide {
+    margin-left: calc(25% - 25vw);
+    margin-right: calc(25% - 25vw);
+    width: auto;
+    max-width: 1000%;
+  }
 }
 .page-template-page-single-column-narrow #secondary {
   margin-top: 1.5em;
+  margin-left: -6em;
+  margin-right: -6em;
 }
 /* = Footer Layout
 ----------------------------------------------- */
@@ -5072,6 +5102,9 @@ img.alignright {
     float: right;
     margin-left: 1rem;
   }
+}
+figure {
+  text-align: center;
 }
 .gallery {
   margin-left: -16px;

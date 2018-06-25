@@ -47,6 +47,37 @@ if ( ! function_exists( 'simple_grey_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 220, 220 );
+
+		/**
+		* Add support for Gutenberg.
+		*
+		* @link https://wordpress.org/gutenberg/handbook/reference/theme-support/
+		*/
+		add_theme_support( 'gutenberg', array(
+		
+			// Theme supports wide images, galleries and videos.
+			'wide-images' => true,
+		
+			// Make specific theme colors available in the editor.
+			'colors' => array(
+				'#000',
+				'#222',
+				'#333',
+				'#0066CC',
+				'#660000',
+				'#666',
+				'#CCCCCC',
+				'#CC0000',
+				'#EEEEEE',
+				'#f5f5f5',
+				'#FFCC00',
+				'#FFFFFF',
+				),
+		
+		) );
+
+
+		
 	}
 endif; // simple_grey_setup
 add_action( 'after_setup_theme', 'simple_grey_setup' );
@@ -154,6 +185,16 @@ function simple_grey_add_editor_styles()
 	add_editor_style( 'css/editor.css' );
 }
 add_action( 'init', 'simple_grey_add_editor_styles' );
+
+/**
+* Enqueue editor styles for Gutenberg
+*/
+ 
+function simple_grey_editor_styles() {
+    wp_enqueue_style( 'simple-grey-editor-style', get_template_directory_uri() . '/css/editor.css' );
+	wp_enqueue_style( 'simple-grey-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic', false );
+}
+add_action( 'enqueue_block_editor_assets', 'simple_grey_editor_styles' );
 
 /**
  * Post Format customizations.
