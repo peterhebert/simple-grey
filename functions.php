@@ -57,23 +57,7 @@ if ( ! function_exists( 'simple_grey_setup' ) ) :
 		
 			// Theme supports wide images, galleries and videos.
 			'wide-images' => true,
-		
-			// Make specific theme colors available in the editor.
-			'colors' => array(
-				'#000',
-				'#222',
-				'#333',
-				'#0066CC',
-				'#660000',
-				'#666',
-				'#CCCCCC',
-				'#CC0000',
-				'#EEEEEE',
-				'#f5f5f5',
-				'#FFCC00',
-				'#FFFFFF',
-				),
-		
+				
 		) );
 
 
