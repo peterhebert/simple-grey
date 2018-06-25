@@ -11,13 +11,18 @@ You can use the Theme Customizer for easy modification of the following theme se
 
 #### Site Branding
 In addition to the Site Title and Description, you can:
-- add a drop shadow to elements in the Header
-- upload a logo to be displayed in the Header
+- Add a logo to be displayed in the Header
 - Apply styles to the logo: slightly rounded corners, or a circle effect.
 - Upload a Site Icon to be used as a browser favicon and app icon on mobile operating systems.
 
-#### Header Image
-This section allows you to upload an image to be used as the background for the Header
+#### Header
+This section allows you to customize the appearance of the Header
+- change the colors used in the Header:
+  - background color
+  - text color
+  - link color and link hover color
+- upload an image to be used as the background for the Header
+- add a drop shadow to elements in the Header
 
 #### Background Image
 This section allows you to upload an image to be used as the background for the main content area.
