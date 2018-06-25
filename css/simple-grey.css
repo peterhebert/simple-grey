@@ -1093,11 +1093,38 @@ input[type="submit"]:focus {
   position: absolute;
   width: 1px;
   height: 1px;
-  margin: -1px;
   padding: 0;
+  margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 .screen-reader-text:active,
 .screen-reader-text:focus {
@@ -1545,22 +1572,22 @@ fieldset[disabled] .paging-navigation .nav-links a {
 }
 /* = Header Layout
 ----------------------------------------------- */
-#masthead {
+.site-header {
   background-color: #333;
   color: #EEEEEE;
   position: relative;
 }
-#masthead a {
+.site-header a {
   text-decoration: none;
   color: #EEEEEE;
 }
-#masthead a:visited {
+.site-header a:visited {
   color: #EEEEEE;
 }
-#masthead a:hover {
+.site-header a:hover {
   color: #FFCC00;
 }
-#masthead .menu-toggle {
+.site-header .menu-toggle {
   position: relative;
   float: left;
   width: 100%;
@@ -1572,7 +1599,7 @@ fieldset[disabled] .paging-navigation .nav-links a {
   margin-bottom: 1.5em;
   text-align: center;
 }
-#masthead .menu-toggle button {
+.site-header .menu-toggle button {
   display: inline-block;
   margin-bottom: 0;
   font-weight: 100%;
@@ -1591,77 +1618,76 @@ fieldset[disabled] .paging-navigation .nav-links a {
   border-color: #999;
   font-weight: 600;
 }
-#masthead .menu-toggle button:hover,
-#masthead .menu-toggle button:focus {
+.site-header .menu-toggle button:hover,
+.site-header .menu-toggle button:focus {
   background-color: #eee;
   border-color: #666;
 }
-#masthead .menu-toggle button:active,
-#masthead .menu-toggle button.active {
+.site-header .menu-toggle button:active,
+.site-header .menu-toggle button.active {
   color: #333333;
   background-color: #eeeeee;
 }
-#masthead .menu-toggle button:focus {
+.site-header .menu-toggle button:focus {
   outline: thin dotted #333;
   outline: 0.3125em auto -webkit-focus-ring-color;
   outline-offset: -0.125em;
 }
-#masthead .menu-toggle button:hover,
-#masthead .menu-toggle button:focus {
+.site-header .menu-toggle button:hover,
+.site-header .menu-toggle button:focus {
   text-decoration: none;
 }
-#masthead .menu-toggle button:active,
-#masthead .menu-toggle button.active {
+.site-header .menu-toggle button:active,
+.site-header .menu-toggle button.active {
   outline: 0;
   background-image: none;
 }
-#masthead .menu-toggle button.disabled,
-#masthead .menu-toggle button[disabled],
-fieldset[disabled] #masthead .menu-toggle button {
+.site-header .menu-toggle button.disabled,
+.site-header .menu-toggle button[disabled],
+fieldset[disabled] .site-header .menu-toggle button {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
   filter: alpha(opacity=65);
 }
-#masthead .menu-toggle button i {
+.site-header .menu-toggle button i {
   margin-right: 0.75em;
   vertical-align: baseline;
 }
-#masthead .site-branding {
-  color: #EEEEEE;
+.site-header .site-branding {
   padding-top: 0.75em;
   position: relative;
   z-index: 2;
 }
-#masthead .site-branding.drop-shadow {
+.site-header .site-branding.drop-shadow {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
-#masthead .site-branding.drop-shadow .site-logo img {
+.site-header .site-branding.drop-shadow .site-logo img {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
-#masthead .site-logo img {
+.site-header .site-logo img {
   max-width: 100%;
 }
-#masthead .rounded img {
+.site-header .rounded img {
   border-radius: 0.25em;
 }
-#masthead .circle img {
+.site-header .circle img {
   border-radius: 50%;
 }
-#masthead .site-title {
+.site-header .site-title {
   font-size: 1.75em;
   line-height: 1.71428571em;
   margin: 0 0 0.85714286em;
   margin-bottom: 0.5em;
 }
-#masthead .site-description {
+.site-header .site-description {
   font-size: 1em;
   line-height: 1.5em;
   margin: 0 0 1.5em;
   font-weight: normal;
 }
-#masthead .site-logo,
-#masthead .site-info {
+.site-header .site-logo,
+.site-header .site-info {
   position: relative;
   float: left;
   width: 100%;
@@ -1672,22 +1698,22 @@ fieldset[disabled] #masthead .menu-toggle button {
   padding-right: 1rem;
 }
 @media screen and (max-width: 36em) {
-  #masthead .site-logo,
-  #masthead .site-title {
+  .site-header .site-logo,
+  .site-header .site-title {
     text-align: center;
   }
-  #masthead .site-logo img {
+  .site-header .site-logo img {
     width: 4.5em;
   }
 }
 @media screen and (min-width: 36em) {
-  #masthead #menu-toggle {
+  .site-header #menu-toggle {
     display: none;
   }
-  #masthead .site-title {
+  .site-header .site-title {
     text-align: left;
   }
-  #masthead .with-logo .site-logo {
+  .site-header .with-logo .site-logo {
     position: relative;
     float: left;
     width: 20.83333333%;
@@ -1699,7 +1725,7 @@ fieldset[disabled] #masthead .menu-toggle button {
     max-width: 7.5em;
     margin-top: 0.75em;
   }
-  #masthead .with-logo .site-info {
+  .site-header .with-logo .site-info {
     position: relative;
     float: left;
     width: 79.16666667%;
@@ -2667,15 +2693,15 @@ body {
   content: "\e680";
 }
 /*!
- *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot?v=4.5.0');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+  src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -2758,56 +2784,37 @@ body {
   margin-left: .3em;
 }
 .fa-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
 }
 .fa-pulse {
-  -webkit-animation: fa-spin 1s infinite steps(8);
   animation: fa-spin 1s infinite steps(8);
-}
-@-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
 }
 @keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 .fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-  -webkit-transform: rotate(90deg);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-  -webkit-transform: rotate(180deg);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  -webkit-transform: rotate(270deg);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
-  -webkit-transform: scale(-1, 1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
-  -webkit-transform: scale(1, -1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   transform: scale(1, -1);
 }
 :root .fa-rotate-90,
@@ -2815,7 +2822,6 @@ body {
 :root .fa-rotate-270,
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
-  -webkit-filter: none;
   filter: none;
 }
 .fa-stack {
@@ -4047,7 +4053,7 @@ body {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -4173,6 +4179,7 @@ body {
   content: "\f1ce";
 }
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -4495,6 +4502,7 @@ body {
   content: "\f23e";
 }
 .fa-battery-4:before,
+.fa-battery:before,
 .fa-battery-full:before {
   content: "\f240";
 }
@@ -4748,6 +4756,264 @@ body {
 .fa-percent:before {
   content: "\f295";
 }
+.fa-gitlab:before {
+  content: "\f296";
+}
+.fa-wpbeginner:before {
+  content: "\f297";
+}
+.fa-wpforms:before {
+  content: "\f298";
+}
+.fa-envira:before {
+  content: "\f299";
+}
+.fa-universal-access:before {
+  content: "\f29a";
+}
+.fa-wheelchair-alt:before {
+  content: "\f29b";
+}
+.fa-question-circle-o:before {
+  content: "\f29c";
+}
+.fa-blind:before {
+  content: "\f29d";
+}
+.fa-audio-description:before {
+  content: "\f29e";
+}
+.fa-volume-control-phone:before {
+  content: "\f2a0";
+}
+.fa-braille:before {
+  content: "\f2a1";
+}
+.fa-assistive-listening-systems:before {
+  content: "\f2a2";
+}
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: "\f2a3";
+}
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: "\f2a4";
+}
+.fa-glide:before {
+  content: "\f2a5";
+}
+.fa-glide-g:before {
+  content: "\f2a6";
+}
+.fa-signing:before,
+.fa-sign-language:before {
+  content: "\f2a7";
+}
+.fa-low-vision:before {
+  content: "\f2a8";
+}
+.fa-viadeo:before {
+  content: "\f2a9";
+}
+.fa-viadeo-square:before {
+  content: "\f2aa";
+}
+.fa-snapchat:before {
+  content: "\f2ab";
+}
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+}
+.fa-snapchat-square:before {
+  content: "\f2ad";
+}
+.fa-pied-piper:before {
+  content: "\f2ae";
+}
+.fa-first-order:before {
+  content: "\f2b0";
+}
+.fa-yoast:before {
+  content: "\f2b1";
+}
+.fa-themeisle:before {
+  content: "\f2b2";
+}
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "\f2b3";
+}
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "\f2b4";
+}
+.fa-handshake-o:before {
+  content: "\f2b5";
+}
+.fa-envelope-open:before {
+  content: "\f2b6";
+}
+.fa-envelope-open-o:before {
+  content: "\f2b7";
+}
+.fa-linode:before {
+  content: "\f2b8";
+}
+.fa-address-book:before {
+  content: "\f2b9";
+}
+.fa-address-book-o:before {
+  content: "\f2ba";
+}
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "\f2bb";
+}
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "\f2bc";
+}
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+.fa-user-circle-o:before {
+  content: "\f2be";
+}
+.fa-user-o:before {
+  content: "\f2c0";
+}
+.fa-id-badge:before {
+  content: "\f2c1";
+}
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "\f2c2";
+}
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "\f2c3";
+}
+.fa-quora:before {
+  content: "\f2c4";
+}
+.fa-free-code-camp:before {
+  content: "\f2c5";
+}
+.fa-telegram:before {
+  content: "\f2c6";
+}
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "\f2c7";
+}
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "\f2c8";
+}
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "\f2c9";
+}
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "\f2ca";
+}
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "\f2cb";
+}
+.fa-shower:before {
+  content: "\f2cc";
+}
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "\f2cd";
+}
+.fa-podcast:before {
+  content: "\f2ce";
+}
+.fa-window-maximize:before {
+  content: "\f2d0";
+}
+.fa-window-minimize:before {
+  content: "\f2d1";
+}
+.fa-window-restore:before {
+  content: "\f2d2";
+}
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "\f2d3";
+}
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "\f2d4";
+}
+.fa-bandcamp:before {
+  content: "\f2d5";
+}
+.fa-grav:before {
+  content: "\f2d6";
+}
+.fa-etsy:before {
+  content: "\f2d7";
+}
+.fa-imdb:before {
+  content: "\f2d8";
+}
+.fa-ravelry:before {
+  content: "\f2d9";
+}
+.fa-eercast:before {
+  content: "\f2da";
+}
+.fa-microchip:before {
+  content: "\f2db";
+}
+.fa-snowflake-o:before {
+  content: "\f2dc";
+}
+.fa-superpowers:before {
+  content: "\f2dd";
+}
+.fa-wpexplorer:before {
+  content: "\f2de";
+}
+.fa-meetup:before {
+  content: "\f2e0";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
 /* =Media
 ----------------------------------------------- */
 .responsive-embed {
@@ -4985,7 +5251,6 @@ img.alignright {
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    -webkit-filter: none !important;
     filter: none !important;
     -ms-filter: none !important;
   }
