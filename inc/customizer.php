@@ -58,7 +58,7 @@ function simple_grey_customize_register($wp_customize)
 	// navigation style
 		$wp_customize->add_section('simple_grey_navigation', array(
 			'title' => __( 'Navigation', 'simple-grey' ),
-			'priority' => 60,
+			'priority' => 105,
 		));
 
 		$wp_customize->add_setting(
