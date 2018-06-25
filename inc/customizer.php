@@ -12,11 +12,20 @@ function simple_grey_customize_register($wp_customize)
 {
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	$header_text_color = (object) $wp_customize->get_setting( 'simple_grey_header_text_color' );
+	$header_text_color->transport = 'postMessage';
+
 	$header_bg_color = (object) $wp_customize->get_setting( 'simple_grey_header_bg_color' );
 	$header_bg_color->transport = 'postMessage';
 
-	//rename "Site Title & Tagline' to 'Site Branding'
+	$header_link_color = (object) $wp_customize->get_setting( 'simple_grey_header_link_color' );
+	$header_link_color->transport = 'postMessage';
+
+	$header_link_hover = (object) $wp_customize->get_setting( 'simple_grey_header_link_hover_color' );
+	$header_link_hover->transport = 'postMessage';
+
+	// rename "Header Image' to 'Site Branding'
 	$wp_customize->get_section( 'title_tagline' )->title = __( 'Site Branding', 'simple-grey' );
 
 	// Change Tagline (blogdescription) to textarea control
@@ -27,18 +36,6 @@ function simple_grey_customize_register($wp_customize)
 			'section' => 'title_tagline',
 			'settings' => 'blogdescription',
 			'type' => 'textarea',
-		)
-	);
-
-	// toggle shadow on logo and text
-	$wp_customize->add_setting( 'simple_grey_header_drop_shadow', array('default' => 1, 'sanitize_callback' => 'simple_grey_sanitize_int') );
-	$wp_customize->add_control(
-		'simple_grey_header_drop_shadow',
-		array(
-			'label' => __( 'Add drop shadow to header elements', 'simple-grey' ),
-			'section' => 'title_tagline',
-			'settings' => 'simple_grey_header_drop_shadow',
-			'type' => 'checkbox',
 		)
 	);
 
@@ -86,17 +83,64 @@ function simple_grey_customize_register($wp_customize)
 			)
 		);
 
-		// add Header background color setting
+
+	// rename "Header Image' section to 'Header'
+	$wp_customize->get_section( 'header_image' )->title = __( 'Header', 'simple-grey' );
+
+		  // Header background color
 		$wp_customize->add_setting( 'simple_grey_header_bg_color', array(
 		  'default' => null,
 		  'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'simple_grey_header_bg_color', array(
 		  'label' => __( 'Header Background Color', 'simple-grey' ),
-		  'section' => 'colors',
+		  'section' => 'header_image',
 		) ) );
 
-		// add 'Background Size' option to Custom Background
+		// Header text color
+		$wp_customize->add_setting( 'simple_grey_header_text_color', array(
+            'default' => null,
+            'sanitize_callback' => 'sanitize_hex_color',
+          ) );
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'simple_grey_header_text_color', array(
+            'label' => __( 'Header Text Color', 'simple-grey' ),
+            'section' => 'header_image',
+          ) ) );
+
+		// Header link color
+		$wp_customize->add_setting( 'simple_grey_header_link_color', array(
+            'default' => null,
+            'sanitize_callback' => 'sanitize_hex_color',
+          ) );
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'simple_grey_header_link_color', array(
+            'label' => __( 'Header Link Color', 'simple-grey' ),
+            'section' => 'header_image',
+          ) ) );
+
+		// Header link hover color
+		$wp_customize->add_setting( 'simple_grey_header_link_hover_color', array(
+            'default' => null,
+            'sanitize_callback' => 'sanitize_hex_color',
+          ) );
+          $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'simple_grey_header_link_hover_color', array(
+            'label' => __( 'Header Link Hover Color', 'simple-grey' ),
+            'section' => 'header_image',
+          ) ) );
+
+	// toggle shadow on logo and text
+	$wp_customize->add_setting( 'simple_grey_header_drop_shadow', array('default' => 1, 'sanitize_callback' => 'simple_grey_sanitize_int') );
+	$wp_customize->add_control(
+		'simple_grey_header_drop_shadow',
+		array(
+			'label' => __( 'Add drop shadow to header elements', 'simple-grey' ),
+            'section' => 'header_image',
+			'settings' => 'simple_grey_header_drop_shadow',
+			'type' => 'checkbox',
+		)
+	);
+
+
+		  // add 'Background Size' option to Custom Background
 		$wp_customize->add_setting(
 			'simple_grey_background_size',
 			array(
@@ -219,12 +263,29 @@ function simple_grey_sanitize_html($input)
 }
 
 function simple_grey_customizer_css() {
-	if ( get_theme_mod( 'simple_grey_header_bg_color' ) ):
-    ?>
-    <style type="text/css">
-			#masthead { background-color: <?php echo get_theme_mod( 'simple_grey_header_bg_color' ); ?>; }
-    </style>
-    <?php
-	endif;
+	
+	$inline_styles = array();
+	if ( get_theme_mod( 'simple_grey_header_bg_color' ) ) {
+		$inline_styles[] = '.site-header { background-color: ' . get_theme_mod( 'simple_grey_header_bg_color' ) . '; }';
+	}
+
+	if ( get_theme_mod( 'simple_grey_header_text_color' ) ) {
+		$inline_styles[] = '.site-header { color: ' . get_theme_mod( 'simple_grey_header_text_color' ) . '; }';
+	}
+
+	if ( get_theme_mod( 'simple_grey_header_link_color' ) ) {
+		$inline_styles[] = '.site-header a, .site-header a:visited { color: ' . get_theme_mod( 'simple_grey_header_link_color' ) . '; }';
+	}
+
+	if ( get_theme_mod( 'simple_grey_header_link_hover_color' ) ) {
+		$inline_styles[] = '.site-header a:hover { color: ' . get_theme_mod( 'simple_grey_header_link_hover_color' ) . '; }';
+	}
+
+	if ( count($inline_styles) > 0 ) {
+		echo "<style type=\"text/css\">\n";
+		$allcss = implode("\n\t",$inline_styles);
+		echo $allcss;
+		echo "</style>\n";
+	}
 }
 add_action( 'wp_head', 'simple_grey_customizer_css' );
