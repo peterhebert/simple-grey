@@ -76,6 +76,10 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
+1.5.2
+- Added Customizer settings for Header Text Color, Header Link Color and Header Link Hover Color
+- Grouped all header-related Customizer settings into "Header" section
+
 1.5.1
 - fixed [bug](https://github.com/peterhebert/simple-grey/issues/5) where comments and admin bar would not display if only one post exists
 - Renamed page template single-column-narrow.php to page-single-column-narrow.php, so that it is not confused by WordPress as a single post template.
