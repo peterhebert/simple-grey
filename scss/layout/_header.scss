@@ -4,6 +4,7 @@
   background-color: $col-masthead-bg;
   color: $col-masthead-txt;
   position: relative;
+  @include clearfix;
 
   a {
     text-decoration: none;

@@ -24,13 +24,14 @@ html {
     /* Force scrollbar in non-IE */
 }
 
+/* Improve default text rendering, handling of kerning pairs and ligatures */
 body {
     padding: 0;
     min-height: $basepct;
     font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-family: $fonts-sans;
-} /* Improve default text rendering, handling of kerning pairs and ligatures */
+} 
 
 // base styles
 @import "base/base";
@@ -42,10 +43,6 @@ body {
 @import "layout/header";
 @import "layout/content";
 @import "layout/footer";
-
-// accessibility fom Bootstrap
-@import "../node_modules/bootstrap/scss/mixins/screen-reader";
-@import "../node_modules/bootstrap/scss/utilities/screenreaders";
 
 // components
 @import "module/menus";

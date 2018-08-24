@@ -2,11 +2,11 @@
 
 @font-face {
 	font-family: 'morevectors';
-	src:url('@{font-path}/morevectors.eot');
-	src:url('@{font-path}/morevectors.eot?#iefix') format('embedded-opentype'),
-			url('@{font-path}/morevectors.ttf') format('truetype'),
-			url('@{font-path}/morevectors.woff') format('woff'),
-			url('@{font-path}/morevectors.svg#morevectors') format('svg');
+	src:url('#{$font-path}/morevectors.eot');
+	src:url('#{$font-path}/morevectors.eot?#iefix') format('embedded-opentype'),
+			url('#{$font-path}/morevectors.ttf') format('truetype'),
+			url('#{$font-path}/morevectors.woff') format('woff'),
+			url('#{$font-path}/morevectors.svg#morevectors') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
