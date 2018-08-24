@@ -1,0 +1,6 @@
+@mixin thumbnail($bdrw: 1px, $bcol: $col-border, $radius: .25em) {
+    @include bordered($bdrw, solid, $bcol);
+    border-radius: $radius;
+    margin: 0;
+    padding: $radius;
+}

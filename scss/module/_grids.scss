@@ -1,0 +1,21 @@
+/* wrapper to center content and provide a base margin on left and right sides */
+
+.wrap {
+    @include container;
+    max-width: $bp-max-container-width;
+}
+
+.col {
+    @include column(1);
+}
+
+// GOLDEN RATIO grid generator - for fluid layouts
+
+// larger golden column
+.golden-a {
+    @include column($ga);
+} 
+// smaller golden column
+.golden-b {
+    @include column($gb);
+} 

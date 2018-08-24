@@ -1,0 +1,22 @@
+/* Fluid images and rich media */
+
+img,
+object,
+embed,
+video {
+    max-width: 100%;
+    height: auto;
+    _width: 100%
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    /* Improve IE's resizing of images */
+    -ms-interpolation-mode: bicubic
+}
+
+figure {
+    margin: 1em auto;
+    padding: 0 40px;
+}

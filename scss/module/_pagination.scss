@@ -1,0 +1,170 @@
+// Pagination
+// -------------------------
+
+//
+// Pagination (multiple pages)
+// --------------------------------------------------
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  border-radius: $bdr-radius;
+
+  > li {
+    display: inline; // Remove list-style and block-level defaults
+    > a,
+    > span {
+      position: relative;
+      float: left; // Collapse white-space
+      padding: .375em .75em;
+      line-height: $baseline;
+      text-decoration: none;
+      background-color: $col-button-bg;
+      border: 1px solid $col-border;
+      margin-left: -1px;
+    }
+    &:first-child {
+      > a,
+      > span {
+        margin-left: 0;
+        @include border-left-radius();
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        @include border-right-radius();
+      }
+    }
+  }
+
+  > li > a,
+  > li > span {
+    &:hover,
+    &:focus {
+      background-color: $col-button-bg-hover;
+    }
+  }
+
+  > .active > a,
+  > .active > span {
+    &,
+    &:hover,
+    &:focus {
+      z-index: 2;
+      color: $col-button-txt-active;
+      background-color: $col-button-bg-active;
+      border-color: $col-button-bg-active;
+      cursor: default;
+    }
+  }
+
+  > .disabled {
+    > span,
+    > span:hover,
+    > span:focus,
+    > a,
+    > a:hover,
+    > a:focus {
+      color: $col-disabled-txt;
+      background-color: $col-button-bg;
+      border-color: $col-border;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Sizing
+// --------------------------------------------------
+
+// Large
+.pagination-lg {
+  @include pagination-size(.5em, .8em, 1.25em, .3em);
+}
+
+// Small
+.pagination-sm {
+  @include pagination-size(.333em, .666em, 0.75em, .25em);
+}
+
+
+/* post/paging navigation */
+.post-navigation,
+.paging-navigation {
+    @include clearfix;
+    margin: $margin 0;
+    .nav-links {
+      @include clearfix;
+      @include baseline-size(.875);
+        margin: 0;
+
+      a {
+        @include button;
+    
+        white-space: normal;
+
+        @include form-control-focus();
+        text-decoration: none;
+        text-align: inherit;
+        margin: .75em 0;
+      }
+
+      .nav-previous a .meta-nav
+      {
+        margin-right: ($margin/2);
+      }
+      .nav-next a .meta-nav
+      {
+        margin-left: ($margin/2);
+      }
+
+    }
+    @media only screen and (min-width: 320px) {
+      .nav-previous, .nav-next { max-width: 47%;  }
+      .nav-previous {
+        float: left;
+      }
+      .nav-next {
+        float: right;
+      }
+    }
+}
+
+.numbered-pagination {
+  @include clearfix;
+  text-align: center;
+  margin: 1.5em auto;
+  a {text-decoration: none; }
+  ul {
+    list-style: none;
+    margin: $margin 0;
+    li {
+      display: inline-block;
+      @include bordered(1px);
+      padding: .25em .75em;
+      margin-left: -1px;
+      color: $col-pagination-txt;
+      &.current {
+        background-color: $col-pagination-bg-active; color: $col-pagination-bg;
+        &:hover { background-color: $col-pagination-bg-active; color: $col-pagination-bg; }
+      }
+      &:hover {
+        background-color: $col-pagination-bg-hover;
+        color: $col-pagination-txt-hover;
+        a { color: $col-pagination-txt-hover; }
+      }
+
+      &:first-child {
+        @include border-left-radius(.25em);
+      }
+      &:last-child {
+        @include border-right-radius(.25em);
+      }
+    }
+  }
+}
+
+// pagination within posts
+.page-links {
+    @include mg-bottom();
+    a { margin: 0 .25em; }
+}

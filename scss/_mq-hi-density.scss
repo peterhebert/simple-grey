@@ -1,0 +1,61 @@
+
+@mixin mq-text-125 {
+  @media 
+    only screen and (-webkit-max-device-pixel-ratio: 1.25) and (min-width: $bp-text-125),
+    only screen and ( max--moz-device-pixel-ratio: 1.25) and (min-width: $bp-text-125),
+    only screen and ( -o-max-device-pixel-ratio: 125/100) and (min-width: $bp-text-125),
+    only screen and ( max-device-pixel-ratio: 1.25) and (min-width: $bp-text-125),
+    only screen and ( max-resolution: 120dpi) and (min-width: $bp-text-125),
+    only screen and ( max-resolution: 1.25dppx) and (min-width: $bp-text-125)
+  {
+    @content;
+  }
+}
+
+@mixin mq-text-150 {
+  @media
+    only screen and (-webkit-max-device-pixel-ratio: 1.5) and (min-width: $bp-text-150),
+    only screen and (max--moz-device-pixel-ratio: 1.5) and (min-width: $bp-text-150),
+    only screen and (-o-max-device-pixel-ratio: 3/2) and (min-width: $bp-text-150),
+    only screen and (max-device-pixel-ratio: 1.5) and (min-width: $bp-text-150),
+    only screen and ( max-resolution: 150dpi) and (min-width: $bp-text-150),
+    only screen and ( max-resolution: 1.5dppx) and (min-width: $bp-text-150)
+  {
+    @content;
+  }
+}
+
+@mixin mq-text-200 {
+  @media 
+  only screen and (-webkit-max-device-pixel-ratio: 2) and (min-width: $bp-text-200),
+  only screen and (max--moz-device-pixel-ratio: 2) and (min-width: $bp-text-200),
+  only screen and (-o-max-device-pixel-ratio: 2/1) and (min-width: $bp-text-200),
+  only screen and (max-device-pixel-ratio: 2) and (min-width: $bp-text-200),
+  only screen and ( max-resolution: 200dpi) and (min-width: $bp-text-200),
+  only screen and ( max-resolution: 2dppx) and (min-width: $bp-text-200)
+  {
+    @content;
+  }
+}
+
+
+/* Increased body size for legibility on for low-dpi, high-res displays */
+
+@include mq-text-125 {
+  body {
+    font-size: 125%;
+  }
+}
+
+@include mq-text-150 {
+  body {
+    font-size: 150%;
+  }
+}
+
+@include mq-text-200
+{
+  body {
+    font-size: 200%;
+  }
+}

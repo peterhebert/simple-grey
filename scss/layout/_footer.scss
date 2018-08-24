@@ -1,0 +1,33 @@
+
+/* = Footer Layout
+----------------------------------------------- */
+#footer {
+    color: $col-footer-text;
+    background-color: $col-footer-bg;
+    margin: 0;
+    padding-top: .75em;
+    padding-bottom: .75em;
+    .footer-text { 
+            @include column(); 
+       @include mg-both(.75); 
+        text-align: center; 
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .widget-area,
+    .footer-credits
+    {
+    @include mg-top();
+    }
+    .widget {
+        @extend .icons;
+        .widget-title { @include baseline-size( 1.5 ); }
+        @media screen and (max-width: $bp-01) {
+            @include column(1);
+        }
+       @include even-columns(3, $widget-breakpoints);
+   }
+    ul { li { line-height: 1.75; } }
+
+}
