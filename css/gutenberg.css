@@ -1,0 +1,89 @@
+/* base CSS to be loaded into Gutenberg editor */
+/* font stacks */
+.headlines {
+  font-weight: 600;
+  font-style: normal;
+}
+.preformatted {
+  font-family: monospace;
+  font-size: 125%;
+  white-space: pre;
+  /* Allow line wrapping of 'pre' */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.show-baselines {
+  background: url('../images/baseline-16-24.png') 0 0.125em;
+  background-image: url('../images/baseline-16-24.svg');
+}
+.button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 100%;
+  font-size: 100%;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  padding: .5em 1em;
+  border-radius: 0.25em;
+  background-color: #eee;
+  color: #333;
+  border-width: 0.0625em;
+  border-style: solid;
+  border-color: #999;
+}
+.button:hover,
+.button:focus {
+  background-color: #eee;
+  border-color: #666;
+}
+.button:active,
+.button.active {
+  color: #333333;
+  background-color: #eeeeee;
+}
+.button:focus {
+  outline: thin dotted #333;
+  outline: 0.3125em auto -webkit-focus-ring-color;
+  outline-offset: -0.125em;
+}
+.button:hover,
+.button:focus {
+  text-decoration: none;
+}
+.button:active,
+.button.active {
+  outline: 0;
+  background-image: none;
+}
+.button.disabled,
+.button[disabled],
+fieldset[disabled] .button {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+.button-wrap {
+  white-space: normal;
+}
+/* set top and bottom margins */
+.pad-sides {
+  padding-left: 16px;
+  padding-left: 1rem;
+  padding-right: 16px;
+  padding-right: 1rem;
+}
+.gutenberg .editor-post-title__block .editor-post-title__input {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2.25em;
+  line-height: 1.33333333em;
+  margin: 0 0 0.66666667em;
+}
+.gutenberg .edit-post-visual-editor .editor-rich-text__tinymce {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}

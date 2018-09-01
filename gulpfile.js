@@ -27,7 +27,7 @@ gulp.task('watch', function() {
 
 // compile and minify LESS to CSS
 gulp.task('styles', function() {
-    return gulp.src(['./less/editor.less', './less/simple-grey.less', './less/print.less'])
+    return gulp.src(['./less/editor.less', './less/gutenberg.less', './less/simple-grey.less', './less/print.less'])
         .pipe(less())
         .pipe(autoprefixer({
     			browsers: ['last 2 versions'],
@@ -41,7 +41,7 @@ gulp.task('styles', function() {
 
 // compile and minify LESS to CSS - rtl versions
 gulp.task('styles-rtl', function() {
-    return gulp.src(['./less/editor.less', './less/simple-grey.less', './less/print.less'])
+    return gulp.src(['./less/editor.less', './less/gutenberg.less', './less/simple-grey.less', './less/print.less'])
         .pipe(less())
         .pipe(autoprefixer({
           browsers: ['last 2 versions'],

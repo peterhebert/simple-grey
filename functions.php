@@ -170,15 +170,19 @@ function simple_grey_add_editor_styles()
 }
 add_action( 'init', 'simple_grey_add_editor_styles' );
 
+
 /**
 * Enqueue editor styles for Gutenberg
 */
  
-function simple_grey_editor_styles() {
-    wp_enqueue_style( 'simple-grey-editor-style', get_template_directory_uri() . '/css/editor.css' );
-	wp_enqueue_style( 'simple-grey-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic', false );
+function simple_grey_block_editor_styles() {
+
+	wp_register_style( 'simple-grey-block-editor-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic');
+
+	wp_enqueue_style( 'simple-grey-block-editor-styles', get_theme_file_uri( '/css/gutenberg-min.css' ), array('simple-grey-block-editor-fonts') );
+
 }
-add_action( 'enqueue_block_editor_assets', 'simple_grey_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'simple_grey_block_editor_styles' );
 
 /**
  * Post Format customizations.
