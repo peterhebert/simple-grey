@@ -1,6 +1,5 @@
 // Grab our gulp packages
 var gulp  = require('gulp'),
-    less = require('gulp-less'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     nano = require('gulp-cssnano'),
@@ -12,7 +11,6 @@ var gulp  = require('gulp'),
     sort = require('gulp-sort'),
     rtlcss = require('gulp-rtlcss');
 
-
 // Create a default task
 gulp.task('default', function() {
   gulp.start('styles', 'font-awesome', 'watch');
@@ -20,50 +18,7 @@ gulp.task('default', function() {
 
 // Watch files for changes
 gulp.task('watch', function () {
-  gulp.watch('./less/**/*.less', ['less', 'less-rtl']);
   gulp.watch('./scss/**/*.scss', ['sass', 'sass-rtl']);
-});
-
-// compile and minify LESS to CSS
-gulp.task('less', function () {
-  return gulp.src(['./less/editor.less', './less/simple-grey.less'])
-    .pipe(less())
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
-    .pipe(gulp.dest('./css'))
-    .pipe(nano({
-      discardComments: {
-        removeAll: true,
-        discardEmpty: true
-      }
-    }))
-    .pipe(rename({
-      suffix: '-min'
-    })) // Append "-min" to the filename.
-    .pipe(gulp.dest('./css')); // Output RTL stylesheets.
-});
-
-// compile and minify LESS to CSS - rtl versions
-gulp.task('less-rtl', function () {
-  return gulp.src(['./less/editor.less', './less/simple-grey.less'])
-    .pipe(less())
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
-    .pipe(nano({
-      discardComments: {
-        removeAll: true,
-        discardEmpty: true
-      }
-    }))
-    .pipe(rtlcss()) // Convert to RTL.
-    .pipe(rename({
-      suffix: '-rtl'
-    })) // Append "-rtl" to the filename.
-    .pipe(gulp.dest('./css')); // Output RTL stylesheets.
 });
 
 // compile and minify SCSS to CSS
