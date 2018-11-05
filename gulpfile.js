@@ -18,7 +18,7 @@ gulp.task('default', function() {
 
 // Watch files for changes
 gulp.task('watch', function () {
-  gulp.watch('./scss/**/*.scss', ['sass', 'sass-rtl']);
+  gulp.watch('./scss/**/*.scss', gulp.parallel('sass', 'sass-rtl'));
 });
 
 // compile and minify SCSS to CSS

@@ -81,6 +81,10 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
+1.6.1
+- changed order of rules so footer widget icons will display correctly at 150% size
+- implemented proper style and script versioning in enqueues
+
 1.6.0
 - Swapped out icon font: Font Awesome 4.7.0 for [Fork Awesome](https://forkawesome.github.io/Fork-Awesome/) 1.1.5
 - Changed CSS preprocessor from LESS to SASS - applies only to full dev package on [GitHub](https://github.com/peterhebert/simple-grey)

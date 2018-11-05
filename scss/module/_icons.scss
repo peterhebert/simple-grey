@@ -24,25 +24,18 @@
         }
     }
 }
+
 .widget.icons {
     text-align: center;
 }
-.icon-large {
-    font-size: 150%;
-    vertical-align: middle;
-}
-.fa-imdb {
-    font-size: 200%;
-    transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    /* IE 9 */
-    -webkit-transform: rotate(45deg);
-    /* Safari and Chrome */
-    vertical-align: middle;
-    &:before {
-        content: "\f145";
+
+.site-footer .widget.icon {
+    .mv, .fa, .dashicons {
+        font-size: 150%;
+        vertical-align: middle;
     }
 }
+
 .dashicon-scalable {
     display: inline-block;
     width: auto;
