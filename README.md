@@ -50,7 +50,7 @@ The footer has two text fields (Top and Bottom), for displaying credits, copyrig
 
 ### Web fonts
 This theme uses the [Open Sans](https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans) web font via Google Fonts. In addition, it includes the following icon fonts:
-- [Font Awesome](http://fontawesome.io/)
+- [Fork Awesome](https://forkawesome.github.io/Fork-Awesome/) - a forked version of Font Awesome 4.x series with updated icons. [Read why they forked the project](https://forkawesome.github.io/Fork-Awesome/whats-new/) - I have similar reasons for switching in this theme,
 - [More Vectors](https://github.com/peterhebert/More-Vectors-Icon-Font)
 
 ### Feature Page Template
