@@ -1,6 +1,6 @@
 // Grab our gulp packages
 var gulp  = require('gulp'),
-    less = require('gulp-less'),
+    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     nano = require('gulp-cssnano'),
     concat = require('gulp-concat'),
@@ -11,53 +11,50 @@ var gulp  = require('gulp'),
     sort = require('gulp-sort'),
     rtlcss = require('gulp-rtlcss');
 
-
 // Create a default task
 gulp.task('default', function() {
-  gulp.start('styles', 'font-awesome', 'watch');
+  gulp.start('styles', 'icons', 'watch');
 });
 
 // Watch files for changes
-gulp.task('watch', function() {
-
-  // Watch .scss files
-  gulp.watch('./less/**/*.less', ['styles', 'styles-rtl']);
-
+gulp.task('watch', function () {
+  gulp.watch('./scss/**/*.scss', ['sass', 'sass-rtl']);
 });
 
-// compile and minify LESS to CSS
-gulp.task('styles', function() {
-    return gulp.src(['./less/editor.less', './less/simple-grey.less', './less/print.less'])
-        .pipe(less())
-        .pipe(autoprefixer({
-    			browsers: ['last 2 versions'],
-    			cascade: false
-    		}))
-        .pipe(gulp.dest('./css'))
-        .pipe(nano({discardComments: {removeAll: true, discardEmpty: true}}))
-        .pipe(rename({ suffix: '-min' })) // Append "-min" to the filename.
-        .pipe(gulp.dest('./css')); // Output RTL stylesheets.
+// compile and minify SCSS to CSS
+gulp.task('sass', function () {
+  return gulp.src('./scss/**/*.scss')
+    .pipe(sass({
+      outputStyle: 'expanded'
+    }).on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(gulp.dest('./css'))
+    .pipe(nano({ discardComments: { removeAll: true, discardEmpty: true } }))
+    .pipe(rename({ suffix: '-min' })) // Append "-min" to the filename.
+    .pipe(gulp.dest('./css')); // Output MINIMIZED stylesheets.
 });
 
-// compile and minify LESS to CSS - rtl versions
-gulp.task('styles-rtl', function() {
-    return gulp.src(['./less/editor.less', './less/simple-grey.less', './less/print.less'])
-        .pipe(less())
-        .pipe(autoprefixer({
-          browsers: ['last 2 versions'],
-          cascade: false
-        }))
-        .pipe(nano({discardComments: {removeAll: true, discardEmpty: true}}))
-        .pipe(rtlcss()) // Convert to RTL.
-        .pipe(rename({ suffix: '-rtl' })) // Append "-rtl" to the filename.
-        .pipe(gulp.dest('./css')); // Output RTL stylesheets.
+// compile and minify SCSS to rtl CSS
+gulp.task('sass-rtl', function () {
+  return gulp.src('./scss/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
+    .pipe(rtlcss())
+    .pipe(nano({ discardComments: { removeAll: true, discardEmpty: true } }))
+    .pipe(rename({
+      suffix: '-rtl'
+    }))
+    .pipe(gulp.dest('./css'));
 });
 
 
-// copy FontAwesome from node_modules dir
-gulp.task('font-awesome', function() {
+// copy icon fonts from node_modules dir
+gulp.task('icons', function() {
 
-   return gulp.src('./node_modules/font-awesome/fonts/**/*')
+   return gulp.src('./node_modules/fork-awesome/fonts/**/*')
           .pipe(gulp.dest('./fonts/'));
 
 });

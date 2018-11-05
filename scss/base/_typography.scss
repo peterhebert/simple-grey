@@ -1,0 +1,126 @@
+/* DEFAULT FONT SETTINGS */
+
+/* 16px base font size with 150% (24px) friendly, unitless line height and margin for vertical rhythm */
+
+/* Font-size percentage is based on 16px browser default size */
+
+body,
+button,
+input,
+select,
+textarea {
+    font-size: $basepct;
+    line-height: $baseline;
+    *font-size: ($base + 0em);
+}
+
+/* IE7 and older can't resize px based text */
+
+p,
+blockquote,
+q,
+pre,
+address,
+hr,
+code,
+samp,
+dl,
+ol,
+ul,
+form,
+table,
+fieldset,
+menu {
+    margin: 0 0 ($baseline + 0em);
+    padding: 0
+}
+
+/* TYPOGRAPHY */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include headlines;
+}
+
+h1 {
+    @include baseline-size( 2.25);
+}
+
+h2 {
+    @include baseline-size( 2);
+}
+
+h3 {
+    @include baseline-size( 1.75);
+}
+
+h4 {
+    @include baseline-size( 1.5);
+}
+
+h5 {
+    @include baseline-size( 1.25);
+}
+
+h6 {
+    @include baseline-size( 1.125);
+}
+
+p,
+.p,
+ol,
+ul,
+blockquote,
+pre,
+td,
+th,
+label {
+    @include baseline-size( 1);
+}
+
+small,
+.small {
+    @include baseline-size( 0.75);
+}
+
+/* ABBREVIATION */
+
+abbr {
+    border-color: $col-border;
+}
+
+abbr[title],
+dfn[title] {
+    cursor: help
+}
+
+/* MARKED/INSERTED/DELETED AND SELECTED TEXT */
+
+ins,
+mark {
+    text-decoration: none
+}
+
+del {
+    text-decoration: line-through
+}
+
+/* selected text */
+
+::-moz-selection,
+::selection {
+    background: $col-bg-inv;
+    color: $col-text-inv;
+    text-shadow: none
+}
+
+/* OTHERS */
+
+var,
+address {
+    font-style: normal
+}

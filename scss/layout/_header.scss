@@ -1,0 +1,94 @@
+/* = Header Layout
+----------------------------------------------- */
+.site-header {
+  background-color: $col-masthead-bg;
+  color: $col-masthead-txt;
+  position: relative;
+  @include clearfix;
+
+  a {
+    text-decoration: none;
+    color: $col-masthead-txt;
+    &:visited {
+      color: $col-masthead-txt;
+    }
+    &:hover {
+      color: $col-masthead-hover;
+    }
+  }
+
+  .menu-toggle {
+    @include column();
+    @include mg-bottom();
+    text-align: center;
+    button {
+      @include button;
+      font-weight: 600;
+      i {
+        margin-right: 0.75em;
+        vertical-align: baseline;
+      }
+    }
+  }
+  .site-branding {
+    padding-top: 0.75em;
+    position: relative;
+    z-index: 2;
+    &.drop-shadow {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+      .site-logo img {
+        box-shadow: $box-shadow;
+      }
+    }
+  }
+  .site-logo {
+    img {
+      max-width: 100%;
+    }
+  }
+  .rounded img {
+    border-radius: .25em;
+  }
+  .circle img {
+    border-radius: 50%;
+  }
+  .site-title {
+    @include baseline-size( 1.75 );
+    margin-bottom: 0.5em;
+  }
+  .site-description {
+    @include baseline-size( 1 );
+    font-weight: normal;
+  }
+  .site-logo,
+  .site-info {
+    @include column();
+  }
+  @media screen and (max-width: $bp-full-menu) {
+    .site-logo,
+    .site-title {
+      text-align: center;
+    }
+    .site-logo img {
+      width: 4.5em;
+    }
+  }
+  @media screen and (min-width: $bp-full-menu) {
+    #menu-toggle {
+      display: none;
+    }
+    .site-title {
+      text-align: left;
+    }
+    .with-logo {
+      .site-logo {
+        @include column(5/24);
+        max-width: 7.5em;
+        margin-top: 0.75em;
+      }
+      .site-info {
+        @include column(19/24);
+      }
+    }
+  }
+}

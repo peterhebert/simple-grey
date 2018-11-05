@@ -1,0 +1,63 @@
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+  .widget-title { 
+      @include baseline-size(1.5);
+      -ms-word-wrap: break-word;
+      word-wrap: break-word;
+  }
+
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"]
+  {
+    width: auto;
+      max-width: 100%;
+  }
+  .icons { 
+    text-align: center; 
+  }
+  margin-bottom: 1.5em;
+}
+
+/* Wordpress calendar widget */
+.widget_calendar {
+  .widget-title {text-align: center;}
+  table {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: .875em;
+    border-bottom: 0.071428571em solid $col-border;
+    td, th { 
+      padding: .357142857em 0.571428571em 0.428571429em 0.571428571em;
+      border: 0.071428571em solid $col-border;
+      border-bottom: none;
+      text-align: center;
+    }
+    caption { margin-bottom: 0.714285714em; }
+  }
+}
+.widget_search input.search-field { width: 12em; } 
+
+/* rss widget */
+.widget_rss {
+  .rss-date {
+    display: block;
+    width: 100%;
+  }
+}
+

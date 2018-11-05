@@ -1,0 +1,156 @@
+/* MoreVectors icon font */
+
+@font-face {
+	font-family: 'morevectors';
+	src:url('#{$font-path}/morevectors.eot');
+	src:url('#{$font-path}/morevectors.eot?#iefix') format('embedded-opentype'),
+			url('#{$font-path}/morevectors.ttf') format('truetype'),
+			url('#{$font-path}/morevectors.woff') format('woff'),
+			url('#{$font-path}/morevectors.svg#morevectors') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.mv {
+	font-family: 'morevectors';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.mv-aim:before { content: "\e600"; }
+.mv-amazon:before { content: "\e601"; }
+.mv-android:before { content: "\e602"; }
+.mv-apple:before { content: "\e603"; }
+.mv-apple-app-store:before { content: "\e604"; }
+.mv-avatar:before { content: "\e605"; }
+.mv-aws:before { content: "\e606"; }
+.mv-badoo:before { content: "\e607"; }
+.mv-basecamp:before { content: "\e608"; }
+.mv-bazaar:before { content: "\e609"; }
+.mv-behance:before { content: "\e60a"; }
+.mv-bing:before { content: "\e60b"; }
+.mv-bitbucket:before { content: "\e60c"; }
+.mv-bitcoin:before { content: "\e60d"; }
+.mv-blackberry:before { content: "\e60e"; }
+.mv-blip:before { content: "\e60f"; }
+.mv-blogger:before { content: "\e610"; }
+.mv-cc:before { content: "\e611"; }
+.mv-cc-by:before { content: "\e612"; }
+.mv-cc-nc:before { content: "\e613"; }
+.mv-cc-nc-eu:before { content: "\e614"; }
+.mv-cc-nc-jp:before { content: "\e615"; }
+.mv-cc-nd:before { content: "\e616"; }
+.mv-cc-pd:before { content: "\e617"; }
+.mv-cc-remix:before { content: "\e618"; }
+.mv-cc-sa:before { content: "\e619"; }
+.mv-cc-sampling:before { content: "\e61a"; }
+.mv-cc-sampling-plus:before { content: "\e61b"; }
+.mv-cc-share:before { content: "\e61c"; }
+.mv-cc-zero:before { content: "\e61d"; }
+.mv-coroflot:before { content: "\e61e"; }
+.mv-css3:before { content: "\e61f"; }
+.mv-delicious:before { content: "\e620"; }
+.mv-designmoo:before { content: "\e621"; }
+.mv-deviantart:before { content: "\e622"; }
+.mv-digg:before { content: "\e623"; }
+.mv-digg-alt:before { content: "\e624"; }
+.mv-dribble:before { content: "\e625"; }
+.mv-dropbox:before { content: "\e626"; }
+.mv-drupal:before { content: "\e627"; }
+.mv-ebay:before { content: "\e628"; }
+.mv-ember:before { content: "\e629"; }
+.mv-envelope:before { content: "\e62a"; }
+.mv-etsy:before { content: "\e62b"; }
+.mv-evernote:before { content: "\e62c"; }
+.mv-facebook:before { content: "\e62d"; }
+.mv-facebook-places:before { content: "\e62e"; }
+.mv-feedburner:before { content: "\e62f"; }
+.mv-flickr:before { content: "\e630"; }
+.mv-forrst:before { content: "\e631"; }
+.mv-foursquare:before { content: "\e632"; }
+.mv-git:before { content: "\e633"; }
+.mv-github:before { content: "\e634"; }
+.mv-gnome:before { content: "\e635"; }
+.mv-google:before { content: "\e636"; }
+.mv-google-hangouts:before { content: "\e637"; }
+.mv-google-play:before { content: "\e638"; }
+.mv-google-plus:before { content: "\e639"; }
+.mv-grooveshark:before { content: "\e63a"; }
+.mv-html5:before { content: "\e63b"; }
+.mv-hype-machine:before { content: "\e63c"; }
+.mv-hyves:before { content: "\e63d"; }
+.mv-icloud:before { content: "\e63e"; }
+.mv-icq:before { content: "\e63f"; }
+.mv-identica:before { content: "\e640"; }
+.mv-instagram:before { content: "\e641"; }
+.mv-instapaper:before { content: "\e642"; }
+.mv-itunes:before { content: "\e643"; }
+.mv-joomla:before { content: "\e644"; }
+.mv-kde:before { content: "\e645"; }
+.mv-lastfm:before { content: "\e646"; }
+.mv-launchpad:before { content: "\e647"; }
+.mv-linkedin:before { content: "\e648"; }
+.mv-linux:before { content: "\e649"; }
+.mv-livejournal:before { content: "\e64a"; }
+.mv-mercurial:before { content: "\e64b"; }
+.mv-metacafe:before { content: "\e64c"; }
+.mv-myspace:before { content: "\e64d"; }
+.mv-newsvine:before { content: "\e64e"; }
+.mv-openid:before { content: "\e64f"; }
+.mv-orkut:before { content: "\e650"; }
+.mv-paypal:before { content: "\e651"; }
+.mv-phone:before { content: "\e652"; }
+.mv-photobucket:before { content: "\e653"; }
+.mv-picasa:before { content: "\e654"; }
+.mv-pinterest:before { content: "\e655"; }
+.mv-podcast:before { content: "\e656"; }
+.mv-quik:before { content: "\e657"; }
+.mv-rdio:before { content: "\e658"; }
+.mv-reddit:before { content: "\e659"; }
+.mv-retweet:before { content: "\e65a"; }
+.mv-rss:before { content: "\e65b"; }
+.mv-scribd:before { content: "\e65c"; }
+.mv-sharethis:before { content: "\e65d"; }
+.mv-skype:before { content: "\e65e"; }
+.mv-slashdot:before { content: "\e65f"; }
+.mv-slideshare:before { content: "\e660"; }
+.mv-smugmug:before { content: "\e661"; }
+.mv-soundcloud:before { content: "\e662"; }
+.mv-spotify:before { content: "\e663"; }
+.mv-springme:before { content: "\e664"; }
+.mv-squarespace:before { content: "\e665"; }
+.mv-squidoo:before { content: "\e666"; }
+.mv-stackoverflow:before { content: "\e667"; }
+.mv-steam:before { content: "\e668"; }
+.mv-stumbleupon:before { content: "\e669"; }
+.mv-subversion:before { content: "\e66a"; }
+.mv-tagged:before { content: "\e66b"; }
+.mv-technorati:before { content: "\e66c"; }
+.mv-tumblr:before { content: "\e66d"; }
+.mv-twitter:before { content: "\e66e"; }
+.mv-ubuntu:before { content: "\e66f"; }
+.mv-viddler:before { content: "\e670"; }
+.mv-vimeo:before { content: "\e671"; }
+.mv-vine:before { content: "\e672"; }
+.mv-virb:before { content: "\e673"; }
+.mv-w3:before { content: "\e674"; }
+.mv-weibo:before { content: "\e675"; }
+.mv-wikipedia:before { content: "\e676"; }
+.mv-wordpress:before { content: "\e677"; }
+.mv-xing:before { content: "\e678"; }
+.mv-xmpp:before { content: "\e679"; }
+.mv-yahoo:before { content: "\e67a"; }
+.mv-yahoo-messenger:before { content: "\e67b"; }
+.mv-windows:before { content: "\e67c"; }
+.mv-yelp:before { content: "\e67d"; }
+.mv-youtube-play:before { content: "\e67e"; }
+.mv-zootool:before { content: "\e67f"; }
+.mv-youtube:before { content: "\e680"; }

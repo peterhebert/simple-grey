@@ -1,0 +1,69 @@
+// normalize.css
+@import "base/normalize";
+// core - required files
+@import "variables";
+@import "mixins";
+
+/* apply a natural box layout model to all elements */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/*
+	Base stylesheet with CSS normalization, typographic baseline grid and progressive responsiveness
+*/
+html {
+    height: $basepct;
+    font-size: $basepct;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    /* Force scrollbar in non-IE */
+}
+
+/* Improve default text rendering, handling of kerning pairs and ligatures */
+body {
+    padding: 0;
+    min-height: $basepct;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: $fonts-sans;
+} 
+
+// base styles
+@import "base/base";
+
+
+@import "module/forms";
+
+// layout
+@import "layout/header";
+@import "layout/content";
+@import "layout/footer";
+
+// components
+@import "module/menus";
+@import "module/widgets";
+@import "module/comments";
+@import "module/pagination";
+
+// icons
+@import "module/icons";
+@import "module/morevectors";
+@import "../node_modules/fork-awesome/scss/fork-awesome";
+
+// media
+@import "module/media";
+@import "module/gallery";
+
+// required WordPress classes
+@import "module/wordpress-required";
+
+// suggested print media stylesheet
+@import "print";
+
+// hi-res media queries
+@import "mq-hi-density";

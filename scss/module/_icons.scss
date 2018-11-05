@@ -1,0 +1,84 @@
+/* icons */
+
+.mv, .fa, .dashicons {
+  font-size: 150%;
+  vertical-align: top;
+}
+
+.icons {
+    .mv, .fa, .dashicons {
+      color: $col-social-icons;
+    }
+    a.mv,
+    a.fa {
+        color: $col-social-icons; 
+        text-decoration: none;
+        &:visited {
+            color: $col-social-icons;
+        }
+        &:hover {
+            color: $col-link-hover;
+        }
+        span {
+            display: none;
+        }
+    }
+}
+.widget.icons {
+    text-align: center;
+}
+.icon-large {
+    font-size: 150%;
+    vertical-align: middle;
+}
+.fa-imdb {
+    font-size: 200%;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    /* IE 9 */
+    -webkit-transform: rotate(45deg);
+    /* Safari and Chrome */
+    vertical-align: middle;
+    &:before {
+        content: "\f145";
+    }
+}
+.dashicon-scalable {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1em;
+    line-height: 1;
+    font-family: "dashicons";
+    text-decoration: inherit;
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: middle;
+    transition: color .1s ease-in 0;
+    text-align: center;
+}
+
+.dashicon-film:before {
+    content: "\f219";
+}
+.glyph-demo {
+  @include clearfix;
+    ul {
+        @include row();
+        @extend .icons;
+        list-style: none;
+        li {
+            @include float;
+            width: 10em;
+            height: 10em;
+            margin-bottom: .75em;
+            text-align: center;
+            font-size: .75em;
+            .mv {
+                font-size: 300%;
+                margin-bottom: .5em;
+            }
+        }
+    }
+}

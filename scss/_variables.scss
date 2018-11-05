@@ -1,0 +1,120 @@
+// VARIABLES
+
+$basepx: 16; // 16px browser default
+$base: $basepx/16;
+$basepct: percentage($base);
+$baseline: 1.5; // multiple of $base
+$bdr-width: 1/$basepx; // 1px border converted to multiple
+
+$bdr-radius: .625em;
+
+// greys
+$white: #fff;
+$gray-100: hsl(0, 0%, 96%); // #F5F5F5
+$gray-200: hsl(0, 0%, 93%); // #EEE
+$gray-300: hsl(0, 0%, 80%); // #CCC
+$gray-400: hsl(0, 0%, 60%); // #999
+$gray-500: hsl(0, 0%, 40%); // #666
+$gray-600: hsl(0, 0%, 33%);  // #555
+$gray-700: hsl(0, 0%, 27%); /// #444
+$gray-800: hsl(0, 0%, 20%) ; // #333
+$gray-900: hsl(0, 0%, 13%); // #222;
+$black: #000;
+
+// named colors
+$blue: hsl(210, 100%, 40%); // #06c
+$red: hsl(0, 100%, 40%); // #c00
+$dark-red : hsl(0, 100%, 20%); // #600
+$gold: hsl(48, 100%, 50%); // #fc0
+
+// variables - color palette
+$col-bg: $white;
+$col-txt: $black;
+$col-border: $gray-300;
+$col-bg-inv: adjust-hue($col-bg, 180);
+$col-text-inv: adjust-hue($col-txt, 180);
+$col-link: $blue;
+$col-link-hover: $red;
+$col-link-active: $dark-red;
+$col-link-visited: darken($col-link, 10%);
+$col-masthead-bg: $gray-800;
+$col-masthead-txt: $gray-200;
+$col-masthead-hover: $gold;
+$col-menu-bg: $gray-100;
+$col-menu-text: $gray-900;
+$col-menu-bg-focus: $col-menu-text;
+$col-menu-text-focus: $col-menu-bg;
+$col-footer-bg: $col-menu-bg;
+$col-footer-text: $col-menu-text;
+$col-disabled-txt: $gray-500;
+$col-disabled-bg: $gray-200;
+$col-focus-border: $gray-500;
+$col-button-bg: $gray-200;
+$col-button-bg-hover: $gray-200;
+$col-button-txt: $gray-800;
+$col-button-bg-active: adjust-hue($col-button-bg, 180);
+$col-button-txt-active: adjust-hue($col-button-txt, 180);
+$col-button-border: $gray-400;
+$col-pagination-bg: $white;
+$col-pagination-txt: $gray-800;
+$col-pagination-bg-hover: $gray-200;
+$col-pagination-txt-hover: $col-pagination-txt;
+$col-pagination-bg-active: $gray-700;
+$col-pagination-txt-active: $gray-200;
+$col-social-icons: $gray-800;
+$input-bg: $white;
+$input-color: $gray-600;
+$col-placeholder: $gray-500;
+$col-tab-focus: $gray-800;
+
+// font stacks 
+$fonts-serif: Cambria, Georgia, Times, 'Times New Roman', serif;
+$fonts-sans: 'Open Sans', Arial, Helvetica, sans-serif;
+
+// responsive breakpoints
+$bp-00: 20em; // based upon 320px most portrait phones
+$bp-01: 24em; // content shows floated post-thumbnail, 2 widget columns
+$bp-02: 30em; // max width for showing mobile style menu
+$bp-03: 36em; // max width for any 1 column, 3 widget columns
+$bp-04: 48em;
+$bp-05: 60em;
+$bp-06: 75em;
+
+// named breakpoints, to make things easier to read
+$bp-float-menu-toggle: $bp-02;
+$bp-full-menu: $bp-03;
+
+$widget-breakpoints: (
+    2: $bp-01,
+    3: $bp-04,
+    4: $bp-06,
+);
+
+// max widths for content and columns
+$bp-max-column-width: $bp-04;
+$bp-container-1col: ($bp-max-column-width + 2);
+$bp-max-container-width: $bp-06;
+
+// move sidebar to 2nd column in main content
+$bp-float-sidebar: $bp-05;
+
+// enlarge text size for larger screens
+$bp-text-125: 1600px;
+$bp-text-150: 2400px;
+$bp-text-200: 3200px;
+
+// fonts directory
+$font-path: "../fonts";
+$fa-font-path: $font-path;
+
+// variables for golden ratio grid generation
+$Phi: 1.61803398874989484820458683436563811772030917980576;
+$ga: (1/$Phi);
+$gb: (1 - (1/$Phi));
+
+// bootstrap inspired grid foundations
+$margin: 1rem;
+$margin-negative: ($margin * -1);
+$gutter: ($margin * 2);
+
+$box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);

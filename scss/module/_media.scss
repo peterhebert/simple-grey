@@ -1,0 +1,23 @@
+/* =Media
+----------------------------------------------- */
+
+@import "../../node_modules/bootstrap/scss/utilities/embed";
+
+// responsive embed containers
+.responsive-embed {
+    @extend .embed-responsive;
+    @extend .embed-responsive-16by9;
+}
+
+/* Images */
+.wp-caption { max-width: 100%; }
+.thumb {
+   @include thumbnail();
+}
+.image-left, .image-right { margin-bottom: $margin; }
+
+@media screen and (min-width: $bp-01) {
+.image-left, .image-right { max-width: 48%; height:auto; }
+.image-left { float: left; margin-right: $margin; }
+.image-right { float: right; margin-left: $margin; }
+}

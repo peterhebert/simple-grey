@@ -1,0 +1,96 @@
+// Centered container element
+@mixin container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: ($basepx * 1px);
+    padding-left: $margin;
+    padding-right: ($basepx * 1px);
+    padding-right: $margin;
+    @include clearfix;
+}
+
+// Creates a wrapper for a series of columns
+@mixin row {
+    margin-left: ($basepx * -1px);
+    margin-left: $margin-negative;
+    margin-right: ($basepx * -1px);
+    margin-right: $margin-negative;
+    @include clearfix;
+}
+
+@mixin column($width: 1) {
+    position: relative;
+    float: left;
+    width: percentage($width);
+    min-height: 1px;
+    padding-left: ($basepx * 1px);
+    padding-left: $margin;
+    padding-right: ($basepx * 1px);
+    padding-right: $margin;
+}
+
+// generic column float with no width specification
+@mixin float {
+    position: relative;
+    float: left;
+    min-height: 1px;
+    padding-left: ($basepx * 1px);
+    padding-left: $margin;
+    padding-right: ($basepx * 1px);
+    padding-right: $margin;
+}
+
+@mixin offset($decimal) {
+    margin-left: percentage($decimal);
+}
+
+@mixin push($decimal) {
+    left: percentage($decimal);
+}
+
+@mixin pull($decimal) {
+    right: percentage($decimal);
+}
+
+// percentage based columns
+// $span - width to span X number of columns
+// $cols - based upon X total columns in parent
+@mixin percentColumn($span: 1, $cols: 12) {
+    $colw: ($span / $cols);
+    @include column($colw);
+}
+
+//  For each key in the map, create a grid breakpoint 
+
+@mixin even-columns( $cols: 4, $colmap: $widget-breakpoints ) {
+    
+
+    @for $i from 2 through $cols {
+
+        $bp-min: map-get($colmap, $i);
+
+        @if $i < $cols {
+            $bp-max: map-get( $colmap, $i+1 );
+            @media only screen and (min-width: $bp-min) and (max-width: $bp-max) {
+                @include percentColumn(1, $i);
+                &:nth-of-type(#{$i}n+1) {
+                    clear: left;
+                }
+            }
+
+        }
+        @else {
+            @media only screen and (min-width: $bp-min) {
+                @include percentColumn(1, $i);
+                &:nth-of-type(#{$i}n+1) {
+                    clear: left;
+                }
+            }
+        }
+
+
+    }
+
+
+}
+

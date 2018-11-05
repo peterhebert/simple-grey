@@ -1,0 +1,13 @@
+@mixin headlines {
+    font-weight: 600;
+    font-style: normal;
+} // 600 is semi-bold weight for Open Sans
+
+@mixin preformatted {
+    font-family: monospace;
+    font-size: 125%;
+    white-space: pre;
+    /* Allow line wrapping of 'pre' */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

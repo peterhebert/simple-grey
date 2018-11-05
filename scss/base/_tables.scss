@@ -1,0 +1,21 @@
+
+/* TABLES */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    @include baseline-size($base, $baseline, $base, 2);
+    border-bottom: ($bdr-width + 0em) solid $col-border;
+}
+
+th {
+    text-align: left
+}
+
+$cellpad: ($baseline/2);
+th,
+td {
+    padding: ($cellpad + 0em) ($cellpad + 0em) ($cellpad - $bdr-width + 0em) ($cellpad + 0em);
+    @include bordered($bdr-width + 0em);
+    border-bottom: 0 solid $col-border;
+}

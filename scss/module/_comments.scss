@@ -1,0 +1,23 @@
+/* =Comments
+----------------------------------------------- */
+
+.comment-content a {
+	word-wrap: break-word;
+}
+.comments-area {
+  .comments-title { 
+    @include baseline-size( 1.5 ); 
+    &:before { font-family: 'FontAwesome'; content: "\f086"; margin-right: .25em; } 
+  }
+  .comment-reply-title { 
+    @include baseline-size( 1.25 );
+    &:before { font-family: 'FontAwesome'; content: "\f112"; margin-right: .5em; } 
+  }
+  ol {
+      list-style-type: none; 
+      li { 
+          @include mg-both(.75);
+      }
+   }
+ 
+}
