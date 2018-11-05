@@ -81,9 +81,9 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
-1.6
-- Changed CSS preprocessor from LESS to SASS - applies only to full dev package on [GitHub](https://github.com/peterhebert/simple-grey)
+1.6.0
 - Swapped out icon font: Font Awesome 4.7.0 for [Fork Awesome](https://forkawesome.github.io/Fork-Awesome/) 1.1.5
+- Changed CSS preprocessor from LESS to SASS - applies only to full dev package on [GitHub](https://github.com/peterhebert/simple-grey)
 
 1.5.2
 - Added Customizer settings for Header Text Color, Header Link Color and Header Link Hover Color
