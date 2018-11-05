@@ -104,7 +104,8 @@ $bp-text-150: 2400px;
 $bp-text-200: 3200px;
 
 // fonts directory
-$font-path : "../fonts";
+$font-path: "../fonts";
+$fa-font-path: $font-path;
 
 // variables for golden ratio grid generation
 $Phi: 1.61803398874989484820458683436563811772030917980576;

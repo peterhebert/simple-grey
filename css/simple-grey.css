@@ -2728,22 +2728,30 @@ fieldset[disabled]
 }
 
 /*!
- *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
- *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Fork Awesome 1.1.5
+License - http://forkawesome.github.io/Fork-Awesome/license
+
+Copyright 2018 Dave Gandy & Fork Awesome
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
-  font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  font-family: "ForkAwesome";
+  src: url("../fonts/forkawesome-webfont.eot?v=1.0.11");
+  src: url("../fonts/forkawesome-webfont.eot?#iefix&v=1.0.11") format("embedded-opentype"), url("../fonts/forkawesome-webfont.woff2?v=1.0.11") format("woff2"), url("../fonts/forkawesome-webfont.woff?v=1.0.11") format("woff"), url("../fonts/forkawesome-webfont.ttf?v=1.0.11") format("truetype"), url("../fonts/forkawesome-webfont.svg?v=1.0.11#forkawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal normal 14px/1 ForkAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -3585,6 +3593,14 @@ fieldset[disabled]
   content: "";
 }
 
+.fa-globe-e:before {
+  content: "";
+}
+
+.fa-globe-w:before {
+  content: "";
+}
+
 .fa-wrench:before {
   content: "";
 }
@@ -3605,6 +3621,7 @@ fieldset[disabled]
   content: "";
 }
 
+.fa-community:before,
 .fa-group:before,
 .fa-users:before {
   content: "";
@@ -4505,14 +4522,6 @@ fieldset[disabled]
   content: "";
 }
 
-.fa-pied-piper-pp:before {
-  content: "";
-}
-
-.fa-pied-piper-alt:before {
-  content: "";
-}
-
 .fa-drupal:before {
   content: "";
 }
@@ -5077,6 +5086,10 @@ fieldset[disabled]
   content: "";
 }
 
+.fa-medium-square:before {
+  content: "";
+}
+
 .fa-yc:before,
 .fa-y-combinator:before {
   content: "";
@@ -5526,10 +5539,6 @@ fieldset[disabled]
   content: "";
 }
 
-.fa-pied-piper:before {
-  content: "";
-}
-
 .fa-first-order:before {
   content: "";
 }
@@ -5728,6 +5737,165 @@ fieldset[disabled]
 
 .fa-meetup:before {
   content: "";
+}
+
+.fa-mastodon:before {
+  content: "";
+}
+
+.fa-mastodon-alt:before {
+  content: "";
+}
+
+.fa-fork-circle:before,
+.fa-fork-awesome:before {
+  content: "";
+}
+
+.fa-peertube:before {
+  content: "";
+}
+
+.fa-diaspora:before {
+  content: "";
+}
+
+.fa-friendica:before {
+  content: "";
+}
+
+.fa-gnu-social:before {
+  content: "";
+}
+
+.fa-liberapay-square:before {
+  content: "";
+}
+
+.fa-liberapay:before {
+  content: "";
+}
+
+.fa-ssb:before,
+.fa-scuttlebutt:before {
+  content: "";
+}
+
+.fa-hubzilla:before {
+  content: "";
+}
+
+.fa-social-home:before {
+  content: "";
+}
+
+.fa-artstation:before {
+  content: "";
+}
+
+.fa-discord:before {
+  content: "";
+}
+
+.fa-discord-alt:before {
+  content: "";
+}
+
+.fa-patreon:before {
+  content: "";
+}
+
+.fa-snowdrift:before {
+  content: "";
+}
+
+.fa-activitypub:before {
+  content: "";
+}
+
+.fa-ethereum:before {
+  content: "";
+}
+
+.fa-keybase:before {
+  content: "";
+}
+
+.fa-shaarli:before {
+  content: "";
+}
+
+.fa-shaarli-o:before {
+  content: "";
+}
+
+.fa-cut-key:before,
+.fa-key-modern:before {
+  content: "";
+}
+
+.fa-xmpp:before {
+  content: "";
+}
+
+.fa-archive-org:before {
+  content: "";
+}
+
+.fa-freedombox:before {
+  content: "";
+}
+
+.fa-facebook-messenger:before {
+  content: "";
+}
+
+.fa-debian:before {
+  content: "";
+}
+
+.fa-mastodon-square:before {
+  content: "";
+}
+
+.fa-tipeee:before {
+  content: "";
+}
+
+.fa-react:before {
+  content: "";
+}
+
+.fa-dogmazic:before {
+  content: "";
+}
+
+.fa-zotero:before {
+  content: "";
+}
+
+.fa-nodejs:before {
+  content: "";
+}
+
+.fa-nextcloud:before {
+  content: "";
+}
+
+.fa-nextcloud-square:before {
+  content: "";
+}
+
+.fa-hackaday:before {
+  content: "";
+}
+
+.fa-laravel:before {
+  content: "";
+}
+
+.fa-signalapp:before {
+  content: "";
 }
 
 .sr-only {

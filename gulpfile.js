@@ -13,7 +13,7 @@ var gulp  = require('gulp'),
 
 // Create a default task
 gulp.task('default', function() {
-  gulp.start('styles', 'font-awesome', 'watch');
+  gulp.start('styles', 'icons', 'watch');
 });
 
 // Watch files for changes
@@ -51,10 +51,10 @@ gulp.task('sass-rtl', function () {
 });
 
 
-// copy FontAwesome from node_modules dir
-gulp.task('font-awesome', function() {
+// copy icon fonts from node_modules dir
+gulp.task('icons', function() {
 
-   return gulp.src('./node_modules/font-awesome/fonts/**/*')
+   return gulp.src('./node_modules/fork-awesome/fonts/**/*')
           .pipe(gulp.dest('./fonts/'));
 
 });

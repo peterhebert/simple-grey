@@ -1,14 +1,13 @@
 {
   "name": "simple-grey",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "description": "A responsive WordPress theme with a simple grey color palette. Clean and simple, this theme is optimized for legibility. It is well suited to blogs and portfolio sites.",
   "main": "gulpfile.js",
   "engines": {
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node ./build/sass.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "bootstrap": "^4.1.3",
@@ -22,15 +21,14 @@
     "gulp-sass": "^4.0.1",
     "gulp-sort": "^2.0.0",
     "gulp-wp-pot": "^1.1.1",
-    "merge-stream": "^1.0.0",
-    "node-sass": "^4.10.0"
+    "merge-stream": "^1.0.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/peterhebert/simple-grey.git"
   },
   "dependencies": {
-    "font-awesome": "^4.2.0"
+    "fork-awesome": "^1.1.5"
   },
   "license": "GPL-2.0"
 }
