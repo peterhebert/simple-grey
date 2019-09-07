@@ -1,8 +1,10 @@
 <?php
 /*
- * Template Name: Single Column Narrow
+ * Template Name: One Column Narrow
+ * Template Post Type: post, page
+ * 
  * Description: Displays the main page content in one column, with a
- * maximum width of 60em for optimum legibility. The secondary
+ * maximum width of 48em for optimum legibility. The secondary
  * sidebar is displayed below the main content in this template.
  *
  * @package Simple Grey

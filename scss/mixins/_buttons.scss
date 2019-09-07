@@ -48,6 +48,7 @@
     $txt-active: $col-button-txt-active,
     $bg-active: $col-button-bg-active,
     $bg-hover: $col-button-bg-hover,
+    $txt-hover: $col-button-txt-hover,
     $bdr: $col-button-border,
     $bdr-focus: $col-focus-border
 ) {
@@ -58,6 +59,7 @@
     &:focus {
         background-color: $bg-hover;
         border-color: $bdr-focus;
+        color: $txt-hover;
     }
     &:active,
     &.active {

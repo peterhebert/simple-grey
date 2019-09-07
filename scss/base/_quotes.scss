@@ -1,6 +1,6 @@
 /* QUOTES */
 
-blockquote {
+blockquote, .wp-block-quote {
     quotes: none
 }
 
@@ -32,12 +32,13 @@ cite {
     font-style: italic
 }
 
-blockquote {
+blockquote, .wp-block-quote {
     padding-left: 1.5em;
     border-left: ((3 * $bdr-width) + 0em) solid $col-border;
+    
+    > p {
+        padding: 0
+    }
 }
 
-blockquote>p {
-    padding: 0
-}
 

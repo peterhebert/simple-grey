@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* base CSS to be loaded into WYSWYG editor */
+/* base CSS to be loaded into block and/or classic editor */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -497,7 +497,7 @@ input::-moz-focus-inner {
 }
 
 /* QUOTES */
-blockquote {
+blockquote, .wp-block-quote {
   quotes: none;
 }
 
@@ -529,12 +529,12 @@ cite {
   font-style: italic;
 }
 
-blockquote {
+blockquote, .wp-block-quote {
   padding-left: 1.5em;
   border-left: 0.1875em solid #cccccc;
 }
 
-blockquote > p {
+blockquote > p, .wp-block-quote > p {
   padding: 0;
 }
 
@@ -569,13 +569,13 @@ a:visited {
 }
 
 a:hover, a:link:hover {
-  color: #cc0000;
+  color: #200080;
   text-decoration: underline;
 }
 
 a:focus {
   outline: thin dotted;
-  color: #cc0000;
+  color: #200080;
 }
 
 a:active {
@@ -4582,7 +4582,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .icons a.mv:hover, .glyph-demo ul a.mv:hover,
 .icons a.fa:hover,
 .glyph-demo ul a.fa:hover {
-  color: #cc0000;
+  color: #200080;
 }
 
 .icons a.mv span, .glyph-demo ul a.mv span,
@@ -4658,4 +4658,380 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .glyph-demo ul li .mv {
   font-size: 300%;
   margin-bottom: .5em;
+}
+
+/* Core block styles */
+hr,
+.wp-block-separator {
+  color: #cccccc;
+}
+
+hr:not(.is-style-wide):not(.is-style-dots),
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  width: 20rem;
+  max-width: 33%;
+  margin: 1rem auto;
+}
+
+hr.is-style-dots:before,
+.wp-block-separator.is-style-dots:before {
+  content: "\00b7 \00b7 \00b7";
+  font-size: 24px;
+  letter-spacing: 1.5em;
+  padding-left: 1.5em;
+  font-family: inherit;
+}
+
+/* Button
+--------------------------------------------- */
+.wp-block-button a.wp-block-button__link {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 100%;
+  font-size: 100%;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  padding: .5em 1em;
+  border-radius: .25em;
+  background-color: #ededed;
+  color: #454545;
+  border: 0.0625 solid #999999;
+  background-color: #ededed;
+  color: #454545;
+  border: 0.0625 solid #999999;
+}
+
+.wp-block-button a.wp-block-button__link:hover, .wp-block-button a.wp-block-button__link:focus {
+  background-color: #cccccc;
+  border-color: #666666;
+  color: #545454;
+}
+
+.wp-block-button a.wp-block-button__link:active, .wp-block-button a.wp-block-button__link.active {
+  color: whitesmoke;
+  background-color: #666666;
+}
+
+.wp-block-button a.wp-block-button__link:focus {
+  outline: thin dotted #333333;
+  outline: 0.3125em auto -webkit-focus-ring-color;
+  outline-offset: -0.125em;
+}
+
+.wp-block-button a.wp-block-button__link:hover, .wp-block-button a.wp-block-button__link:focus {
+  text-decoration: none;
+}
+
+.wp-block-button a.wp-block-button__link:active, .wp-block-button a.wp-block-button__link.active {
+  outline: 0;
+  background-image: none;
+}
+
+.wp-block-button a.wp-block-button__link.disabled, .wp-block-button a.wp-block-button__link[disabled],
+fieldset[disabled] .wp-block-button a.wp-block-button__link {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: .65;
+}
+
+.wp-block-button a.wp-block-button__link:hover, .wp-block-button a.wp-block-button__link:focus {
+  background-color: #cccccc;
+  border-color: #666666;
+  color: #545454;
+}
+
+.wp-block-button a.wp-block-button__link:active, .wp-block-button a.wp-block-button__link.active {
+  color: whitesmoke;
+  background-color: #666666;
+}
+
+.wp-block-button a.wp-block-button__link.has-white-color {
+  color: #fff;
+}
+
+.wp-block-button a.wp-block-button__link.has-white-background-color {
+  background-color: #fff;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-100-color {
+  color: whitesmoke;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-100-background-color {
+  background-color: whitesmoke;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-200-color {
+  color: #ededed;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-200-background-color {
+  background-color: #ededed;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-300-color {
+  color: #cccccc;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-300-background-color {
+  background-color: #cccccc;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-400-color {
+  color: #999999;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-400-background-color {
+  background-color: #999999;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-500-color {
+  color: #666666;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-500-background-color {
+  background-color: #666666;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-600-color {
+  color: #545454;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-600-background-color {
+  background-color: #545454;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-700-color {
+  color: #454545;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-700-background-color {
+  background-color: #454545;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-800-color {
+  color: #333333;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-800-background-color {
+  background-color: #333333;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-900-color {
+  color: #212121;
+}
+
+.wp-block-button a.wp-block-button__link.has-grey-900-background-color {
+  background-color: #212121;
+}
+
+.wp-block-button a.wp-block-button__link.has-black-color {
+  color: #000;
+}
+
+.wp-block-button a.wp-block-button__link.has-black-background-color {
+  background-color: #000;
+}
+
+.wp-block-button a.wp-block-button__link.has-red-color {
+  color: #cc0000;
+}
+
+.wp-block-button a.wp-block-button__link.has-red-background-color {
+  background-color: #cc0000;
+}
+
+.wp-block-button a.wp-block-button__link.has-green-color {
+  color: #039600;
+}
+
+.wp-block-button a.wp-block-button__link.has-green-background-color {
+  background-color: #039600;
+}
+
+.wp-block-button a.wp-block-button__link.has-blue-color {
+  color: #0066cc;
+}
+
+.wp-block-button a.wp-block-button__link.has-blue-background-color {
+  background-color: #0066cc;
+}
+
+.wp-block-button a.wp-block-button__link.has-cyan-color {
+  color: #00caca;
+}
+
+.wp-block-button a.wp-block-button__link.has-cyan-background-color {
+  background-color: #00caca;
+}
+
+.wp-block-button a.wp-block-button__link.has-magenta-color {
+  color: #db00db;
+}
+
+.wp-block-button a.wp-block-button__link.has-magenta-background-color {
+  background-color: #db00db;
+}
+
+.wp-block-button a.wp-block-button__link.has-yellow-color {
+  color: #ffcc00;
+}
+
+.wp-block-button a.wp-block-button__link.has-yellow-background-color {
+  background-color: #ffcc00;
+}
+
+.wp-block-button a.wp-block-button__link.has-oragne-color {
+  color: #FF7400;
+}
+
+.wp-block-button a.wp-block-button__link.has-oragne-background-color {
+  background-color: #FF7400;
+}
+
+.has-white-color {
+  color: #fff;
+}
+
+.has-white-background-color {
+  background-color: #fff;
+}
+
+.has-grey-100-color {
+  color: whitesmoke;
+}
+
+.has-grey-100-background-color {
+  background-color: whitesmoke;
+}
+
+.has-grey-200-color {
+  color: #ededed;
+}
+
+.has-grey-200-background-color {
+  background-color: #ededed;
+}
+
+.has-grey-300-color {
+  color: #cccccc;
+}
+
+.has-grey-300-background-color {
+  background-color: #cccccc;
+}
+
+.has-grey-400-color {
+  color: #999999;
+}
+
+.has-grey-400-background-color {
+  background-color: #999999;
+}
+
+.has-grey-500-color {
+  color: #666666;
+}
+
+.has-grey-500-background-color {
+  background-color: #666666;
+}
+
+.has-grey-600-color {
+  color: #545454;
+}
+
+.has-grey-600-background-color {
+  background-color: #545454;
+}
+
+.has-grey-700-color {
+  color: #454545;
+}
+
+.has-grey-700-background-color {
+  background-color: #454545;
+}
+
+.has-grey-800-color {
+  color: #333333;
+}
+
+.has-grey-800-background-color {
+  background-color: #333333;
+}
+
+.has-grey-900-color {
+  color: #212121;
+}
+
+.has-grey-900-background-color {
+  background-color: #212121;
+}
+
+.has-black-color {
+  color: #000;
+}
+
+.has-black-background-color {
+  background-color: #000;
+}
+
+.has-red-color {
+  color: #cc0000;
+}
+
+.has-red-background-color {
+  background-color: #cc0000;
+}
+
+.has-green-color {
+  color: #039600;
+}
+
+.has-green-background-color {
+  background-color: #039600;
+}
+
+.has-blue-color {
+  color: #0066cc;
+}
+
+.has-blue-background-color {
+  background-color: #0066cc;
+}
+
+.has-cyan-color {
+  color: #00caca;
+}
+
+.has-cyan-background-color {
+  background-color: #00caca;
+}
+
+.has-magenta-color {
+  color: #db00db;
+}
+
+.has-magenta-background-color {
+  background-color: #db00db;
+}
+
+.has-yellow-color {
+  color: #ffcc00;
+}
+
+.has-yellow-background-color {
+  background-color: #ffcc00;
+}
+
+.has-oragne-color {
+  color: #FF7400;
+}
+
+.has-oragne-background-color {
+  background-color: #FF7400;
 }

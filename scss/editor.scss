@@ -1,4 +1,4 @@
-/* base CSS to be loaded into WYSWYG editor */
+/* base CSS to be loaded into block and/or classic editor */
 
 // normalize.css
 @import "base/normalize";
@@ -43,3 +43,6 @@ body {
 @import "../node_modules/fork-awesome/scss/fork-awesome";
 @import "module/morevectors";
 @import "module/icons";
+
+// WordPress core block styles
+@import "module/core-blocks";

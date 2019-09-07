@@ -1,0 +1,59 @@
+/* Core block styles */ 
+
+// hr spearator
+hr,
+.wp-block-separator {
+    color: $grey-300;
+    &:not(.is-style-wide):not(.is-style-dots) {
+        width: 20rem;
+        max-width: 33%;
+        margin: $margin auto;
+    }
+    &.is-style-dots:before {
+        content: "\00b7 \00b7 \00b7";
+        font-size: 24px;
+        letter-spacing: 1.5em;
+        padding-left: 1.5em;
+        font-family: inherit;
+    }
+    
+}
+
+// buttons
+/* Button
+--------------------------------------------- */
+
+.wp-block-button {
+
+	a.wp-block-button__link {
+        @include button;
+
+        @include button-color;
+
+        @each $name, $color in $editor-color-palette {
+
+            &.has-#{$name}-color {
+                color: $color;
+            }
+        
+            &.has-#{$name}-background-color {
+                background-color: $color;
+            }
+        }
+        
+	}
+}
+
+// color styles
+// -- see editor-color-palette in functions.php
+
+@each $name, $color in $editor-color-palette {
+
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}

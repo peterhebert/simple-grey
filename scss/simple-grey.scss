@@ -62,6 +62,9 @@ body {
 // required WordPress classes
 @import "module/wordpress-required";
 
+// WordPress core block styles
+@import "module/core-blocks";
+
 // suggested print media stylesheet
 @import "print";
 

@@ -55,16 +55,107 @@ if ( ! function_exists( 'simple_grey_setup' ) ) :
 		*
 		* @link https://wordpress.org/gutenberg/handbook/reference/theme-support/
 		*/
-		add_theme_support( 'gutenberg', array(
-		
-			// Theme supports wide images, galleries and videos.
-			'wide-images' => true,
-				
-		) );
 
+		// wide blocks
+		add_theme_support( 'align-wide' );
 
+		// editor color palette
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name'  => __( 'White', 'simple-grey' ),
+				'slug'  => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => __( 'Grey 100 / Whitesmoke', 'simple-grey' ),
+				'slug'  => 'grey-100',
+				'color' => '#f5f5f5',
+			),
+			array(
+				'name'  => __( 'Grey 200', 'simple-grey' ),
+				'slug'  => 'grey-200',
+				'color' => '#ededed',
+			),
+			array(
+				'name'  => __( 'Grey 300', 'simple-grey' ),
+				'slug'  => 'grey-300',
+				'color' => '#cccccc',
+			),
+			array(
+				'name'  => __( 'Grey 400', 'simple-grey' ),
+				'slug'  => 'grey-400',
+				'color' => '#999999',
+			),
+			array(
+				'name'  => __( 'Grey 500', 'simple-grey' ),
+				'slug'  => 'grey-500',
+				'color' => '#666666',
+			),
+			array(
+				'name'  => __( 'Grey 600', 'simple-grey' ),
+				'slug'  => 'grey-600',
+				'color' => '#545454',
+			),
+			array(
+				'name'  => __( 'Grey 700', 'simple-grey' ),
+				'slug'  => 'grey-700',
+				'color' => '#454545',
+			),
+			array(
+				'name'  => __( 'Grey 800', 'simple-grey' ),
+				'slug'  => 'grey-800',
+				'color' => '#333333',
+			),
+			array(
+				'name'  => __( 'Grey 900', 'simple-grey' ),
+				'slug'  => 'grey-900',
+				'color' => '#212121',
+			),
+			array(
+				'name'  => __( 'Black', 'simple-grey' ),
+				'slug'  => 'black',
+				'color' => '#000000',
+			),
+			array(
+				'name'	=> __( 'Red', 'simple-grey' ),
+				'slug'	=> 'red',
+				'color'	=> '#cc0000',
+			),
+			array(
+				'name'	=> __( 'Green', 'simple-grey' ),
+				'slug'	=> 'green',
+				'color'	=> '#039600',
+			),
+			array(
+				'name'  => __( 'Blue', 'simple-grey' ),
+				'slug'  => 'blue',
+				'color'	=> '#0066cc',
+			),
+			array(
+				'name'  => __( 'Cyan', 'simple-grey' ),
+				'slug'  => 'cyan',
+				'color' => '#00caca',
+			),
+			array(
+				'name'  => __( 'Magenta', 'simple-grey' ),
+				'slug'  => 'magenta',
+				'color' => '#db00db',
+			),
+			array(
+				'name'  => __( 'Yellow', 'simple-grey' ),
+				'slug'  => 'yellow',
+				'color' => '#ffcc00',
+			),
+			array(
+				'name'  => __( 'Orange', 'simple-grey' ),
+				'slug'  => 'orange',
+				'color' => '#FF7400',
+			),
+
+		) );		
 		
 	}
+ 
 endif; // simple_grey_setup
 add_action( 'after_setup_theme', 'simple_grey_setup' );
 
