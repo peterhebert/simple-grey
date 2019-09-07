@@ -1,0 +1,43 @@
+/* QUOTES */
+
+blockquote {
+    quotes: none
+}
+
+blockquote:before,
+blockquote:after {
+    content: '';
+    content: none
+}
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+q:before {
+    content: open-quote
+}
+
+q:after {
+    content: close-quote
+}
+
+cite:before {
+    content: "\2014 ";
+}
+
+blockquote,
+q,
+cite {
+    font-style: italic
+}
+
+blockquote {
+    padding-left: 1.5em;
+    border-left: ((3 * $bdr-width) + 0em) solid $col-border;
+}
+
+blockquote>p {
+    padding: 0
+}
+

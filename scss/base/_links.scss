@@ -1,0 +1,31 @@
+/* HYPERLINKS */
+
+a {
+    text-decoration: none;
+    color: $col-link;
+    &:link {
+        color: $col-link
+    }
+    &:visited {
+        color: $col-link-visited
+    }
+    &:hover,
+    &:link:hover {
+        color: $col-link-hover;
+        text-decoration: underline
+    }
+    &:focus {
+        outline: thin dotted;
+        color: $col-link-hover
+    }
+    &:active {
+        color: $col-link-active
+    }
+}
+
+/* Better CSS Outline Suppression */
+
+a:hover,
+a:active {
+    outline: none
+}

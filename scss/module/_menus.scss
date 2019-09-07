@@ -1,0 +1,81 @@
+/* main navigation menu */
+
+#navigation {
+  background: $col-menu-bg;
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    display: block;
+    background: $col-menu-bg;
+    color: $col-menu-text;
+    padding: 0.25em 0.5em;
+    &:hover,
+    &:focus {
+      color: $col-menu-text-focus;
+      background: $col-menu-bg-focus;
+    }
+  }
+  .nav-menu {
+    display: none;
+  }
+  &.toggled,
+  &:focus {
+    .nav-menu {
+      display: block;
+    }
+  }
+  .nav-menu.hierarchical {
+    ul { margin-left: 0.75em; }
+  }
+
+  @media screen and (min-width: $bp-full-menu) {
+    .nav-menu {
+      display: block;
+    }
+    ul.drop-down {
+      li {
+        display: inline-block;
+        position: relative;
+        overflow: visible;
+      }
+      li ul {
+        position: absolute;
+        left: -999em;
+      }
+      ul li {
+          a { display: inline-block; width: 11em; word-wrap: auto; }
+      }
+
+      .sub-menu .menu-item-has-children:focus,
+      .sub-menu .menu-item-has-children:hover,
+      .sub-menu .menu-item-has-children.focus,
+      .sub-menu .menu-item-has-children.hover,
+      .sub-menu .menu-item-has-children[aria-expanded="true"],
+      li.menu-item-has-children.focus,
+      li.menu-item-has-children:hover,
+      li.menu-item-has-children:focus,
+      li.menu-item-has-children[aria-expanded="true"] {
+        > ul {
+          left: 0;
+          top: 100%;
+          z-index: 99999;
+         &.menu-side {
+           left: 100%;
+           top: 0;
+          }
+        }
+
+      }
+
+    }
+    .nav-menu.flat {
+      @include clearfix;
+      li { display: inline; line-height: 2.25; }
+      a { display: inline; white-space: nowrap; }
+    }
+  }
+}

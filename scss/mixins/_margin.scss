@@ -1,0 +1,13 @@
+
+@mixin mg-top($multiple: 1) {
+    margin-top: (($baseline * $multiple) + 0em);
+}
+
+@mixin mg-bottom($multiple: 1) {
+    margin-bottom: (($baseline * $multiple) + 0em);
+}
+
+@mixin mg-both($top: 1, $bottom: 1) {
+    @include mg-top($top);
+    @include mg-bottom($bottom);
+}

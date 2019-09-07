@@ -1,0 +1,24 @@
+@mixin bordered ($width: $bdr-width, $style: solid, $col: $col-border) {
+  border: $width $style $col;
+}
+
+// Single side border-radius
+@mixin border-top-radius($radius: $bdr-radius) {
+  border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin border-right-radius($radius: $bdr-radius) {
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius: $bdr-radius) {
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin border-left-radius($radius: $bdr-radius) {
+  border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
+}

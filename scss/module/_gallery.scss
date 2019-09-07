@@ -1,0 +1,36 @@
+// GALLERIES
+
+.gallery {
+    @include row;
+    figure.gallery-item {
+        //@include column();
+        @include mg-bottom();
+        img {
+            @include thumbnail();
+            background-color: $col-bg;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .gallery-icon {
+        text-align: center;
+        @include mg-bottom(.25);
+    }
+    figcaption.gallery-caption {
+        @include baseline-size( .75, 1);
+        margin: 0;
+    }
+}
+
+@for $i from 1 through 9 {
+    $width: ( $i / 9 );
+    .gallery-columns-#{$i} {
+        figure.gallery-item {
+            @include column($width);
+            &:nth-of-type(#{$i}n+1) {
+                clear: left;
+            }
+        }
+    }
+
+}

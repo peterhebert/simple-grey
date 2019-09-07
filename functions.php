@@ -3,6 +3,8 @@
  * simple_grey functions and definitions.
  */
 
+define('SIMPLE_GREY_VERSION', '1.6.1');
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -126,7 +128,7 @@ if ( ! function_exists( 'get_theme_file_uri' ) ){
  */
 function simple_grey_scripts()
 {
-
+	
 	// load fonts
 	wp_enqueue_style( 'simple-grey-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic', false );
 	wp_enqueue_style( 'dashicons' );
@@ -138,22 +140,22 @@ function simple_grey_scripts()
 		wp_enqueue_style( 'simple-grey-main', get_theme_file_uri( 'css/simple-grey.css' ) );
 	}
 
-	wp_enqueue_script( 'simple-grey-navigation', get_theme_file_uri( 'js/navigation.js' ), array(), '20140817', true );
+	wp_enqueue_script( 'simple-grey-navigation', get_theme_file_uri( 'js/navigation.js' ), array(), SIMPLE_GREY_VERSION, true );
 
-	wp_enqueue_script( 'simple-grey-skip-link-focus-fix', get_theme_file_uri( 'js/skip-link-focus-fix.js' ), array(), '20130115', true );
+	wp_enqueue_script( 'simple-grey-skip-link-focus-fix', get_theme_file_uri( 'js/skip-link-focus-fix.js' ), array(), SIMPLE_GREY_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	// fix issues with oEmbeds
-	wp_enqueue_script( 'simple-grey-oembed-adjust', get_theme_file_uri( 'js/oembed-adjust.js' ), array( 'jquery' ), null, true );
+	wp_enqueue_script( 'simple-grey-oembed-adjust', get_theme_file_uri( 'js/oembed-adjust.js' ), array( 'jquery' ), SIMPLE_GREY_VERSION, true );
 
 	// accessibility features
-	wp_enqueue_script( 'simple-grey-accessibility', get_theme_file_uri( 'js/accessibility.js' ), array( 'jquery' ), null, true );
+	wp_enqueue_script( 'simple-grey-accessibility', get_theme_file_uri( 'js/accessibility.js' ), array( 'jquery' ), SIMPLE_GREY_VERSION, true );
 
 	// and finally, enqueue theme stylesheet (style.css)
-	wp_enqueue_style( 'simple-grey-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'simple-grey-style', get_stylesheet_uri(), array(), SIMPLE_GREY_VERSION, true );
 
 }
 add_action( 'wp_enqueue_scripts', 'simple_grey_scripts' );

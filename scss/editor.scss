@@ -1,0 +1,45 @@
+/* base CSS to be loaded into WYSWYG editor */
+
+// normalize.css
+@import "base/normalize";
+
+// core - required files
+@import "variables";
+@import "mixins";
+
+/* BASE CSS */
+
+/* apply a natural box layout model to all elements */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/*
+	Base stylesheet with CSS normalization, typographic baseline grid and progressive responsiveness
+*/
+
+html {
+    font-size: $basepct;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    /* Force scrollbar in non-IE */
+}
+
+body {
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: $fonts-sans;
+} /* Improve default text rendering, handling of kerning pairs and ligatures */
+
+@import "base/base";
+
+// media emeds and alignment
+@import "module/media";
+
+// icons
+@import "../node_modules/fork-awesome/scss/fork-awesome";
+@import "module/morevectors";
+@import "module/icons";

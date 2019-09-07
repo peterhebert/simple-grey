@@ -1,0 +1,10 @@
+@mixin pad-sides {
+    padding-left: ($basepx * 1px);
+    padding-left: $margin;
+    padding-right: ($basepx * 1px);
+    padding-right: $margin;
+}
+
+.pad-sides {
+    @include pad-sides();
+}

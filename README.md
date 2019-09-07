@@ -50,7 +50,7 @@ The footer has two text fields (Top and Bottom), for displaying credits, copyrig
 
 ### Web fonts
 This theme uses the [Open Sans](https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans) web font via Google Fonts. In addition, it includes the following icon fonts:
-- [Font Awesome](http://fontawesome.io/)
+- [Fork Awesome](https://forkawesome.github.io/Fork-Awesome/) - a forked version of Font Awesome 4.x series with updated icons. [Read why they forked the project](https://forkawesome.github.io/Fork-Awesome/whats-new/) - I have similar reasons for switching in this theme,
 - [More Vectors](https://github.com/peterhebert/More-Vectors-Icon-Font)
 
 ### Feature Page Template
@@ -80,6 +80,14 @@ All development of this theme is done on [GitHub](https://github.com/peterhebert
 More information about this theme is available on the [Rex Rana](https://rexrana.ca/code/simple-grey-wordpress-theme) website.
 
 ## Changelog
+
+1.6.1
+- changed order of rules so footer widget icons will display correctly at 150% size
+- implemented proper style and script versioning in enqueues
+
+1.6.0
+- Swapped out icon font: Font Awesome 4.7.0 for [Fork Awesome](https://forkawesome.github.io/Fork-Awesome/) 1.1.5
+- Changed CSS preprocessor from LESS to SASS - applies only to full dev package on [GitHub](https://github.com/peterhebert/simple-grey)
 
 1.5.2
 - Added Customizer settings for Header Text Color, Header Link Color and Header Link Hover Color

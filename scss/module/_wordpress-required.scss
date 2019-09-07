@@ -1,0 +1,9 @@
+/* classes required by WordPress */
+.wp-caption-text { font-size: inherit; }
+.sticky { font-size: inherit; }
+.bypostauthor { font-size: inherit; }
+.alignright { text-align: right }
+.alignleft { text-align: left }
+.aligncenter { text-align: center }
+img.alignleft { @extend .image-left; vertical-align: text-top; }
+img.alignright { @extend .image-right; vertical-align: text-top; }

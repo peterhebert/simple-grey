@@ -1,0 +1,67 @@
+// buttons
+// Core styles
+@mixin button {
+    
+    display: inline-block;
+    margin-bottom: 0; // For input.btn
+    font-weight: 100%;
+    font-size: 100%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    white-space: nowrap;
+    padding: .5em 1em;
+    border-radius: .25em;
+    @include button-color();
+    &:focus {
+        @include tab-focus();
+    }
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        background-image: none; //.box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+        pointer-events: none; // Future-proof disabling of clicks
+        opacity: .65;
+    }
+}
+
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+    padding: $padding-vertical $padding-horizontal;
+    font-size: $font-size;
+    line-height: $line-height;
+    border-radius: $border-radius;
+}
+
+@mixin button-color( 
+    $txt: $col-button-txt,
+    $bg: $col-button-bg,
+    $txt-active: $col-button-txt-active,
+    $bg-active: $col-button-bg-active,
+    $bg-hover: $col-button-bg-hover,
+    $bdr: $col-button-border,
+    $bdr-focus: $col-focus-border
+) {
+    background-color: $bg;
+    color: $txt;
+    @include bordered ($bdr-width, solid, $bdr);
+    &:hover,
+    &:focus {
+        background-color: $bg-hover;
+        border-color: $bdr-focus;
+    }
+    &:active,
+    &.active {
+        color: $txt-active;
+        background-color: $bg-active;
+    }
+}

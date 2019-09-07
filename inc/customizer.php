@@ -127,17 +127,17 @@ function simple_grey_customize_register($wp_customize)
             'section' => 'header_image',
           ) ) );
 
-	// toggle shadow on logo and text
-	$wp_customize->add_setting( 'simple_grey_header_drop_shadow', array('default' => 1, 'sanitize_callback' => 'simple_grey_sanitize_int') );
-	$wp_customize->add_control(
-		'simple_grey_header_drop_shadow',
-		array(
-			'label' => __( 'Add drop shadow to header elements', 'simple-grey' ),
-            'section' => 'header_image',
-			'settings' => 'simple_grey_header_drop_shadow',
-			'type' => 'checkbox',
-		)
-	);
+		// toggle shadow on logo and text
+		$wp_customize->add_setting( 'simple_grey_header_drop_shadow', array('default' => 1, 'sanitize_callback' => 'simple_grey_sanitize_int') );
+		$wp_customize->add_control(
+			'simple_grey_header_drop_shadow',
+			array(
+				'label' => __( 'Add drop shadow to header elements', 'simple-grey' ),
+				'section' => 'header_image',
+				'settings' => 'simple_grey_header_drop_shadow',
+				'type' => 'checkbox',
+			)
+		);
 
 
 		  // add 'Background Size' option to Custom Background
@@ -176,6 +176,16 @@ function simple_grey_customize_register($wp_customize)
 				'label' => __( 'Show Date Updated', 'simple-grey' ),
 				'section' => 'simple_grey_reading',
 				'settings' => 'simple_grey_show_updated',
+				'type' => 'checkbox',
+			)
+		);
+		$wp_customize->add_setting( 'simple_grey_show_meta', array('default' => 0, 'sanitize_callback' => 'simple_grey_sanitize_int') );
+		$wp_customize->add_control(
+			'simple_grey_show_meta',
+			array(
+				'label' => __( 'Show custom fields below posts', 'simple-grey' ),
+				'section' => 'simple_grey_reading',
+				'settings' => 'simple_grey_show_meta',
 				'type' => 'checkbox',
 			)
 		);

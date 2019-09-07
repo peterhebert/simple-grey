@@ -1,0 +1,10 @@
+@mixin baseline-size( $size: $base, $bline: $baseline, $context: $base, $bdr: 0) {
+    $sizeMultiple: ($size / $context);
+    $blMultiple: ($bline / $context);
+    $blAdd: ceil(($size/$bline) - floor($size/$bline));
+    $nextBaseline: (floor(($size/$bline)+$blAdd)*$bline);
+    $lineHeight: (($nextBaseline/$context)/$sizeMultiple) + 0em;
+    font-size: $sizeMultiple + 0em;
+    line-height: $lineHeight;
+    margin: 0 0 (($blMultiple/$sizeMultiple) - (($bdr*$bdr-width)/$sizeMultiple) + 0em);
+}
