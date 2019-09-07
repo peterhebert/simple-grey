@@ -19,7 +19,7 @@
 				'after'  => '</div>',
 			) );
 		?>
-        <?php the_meta(); ?>
+      <?php get_template_part( 'partials/meta' ); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
