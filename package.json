@@ -11,14 +11,14 @@
   },
   "devDependencies": {
     "bootstrap": "^4.3.1",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
-    "gulp-rtlcss": "^1.0.0",
-    "gulp-sass": "^4.0.1",
+    "gulp-rtlcss": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "gulp-sort": "^2.0.0",
     "gulp-wp-pot": "^1.1.1",
     "merge-stream": "^1.0.0"
@@ -28,7 +28,7 @@
     "url": "https://github.com/peterhebert/simple-grey.git"
   },
   "dependencies": {
-    "fork-awesome": "^1.1.5"
+    "fork-awesome": "^1.1.7"
   },
   "license": "GPL-2.0"
 }
