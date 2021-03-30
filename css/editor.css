@@ -691,8 +691,8 @@ figure {
 }
 
 /*!
-Fork Awesome 1.1.5
-License - http://forkawesome.github.io/Fork-Awesome/license
+Fork Awesome 1.1.7
+License - https://forkaweso.me/Fork-Awesome/license
 
 Copyright 2018 Dave Gandy & Fork Awesome
 
@@ -706,8 +706,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
  * -------------------------- */
 @font-face {
   font-family: "ForkAwesome";
-  src: url("../fonts/forkawesome-webfont.eot?v=1.0.11");
-  src: url("../fonts/forkawesome-webfont.eot?#iefix&v=1.0.11") format("embedded-opentype"), url("../fonts/forkawesome-webfont.woff2?v=1.0.11") format("woff2"), url("../fonts/forkawesome-webfont.woff?v=1.0.11") format("woff"), url("../fonts/forkawesome-webfont.ttf?v=1.0.11") format("truetype"), url("../fonts/forkawesome-webfont.svg?v=1.0.11#forkawesomeregular") format("svg");
+  src: url("../fonts/forkawesome-webfont.eot?v=1.1.7");
+  src: url("../fonts/forkawesome-webfont.eot?#iefix&v=1.1.7") format("embedded-opentype"), url("../fonts/forkawesome-webfont.woff2?v=1.1.7") format("woff2"), url("../fonts/forkawesome-webfont.woff?v=1.1.7") format("woff"), url("../fonts/forkawesome-webfont.ttf?v=1.1.7") format("truetype"), url("../fonts/forkawesome-webfont.svg?v=1.1.7#forkawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1014,6 +1014,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.fa-sync:before,
 .fa-refresh:before {
   content: "";
 }
@@ -1127,6 +1128,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.fa-video:before,
 .fa-video-camera:before {
   content: "";
 }
@@ -1512,7 +1514,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
-.fa-bell:before {
+.fa-bell-o:before {
   content: "";
 }
 
@@ -1672,6 +1674,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.fa-google-plus-g:before,
 .fa-google-plus:before {
   content: "";
 }
@@ -1792,7 +1795,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
-.fa-bell-o:before {
+.fa-bell:before {
   content: "";
 }
 
@@ -1800,6 +1803,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.fa-utensils:before,
 .fa-cutlery:before {
   content: "";
 }
@@ -2158,6 +2162,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.fa-pound:before,
 .fa-gbp:before {
   content: "";
 }
@@ -2203,26 +2208,32 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.fa-sort-alpha-down:before,
 .fa-sort-alpha-asc:before {
   content: "";
 }
 
+.fa-sort-alpha-up:before,
 .fa-sort-alpha-desc:before {
   content: "";
 }
 
+.fa-sort-amount-down:before,
 .fa-sort-amount-asc:before {
   content: "";
 }
 
+.fa-sort-amount-up:before,
 .fa-sort-amount-desc:before {
   content: "";
 }
 
+.fa-sort-numeric-down:before,
 .fa-sort-numeric-asc:before {
   content: "";
 }
 
+.fa-sort-numeric-up:before,
 .fa-sort-numeric-desc:before {
   content: "";
 }
@@ -2513,6 +2524,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.fa-utensil-spoon:before,
 .fa-spoon:before {
   content: "";
 }
@@ -2696,6 +2708,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.fa-heading:before,
 .fa-header:before {
   content: "";
 }
@@ -2869,6 +2882,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.fa-closed-captioning:before,
 .fa-cc:before {
   content: "";
 }
@@ -2927,6 +2941,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.fa-gem:before,
 .fa-diamond:before {
   content: "";
 }
@@ -3314,6 +3329,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.fa-vimeo-v:before,
 .fa-vimeo:before {
   content: "";
 }
@@ -3442,6 +3458,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.fa-phone-volume:before,
 .fa-volume-control-phone:before {
   content: "";
 }
@@ -3859,6 +3876,126 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .fa-signalapp:before {
   content: "";
+}
+
+.fa-gnupg:before {
+  content: "";
+}
+
+.fa-php:before {
+  content: "";
+}
+
+.fa-ffmpeg:before {
+  content: "";
+}
+
+.fa-joplin:before {
+  content: "";
+}
+
+.fa-syncthing:before {
+  content: "";
+}
+
+.fa-inkscape:before {
+  content: "";
+}
+
+.fa-matrix-org:before {
+  content: "";
+}
+
+.fa-pixelfed:before {
+  content: "";
+}
+
+.fa-bootstrap:before {
+  content: "";
+}
+
+.fa-dev-to:before {
+  content: "";
+}
+
+.fa-hashnode:before {
+  content: "";
+}
+
+.fa-jirafeau:before {
+  content: "";
+}
+
+.fa-emby:before {
+  content: "";
+}
+
+.fa-wikidata:before {
+  content: "";
+}
+
+.fa-gimp:before {
+  content: "";
+}
+
+.fa-c:before {
+  content: "";
+}
+
+.fa-digitalocean:before {
+  content: "";
+}
+
+.fa-att:before {
+  content: "";
+}
+
+.fa-gitea:before {
+  content: "";
+}
+
+.fa-file-epub:before {
+  content: "";
+}
+
+.fa-python:before {
+  content: "";
+}
+
+.fa-archlinux:before {
+  content: "";
+}
+
+.fa-pleroma:before {
+  content: "";
+}
+
+.fa-unsplash:before {
+  content: "";
+}
+
+.fa-hackster:before {
+  content: "";
+}
+
+.fa-spell-check:before {
+  content: "";
+}
+
+.fa-moon:before {
+  content: "";
+}
+
+.fa-sun:before {
+  content: "";
+}
+
+.fa-f-droid:before {
+  content: "";
+}
+
+.fa-biometric:before {
+  content: "";
 }
 
 .sr-only {
