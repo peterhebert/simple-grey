@@ -1474,11 +1474,16 @@ body {
   margin-top: 1.5em;
 }
 
-.page-template-page-single-column-narrow .wrap, .page-template-page-single-column-narrow #site-navigation .menu-wrap {
+.page-template-page-single-column-narrow .wrap, .page-template-page-single-column-narrow #site-navigation .menu-wrap,
+.page-template-p-single-column-narrow .wrap,
+.page-template-p-single-column-narrow #site-navigation .menu-wrap {
   max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.page-template-page-single-column-narrow #secondary {
+.page-template-page-single-column-narrow #secondary,
+.page-template-p-single-column-narrow #secondary {
   margin-top: 1.5em;
 }
 
