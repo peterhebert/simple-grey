@@ -7,15 +7,15 @@
 
 get_header(); ?>
 
-    <main id="main" role="main">
+	<main id="main" role="main">
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'simple-grey' ); ?></h1>
+					<h1 class="page-title"><?php echo esc_html__( 'Oops! That page can’t be found.', 'simple-grey' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'simple-grey' ); ?></p>
+					<p><?php echo esc_html__( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'simple-grey' ); ?></p>
 
 					<?php get_search_form(); ?>
 
@@ -23,16 +23,18 @@ get_header(); ?>
 
 					<?php if ( simple_grey_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php _e( 'Most Used Categories', 'simple-grey' ); ?></h2>
+						<h2 class="widget-title"><?php echo esc_html__( 'Most Used Categories', 'simple-grey' ); ?></h2>
 						<ul>
 						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
+							wp_list_categories(
+								array(
+									'orderby'    => 'count',
+									'order'      => 'DESC',
+									'show_count' => 1,
+									'title_li'   => '',
+									'number'     => 10,
+								)
+							);
 						?>
 						</ul>
 					</div><!-- .widget -->
