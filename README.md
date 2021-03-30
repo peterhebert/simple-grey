@@ -81,6 +81,10 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
+1.7.0
+- added customizer option to toggle display of custom fields / post meta at bottom of single posts
+- tested up to WordPress 5.7
+
 1.6.1
 - changed order of rules so footer widget icons will display correctly at 150% size
 - implemented proper style and script versioning in enqueues
