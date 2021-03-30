@@ -50,7 +50,7 @@ $footer_credits = get_theme_mod( 'simple_grey_show_footer_credits' );
 					// translators: 1. theme name.
 					esc_html__( 'Theme: %1$s.', 'simple-grey' ),
 					sprintf(
-					// translators: 1. theme url. 2. Theme name.
+						// translators: 1. theme url. 2. Theme name.
 						esc_html__( '<a href="%1$s">%2$s</a>', 'simple-grey' ),
 						esc_url( 'https://github.com/peterhebert/simple-grey' ),
 						esc_html__( 'Simple Grey', 'simple-grey' )

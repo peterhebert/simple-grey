@@ -1,6 +1,8 @@
 <?php
 /**
  * WAI-ARIA Navigation Menu template functions
+ *
+ * @package Simple Grey
  * @see wp-includes/nav-menu-template.php
  * @link https://github.com/proteusthemes/WAI-ARIA-Walker_Nav_Menu
  */
@@ -21,28 +23,37 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 	 *
 	 * @see Walker::start_lvl()
 	 *
-	 * @param string $output Passed by reference. Used to append additional content.
-	 * @param int    $depth  Depth of menu item. Used for padding.
-	 * @param array  $args   An array of wp_nav_menu() arguments.
+	 * @param string   $output Used to append additional content (passed by reference).
+	 * @param int      $depth  Depth of menu item. Used for padding.
+	 * @param stdClass $args   An object of wp_nav_menu() arguments.
+	 * @return void
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
-			$indent = str_repeat("\t", $depth);
-			$lvl_class = "sub-menu";
-			if( 1 < $depth ) {
-				$lvl_class .= " menu-side";
-			}
-			$output .= "\n$indent<ul class=\"{$lvl_class}\">\n";
+			$indent    = str_repeat( "\t", $depth );
+			$lvl_class = 'sub-menu';
+		if ( 1 < $depth ) {
+			$lvl_class .= ' menu-side';
+		}
+		$output .= "\n$indent<ul class=\"{$lvl_class}\">\n";
 	}
 
 	/**
 	 * Start the element output.
 	 *
 	 * @see Walker_Nav_Menu::start_el() for parameters and longer explanation
+	 *
+	 * @param string   $output Used to append additional content (passed by reference).
+	 * @param WP_Post  $item   Menu item data object.
+	 * @param int      $depth  Depth of menu item. Used for padding.
+	 * @param stdClass $args   An object of wp_nav_menu() arguments.
+	 * @param int      $id     Current item ID.
+	 *
+	 * @return void
 	 */
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+		$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID . ' depth-' . $depth;
 
 		/**
@@ -81,21 +92,22 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		 * @param array  $args    An array of {@see wp_nav_menu()} arguments.
 		 * @param int    $depth   Depth of menu item. Used for padding.
 		 */
-		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
+		$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-		$output .= sprintf( '%s<li%s%s%s>',
+		$output .= sprintf(
+			'%s<li%s%s%s>',
 			$indent,
 			$id,
 			$class_names,
-			in_array( 'menu-item-has-children', $item->classes ) ? ' aria-haspopup="true"' : ''
+			in_array( 'menu-item-has-children', $item->classes, true ) ? ' aria-haspopup="true"' : ''
 		);
 
-		$atts = array();
+		$atts           = array();
 		$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
-		$atts['target'] = ! empty( $item->target )     ? $item->target     : '';
-		$atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';
-		$atts['href']   = ! empty( $item->url )        ? $item->url        : '';
+		$atts['target'] = ! empty( $item->target ) ? $item->target : '';
+		$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
+		$atts['href']   = ! empty( $item->url ) ? $item->url : '';
 
 		/**
 		 * Filter the HTML attributes applied to a menu item's anchor element.
@@ -120,7 +132,7 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$attributes = '';
 		foreach ( $atts as $attr => $value ) {
 			if ( ! empty( $value ) ) {
-				$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+				$value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 				$attributes .= ' ' . $attr . '="' . $value . '"';
 			}
 		}
@@ -140,8 +152,8 @@ class Aria_Walker_Nav_Menu extends Walker_Nav_Menu {
 		 */
 		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'>';
+		$item_output  = $args->before;
+		$item_output .= '<a' . $attributes . '>';
 		$item_output .= $args->link_before . $title . $args->link_after;
 		$item_output .= '</a>';
 		$item_output .= $args->after;
