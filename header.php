@@ -6,6 +6,7 @@
  *
  * @package Simple Grey
  */
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -17,43 +18,44 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <nav role="navigation">
-  <a href="#content" class="screen-reader-text" aria-role="navigation"><?php _e( 'Skip to Content', 'simple-grey' ); ?></a>
+<a href="#content" class="screen-reader-text" aria-role="navigation"><?php echo esc_html__( 'Skip to Content', 'simple-grey' ); ?></a>
 </nav>
 <header id="masthead" class="site-header" role="banner">
-  <div class="wrap">
+<div class="wrap">
 <?php
 $brand_class = '';
 if ( has_custom_logo() ) :
-    $brand_class .= ' with-logo';
+	$brand_class .= ' with-logo';
 endif;
 if ( get_theme_mod( 'simple_grey_header_drop_shadow' ) ) :
-    $brand_class .= ' drop-shadow';
+	$brand_class .= ' drop-shadow';
 endif;
-      ?>
-      <div class="site-branding row<?php echo $brand_class; ?>">
-      <?php the_custom_logo( ); ?>
-      <div class="site-info">
-        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-        <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-      </div>
+?>
+<div class="site-branding row<?php echo esc_attr( $brand_class ); ?>">
+<?php the_custom_logo(); ?>
+<div class="site-info">
+<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+</div>
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
-      <div id="menu-toggle" class="menu-toggle"><button aria-controls="navigation" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i><?php _e( 'Menu', 'simple-grey' ); ?></button></div>
+<div id="menu-toggle" class="menu-toggle"><button aria-controls="navigation" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i><?php echo esc_html__( 'Menu', 'simple-grey' ); ?></button></div>
 <?php endif; ?>
-      </div>
-      <!-- .site-branding -->
-  </div>
+</div>
+<!-- .site-branding -->
+</div>
 </header><!-- #masthead -->
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
-    <div id="navigation" role="navigation">
-      <div class="wrap">
-        <nav class="row">
-          <?php simple_grey_main_menu(); ?>
-        </nav>
-      </div>
-    </div>
+<div id="navigation" role="navigation">
+<div class="wrap">
+<nav class="row">
+	<?php simple_grey_main_menu(); ?>
+</nav>
+</div>
+</div>
 <?php endif; ?>
 
 <div id="content">
-    <div class="wrap">
-  <div class="row">
+	<div class="wrap">
+		<div class="row">
