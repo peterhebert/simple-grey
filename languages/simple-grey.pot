@@ -12,7 +12,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: 404.php:14
-msgid "Oops! That page can&rsquo;t be found."
+msgid "Oops! That page can’t be found."
 msgstr ""
 
 #: 404.php:18
@@ -23,296 +23,292 @@ msgstr ""
 msgid "Most Used Categories"
 msgstr ""
 
-#: 404.php:43
+#: 404.php:45
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: comments.php:28
+#: comments.php:29
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:35, comments.php:52
+#: comments.php:41, comments.php:61
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:36, comments.php:53
+#: comments.php:42, comments.php:62
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:37, comments.php:54
+#: comments.php:43, comments.php:63
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:64
+#: comments.php:73
 msgid "Comments are closed."
 msgstr ""
 
-#: content-aside.php:18, content-gallery.php:16, content-page.php:23, content-single.php:21, content.php:31
+#: content-aside.php:21, content-gallery.php:19, content-page.php:25, content-single.php:25, content.php:40
 msgid "Pages:"
 msgstr ""
 
-#: content-aside.php:27, content-gallery.php:25, content-page.php:30, content-single.php:29, content.php:41, inc/template-tags.php:98, inc/template-tags.php:117, inc/template-tags.php:268
+#: content-aside.php:31, content-gallery.php:29, content-page.php:33, content-single.php:34, content.php:51, inc/template-tags.php:115, inc/template-tags.php:143, inc/template-tags.php:317
 msgid "Edit"
 msgstr ""
 
-#: content-none.php:13
+#: content-none.php:15
 msgid "Nothing Found"
 msgstr ""
 
-#: content-none.php:19
+#: content-none.php:25
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: content-none.php:26
+#: content-none.php:40
 msgid "Sorry, but no content was found matching the %1$s <em>%2$s</em>. Perhaps searching can help."
 msgstr ""
 
-#: content-none.php:32
+#: content-none.php:51
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: content-none.php:37
+#: content-none.php:56
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: content.php:26
+#: content.php:33
 msgid "Continue reading &ldquo;%s&rdquo; <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: footer.php:34
+#: footer.php:45
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:36
+#: footer.php:51
 msgid "Theme: %1$s."
 msgstr ""
 
-#: footer.php:38
+#: footer.php:54
 msgid "<a href=\"%1$s\">%2$s</a>"
 msgstr ""
 
-#: footer.php:39
-msgid "https://github.com/peterhebert/simple-grey"
-msgstr ""
-
-#: footer.php:40
+#: footer.php:56
 msgid "Simple Grey"
 msgstr ""
 
-#: functions.php:64
+#: functions.php:65
 msgid "Secondary"
 msgstr ""
 
-#: functions.php:74
+#: functions.php:77
 msgid "Featured"
 msgstr ""
 
-#: functions.php:83, inc/customizer.php:195
+#: functions.php:88, inc/customizer.php:262
 msgid "Footer"
 msgstr ""
 
-#: header.php:21
+#: header.php:23
 msgid "Skip to Content"
 msgstr ""
 
-#: header.php:41
+#: header.php:43
 msgid "Menu"
 msgstr ""
 
-#: inc/customizer.php:29
+#: inc/customizer.php:30
 msgid "Site Branding"
 msgstr ""
 
-#: inc/customizer.php:35
+#: inc/customizer.php:36
 msgid "Site Description"
 msgstr ""
 
-#: inc/customizer.php:48
+#: inc/customizer.php:55
 msgid "Logo Style"
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:69
 msgid "Navigation"
 msgstr ""
 
-#: inc/customizer.php:75
+#: inc/customizer.php:85
 msgid "Navigation Style"
 msgstr ""
 
-#: inc/customizer.php:82
+#: inc/customizer.php:92
 msgid "Navigation style applied to the primary menu."
 msgstr ""
 
-#: inc/customizer.php:88
+#: inc/customizer.php:97
 msgid "Header"
 msgstr ""
 
-#: inc/customizer.php:96
+#: inc/customizer.php:112
 msgid "Header Background Color"
 msgstr ""
 
-#: inc/customizer.php:106
+#: inc/customizer.php:131
 msgid "Header Text Color"
 msgstr ""
 
-#: inc/customizer.php:116
+#: inc/customizer.php:150
 msgid "Header Link Color"
 msgstr ""
 
-#: inc/customizer.php:126
+#: inc/customizer.php:169
 msgid "Header Link Hover Color"
 msgstr ""
 
-#: inc/customizer.php:135
+#: inc/customizer.php:186
 msgid "Add drop shadow to header elements"
 msgstr ""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:205
 msgid "Background Size"
 msgstr ""
 
-#: inc/customizer.php:158
+#: inc/customizer.php:208
 msgid "Auto"
 msgstr ""
 
-#: inc/customizer.php:159
+#: inc/customizer.php:209
 msgid "Cover"
 msgstr ""
 
-#: inc/customizer.php:160
+#: inc/customizer.php:210
 msgid "Contain"
 msgstr ""
 
-#: inc/customizer.php:161
+#: inc/customizer.php:211
 msgid "Initial"
 msgstr ""
 
-#: inc/customizer.php:162
+#: inc/customizer.php:212
 msgid "Inherit"
 msgstr ""
 
-#: inc/customizer.php:169
+#: inc/customizer.php:221
 msgid "Reading"
 msgstr ""
 
-#: inc/customizer.php:176
+#: inc/customizer.php:235
 msgid "Show Date Updated"
 msgstr ""
 
-#: inc/customizer.php:186
+#: inc/customizer.php:251
 msgid "Show custom fields below posts"
 msgstr ""
 
-#: inc/customizer.php:202
+#: inc/customizer.php:276
 msgid "Footer Top Text"
 msgstr ""
 
-#: inc/customizer.php:213
+#: inc/customizer.php:293
 msgid "Footer Bottom Text"
 msgstr ""
 
-#: inc/customizer.php:224
+#: inc/customizer.php:310
 msgid "Show WordPress and Theme Credits"
 msgstr ""
 
-#: inc/extras.php:120
+#: inc/extras.php:102
 msgid "Read More"
 msgstr ""
 
-#: inc/menu.php:7
+#: inc/menu.php:16
 msgid "Primary Navigation"
 msgstr ""
 
-#: inc/template-tags.php:22
+#: inc/template-tags.php:26
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:73, post-navigation.php:14
+#: inc/template-tags.php:85, post-navigation.php:14
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:76, post-navigation.php:17
+#: inc/template-tags.php:88, post-navigation.php:17
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span>%title"
 msgstr ""
 
-#: inc/template-tags.php:77, post-navigation.php:18
+#: inc/template-tags.php:89, post-navigation.php:18
 msgctxt "Next post link"
 msgid "%title<span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:98
+#: inc/template-tags.php:115
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:108
+#: inc/template-tags.php:130
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: inc/template-tags.php:114
+#: inc/template-tags.php:139
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:121
+#: inc/template-tags.php:147
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:171
-msgid "Posted on %1$s by %2$s"
+#: inc/template-tags.php:206
+msgid "Posted on %1$s by %2$s "
 msgstr ""
 
-#: inc/template-tags.php:189, inc/template-tags.php:192, inc/template-tags.php:250, inc/template-tags.php:256
+#: inc/template-tags.php:223, inc/template-tags.php:226, inc/template-tags.php:289, inc/template-tags.php:301
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:198
+#: inc/template-tags.php:233
 msgid "and tagged %2$s."
 msgstr ""
 
-#: inc/template-tags.php:206
+#: inc/template-tags.php:241
 msgid "in %1$s and tagged %2$s."
 msgstr ""
 
-#: inc/template-tags.php:208
+#: inc/template-tags.php:244
 msgid "in %1$s."
 msgstr ""
 
-#: inc/template-tags.php:228
-msgid "Last updated on %1$s by %2$s."
-msgstr ""
-
-#: inc/template-tags.php:252
-msgid "Posted in %1$s"
-msgstr ""
-
-#: inc/template-tags.php:258
-msgid "Tagged %1$s"
-msgstr ""
-
 #: inc/template-tags.php:264
+msgid "Last updated on %1$s by %2$s. "
+msgstr ""
+
+#: inc/template-tags.php:293
+msgid "Posted in "
+msgstr ""
+
+#: inc/template-tags.php:304
+msgid "Tagged "
+msgstr ""
+
+#: inc/template-tags.php:313
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:264
+#: inc/template-tags.php:313
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:264
+#: inc/template-tags.php:313
 msgid "% Comments"
 msgstr ""
 
-#: maintenance.php:21
+#: maintenance.php:25
 msgid "Site Under Maintenance"
 msgstr ""
 
-#: maintenance.php:25
+#: maintenance.php:29
 msgid "We're currently performing maintenance on this website. Please check back soon."
 msgstr ""
 
-#: search.php:15
+#: search.php:18
 msgid "Search Results for: %s"
 msgstr ""
