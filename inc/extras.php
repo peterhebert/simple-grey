@@ -120,3 +120,31 @@ function simple_grey_excerpt_more($more)
 	return '&hellip; <a class="read-more" href="'.get_permalink( get_the_ID() ).'">'.__( 'Read More', 'simple-grey' ).'</a>';
 }
 add_filter( 'excerpt_more', 'simple_grey_excerpt_more' );
+
+
+function simple_grey_basic_allowed_html() {
+
+	$allowed_tags = array(
+		'a' => array(
+			'class' => array(),
+			'href'  => array(),
+			'rel'   => array(),
+			'title' => array(),
+		),
+		'abbr' => array(
+			'title' => array(),
+		),
+		'b' => array(),
+		'em' => array(),
+		'i' => array(),
+		'span' => array(
+			'class' => array(),
+			'title' => array(),
+			'style' => array(),
+		),
+		'strike' => array(),
+		'strong' => array(),
+	);
+	
+	return $allowed_tags;
+}
