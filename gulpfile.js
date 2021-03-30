@@ -11,18 +11,9 @@ var gulp  = require('gulp'),
     sort = require('gulp-sort'),
     rtlcss = require('gulp-rtlcss');
 
-// Create a default task
-gulp.task('default', function() {
-  gulp.start('styles', 'icons', 'watch');
-});
-
-// Watch files for changes
-gulp.task('watch', function () {
-  gulp.watch('./scss/**/*.scss', gulp.parallel('sass', 'sass-rtl'));
-});
 
 // compile and minify SCSS to CSS
-gulp.task('sass', function () {
+function styles() {
   return gulp.src('./scss/**/*.scss')
     .pipe(sass({
       outputStyle: 'expanded'
@@ -35,10 +26,11 @@ gulp.task('sass', function () {
     .pipe(nano({ discardComments: { removeAll: true, discardEmpty: true } }))
     .pipe(rename({ suffix: '-min' })) // Append "-min" to the filename.
     .pipe(gulp.dest('./css')); // Output MINIMIZED stylesheets.
-});
+}
+exports.styles = styles;
 
 // compile and minify SCSS to rtl CSS
-gulp.task('sass-rtl', function () {
+function styles_rtl () {
   return gulp.src('./scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
@@ -48,29 +40,41 @@ gulp.task('sass-rtl', function () {
       suffix: '-rtl'
     }))
     .pipe(gulp.dest('./css'));
-});
-
+}
+exports.styles_rtl = styles_rtl;
 
 // copy icon fonts from node_modules dir
-gulp.task('icons', function() {
-
+function icons() {
    return gulp.src('./node_modules/fork-awesome/fonts/**/*')
           .pipe(gulp.dest('./fonts/'));
-
-});
+}
+exports.icons = icons;
 
 // generate .pot files for translation
-gulp.task('translation', function () {
-	return gulp.src('./**/*.php')
-		.pipe(sort())
-		.pipe(wpPot( {
-			domain: 'simple-grey',
-			destFile:'simple-grey.pot',
-			bugReport: 'https://github.com/peterhebert/simple-grey/issues',
-			lastTranslator: 'Peter Hebert <peter@peterhebert.com>',
+function translate() {
+  return gulp.src('./**/*.php')
+    .pipe(sort())
+    .pipe(wpPot( {
+      domain: 'simple-grey',
+      destFile:'simple-grey.pot',
+      bugReport: 'https://github.com/peterhebert/simple-grey/issues',
+      lastTranslator: 'Peter Hebert <peter@peterhebert.com>',
       headers: false
-		} ))
+    } ))
     .pipe(replace(/([0-9]{4}) simple-grey/, '$1 Peter Hebert'))
     .pipe(replace('same license as the simple-grey package', 'GNU General Public License v2 or later'))
-		.pipe(gulp.dest('languages'));
-});
+    .pipe(gulp.dest('languages'));
+
+}
+exports.translate = translate;
+
+// Watch files for changes
+const watchStyles = () => gulp.watch('./scss/**/*.scss', gulp.parallel(styles, styles_rtl) );
+
+// Create a default task
+const dev = gulp.series(
+  gulp.parallel(styles, styles_rtl, icons),
+  watchStyles
+);
+exports.default = dev;
+
