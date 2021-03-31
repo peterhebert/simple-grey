@@ -203,11 +203,11 @@ if ( ! function_exists( 'simple-grey_posted_on' ) ) :
 		echo '<span class="posted-on">';
 		printf(
 			// translators: 1. published date. 2. Author name.
-			esc_html__( 'Posted on %1$s by %2$s ', 'simple-grey' ),
+			wp_kses( __( 'Posted on %1$s by %2$s ', 'simple-grey' ), simple_grey_basic_allowed_html() ),
 			sprintf(
 				'<a href="%1$s" rel="bookmark">%2$s</a>',
 				esc_url( get_permalink() ),
-				esc_html( $time_published_string )
+				wp_kses( $time_published_string, simple_grey_basic_allowed_html() ),
 			),
 			sprintf(
 				'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
@@ -261,8 +261,8 @@ if ( ! function_exists( 'simple-grey_posted_on' ) ) :
 			echo '<span class="post-updated">';
 			printf(
 				// translators: 1. Updated date. 2. Updated author.
-				esc_html__( 'Last updated on %1$s by %2$s. ', 'simple-grey' ),
-				esc_html( $time_updated_string ),
+				wp_kses( __( 'Last updated on %1$s by %2$s ', 'simple-grey' ), simple_grey_basic_allowed_html() ),
+				wp_kses( $time_updated_string, simple_grey_basic_allowed_html() ),
 				sprintf(
 					'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 					esc_url( get_author_posts_url( get_the_modified_author_id() ) ),
