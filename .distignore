@@ -1,7 +1,8 @@
 node_modules
 scss
-.gulpfile
+gulpfile.js
 .gitignore
 .distignore
 package.json
 package.lock
+.git/
