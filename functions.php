@@ -125,7 +125,7 @@ if ( ! function_exists( 'get_theme_file_uri' ) ) {
  */
 function simple_grey_scripts() {
 	// phpcs:ignore.
-	wp_enqueue_style( 'simple-grey-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic', false );
+	wp_enqueue_style( 'simple-grey-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic', array(), date( 'U' ) );
 	wp_enqueue_style( 'dashicons' );
 
 	// load theme stylesheets.
