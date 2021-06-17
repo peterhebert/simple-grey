@@ -29,34 +29,18 @@ $footer_credits = get_theme_mod( 'simple_grey_show_footer_credits' );
 <!-- .widget-area -->
 <?php endif; ?>
 
-<?php if ( $footer_bottom || $footer_credits ) : ?>
+<?php if ( $footer_bottom || 1 === $footer_credits ) : ?>
 	<div class="footer-text">
 			<?php if ( $footer_bottom ) : ?>
 		<p><?php echo wp_kses( $footer_bottom, $basic_allowed ); ?></p>
 <?php endif; ?>
-			<?php if ( '' !== $footer_credits ) : ?>
+			<?php if ( 1 === $footer_credits ) : ?>
 				<?php
 				do_action( 'simple_grey_credits' );
 				?>
-	<p><i class="mv mv-wordpress icon-large"></i> <a href="http://wordpress.org/" rel="generator">
-				<?php
+	<p><i class="mv mv-wordpress icon-large"></i> <a href="http://wordpress.org/" rel="generator"><?php esc_html_e( 'Proudly powered by WordPress' ); ?></a>.
+				<?php esc_html_e( 'Theme', 'simple-grey' ); ?>: <a href="https://github.com/peterhebert/simple-grey"><?php esc_html_e( 'Simple Grey', 'simple-grey' ); ?></a>.
 
-				// translators: Theme name.
-				printf( esc_html__( 'Proudly powered by %s', 'simple-grey' ), 'WordPress' );
-				?>
-	</a>.
-				<?php
-				printf(
-					// translators: 1. theme name.
-					esc_html__( 'Theme: %1$s.', 'simple-grey' ),
-					sprintf(
-						// translators: 1. theme url. 2. Theme name.
-						esc_html__( '<a href="%1$s">%2$s</a>', 'simple-grey' ),
-						esc_url( 'https://github.com/peterhebert/simple-grey' ),
-						esc_html__( 'Simple Grey', 'simple-grey' )
-					)
-				);
-				?>
 </p>
 <?php endif; ?>
 </div>
