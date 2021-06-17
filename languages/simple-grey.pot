@@ -82,19 +82,11 @@ msgstr ""
 msgid "Continue reading &ldquo;%s&rdquo; <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: footer.php:45
-msgid "Proudly powered by %s"
+#: footer.php:42
+msgid "Theme"
 msgstr ""
 
-#: footer.php:51
-msgid "Theme: %1$s."
-msgstr ""
-
-#: footer.php:54
-msgid "<a href=\"%1$s\">%2$s</a>"
-msgstr ""
-
-#: footer.php:56
+#: footer.php:42
 msgid "Simple Grey"
 msgstr ""
 
@@ -106,7 +98,7 @@ msgstr ""
 msgid "Featured"
 msgstr ""
 
-#: functions.php:88, inc/customizer.php:262
+#: functions.php:88, inc/customizer.php:264
 msgid "Footer"
 msgstr ""
 
@@ -146,71 +138,71 @@ msgstr ""
 msgid "Header"
 msgstr ""
 
-#: inc/customizer.php:112
+#: inc/customizer.php:113
 msgid "Header Background Color"
 msgstr ""
 
-#: inc/customizer.php:131
+#: inc/customizer.php:133
 msgid "Header Text Color"
 msgstr ""
 
-#: inc/customizer.php:150
+#: inc/customizer.php:152
 msgid "Header Link Color"
 msgstr ""
 
-#: inc/customizer.php:169
+#: inc/customizer.php:171
 msgid "Header Link Hover Color"
 msgstr ""
 
-#: inc/customizer.php:186
+#: inc/customizer.php:188
 msgid "Add drop shadow to header elements"
 msgstr ""
 
-#: inc/customizer.php:205
+#: inc/customizer.php:207
 msgid "Background Size"
 msgstr ""
 
-#: inc/customizer.php:208
+#: inc/customizer.php:210
 msgid "Auto"
 msgstr ""
 
-#: inc/customizer.php:209
+#: inc/customizer.php:211
 msgid "Cover"
 msgstr ""
 
-#: inc/customizer.php:210
+#: inc/customizer.php:212
 msgid "Contain"
 msgstr ""
 
-#: inc/customizer.php:211
+#: inc/customizer.php:213
 msgid "Initial"
 msgstr ""
 
-#: inc/customizer.php:212
+#: inc/customizer.php:214
 msgid "Inherit"
 msgstr ""
 
-#: inc/customizer.php:221
+#: inc/customizer.php:223
 msgid "Reading"
 msgstr ""
 
-#: inc/customizer.php:235
+#: inc/customizer.php:237
 msgid "Show Date Updated"
 msgstr ""
 
-#: inc/customizer.php:251
+#: inc/customizer.php:253
 msgid "Show custom fields below posts"
 msgstr ""
 
-#: inc/customizer.php:276
+#: inc/customizer.php:278
 msgid "Footer Top Text"
 msgstr ""
 
-#: inc/customizer.php:293
+#: inc/customizer.php:294
 msgid "Footer Bottom Text"
 msgstr ""
 
-#: inc/customizer.php:310
+#: inc/customizer.php:311
 msgid "Show WordPress and Theme Credits"
 msgstr ""
 
@@ -278,7 +270,7 @@ msgid "in %1$s."
 msgstr ""
 
 #: inc/template-tags.php:264
-msgid "Last updated on %1$s by %2$s. "
+msgid "Last updated on %1$s by %2$s "
 msgstr ""
 
 #: inc/template-tags.php:293
