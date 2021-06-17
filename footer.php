@@ -38,10 +38,10 @@ $footer_credits = get_theme_mod( 'simple_grey_show_footer_credits' );
 				<?php
 				do_action( 'simple_grey_credits' );
 				?>
-	<p><i class="mv mv-wordpress icon-large"></i> <a href="http://wordpress.org/" rel="generator"><?php esc_html_e( 'Proudly powered by WordPress' ); ?></a>.
-				<?php esc_html_e( 'Theme', 'simple-grey' ); ?>: <a href="https://github.com/peterhebert/simple-grey"><?php esc_html_e( 'Simple Grey', 'simple-grey' ); ?></a>.
-
+	<p><i class="mv mv-wordpress icon-large"></i> <a href="<?php echo esc_url('http://wordpress.org/'); ?>" rel="generator"><?php esc_html_e( 'Proudly powered by WordPress', 'simple-grey' ); ?></a>. <?php esc_html_e( 'Theme', 'simple-grey' ); ?>: <a href="<?php echo esc_url('https://github.com/peterhebert/simple-grey'); ?>"><?php esc_html_e( 'Simple Grey', 'simple-grey' ); ?></a>.
 </p>
+
+
 <?php endif; ?>
 </div>
 <?php endif; ?>
