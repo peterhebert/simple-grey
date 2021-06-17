@@ -81,6 +81,10 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
+1.7.3
+- bug fixe: customizer styles not loading
+- bug fix: double escaped footer credits
+
 1.7.0
 - added customizer option to toggle display of custom fields / post meta at bottom of single posts
 - tested up to WordPress 5.7
