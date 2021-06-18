@@ -50,44 +50,20 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-aside.php:21, content-gallery.php:19, content-page.php:25, content-single.php:25, content.php:40
-msgid "Pages:"
+#: footer.php:39
+msgid "Theme: "
 msgstr ""
 
-#: content-aside.php:31, content-gallery.php:29, content-page.php:33, content-single.php:34, content.php:51, inc/template-tags.php:115, inc/template-tags.php:143, inc/template-tags.php:317
-msgid "Edit"
-msgstr ""
-
-#: content-none.php:15
-msgid "Nothing Found"
-msgstr ""
-
-#: content-none.php:25
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: content-none.php:40
-msgid "Sorry, but no content was found matching the %1$s <em>%2$s</em>. Perhaps searching can help."
-msgstr ""
-
-#: content-none.php:51
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-
-#: content-none.php:56
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: content.php:33
-msgid "Continue reading &ldquo;%s&rdquo; <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: footer.php:42
-msgid "Theme"
-msgstr ""
-
-#: footer.php:42
+#: footer.php:40
 msgid "Simple Grey"
+msgstr ""
+
+#: footer.php:42
+msgid "Theme development on GitHub"
+msgstr ""
+
+#: footer.php:47
+msgid "Proudly powered by WordPress"
 msgstr ""
 
 #: functions.php:65
@@ -236,6 +212,10 @@ msgstr ""
 msgid "Pingback:"
 msgstr ""
 
+#: inc/template-tags.php:115, inc/template-tags.php:143, partials/content-page.php:33, partials/content.php:51, partials/footer-entry-meta.php:23
+msgid "Edit"
+msgstr ""
+
 #: inc/template-tags.php:130
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
@@ -249,48 +229,28 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:206
+#: inc/template-tags.php:195
 msgid "Posted on %1$s by %2$s "
 msgstr ""
 
-#: inc/template-tags.php:223, inc/template-tags.php:226, inc/template-tags.php:289, inc/template-tags.php:301
-msgid ", "
-msgstr ""
-
-#: inc/template-tags.php:233
-msgid "and tagged %2$s."
-msgstr ""
-
-#: inc/template-tags.php:241
-msgid "in %1$s and tagged %2$s."
-msgstr ""
-
-#: inc/template-tags.php:244
-msgid "in %1$s."
-msgstr ""
-
-#: inc/template-tags.php:264
+#: inc/template-tags.php:238
 msgid "Last updated on %1$s by %2$s "
 msgstr ""
 
-#: inc/template-tags.php:293
-msgid "Posted in "
+#: inc/template-tags.php:265, inc/template-tags.php:268
+msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:304
-msgid "Tagged "
+#: inc/template-tags.php:275
+msgid "and tagged %2$s."
 msgstr ""
 
-#: inc/template-tags.php:313
-msgid "Leave a comment"
+#: inc/template-tags.php:285
+msgid "in %1$s and tagged %2$s."
 msgstr ""
 
-#: inc/template-tags.php:313
-msgid "1 Comment"
-msgstr ""
-
-#: inc/template-tags.php:313
-msgid "% Comments"
+#: inc/template-tags.php:288
+msgid "in %1$s."
 msgstr ""
 
 #: maintenance.php:25
@@ -299,6 +259,46 @@ msgstr ""
 
 #: maintenance.php:29
 msgid "We're currently performing maintenance on this website. Please check back soon."
+msgstr ""
+
+#: partials/content-aside.php:21, partials/content-gallery.php:19, partials/content-page.php:25, partials/content-single.php:25, partials/content.php:40
+msgid "Pages:"
+msgstr ""
+
+#: partials/content-none.php:15
+msgid "Nothing Found"
+msgstr ""
+
+#: partials/content-none.php:25
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: partials/content-none.php:40
+msgid "Sorry, but no content was found matching the %1$s <em>%2$s</em>. Perhaps searching can help."
+msgstr ""
+
+#: partials/content-none.php:51
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: partials/content-none.php:56
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: partials/content.php:33
+msgid "Continue reading &ldquo;%s&rdquo; <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: partials/footer-entry-meta.php:19
+msgid "Leave a comment"
+msgstr ""
+
+#: partials/footer-entry-meta.php:19
+msgid "1 Comment"
+msgstr ""
+
+#: partials/footer-entry-meta.php:19
+msgid "% Comments"
 msgstr ""
 
 #: search.php:18

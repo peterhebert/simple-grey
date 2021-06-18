@@ -78,3 +78,7 @@ const dev = gulp.series(
 );
 exports.default = dev;
 
+exports.build = gulp.series(
+  gulp.parallel( styles, styles_rtl, icons  ),
+  translate
+);
