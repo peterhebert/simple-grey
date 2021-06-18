@@ -81,6 +81,20 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
+1.7.4
+* move content templates to partials
+* split simple_grey_posted_on() into three template tags:
+    * simple_grey_posted_on()
+    * simple_grey_post_updated()
+    * simple_grey_post_taxonomy()
+* make partial for content enty meta footer
+* create prod build task in gulp
+* update translation template
+* fix footer widgets area to 4 columns with clearfix
+* make link icons span screen reader only
+* center calendar widget nav for prev/next month
+* updated compiled css
+
 1.7.3
 - bug fix: customizer styles not loading
 - bug fix: double escaped footer credits
