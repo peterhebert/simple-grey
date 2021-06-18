@@ -82,7 +82,7 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 ## Changelog
 
 1.7.3
-- bug fixe: customizer styles not loading
+- bug fix: customizer styles not loading
 - bug fix: double escaped footer credits
 
 1.7.0

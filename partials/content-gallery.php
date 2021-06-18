@@ -24,8 +24,6 @@
 	<?php get_template_part( 'partials/meta' ); ?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-meta">
-		<?php simple_grey_posted_on(); ?>
-		<?php edit_post_link( __( 'Edit', 'simple-grey' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta -->
+	<?php get_template_part( 'partials/footer', 'entry-meta' ); ?>
+
 </article><!-- #post-## -->

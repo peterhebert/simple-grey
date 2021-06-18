@@ -173,7 +173,7 @@ if ( ! function_exists( 'simple_grey_comment' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'simple-grey_posted_on' ) ) :
+if ( ! function_exists( 'simple_grey_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time, author and taxonomy.
 	 *
@@ -187,17 +187,6 @@ if ( ! function_exists( 'simple-grey_posted_on' ) ) :
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() )
 		);
-
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_updated_string = '<time class="updated" datetime="%1$s">%2$s</time>';
-
-			$time_updated_string = sprintf(
-				$time_updated_string,
-				esc_attr( get_the_modified_date( 'c' ) ),
-				esc_html( get_the_modified_date() )
-			);
-
-		}
 
 		/* print posted date and time */
 		echo '<span class="posted-on">';
@@ -215,6 +204,59 @@ if ( ! function_exists( 'simple-grey_posted_on' ) ) :
 				esc_html( get_the_author() )
 			)
 		);
+		echo "</span>\r";
+
+
+	}
+endif;
+
+if ( ! function_exists( 'simple_grey_post_updated' ) ) :
+
+	/**
+	 * Prints HTML with meta information for the current post-date/time, author and taxonomy.
+	 *
+	 * @return void
+	 */
+    function simple_grey_post_updated() {
+
+        if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_updated_string = '<time class="updated" datetime="%1$s">%2$s</time>';
+
+			$time_updated_string = sprintf(
+				$time_updated_string,
+				esc_attr( get_the_modified_date( 'c' ) ),
+				esc_html( get_the_modified_date() )
+			);
+
+		}
+
+		// print updated time and date.
+		if ( isset( $time_updated_string ) && 1 === get_theme_mod( 'simple_grey_show_updated' ) ) {
+			echo '<span class="post-updated">';
+			printf(
+				// translators: 1. Updated date. 2. Updated author.
+				wp_kses( __( 'Last updated on %1$s by %2$s ', 'simple-grey' ), simple_grey_basic_allowed_html() ),
+				wp_kses( $time_updated_string, simple_grey_basic_allowed_html() ),
+				sprintf(
+					'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
+					esc_url( get_author_posts_url( get_the_modified_author_id() ) ),
+					esc_html( get_the_modified_author() )
+				)
+			);
+			echo "</span>\r";
+		}
+
+    }
+
+endif;
+
+if ( ! function_exists( 'simple_grey_post_taxonomy' ) ) :
+	/**
+	 * Prints categories and terms associated with post.
+	 *
+	 * @return void
+	 */
+	function simple_grey_post_taxonomy() {
 
 		// taxonomy.
 		$category_list = simple_grey_get_the_category_list( get_the_ID() );
@@ -234,7 +276,9 @@ if ( ! function_exists( 'simple-grey_posted_on' ) ) :
 			} else {
 				$meta_text = '';
 			}
+
 		} else {
+
 			// But this post has categories so we should probably display them here.
 			if ( '' !== $tag_list ) {
 				// translators: 1. category. 2. tags.
@@ -243,7 +287,9 @@ if ( ! function_exists( 'simple-grey_posted_on' ) ) :
 				// translators: category.
 				$meta_text = __( 'in %1$s.', 'simple-grey' );
 			}
-		} // end check for categories on this blog.
+
+		} 
+		// end check for categories on this blog.
 
 		if ( '' !== $meta_text && 'post' === get_post_type() ) :
 			echo ' <span class="post-taxonomy">';
@@ -254,67 +300,7 @@ if ( ! function_exists( 'simple-grey_posted_on' ) ) :
 			);
 			echo '</span>';
 		endif;
-		echo "</span>\r";
 
-		// print updated time and date.
-		if ( isset( $time_updated_string ) && 1 === get_theme_mod( 'simple_grey_show_updated' ) ) {
-			echo '<span class="post-updated">';
-			printf(
-				// translators: 1. Updated date. 2. Updated author.
-				wp_kses( __( 'Last updated on %1$s by %2$s ', 'simple-grey' ), simple_grey_basic_allowed_html() ),
-				wp_kses( $time_updated_string, simple_grey_basic_allowed_html() ),
-				sprintf(
-					'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-					esc_url( get_author_posts_url( get_the_modified_author_id() ) ),
-					esc_html( get_the_modified_author() )
-				)
-			);
-			echo "</span>\r";
-		}
-
-	}
-endif;
-
-if ( ! function_exists( 'simple_grey_entry_footer' ) ) :
-	/**
-	 * Prints HTML with meta information for the categories, tags and comments.
-	 */
-	function simple_grey_entry_footer() {
-
-		$basic_html = simple_grey_basic_allowed_html();
-
-		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( __( ', ', 'simple-grey' ) );
-			if ( $categories_list && simple_grey_categorized_blog() ) {
-
-				echo wp_kses( '<span class="cat-links">', $basic_html );
-				echo esc_html( __( 'Posted in ', 'simple-grey' ) );
-
-				// translators: list of categories on post.
-				printf( wp_kses( $categories_list, wp_kses_allowed_html( 'post' ) ) );
-				echo wp_kses( '</span>', $basic_html );
-			}
-
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', __( ', ', 'simple-grey' ) );
-			if ( $tags_list ) {
-				echo wp_kses( '<span class="tags-links">', $basic_html );
-				echo esc_html( __( 'Tagged ', 'simple-grey' ) );
-				// translators: list of tags on post.
-				printf( wp_kses( $tags_list, wp_kses_allowed_html( 'post' ) ) );
-				echo wp_kses( '</span>', $basic_html );
-			}
-		}
-
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link( __( 'Leave a comment', 'simple-grey' ), __( '1 Comment', 'simple-grey' ), __( '% Comments', 'simple-grey' ) );
-			echo '</span>';
-		}
-
-		edit_post_link( __( 'Edit', 'simple-grey' ), '<span class="edit-link">', '</span>' );
 	}
 endif;
 
@@ -366,3 +352,5 @@ function simple_grey_category_transient_flusher() {
 }
 add_action( 'edit_category', 'simple_grey_category_transient_flusher' );
 add_action( 'save_post', 'simple_grey_category_transient_flusher' );
+
+

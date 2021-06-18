@@ -19,7 +19,7 @@ get_header(); ?>
 			while ( have_posts() ) :
 				the_post();
 				?>
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php get_template_part( 'partials/content', 'page' ); ?>
 				<?php get_template_part( 'partials/meta' ); ?>
 				<?php
 				// If comments are open or we have at least one comment, load up the comment template.
@@ -29,7 +29,7 @@ get_header(); ?>
 				?>
 		<?php endwhile; ?>
 		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'partials/content', 'none' ); ?>
 		<?php endif; ?>
 	</main>
 	<?php get_sidebar(); ?>

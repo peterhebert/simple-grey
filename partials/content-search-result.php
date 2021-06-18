@@ -24,7 +24,6 @@
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer">
-		<?php simple_grey_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php get_template_part( 'partials/entry', 'footer' ); ?>
+
 </article><!-- #post-## -->
