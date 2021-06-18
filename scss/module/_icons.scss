@@ -20,20 +20,14 @@
             color: $col-link-hover;
         }
         span {
-            display: none;
+            @include sr-only;
+            @include sr-only-focusable;
         }
     }
 }
 
 .widget.icons {
     text-align: center;
-}
-
-.site-footer .widget.icon {
-    .mv, .fa, .dashicons {
-        font-size: 150%;
-        vertical-align: middle;
-    }
 }
 
 .dashicon-scalable {

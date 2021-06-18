@@ -4588,16 +4588,31 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .icons a.mv span, .glyph-demo ul a.mv span,
 .icons a.fa span,
 .glyph-demo ul a.fa span {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.icons a.mv span:active, .glyph-demo ul a.mv span:active, .icons a.mv span:focus, .glyph-demo ul a.mv span:focus,
+.icons a.fa span:active,
+.glyph-demo ul a.fa span:active,
+.icons a.fa span:focus,
+.glyph-demo ul a.fa span:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 
 .widget.icons, .glyph-demo ul.widget {
   text-align: center;
-}
-
-.site-footer .widget.icon .mv, .site-footer .widget.icon .fa, .site-footer .widget.icon .dashicons {
-  font-size: 150%;
-  vertical-align: middle;
 }
 
 .dashicon-scalable {

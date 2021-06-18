@@ -1498,14 +1498,6 @@ body {
 }
 
 #footer .footer-text {
-  position: relative;
-  float: left;
-  width: 100%;
-  min-height: 1px;
-  padding-left: 16px;
-  padding-left: 1rem;
-  padding-right: 16px;
-  padding-right: 1rem;
   margin-top: 1.125em;
   margin-bottom: 1.5em;
   text-align: center;
@@ -1515,32 +1507,36 @@ body {
   margin-bottom: 0;
 }
 
-#footer .widget-area,
 #footer .footer-credits {
+  text-align: center;
+  font-size: .875em;
   margin-top: 1.5em;
 }
 
-#footer .widget .widget-title {
-  font-size: 1.5em;
-  line-height: 1em;
-  margin: 0 0 1em;
+#footer ul li {
+  line-height: 1.75;
 }
 
-@media screen and (max-width: 24em) {
-  #footer .widget {
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 16px;
-    padding-left: 1rem;
-    padding-right: 16px;
-    padding-right: 1rem;
-  }
+#footer .mv, #footer .fa, #footer .dashicons {
+  font-size: 150%;
+  vertical-align: middle;
+}
+
+.site-footer .widget-area {
+  margin-top: 1.125em;
+  margin-bottom: 1.5em;
+  margin: 0 -16px;
+  margin: 0 -1rem;
+}
+
+.site-footer .widget-area::after {
+  display: block;
+  clear: both;
+  content: "";
 }
 
 @media only screen and (min-width: 24em) and (max-width: 48em) {
-  #footer .widget {
+  .site-footer .widget-area .widget {
     position: relative;
     float: left;
     width: 50%;
@@ -1550,13 +1546,13 @@ body {
     padding-right: 16px;
     padding-right: 1rem;
   }
-  #footer .widget:nth-of-type(2n+1) {
+  .site-footer .widget-area .widget:nth-of-type(2n+1) {
     clear: left;
   }
 }
 
-@media only screen and (min-width: 48em) {
-  #footer .widget {
+@media only screen and (min-width: 48em) and (max-width: 75em) {
+  .site-footer .widget-area .widget {
     position: relative;
     float: left;
     width: 33.33333%;
@@ -1566,13 +1562,31 @@ body {
     padding-right: 16px;
     padding-right: 1rem;
   }
-  #footer .widget:nth-of-type(3n+1) {
+  .site-footer .widget-area .widget:nth-of-type(3n+1) {
     clear: left;
   }
 }
 
-#footer ul li {
-  line-height: 1.75;
+@media only screen and (min-width: 75em) {
+  .site-footer .widget-area .widget {
+    position: relative;
+    float: left;
+    width: 25%;
+    min-height: 1px;
+    padding-left: 16px;
+    padding-left: 1rem;
+    padding-right: 16px;
+    padding-right: 1rem;
+  }
+  .site-footer .widget-area .widget:nth-of-type(4n+1) {
+    clear: left;
+  }
+}
+
+.site-footer .widget-area .widget .widget-title {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin: 0 0 1em;
 }
 
 /* main navigation menu */
@@ -1703,7 +1717,7 @@ body {
   max-width: 100%;
 }
 
-.widget .icons, .widget #footer .widget, #footer .widget .widget, .widget .glyph-demo ul, .glyph-demo .widget ul {
+.widget .icons, .widget .glyph-demo ul, .glyph-demo .widget ul {
   text-align: center;
 }
 
@@ -1728,6 +1742,10 @@ body {
 
 .widget_calendar table caption {
   margin-bottom: 0.714285714em;
+}
+
+.widget_calendar .wp-calendar-nav {
+  text-align: center;
 }
 
 .widget_search input.search-field {
@@ -5944,46 +5962,57 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   vertical-align: top;
 }
 
-.icons .mv, #footer .widget .mv, .glyph-demo ul .mv, .icons .fa, #footer .widget .fa, .glyph-demo ul .fa, .icons .dashicons, #footer .widget .dashicons, .glyph-demo ul .dashicons {
+.icons .mv, .glyph-demo ul .mv, .icons .fa, .glyph-demo ul .fa, .icons .dashicons, .glyph-demo ul .dashicons {
   color: #333333;
 }
 
-.icons a.mv, #footer .widget a.mv, .glyph-demo ul a.mv,
+.icons a.mv, .glyph-demo ul a.mv,
 .icons a.fa,
-#footer .widget a.fa,
 .glyph-demo ul a.fa {
   color: #333333;
   text-decoration: none;
 }
 
-.icons a.mv:visited, #footer .widget a.mv:visited, .glyph-demo ul a.mv:visited,
+.icons a.mv:visited, .glyph-demo ul a.mv:visited,
 .icons a.fa:visited,
-#footer .widget a.fa:visited,
 .glyph-demo ul a.fa:visited {
   color: #333333;
 }
 
-.icons a.mv:hover, #footer .widget a.mv:hover, .glyph-demo ul a.mv:hover,
+.icons a.mv:hover, .glyph-demo ul a.mv:hover,
 .icons a.fa:hover,
-#footer .widget a.fa:hover,
 .glyph-demo ul a.fa:hover {
   color: #cc0000;
 }
 
-.icons a.mv span, #footer .widget a.mv span, .glyph-demo ul a.mv span,
+.icons a.mv span, .glyph-demo ul a.mv span,
 .icons a.fa span,
-#footer .widget a.fa span,
 .glyph-demo ul a.fa span {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
-.widget.icons, #footer .widget, .glyph-demo ul.widget {
+.icons a.mv span:active, .glyph-demo ul a.mv span:active, .icons a.mv span:focus, .glyph-demo ul a.mv span:focus,
+.icons a.fa span:active,
+.glyph-demo ul a.fa span:active,
+.icons a.fa span:focus,
+.glyph-demo ul a.fa span:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+.widget.icons, .glyph-demo ul.widget {
   text-align: center;
-}
-
-.site-footer .widget.icon .mv, .site-footer .widget.icon .fa, .site-footer .widget.icon .dashicons {
-  font-size: 150%;
-  vertical-align: middle;
 }
 
 .dashicon-scalable {
