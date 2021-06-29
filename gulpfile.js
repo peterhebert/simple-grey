@@ -1,6 +1,6 @@
 // Grab our gulp packages
 var gulp  = require('gulp'),
-    sass = require('gulp-sass'),
+    sass = require('gulp-sass')(require('sass')),
     autoprefixer = require('gulp-autoprefixer'),
     nano = require('gulp-cssnano'),
     concat = require('gulp-concat'),
@@ -10,7 +10,6 @@ var gulp  = require('gulp'),
     wpPot = require('gulp-wp-pot'),
     sort = require('gulp-sort'),
     rtlcss = require('gulp-rtlcss');
-
 
 // compile and minify SCSS to CSS
 function styles() {
