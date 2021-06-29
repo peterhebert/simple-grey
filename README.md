@@ -81,6 +81,10 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
+1.7.5
+* show meta fields below the_content() as per customizer instructions
+* fix to [issue 18](https://github.com/peterhebert/simple-grey/issues/18) - double escaped post navigation
+
 1.7.4
 * move content templates to partials
 * split simple_grey_posted_on() into three template tags:

@@ -1,7 +1,7 @@
 {
   "name": "simple-grey",
-  "version": "1.6.1",
   "description": "A responsive WordPress theme with a simple grey color palette. Clean and simple, this theme is optimized for legibility. It is well suited to blogs and portfolio sites.",
+  "version": "1.7.5",
   "main": "gulpfile.js",
   "engines": {
     "node": ">= 0.10.0"
