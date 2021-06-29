@@ -34,6 +34,9 @@
 					get_the_title()
 				)
 			);
+			
+			get_template_part( 'partials/meta' );
+			
 
 			wp_link_pages(
 				array(

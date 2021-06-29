@@ -16,9 +16,9 @@
 <a href="<?php the_post_thumbnail_url( 'full' ); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
 </div><!-- .post-thumbnail -->
 	<?php } ?>
-	<?php get_template_part( 'partials/meta' ); ?>
 	<div class="entry-content">
 		<?php the_content(); ?>
+		<?php get_template_part( 'partials/meta' ); ?>
 		<?php
 		wp_link_pages(
 			array(
