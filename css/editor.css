@@ -146,9 +146,9 @@ select {
 }
 
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+html input[type=button],
+input[type=reset],
+input[type=submit] {
   -webkit-appearance: button;
   cursor: pointer;
 }
@@ -168,24 +168,24 @@ input {
   line-height: normal;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type=checkbox],
+input[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-input[type="search"] {
+input[type=search] {
   -webkit-appearance: textfield;
   box-sizing: content-box;
 }
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -257,12 +257,12 @@ body {
   width: 1px;
   height: 1px;
   padding: 0;
+  margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
 }
-
 .screen-reader-text:active, .screen-reader-text:focus {
   position: static;
   width: auto;
@@ -318,8 +318,8 @@ h6 {
 
 h1 {
   font-size: 2.25em;
-  line-height: 1.33333em;
-  margin: 0 0 0.66667em;
+  line-height: 1.3333333333em;
+  margin: 0 0 0.6666666667em;
 }
 
 h2 {
@@ -330,8 +330,8 @@ h2 {
 
 h3 {
   font-size: 1.75em;
-  line-height: 1.71429em;
-  margin: 0 0 0.85714em;
+  line-height: 1.7142857143em;
+  margin: 0 0 0.8571428571em;
 }
 
 h4 {
@@ -348,8 +348,8 @@ h5 {
 
 h6 {
   font-size: 1.125em;
-  line-height: 1.33333em;
-  margin: 0 0 1.33333em;
+  line-height: 1.3333333333em;
+  margin: 0 0 1.3333333333em;
 }
 
 p,
@@ -450,7 +450,7 @@ textarea {
 }
 
 legend {
-  *margin-left: -.75em;
+  *margin-left: -0.75em;
 }
 
 button,
@@ -469,24 +469,24 @@ input {
 }
 
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+input[type=button],
+input[type=reset],
+input[type=submit] {
   cursor: pointer;
   -webkit-appearance: button;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type=checkbox],
+input[type=radio] {
   box-sizing: border-box;
 }
 
-input[type="search"] {
+input[type=search] {
   -webkit-appearance: textfield;
   box-sizing: content-box;
 }
 
-input[type="search"]::-webkit-search-decoration {
+input[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -503,12 +503,12 @@ blockquote {
 
 blockquote:before,
 blockquote:after {
-  content: '';
+  content: "";
   content: none;
 }
 
 q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: "“" "”" "‘" "’";
 }
 
 q:before {
@@ -520,7 +520,7 @@ q:after {
 }
 
 cite:before {
-  content: "\2014 ";
+  content: "—";
 }
 
 blockquote,
@@ -559,25 +559,20 @@ a {
   text-decoration: none;
   color: #0066cc;
 }
-
 a:link {
   color: #0066cc;
 }
-
 a:visited {
   color: #004d99;
 }
-
 a:hover, a:link:hover {
   color: #cc0000;
   text-decoration: underline;
 }
-
 a:focus {
   outline: thin dotted;
   color: #cc0000;
 }
-
 a:active {
   color: #660000;
 }
@@ -619,12 +614,10 @@ figure {
   padding: 0;
   overflow: hidden;
 }
-
 .embed-responsive::before, .responsive-embed::before {
   display: block;
   content: "";
 }
-
 .embed-responsive .embed-responsive-item, .responsive-embed .embed-responsive-item,
 .embed-responsive iframe,
 .responsive-embed iframe,
@@ -644,7 +637,7 @@ figure {
 }
 
 .embed-responsive-21by9::before {
-  padding-top: 42.85714%;
+  padding-top: 42.8571428571%;
 }
 
 .embed-responsive-16by9::before, .responsive-embed::before {
@@ -680,16 +673,17 @@ figure {
     max-width: 48%;
     height: auto;
   }
+
   .image-left {
     float: left;
     margin-right: 1rem;
   }
+
   .image-right {
     float: right;
     margin-left: 1rem;
   }
 }
-
 /*!
 Fork Awesome 1.1.7
 License - https://forkaweso.me/Fork-Awesome/license
@@ -711,7 +705,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   font-weight: normal;
   font-style: normal;
 }
-
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 ForkAwesome;
@@ -723,7 +716,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 /* makes the font 33% larger relative to the icon container */
 .fa-lg {
-  font-size: 1.33333em;
+  font-size: 1.3333333333em;
   line-height: 0.75em;
   vertical-align: -15%;
 }
@@ -745,36 +738,34 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .fa-fw {
-  width: 1.28571em;
+  width: 1.2857142857em;
   text-align: center;
 }
 
 .fa-ul {
   padding-left: 0;
-  margin-left: 2.14286em;
+  margin-left: 2.1428571429em;
   list-style-type: none;
 }
-
 .fa-ul > li {
   position: relative;
 }
 
 .fa-li {
   position: absolute;
-  left: -2.14286em;
-  width: 2.14286em;
-  top: 0.14286em;
+  left: -2.1428571429em;
+  width: 2.1428571429em;
+  top: 0.1428571429em;
   text-align: center;
 }
-
 .fa-li.fa-lg {
-  left: -1.85714em;
+  left: -1.8571428571em;
 }
 
 .fa-border {
-  padding: .2em .25em .15em;
+  padding: 0.2em 0.25em 0.15em;
   border: solid 0.08em #eee;
-  border-radius: .1em;
+  border-radius: 0.1em;
 }
 
 .fa-pull-left {
@@ -786,11 +777,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .fa.fa-pull-left {
-  margin-right: .3em;
+  margin-right: 0.3em;
 }
-
 .fa.fa-pull-right {
-  margin-left: .3em;
+  margin-left: 0.3em;
 }
 
 /* Deprecated as of 4.4.0 */
@@ -803,11 +793,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .fa.pull-left {
-  margin-right: .3em;
+  margin-right: 0.3em;
 }
-
 .fa.pull-right {
-  margin-left: .3em;
+  margin-left: 0.3em;
 }
 
 .fa-spin {
@@ -817,7 +806,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .fa-pulse {
   animation: fa-spin 1s infinite steps(8);
 }
-
 @keyframes fa-spin {
   0% {
     transform: rotate(0deg);
@@ -826,7 +814,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     transform: rotate(359deg);
   }
 }
-
 .fa-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   transform: rotate(90deg);
@@ -4020,15 +4007,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 /* MoreVectors icon font */
 @font-face {
-  font-family: 'morevectors';
+  font-family: "morevectors";
   src: url("../fonts/morevectors.eot");
   src: url("../fonts/morevectors.eot?#iefix") format("embedded-opentype"), url("../fonts/morevectors.ttf") format("truetype"), url("../fonts/morevectors.woff") format("woff"), url("../fonts/morevectors.svg#morevectors") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-
 .mv {
-  font-family: 'morevectors';
+  font-family: "morevectors";
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -4041,519 +4027,519 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .mv-aim:before {
-  content: "\e600";
+  content: "";
 }
 
 .mv-amazon:before {
-  content: "\e601";
+  content: "";
 }
 
 .mv-android:before {
-  content: "\e602";
+  content: "";
 }
 
 .mv-apple:before {
-  content: "\e603";
+  content: "";
 }
 
 .mv-apple-app-store:before {
-  content: "\e604";
+  content: "";
 }
 
 .mv-avatar:before {
-  content: "\e605";
+  content: "";
 }
 
 .mv-aws:before {
-  content: "\e606";
+  content: "";
 }
 
 .mv-badoo:before {
-  content: "\e607";
+  content: "";
 }
 
 .mv-basecamp:before {
-  content: "\e608";
+  content: "";
 }
 
 .mv-bazaar:before {
-  content: "\e609";
+  content: "";
 }
 
 .mv-behance:before {
-  content: "\e60a";
+  content: "";
 }
 
 .mv-bing:before {
-  content: "\e60b";
+  content: "";
 }
 
 .mv-bitbucket:before {
-  content: "\e60c";
+  content: "";
 }
 
 .mv-bitcoin:before {
-  content: "\e60d";
+  content: "";
 }
 
 .mv-blackberry:before {
-  content: "\e60e";
+  content: "";
 }
 
 .mv-blip:before {
-  content: "\e60f";
+  content: "";
 }
 
 .mv-blogger:before {
-  content: "\e610";
+  content: "";
 }
 
 .mv-cc:before {
-  content: "\e611";
+  content: "";
 }
 
 .mv-cc-by:before {
-  content: "\e612";
+  content: "";
 }
 
 .mv-cc-nc:before {
-  content: "\e613";
+  content: "";
 }
 
 .mv-cc-nc-eu:before {
-  content: "\e614";
+  content: "";
 }
 
 .mv-cc-nc-jp:before {
-  content: "\e615";
+  content: "";
 }
 
 .mv-cc-nd:before {
-  content: "\e616";
+  content: "";
 }
 
 .mv-cc-pd:before {
-  content: "\e617";
+  content: "";
 }
 
 .mv-cc-remix:before {
-  content: "\e618";
+  content: "";
 }
 
 .mv-cc-sa:before {
-  content: "\e619";
+  content: "";
 }
 
 .mv-cc-sampling:before {
-  content: "\e61a";
+  content: "";
 }
 
 .mv-cc-sampling-plus:before {
-  content: "\e61b";
+  content: "";
 }
 
 .mv-cc-share:before {
-  content: "\e61c";
+  content: "";
 }
 
 .mv-cc-zero:before {
-  content: "\e61d";
+  content: "";
 }
 
 .mv-coroflot:before {
-  content: "\e61e";
+  content: "";
 }
 
 .mv-css3:before {
-  content: "\e61f";
+  content: "";
 }
 
 .mv-delicious:before {
-  content: "\e620";
+  content: "";
 }
 
 .mv-designmoo:before {
-  content: "\e621";
+  content: "";
 }
 
 .mv-deviantart:before {
-  content: "\e622";
+  content: "";
 }
 
 .mv-digg:before {
-  content: "\e623";
+  content: "";
 }
 
 .mv-digg-alt:before {
-  content: "\e624";
+  content: "";
 }
 
 .mv-dribble:before {
-  content: "\e625";
+  content: "";
 }
 
 .mv-dropbox:before {
-  content: "\e626";
+  content: "";
 }
 
 .mv-drupal:before {
-  content: "\e627";
+  content: "";
 }
 
 .mv-ebay:before {
-  content: "\e628";
+  content: "";
 }
 
 .mv-ember:before {
-  content: "\e629";
+  content: "";
 }
 
 .mv-envelope:before {
-  content: "\e62a";
+  content: "";
 }
 
 .mv-etsy:before {
-  content: "\e62b";
+  content: "";
 }
 
 .mv-evernote:before {
-  content: "\e62c";
+  content: "";
 }
 
 .mv-facebook:before {
-  content: "\e62d";
+  content: "";
 }
 
 .mv-facebook-places:before {
-  content: "\e62e";
+  content: "";
 }
 
 .mv-feedburner:before {
-  content: "\e62f";
+  content: "";
 }
 
 .mv-flickr:before {
-  content: "\e630";
+  content: "";
 }
 
 .mv-forrst:before {
-  content: "\e631";
+  content: "";
 }
 
 .mv-foursquare:before {
-  content: "\e632";
+  content: "";
 }
 
 .mv-git:before {
-  content: "\e633";
+  content: "";
 }
 
 .mv-github:before {
-  content: "\e634";
+  content: "";
 }
 
 .mv-gnome:before {
-  content: "\e635";
+  content: "";
 }
 
 .mv-google:before {
-  content: "\e636";
+  content: "";
 }
 
 .mv-google-hangouts:before {
-  content: "\e637";
+  content: "";
 }
 
 .mv-google-play:before {
-  content: "\e638";
+  content: "";
 }
 
 .mv-google-plus:before {
-  content: "\e639";
+  content: "";
 }
 
 .mv-grooveshark:before {
-  content: "\e63a";
+  content: "";
 }
 
 .mv-html5:before {
-  content: "\e63b";
+  content: "";
 }
 
 .mv-hype-machine:before {
-  content: "\e63c";
+  content: "";
 }
 
 .mv-hyves:before {
-  content: "\e63d";
+  content: "";
 }
 
 .mv-icloud:before {
-  content: "\e63e";
+  content: "";
 }
 
 .mv-icq:before {
-  content: "\e63f";
+  content: "";
 }
 
 .mv-identica:before {
-  content: "\e640";
+  content: "";
 }
 
 .mv-instagram:before {
-  content: "\e641";
+  content: "";
 }
 
 .mv-instapaper:before {
-  content: "\e642";
+  content: "";
 }
 
 .mv-itunes:before {
-  content: "\e643";
+  content: "";
 }
 
 .mv-joomla:before {
-  content: "\e644";
+  content: "";
 }
 
 .mv-kde:before {
-  content: "\e645";
+  content: "";
 }
 
 .mv-lastfm:before {
-  content: "\e646";
+  content: "";
 }
 
 .mv-launchpad:before {
-  content: "\e647";
+  content: "";
 }
 
 .mv-linkedin:before {
-  content: "\e648";
+  content: "";
 }
 
 .mv-linux:before {
-  content: "\e649";
+  content: "";
 }
 
 .mv-livejournal:before {
-  content: "\e64a";
+  content: "";
 }
 
 .mv-mercurial:before {
-  content: "\e64b";
+  content: "";
 }
 
 .mv-metacafe:before {
-  content: "\e64c";
+  content: "";
 }
 
 .mv-myspace:before {
-  content: "\e64d";
+  content: "";
 }
 
 .mv-newsvine:before {
-  content: "\e64e";
+  content: "";
 }
 
 .mv-openid:before {
-  content: "\e64f";
+  content: "";
 }
 
 .mv-orkut:before {
-  content: "\e650";
+  content: "";
 }
 
 .mv-paypal:before {
-  content: "\e651";
+  content: "";
 }
 
 .mv-phone:before {
-  content: "\e652";
+  content: "";
 }
 
 .mv-photobucket:before {
-  content: "\e653";
+  content: "";
 }
 
 .mv-picasa:before {
-  content: "\e654";
+  content: "";
 }
 
 .mv-pinterest:before {
-  content: "\e655";
+  content: "";
 }
 
 .mv-podcast:before {
-  content: "\e656";
+  content: "";
 }
 
 .mv-quik:before {
-  content: "\e657";
+  content: "";
 }
 
 .mv-rdio:before {
-  content: "\e658";
+  content: "";
 }
 
 .mv-reddit:before {
-  content: "\e659";
+  content: "";
 }
 
 .mv-retweet:before {
-  content: "\e65a";
+  content: "";
 }
 
 .mv-rss:before {
-  content: "\e65b";
+  content: "";
 }
 
 .mv-scribd:before {
-  content: "\e65c";
+  content: "";
 }
 
 .mv-sharethis:before {
-  content: "\e65d";
+  content: "";
 }
 
 .mv-skype:before {
-  content: "\e65e";
+  content: "";
 }
 
 .mv-slashdot:before {
-  content: "\e65f";
+  content: "";
 }
 
 .mv-slideshare:before {
-  content: "\e660";
+  content: "";
 }
 
 .mv-smugmug:before {
-  content: "\e661";
+  content: "";
 }
 
 .mv-soundcloud:before {
-  content: "\e662";
+  content: "";
 }
 
 .mv-spotify:before {
-  content: "\e663";
+  content: "";
 }
 
 .mv-springme:before {
-  content: "\e664";
+  content: "";
 }
 
 .mv-squarespace:before {
-  content: "\e665";
+  content: "";
 }
 
 .mv-squidoo:before {
-  content: "\e666";
+  content: "";
 }
 
 .mv-stackoverflow:before {
-  content: "\e667";
+  content: "";
 }
 
 .mv-steam:before {
-  content: "\e668";
+  content: "";
 }
 
 .mv-stumbleupon:before {
-  content: "\e669";
+  content: "";
 }
 
 .mv-subversion:before {
-  content: "\e66a";
+  content: "";
 }
 
 .mv-tagged:before {
-  content: "\e66b";
+  content: "";
 }
 
 .mv-technorati:before {
-  content: "\e66c";
+  content: "";
 }
 
 .mv-tumblr:before {
-  content: "\e66d";
+  content: "";
 }
 
 .mv-twitter:before {
-  content: "\e66e";
+  content: "";
 }
 
 .mv-ubuntu:before {
-  content: "\e66f";
+  content: "";
 }
 
 .mv-viddler:before {
-  content: "\e670";
+  content: "";
 }
 
 .mv-vimeo:before {
-  content: "\e671";
+  content: "";
 }
 
 .mv-vine:before {
-  content: "\e672";
+  content: "";
 }
 
 .mv-virb:before {
-  content: "\e673";
+  content: "";
 }
 
 .mv-w3:before {
-  content: "\e674";
+  content: "";
 }
 
 .mv-weibo:before {
-  content: "\e675";
+  content: "";
 }
 
 .mv-wikipedia:before {
-  content: "\e676";
+  content: "";
 }
 
 .mv-wordpress:before {
-  content: "\e677";
+  content: "";
 }
 
 .mv-xing:before {
-  content: "\e678";
+  content: "";
 }
 
 .mv-xmpp:before {
-  content: "\e679";
+  content: "";
 }
 
 .mv-yahoo:before {
-  content: "\e67a";
+  content: "";
 }
 
 .mv-yahoo-messenger:before {
-  content: "\e67b";
+  content: "";
 }
 
 .mv-windows:before {
-  content: "\e67c";
+  content: "";
 }
 
 .mv-yelp:before {
-  content: "\e67d";
+  content: "";
 }
 
 .mv-youtube-play:before {
-  content: "\e67e";
+  content: "";
 }
 
 .mv-zootool:before {
-  content: "\e67f";
+  content: "";
 }
 
 .mv-youtube:before {
-  content: "\e680";
+  content: "";
 }
 
 /* icons */
@@ -4565,26 +4551,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .icons .mv, .glyph-demo ul .mv, .icons .fa, .glyph-demo ul .fa, .icons .dashicons, .glyph-demo ul .dashicons {
   color: #333333;
 }
-
 .icons a.mv, .glyph-demo ul a.mv,
 .icons a.fa,
 .glyph-demo ul a.fa {
   color: #333333;
   text-decoration: none;
 }
-
 .icons a.mv:visited, .glyph-demo ul a.mv:visited,
 .icons a.fa:visited,
 .glyph-demo ul a.fa:visited {
   color: #333333;
 }
-
 .icons a.mv:hover, .glyph-demo ul a.mv:hover,
 .icons a.fa:hover,
 .glyph-demo ul a.fa:hover {
   color: #cc0000;
 }
-
 .icons a.mv span, .glyph-demo ul a.mv span,
 .icons a.fa span,
 .glyph-demo ul a.fa span {
@@ -4597,7 +4579,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-
 .icons a.mv span:active, .glyph-demo ul a.mv span:active, .icons a.mv span:focus, .glyph-demo ul a.mv span:focus,
 .icons a.fa span:active,
 .glyph-demo ul a.fa span:active,
@@ -4627,12 +4608,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   font-weight: normal;
   font-style: normal;
   vertical-align: middle;
-  transition: color .1s ease-in 0;
+  transition: color 0.1s ease-in 0;
   text-align: center;
 }
 
 .dashicon-film:before {
-  content: "\f219";
+  content: "";
 }
 
 .glyph-demo::after {
@@ -4640,7 +4621,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   clear: both;
   content: "";
 }
-
 .glyph-demo ul {
   margin-left: -16px;
   margin-left: -1rem;
@@ -4648,13 +4628,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   margin-right: -1rem;
   list-style: none;
 }
-
 .glyph-demo ul::after {
   display: block;
   clear: both;
   content: "";
 }
-
 .glyph-demo ul li {
   position: relative;
   float: left;
@@ -4665,12 +4643,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   padding-right: 1rem;
   width: 10em;
   height: 10em;
-  margin-bottom: .75em;
+  margin-bottom: 0.75em;
   text-align: center;
-  font-size: .75em;
+  font-size: 0.75em;
 }
-
 .glyph-demo ul li .mv {
   font-size: 300%;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
