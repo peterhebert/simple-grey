@@ -14,8 +14,8 @@ if ( $next || $previous ) :
 		<h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'simple-grey' ); ?></h1>
 		<div class="nav-links">
 		<?php
-			previous_post_link( '<div class="nav-previous">%link</div>', esc_html_x( '<span class="meta-nav">&larr;</span>%title', 'Previous post link', 'simple-grey' ) );
-			next_post_link( '<div class="nav-next">%link</div>', esc_html_x( '%title<span class="meta-nav">&rarr;</span>', 'Next post link', 'simple-grey' ) );
+			previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">&larr;</span>%title' );
+			next_post_link( '<div class="nav-next">%link</div>', '%title<span class="meta-nav">&rarr;</span>' );
 		?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
