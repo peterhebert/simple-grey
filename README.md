@@ -81,6 +81,10 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
+1.7.6
+* add 'nested list' to label for hierarchical nav style
+* make Narrow page template width actually narrow (48em instead of 60em)
+
 1.7.5
 * show meta fields below the_content() as per customizer instructions
 * fix to [issue 18](https://github.com/peterhebert/simple-grey/issues/18) - double escaped post navigation
