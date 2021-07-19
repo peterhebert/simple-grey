@@ -198,12 +198,12 @@ msgstr ""
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:88, post-navigation.php:17
+#: inc/template-tags.php:88
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span>%title"
 msgstr ""
 
-#: inc/template-tags.php:89, post-navigation.php:18
+#: inc/template-tags.php:89
 msgctxt "Next post link"
 msgid "%title<span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
@@ -212,7 +212,7 @@ msgstr ""
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:115, inc/template-tags.php:143, partials/content-page.php:33, partials/content.php:51, partials/footer-entry-meta.php:23
+#: inc/template-tags.php:115, inc/template-tags.php:143, partials/content-page.php:33, partials/content.php:54, partials/footer-entry-meta.php:23
 msgid "Edit"
 msgstr ""
 
@@ -261,7 +261,7 @@ msgstr ""
 msgid "We're currently performing maintenance on this website. Please check back soon."
 msgstr ""
 
-#: partials/content-aside.php:21, partials/content-gallery.php:19, partials/content-page.php:25, partials/content-single.php:25, partials/content.php:40
+#: partials/content-aside.php:21, partials/content-gallery.php:19, partials/content-page.php:25, partials/content-single.php:25, partials/content.php:43
 msgid "Pages:"
 msgstr ""
 
