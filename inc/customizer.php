@@ -86,7 +86,7 @@ function simple_grey_customize_register( $wp_customize ) {
 				'section'     => 'simple_grey_navigation',
 				'choices'     => array(
 					'flat'         => 'Flat',
-					'hierarchical' => 'Hierarchical',
+					'hierarchical' => 'Hierarchical (nested list)',
 					'drop-down'    => 'Drop Down',
 				),
 				'description' => __( 'Navigation style applied to the primary menu.', 'simple-grey' ),

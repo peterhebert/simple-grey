@@ -144,13 +144,16 @@ body {
   }
 }
 
+.page-template-p-single-column-narrow-php,
 .page-template-page-single-column-narrow,
 .page-template-p-single-column-narrow {
-  .wrap, #site-navigation .menu-wrap {
-    max-width: $bp-05;
+  
+  .wrap {
+    max-width: $bp-04;
     margin-left: auto;
     margin-right: auto;
   }
+
   #secondary {
     @include mg-top();
   }
