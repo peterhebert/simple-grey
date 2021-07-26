@@ -40,30 +40,31 @@ body {
 @import "module/forms";
 
 // layout
-@import "layout/header";
-@import "layout/content";
-@import "layout/footer";
+// @import "layout/header";
+// @import "layout/content";
+@import "layout/content-flex";
+// @import "layout/footer";
 
 // components
-@import "module/menus";
-@import "module/widgets";
-@import "module/comments";
-@import "module/pagination";
+// @import "module/menus";
+// @import "module/widgets";
+// @import "module/comments";
+// @import "module/pagination";
 
 // icons
-@import "../node_modules/fork-awesome/scss/fork-awesome";
-@import "module/morevectors";
-@import "module/icons";
+// @import "../node_modules/fork-awesome/scss/fork-awesome";
+// @import "module/morevectors";
+// @import "module/icons";
 
 // media
-@import "module/media";
-@import "module/gallery";
+// @import "module/media";
+// @import "module/gallery";
 
 // required WordPress classes
-@import "module/wordpress-required";
+// @import "module/wordpress-required";
 
 // suggested print media stylesheet
-@import "print";
+// @import "print";
 
 // hi-res media queries
-@import "mq-hi-density";
+// @import "mq-hi-density";
