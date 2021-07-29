@@ -76,6 +76,11 @@ function simple_grey_custom_theme_features() {
 
 	}
 
+	// add theme support for Gutenberg.
+	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'responsive-embeds' );
+
 }
 add_action( 'after_setup_theme', 'simple_grey_custom_theme_features' );
 

@@ -1414,6 +1414,17 @@ body {
 .page-template-p-single-column-narrow #secondary {
   margin-top: 1.5em;
 }
+@media screen and (min-width: 48em) {
+  .page-template-p-single-column-narrow-php .wp-block-cover-image.alignwide, .page-template-p-single-column-narrow-php .wp-block-cover.alignwide,
+.page-template-page-single-column-narrow .wp-block-cover-image.alignwide,
+.page-template-page-single-column-narrow .wp-block-cover.alignwide,
+.page-template-p-single-column-narrow .wp-block-cover-image.alignwide,
+.page-template-p-single-column-narrow .wp-block-cover.alignwide {
+    width: 150%;
+    max-width: 100vw;
+    margin-left: -25%;
+  }
+}
 
 /* = Footer Layout
 ----------------------------------------------- */
@@ -6189,6 +6200,12 @@ img.alignleft {
 
 img.alignright {
   vertical-align: text-top;
+}
+
+.alignfull {
+  margin: 1rem calc(50% - 50vw);
+  max-width: 100vw;
+  width: 100vw;
 }
 
 /* PRINT */
