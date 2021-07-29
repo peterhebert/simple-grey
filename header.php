@@ -18,7 +18,11 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php 
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+}
+?>
 <nav role="navigation">
 <a href="#content" class="screen-reader-text" aria-role="navigation"><?php echo esc_html__( 'Skip to Content', 'simple-grey' ); ?></a>
 </nav>
@@ -26,15 +30,23 @@
 <div class="wrap">
 <?php
 $brand_class = '';
-if ( has_custom_logo() ) :
-	$brand_class .= ' with-logo';
-endif;
+
+if ( function_exists( 'has_custom_logo' ) ) {
+	if ( has_custom_logo() ) :
+		$brand_class .= ' with-logo';
+	endif;
+}
+
 if ( get_theme_mod( 'simple_grey_header_drop_shadow' ) ) :
 	$brand_class .= ' drop-shadow';
 endif;
 ?>
 <div class="site-branding row<?php echo esc_attr( $brand_class ); ?>">
-<?php the_custom_logo(); ?>
+<?php 
+if ( function_exists( 'has_custom_logo' ) ) {
+	the_custom_logo(); 
+}
+?>
 <div class="site-info">
 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
