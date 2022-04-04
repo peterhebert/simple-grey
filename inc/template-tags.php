@@ -206,7 +206,6 @@ if ( ! function_exists( 'simple_grey_posted_on' ) ) :
 		);
 		echo "</span>\r";
 
-
 	}
 endif;
 
@@ -217,9 +216,9 @@ if ( ! function_exists( 'simple_grey_post_updated' ) ) :
 	 *
 	 * @return void
 	 */
-    function simple_grey_post_updated() {
+	function simple_grey_post_updated() {
 
-        if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_updated_string = '<time class="updated" datetime="%1$s">%2$s</time>';
 
 			$time_updated_string = sprintf(
@@ -246,7 +245,7 @@ if ( ! function_exists( 'simple_grey_post_updated' ) ) :
 			echo "</span>\r";
 		}
 
-    }
+	}
 
 endif;
 
@@ -276,7 +275,6 @@ if ( ! function_exists( 'simple_grey_post_taxonomy' ) ) :
 			} else {
 				$meta_text = '';
 			}
-
 		} else {
 
 			// But this post has categories so we should probably display them here.
@@ -287,8 +285,7 @@ if ( ! function_exists( 'simple_grey_post_taxonomy' ) ) :
 				// translators: category.
 				$meta_text = __( 'in %1$s.', 'simple-grey' );
 			}
-
-		} 
+		}
 		// end check for categories on this blog.
 
 		if ( '' !== $meta_text && 'post' === get_post_type() ) :
@@ -319,7 +316,6 @@ function simple_grey_categorized_blog() {
 			array(
 				'fields'     => 'ids',
 				'hide_empty' => 1,
-
 				// We only need to know if there is more than one category.
 				'number'     => 2,
 			)

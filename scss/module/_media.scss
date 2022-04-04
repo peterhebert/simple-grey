@@ -1,12 +1,13 @@
 /* =Media
 ----------------------------------------------- */
 
-@import "../../node_modules/bootstrap/scss/utilities/embed";
+@import "../../node_modules/bootstrap/scss/helpers/ratio";
 
 // responsive embed containers
-.responsive-embed {
-    @extend .embed-responsive;
-    @extend .embed-responsive-16by9;
+.responsive-embed,
+.wp-block-embed.wp-embed-aspect-16-9 {
+    @extend .ratio;
+    --bs-aspect-ratio: calc(9 / 16 * 100%);
 }
 
 /* Images */

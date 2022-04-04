@@ -1,8 +1,8 @@
 // accessibility fom Bootstrap
-@import "../../node_modules/bootstrap/scss/mixins/screen-reader";
+@import "../../node_modules/bootstrap/scss/mixins/visually-hidden";
 
 /* accessibility */
 .screen-reader-text {
-    @include sr-only;
-    @include sr-only-focusable;
+    @include visually-hidden;
+    @include visually-hidden-focusable;
 }

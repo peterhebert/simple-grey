@@ -1,5 +1,11 @@
 // VARIABLES
 
+// Prefix for :root CSS variables
+
+$variable-prefix:             bs- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix:                      $variable-prefix !default;
+
+
 $basepx: 16; // 16px browser default
 $base: $basepx/16;
 $basepct: percentage($base);
@@ -119,9 +125,9 @@ $gutter: ($margin * 2);
 
 $box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 
-$embed-responsive-aspect-ratios: (
-    (21 9),
-    (16 9),
-    (4 3),
-    (1 1),
+$aspect-ratios: (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%)
 );
