@@ -81,6 +81,10 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
+1.7.7
+* Added support for responsive embeds from block editor (16x9)
+* Updated Bootstrap version to 5.1.3
+
 1.7.6
 * add 'nested list' to label for hierarchical nav style
 * make Narrow page template width actually narrow (48em instead of 60em)
