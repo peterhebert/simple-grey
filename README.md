@@ -81,6 +81,9 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
+1.7.8
+* bug fix for [issue](https://github.com/peterhebert/simple-grey/issues/21) with template tag function simple_grey_posted_on();
+
 1.7.7
 * Added support for responsive embeds from block editor (16x9)
 * Updated Bootstrap version to 5.1.3
