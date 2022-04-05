@@ -188,16 +188,13 @@ if ( ! function_exists( 'simple_grey_posted_on' ) ) :
 			esc_html( get_the_date() )
 		);
 
+		$posted_on_html = wp_kses( $time_published_string, simple_grey_basic_allowed_html() );
+
 		/* print posted date and time */
-		echo '<span class="posted-on">';
 		printf(
 			// translators: 1. published date. 2. Author name.
 			wp_kses( __( 'Posted on %1$s by %2$s ', 'simple-grey' ), simple_grey_basic_allowed_html() ),
-			sprintf(
-				'<a href="%1$s" rel="bookmark">%2$s</a>',
-				esc_url( get_permalink() ),
-				wp_kses( $time_published_string, simple_grey_basic_allowed_html() ),
-			),
+			sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>', esc_url( get_permalink() ), $posted_on_html ),
 			sprintf(
 				'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
@@ -205,8 +202,9 @@ if ( ! function_exists( 'simple_grey_posted_on' ) ) :
 			)
 		);
 		echo "</span>\r";
-
+				
 	}
+
 endif;
 
 if ( ! function_exists( 'simple_grey_post_updated' ) ) :
