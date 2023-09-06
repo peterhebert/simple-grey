@@ -60,14 +60,13 @@ function translate() {
     .pipe(sort())
     .pipe(wpPot( {
       domain: 'simple-grey',
-      destFile:'simple-grey.pot',
       bugReport: 'https://github.com/peterhebert/simple-grey/issues',
       lastTranslator: 'Peter Hebert <peter@peterhebert.com>',
       headers: false
     } ))
     .pipe(replace(/([0-9]{4}) simple-grey/, '$1 Peter Hebert'))
     .pipe(replace('same license as the simple-grey package', 'GNU General Public License v2 or later'))
-    .pipe(gulp.dest('languages'));
+    .pipe(gulp.dest('./languages/simple-grey.pot'));
 
 }
 exports.translate = translate;
