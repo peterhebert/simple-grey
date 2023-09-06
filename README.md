@@ -81,6 +81,10 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
+1.7.9
+* updated translation template (languages/simple-grey.pot)
+* updated vulnerable node package versions (only available through GitHub repo)
+
 1.7.8
 * bug fix for [issue](https://github.com/peterhebert/simple-grey/issues/21) with template tag function simple_grey_posted_on();
 
