@@ -1,28 +1,34 @@
 // Grab our gulp packages
-var gulp  = require('gulp'),
-    sass = require('gulp-sass')(require('sass')),
-    autoprefixer = require('gulp-autoprefixer'),
-    nano = require('gulp-cssnano'),
-    concat = require('gulp-concat'),
-    rename = require('gulp-rename'),
-    replace = require('gulp-replace'),
-    merge = require('merge-stream'),
-    wpPot = require('gulp-wp-pot'),
-    sort = require('gulp-sort'),
-    rtlcss = require('gulp-rtlcss');
+var gulp  = require('gulp');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
+var sass = require('gulp-sass')(require('sass'));
+var concat = require('gulp-concat');
+var rename = require('gulp-rename');
+var replace = require('gulp-replace');
+var merge = require('merge-stream');
+var wpPot = require('gulp-wp-pot');
+var sort = require('gulp-sort');
+var rtlcss = require('gulp-rtlcss');
+
+const plugins = [
+  autoprefixer({
+    browsers: ['last 2 versions'],
+    cascade: false
+  }),
+  cssnano({ discardComments: { removeAll: true, discardEmpty: true } })
+];
 
 // compile and minify SCSS to CSS
 function styles() {
+
   return gulp.src('./scss/**/*.scss')
     .pipe(sass({
       outputStyle: 'expanded'
     }).on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
     .pipe(gulp.dest('./css'))
-    .pipe(nano({ discardComments: { removeAll: true, discardEmpty: true } }))
+    .pipe(postcss(plugins))
     .pipe(rename({ suffix: '-min' })) // Append "-min" to the filename.
     .pipe(gulp.dest('./css')); // Output MINIMIZED stylesheets.
 }
@@ -32,9 +38,8 @@ exports.styles = styles;
 function styles_rtl () {
   return gulp.src('./scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
     .pipe(rtlcss())
-    .pipe(nano({ discardComments: { removeAll: true, discardEmpty: true } }))
+    .pipe(postcss(plugins))
     .pipe(rename({
       suffix: '-rtl'
     }))
