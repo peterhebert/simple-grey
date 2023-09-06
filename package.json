@@ -27,6 +27,10 @@
     "minimist": "^1.2.6",
     "sass": "~1.32.6"
   },
+  "overrides": {
+    "glob-watcher": "6.0.0",
+    "glob-stream": "8.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/peterhebert/simple-grey.git"
