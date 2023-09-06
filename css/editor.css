@@ -110,7 +110,7 @@ figure {
 }
 
 hr {
-  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -171,7 +171,6 @@ input {
 
 input[type=checkbox],
 input[type=radio] {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
 }
@@ -183,6 +182,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type=search] {
   -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
@@ -233,7 +233,6 @@ th {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -257,7 +256,6 @@ body {
 /* Improve default text rendering, handling of kerning pairs and ligatures */
 /* accessibility */
 .screen-reader-text {
-  position: absolute !important;
   width: 1px !important;
   height: 1px !important;
   padding: 0 !important;
@@ -267,8 +265,10 @@ body {
   white-space: nowrap !important;
   border: 0 !important;
 }
-.screen-reader-text:not(:focus):not(:focus-within) {
+.screen-reader-text:not(caption) {
   position: absolute !important;
+}
+.screen-reader-text:not(:focus):not(:focus-within) {
   width: 1px !important;
   height: 1px !important;
   padding: 0 !important;
@@ -277,6 +277,9 @@ body {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+.screen-reader-text:not(:focus):not(:focus-within):not(caption) {
+  position: absolute !important;
 }
 
 /* DEFAULT FONT SETTINGS */
@@ -402,12 +405,6 @@ del {
 
 /* selected text */
 ::-moz-selection,
-::-moz-selection {
-  background: white;
-  color: black;
-  text-shadow: none;
-}
-::-moz-selection,
 ::selection {
   background: white;
   color: black;
@@ -485,12 +482,12 @@ input[type=submit] {
 
 input[type=checkbox],
 input[type=radio] {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 input[type=search] {
   -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
@@ -838,30 +835,35 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .fa-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .fa-rotate-180 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .fa-rotate-270 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
 .fa-flip-horizontal {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 
 .fa-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 
@@ -870,7 +872,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 :root .fa-rotate-270,
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
-  -webkit-filter: none;
   filter: none;
 }
 
@@ -4846,7 +4847,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   font-weight: normal;
   font-style: normal;
   vertical-align: middle;
-  -webkit-transition: color 0.1s ease-in 0;
   transition: color 0.1s ease-in 0;
   text-align: center;
 }

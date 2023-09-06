@@ -13,10 +13,7 @@ var sort = require('gulp-sort');
 var rtlcss = require('gulp-rtlcss');
 
 const plugins = [
-  autoprefixer({
-    browsers: ['last 2 versions'],
-    cascade: false
-  }),
+  autoprefixer(),
   cssnano({ discardComments: { removeAll: true, discardEmpty: true } })
 ];
 

@@ -3,12 +3,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: simple-grey\n"
-"Report-Msgid-Bugs-To: https://github.com/peterhebert/simple-grey/issues\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Peter Hebert <peter@peterhebert.com>\n"
+"POT-Creation-Date: 2023-09-06 21:45+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/peterhebert/simple-grey/issues\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: 404.php:14
@@ -23,6 +23,7 @@ msgstr ""
 msgid "Most Used Categories"
 msgstr ""
 
+#. translators: %1$s: smiley
 #: 404.php:45
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
@@ -48,6 +49,10 @@ msgstr ""
 
 #: comments.php:73
 msgid "Comments are closed."
+msgstr ""
+
+#: feature-page.php:3
+msgid "Feature Page"
 msgstr ""
 
 #: footer.php:39
@@ -84,6 +89,27 @@ msgstr ""
 
 #: header.php:55
 msgid "Menu"
+msgstr ""
+
+#: maintenance.php:25
+msgid "Site Under Maintenance"
+msgstr ""
+
+#: maintenance.php:29
+msgid "We're currently performing maintenance on this website. Please check back soon."
+msgstr ""
+
+#: p-single-column-narrow.php:3
+msgid "Single Column Narrow"
+msgstr ""
+
+#: post-navigation.php:14, inc/template-tags.php:85
+msgid "Post navigation"
+msgstr ""
+
+#. translators: search terms entered.
+#: search.php:18
+msgid "Search Results for: %s"
 msgstr ""
 
 #: inc/customizer.php:30
@@ -190,12 +216,9 @@ msgstr ""
 msgid "Primary Navigation"
 msgstr ""
 
+#. translators: category name.
 #: inc/template-tags.php:26
 msgid "View all posts in %s"
-msgstr ""
-
-#: inc/template-tags.php:85, post-navigation.php:14
-msgid "Post navigation"
 msgstr ""
 
 #: inc/template-tags.php:88
@@ -208,57 +231,55 @@ msgctxt "Next post link"
 msgid "%title<span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:115
-msgid "Pingback:"
-msgstr ""
-
-#: inc/template-tags.php:115, inc/template-tags.php:143, partials/content-page.php:33, partials/content.php:54, partials/footer-entry-meta.php:23
-msgid "Edit"
-msgstr ""
-
+#. translators: author name.
 #: inc/template-tags.php:130
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
+#. translators: 1. date. 2. time.
 #: inc/template-tags.php:139
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:143, inc/template-tags.php:115, partials/content-page.php:33, partials/content.php:54, partials/footer-entry-meta.php:23
+msgid "Edit"
 msgstr ""
 
 #: inc/template-tags.php:147
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
+#: inc/template-tags.php:115
+msgid "Pingback:"
+msgstr ""
+
+#. translators: 1. published date. 2. Author name.
 #: inc/template-tags.php:196
 msgid "Posted on %1$s by %2$s "
 msgstr ""
 
+#. translators: 1. Updated date. 2. Updated author.
 #: inc/template-tags.php:235
 msgid "Last updated on %1$s by %2$s "
 msgstr ""
 
+#. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:262, inc/template-tags.php:265
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:272
-msgid "and tagged %2$s."
+#. translators: category.
+#: inc/template-tags.php:284
+msgid "in %1$s."
 msgstr ""
 
 #: inc/template-tags.php:281
 msgid "in %1$s and tagged %2$s."
 msgstr ""
 
-#: inc/template-tags.php:284
-msgid "in %1$s."
-msgstr ""
-
-#: maintenance.php:25
-msgid "Site Under Maintenance"
-msgstr ""
-
-#: maintenance.php:29
-msgid "We're currently performing maintenance on this website. Please check back soon."
+#: inc/template-tags.php:272
+msgid "and tagged %2$s."
 msgstr ""
 
 #: partials/content-aside.php:21, partials/content-gallery.php:19, partials/content-page.php:25, partials/content-single.php:25, partials/content.php:43
@@ -269,22 +290,23 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: partials/content-none.php:25
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: partials/content-none.php:40
-msgid "Sorry, but no content was found matching the %1$s <em>%2$s</em>. Perhaps searching can help."
+#: partials/content-none.php:56
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #: partials/content-none.php:51
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: partials/content-none.php:56
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+#: partials/content-none.php:40
+msgid "Sorry, but no content was found matching the %1$s <em>%2$s</em>. Perhaps searching can help."
 msgstr ""
 
+#: partials/content-none.php:25
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#. translators: %s: Name of current post
 #: partials/content.php:33
 msgid "Continue reading &ldquo;%s&rdquo; <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
@@ -299,8 +321,4 @@ msgstr ""
 
 #: partials/footer-entry-meta.php:19
 msgid "% Comments"
-msgstr ""
-
-#: search.php:18
-msgid "Search Results for: %s"
 msgstr ""
