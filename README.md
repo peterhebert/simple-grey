@@ -81,6 +81,9 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
+1.8.0
+* tested with WordPress 6.6
+
 1.7.9
 * updated translation template (languages/simple-grey.pot)
 * updated vulnerable node package versions (only available through GitHub repo)
