@@ -1,4 +1,4 @@
-# Copyright (C) 2023 Peter Hebert
+# Copyright (C) 2024 Peter Hebert
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: Peter Hebert <peter@peterhebert.com>\n"
-"POT-Creation-Date: 2023-09-06 21:58+0000\n"
+"POT-Creation-Date: 2024-07-18 15:14+0000\n"
 "Report-Msgid-Bugs-To: https://github.com/peterhebert/simple-grey/issues\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -55,19 +55,19 @@ msgstr ""
 msgid "Feature Page"
 msgstr ""
 
-#: footer.php:39
+#: footer.php:38
 msgid "Theme: "
 msgstr ""
 
-#: footer.php:40
+#: footer.php:39
 msgid "Simple Grey"
 msgstr ""
 
-#: footer.php:42
+#: footer.php:41
 msgid "Theme development on GitHub"
 msgstr ""
 
-#: footer.php:47
+#: footer.php:46
 msgid "Proudly powered by WordPress"
 msgstr ""
 
