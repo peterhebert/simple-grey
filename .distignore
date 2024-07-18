@@ -4,5 +4,5 @@ gulpfile.js
 .gitignore
 .distignore
 package.json
-package.lock
+package-lock.json
 .git/
