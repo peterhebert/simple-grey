@@ -81,6 +81,10 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 
 ## Changelog
 
+1.8.1
+* tested with WordPress 6.9
+* bug fix for search.php - critical syntax error with `the_post_navigation()` - patch submitted by [Paul Barnes](https://profiles.wordpress.org/thepodcastbrowser/)
+
 1.8.0
 * tested with WordPress 6.6
 
