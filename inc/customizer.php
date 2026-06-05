@@ -298,6 +298,7 @@ function simple_grey_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Footer credits for theme and WordPress.
 	$wp_customize->add_setting(
 		'simple_grey_show_footer_credits',
 		array(
@@ -314,7 +315,6 @@ function simple_grey_customize_register( $wp_customize ) {
 			'type'     => 'checkbox',
 		)
 	);
-
 }
 add_action( 'customize_register', 'simple_grey_customize_register' );
 
@@ -339,11 +339,11 @@ function simple_grey_sanitize_text( $str ) {
 /**
  * Sanitizer function for integer.
  *
- * @param mixed $int Input variable to sanitize.
+ * @param mixed $input Input variable to sanitize.
  * @return int sanitized to an integer value.
  */
-function simple_grey_sanitize_int( $int ) {
-	return absint( $int );
+function simple_grey_sanitize_int( $input ) {
+	return absint( $input );
 }
 
 /**
@@ -403,3 +403,16 @@ function simple_grey_customizer_css() {
 	}
 }
 add_action( 'wp_head', 'simple_grey_customizer_css' );
+
+/**
+ * Retrieval function for customizer setting - to show or hide footer credits.
+ *
+ * Defaults to true if theme mod not present in database.
+ *
+ * @return boolean True or false to show or hide credits.
+ */
+function simple_grey_show_footer_credits() {
+	$show = boolval( get_theme_mod( 'simple_grey_show_footer_credits', true ) );
+
+	return $show;
+}

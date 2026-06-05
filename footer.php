@@ -9,7 +9,7 @@
 
 $basic_allowed = simple_grey_basic_allowed_html();
 $footer_bottom = get_theme_mod( 'simple_grey_footer_text_bottom' );
-$show_credits  = get_theme_mod( 'simple_grey_show_footer_credits' );
+$show_credits  = simple_grey_show_footer_credits();
 
 ?>
 </div>
