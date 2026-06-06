@@ -5,7 +5,8 @@
  * @package Simple Grey
  */
 
-define( 'SIMPLE_GREY_VERSION', '1.6.1' );
+$theme = wp_get_theme();
+define( 'SIMPLE_GREY_VERSION', $theme->get( 'Version' ) );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -13,46 +14,6 @@ define( 'SIMPLE_GREY_VERSION', '1.6.1' );
 if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
-
-if ( ! function_exists( 'simple_grey_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
-	function simple_grey_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on simple_grey, use a find and replace
-		 * to change 'simple-grey' to the name of your theme in all the template files
-		 */
-		load_theme_textdomain( 'simple-grey', get_template_directory() . '/languages' );
-
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-		 */
-		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 220, 220 );
-	}
-
-endif;
-add_action( 'after_setup_theme', 'simple_grey_setup' );
 
 /**
  * Register widget area.
@@ -151,7 +112,6 @@ function simple_grey_scripts() {
 
 	// and finally, enqueue theme stylesheet (style.css).
 	wp_enqueue_style( 'simple-grey-style', get_stylesheet_uri(), array(), SIMPLE_GREY_VERSION, true );
-
 }
 add_action( 'wp_enqueue_scripts', 'simple_grey_scripts' );
 
@@ -172,9 +132,9 @@ add_action( 'init', 'simple_grey_add_editor_styles' );
 require get_template_directory() . '/inc/post-formats.php';
 
 /**
- * Implement the Custom Header and Custom Background features.
+ * Theme setup, Custom Header and Custom Background features.
  */
-require get_template_directory() . '/inc/custom-theme-features.php';
+require get_template_directory() . '/inc/theme-setup.php';
 
 /**
  * Custom template tags for this theme.
