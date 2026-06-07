@@ -96,6 +96,10 @@ function simple_grey_scripts() {
 		wp_enqueue_style( 'simple-grey-main', get_theme_file_uri( 'css/simple-grey.css' ), array(), SIMPLE_GREY_VERSION );
 	}
 
+	// Fork Awesome web font.
+	wp_enqueue_style( 'fork-awesome-icons', get_theme_file_uri( 'css/fork-awesome.min.css' ), array(), '1.2.0' );
+
+	// load scripts.
 	wp_enqueue_script( 'simple-grey-navigation', get_theme_file_uri( 'js/navigation.js' ), array(), SIMPLE_GREY_VERSION, true );
 
 	wp_enqueue_script( 'simple-grey-skip-link-focus-fix', get_theme_file_uri( 'js/skip-link-focus-fix.js' ), array(), SIMPLE_GREY_VERSION, true );

@@ -49,11 +49,6 @@ a {
   background-color: transparent;
 }
 
-a:active,
-a:hover {
-  outline: 0;
-}
-
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -255,31 +250,31 @@ body {
 
 /* Improve default text rendering, handling of kerning pairs and ligatures */
 /* accessibility */
-.screen-reader-text {
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
+nav.accessible-skip-nav {
+  line-height: 2;
 }
-.screen-reader-text:not(caption) {
-  position: absolute !important;
+nav.accessible-skip-nav:focus-within {
+  background-color: #fff;
+  padding: 0.5rem;
 }
-.screen-reader-text:not(:focus):not(:focus-within) {
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
+
+a.skip-link:not(:focus):not(:focus-visible) {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
-.screen-reader-text:not(:focus):not(:focus-within):not(caption) {
-  position: absolute !important;
+a.skip-link:focus, a.skip-link:focus-visible {
+  padding: 0.75em;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  position: relative;
+  background-color: #fff;
+  color: #cc0000;
 }
 
 /* DEFAULT FONT SETTINGS */
@@ -575,18 +570,13 @@ a:hover, a:link:hover {
   color: #cc0000;
   text-decoration: underline;
 }
-a:focus {
-  outline: thin dotted;
+a:focus-visible {
+  outline-style: solid;
   color: #cc0000;
+  padding-inline: 0.25em;
 }
 a:active {
   color: #660000;
-}
-
-/* Better CSS Outline Suppression */
-a:hover,
-a:active {
-  outline: none;
 }
 
 /* Fluid images and rich media */

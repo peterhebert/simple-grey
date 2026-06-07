@@ -50,7 +50,7 @@ The footer has two text fields (Top and Bottom), for displaying credits, copyrig
 
 ### Web fonts
 This theme uses the [Open Sans](https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans) web font via Google Fonts. In addition, it includes the following icon fonts:
-- [Fork Awesome](https://forkawesome.github.io/Fork-Awesome/) - a forked version of Font Awesome 4.x series with updated icons. [Read why they forked the project](https://forkawesome.github.io/Fork-Awesome/whats-new/) - I have similar reasons for switching in this theme,
+- [Fork Awesome](https://forkawesome.github.io/Fork-Awesome/) - a forked version of Font Awesome 4.x series with updated icons. [Read why they forked the project](https://forkawesome.github.io/Fork-Awesome/whats-new/) - I have similar reasons for switching in this theme. Note this library is now deprecated, and I may remove it in a 2.0 version of this theme.
 - [More Vectors](https://github.com/peterhebert/More-Vectors-Icon-Font)
 
 ### Feature Page Template
@@ -59,7 +59,7 @@ This theme includes a *Feature Page* template, which can be used for a front pag
 ## Complementary Plugins
 The following plugins are quite useful in conjunction with this theme:
 - [Widget CSS Classes](https://en-ca.wordpress.org/plugins/widget-css-classes/) - allows you to apply CSS classes to any widget. For example:
-    - by applying the class 'icons' to widgets in the footer, the theme will allow you to style social media icons to match the footer (dark grey instead of the blue link color). See this in action at [my personal site](https://peterhebert.com/)
+    - by applying the class 'icons' to widgets in the footer, the theme will allow you to style social media icons to match the footer (dark grey instead of the blue link color).
     - by applying the class 'columns' to widgets in the Featured widget area, you can have your widgets be in columns, instead of full width.
 - [Display Widgets](https://wordpress.org/plugins/display-widgets/) - allows you to choose which posts or pages your widgets are displayed on.
 - [Custom Query Shortcode](https://wordpress.org/plugins/custom-query-shortcode/) - provides a shortcode for using custom queries in your page or post. Simple Grey includes support for using shortcodes within Widgets, so you could use this to generate complex layouts or featured content areas, slideshows, etc.
@@ -87,7 +87,7 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 * fixed boolean display logic for footer credits.
 * consolidate theme supprt / setup into one function.
 * fixed logic for displaying categories and tags on posts.
-
+* removal of custom `.screen-reader-text` override (rely on WordPreess core CSS)
 
 1.8.1
 * tested with WordPress 6.9

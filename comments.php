@@ -25,7 +25,7 @@ if ( post_password_required() ) {
 			<?php
 
 				printf(
-					// phpcs:ignore
+					// translators: 1. Number of comments. 2. Post title.
 					_nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'simple-grey' ) ,
 					esc_html( number_format_i18n( get_comments_number() ) ),
 					'<span>' . esc_html( get_the_title() ) . '</span>'
