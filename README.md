@@ -84,9 +84,9 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 1.9.0
 * Changes to meet new WordPress standards for the `accessibility-ready` tag. See: [blog post](https://make.wordpress.org/accessibility/2026/05/06/accessibility-ready-requirements-updated/) and new [Guidelines](https://wpaccessibility.org/docs/topics/theme-guidelines/).
 * fixed skip link
-* updated normalise.css from v3.0.2 to latest (12.1.1) from [@csstools/normalize.css](https://github.com/csstools/normalize.css)
 * fixed boolean display logic for footer credits.
 * consolidate theme supprt / setup into one function.
+* fixed logic for displaying categories and tags on posts.
 
 
 1.8.1

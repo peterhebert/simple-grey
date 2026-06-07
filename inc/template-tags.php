@@ -47,7 +47,6 @@ if ( ! function_exists( 'simple_grey_list_categories_without_uncategorized' ) ) 
 		}
 		$args['title_li'] = '';
 		return wp_list_categories( $args );
-
 	}
 endif;
 
@@ -188,13 +187,11 @@ if ( ! function_exists( 'simple_grey_posted_on' ) ) :
 			esc_html( get_the_date() )
 		);
 
-		$posted_on_html = wp_kses( $time_published_string, simple_grey_basic_allowed_html() );
-
 		/* print posted date and time */
 		printf(
 			// translators: 1. published date. 2. Author name.
 			wp_kses( __( 'Posted on %1$s by %2$s ', 'simple-grey' ), simple_grey_basic_allowed_html() ),
-			sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>', esc_url( get_permalink() ), $posted_on_html ),
+			wp_kses( $time_published_string, simple_grey_basic_allowed_html() ),
 			sprintf(
 				'<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
@@ -202,7 +199,6 @@ if ( ! function_exists( 'simple_grey_posted_on' ) ) :
 			)
 		);
 		echo "</span>\r";
-				
 	}
 
 endif;
@@ -242,12 +238,12 @@ if ( ! function_exists( 'simple_grey_post_updated' ) ) :
 			);
 			echo "</span>\r";
 		}
-
 	}
 
 endif;
 
 if ( ! function_exists( 'simple_grey_post_taxonomy' ) ) :
+
 	/**
 	 * Prints categories and terms associated with post.
 	 *
@@ -264,39 +260,47 @@ if ( ! function_exists( 'simple_grey_post_taxonomy' ) ) :
 		/* translators: used between list items, there is a space after the comma */
 		$tag_list = get_the_tag_list( '', __( ', ', 'simple-grey' ) );
 
-		if ( 0 === count( $category_list ) ) {
+		// only print if we have any taxonomy terms.
+		$the_categories = get_the_terms( get_the_ID(), 'category' );
+		$the_tags       = get_the_terms( get_the_ID(), 'post_tag' );
 
-			// This post only has no categories so we just need to worry about tags in the meta text.
-			if ( '' !== $tag_list ) {
-				// translators: tag.
-				$meta_text = __( 'and tagged %2$s.', 'simple-grey' );
-			} else {
-				$meta_text = '';
-			}
-		} else {
+		if ( is_array( $the_categories ) || is_array( $the_tags ) ) {
 
-			// But this post has categories so we should probably display them here.
-			if ( '' !== $tag_list ) {
-				// translators: 1. category. 2. tags.
-				$meta_text = __( 'in %1$s and tagged %2$s.', 'simple-grey' );
-			} else {
-				// translators: category.
-				$meta_text = __( 'in %1$s.', 'simple-grey' );
-			}
-		}
-		// end check for categories on this blog.
-
-		if ( '' !== $meta_text && 'post' === get_post_type() ) :
 			echo ' <span class="post-taxonomy">';
-			printf(
-				esc_html( $meta_text ),
-				wp_kses( $category_list_filtered, wp_kses_allowed_html( 'post' ) ),
-				wp_kses( $tag_list, wp_kses_allowed_html( 'post' ) )
-			);
-			echo '</span>';
-		endif;
 
+			// both exist, print both.
+			if ( is_array( $the_categories ) && is_array( $the_tags ) ) {
+				printf(
+					// translators: 1. category. 2. tags.
+					esc_html( __( 'in %1$s and tagged %2$s.', 'simple-grey' ) ),
+					wp_kses( $category_list_filtered, wp_kses_allowed_html( 'post' ) ),
+					wp_kses( $tag_list, wp_kses_allowed_html( 'post' ) )
+				);
+
+			} elseif ( is_array( $the_categories ) && false === $the_tags ) {
+
+				// categories only.
+				printf(
+					// translators: 1. category.
+					esc_html( __( 'in %s.', 'simple-grey' ) ),
+					wp_kses( $category_list_filtered, wp_kses_allowed_html( 'post' ) ),
+				);
+
+			} elseif ( is_array( $the_tags ) && false === $the_categories ) {
+
+				printf(
+					// translators: 1. tags.
+					esc_html( __( 'and tagged %s.', 'simple-grey' ) ),
+					wp_kses( $tag_list, wp_kses_allowed_html( 'post' ) )
+				);
+
+			}
+
+			echo '</span>';
+
+		}
 	}
+
 endif;
 
 /**
