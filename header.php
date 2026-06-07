@@ -18,14 +18,12 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php 
+<?php
 if ( function_exists( 'wp_body_open' ) ) {
 	wp_body_open();
 }
 ?>
-<nav role="navigation">
-<a href="#content" class="screen-reader-text" aria-role="navigation"><?php echo esc_html__( 'Skip to Content', 'simple-grey' ); ?></a>
-</nav>
+<nav class="accessible-skip-nav"><a href="#content" class="screen-reader-text skip-link"><?php echo esc_html__( 'Skip to main content', 'simple-grey' ); ?></a></nav>
 <header id="masthead" class="site-header" role="banner">
 <div class="wrap">
 <?php
@@ -42,16 +40,29 @@ if ( get_theme_mod( 'simple_grey_header_drop_shadow' ) ) :
 endif;
 ?>
 <div class="site-branding row<?php echo esc_attr( $brand_class ); ?>">
-<?php 
+<?php
 if ( function_exists( 'has_custom_logo' ) ) {
-	the_custom_logo(); 
+	the_custom_logo();
 }
-?>
+
+$site_title       = get_bloginfo( 'name' );
+$site_description = get_bloginfo( 'description' );
+
+if ( ! empty( $site_title ) || ! empty( $site_description ) ) :
+	?>
 <div class="site-info">
-<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	<?php if ( ! empty( $site_title ) ) : ?>
+		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	<?php endif; ?>
+
+	<?php if ( ! empty( $site_description ) ) : ?>
+		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	<?php endif; ?>
 </div>
-<?php if ( has_nav_menu( 'primary' ) ) : ?>
+	<?php
+endif;
+if ( has_nav_menu( 'primary' ) ) :
+	?>
 <div id="menu-toggle" class="menu-toggle"><button aria-controls="navigation" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i><?php echo esc_html__( 'Menu', 'simple-grey' ); ?></button></div>
 <?php endif; ?>
 </div>
@@ -68,6 +79,6 @@ if ( function_exists( 'has_custom_logo' ) ) {
 </div>
 <?php endif; ?>
 
-<div id="content">
+<div id="content" tabindex="-1">
 	<div class="wrap">
 		<div class="row">

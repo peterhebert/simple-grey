@@ -1,8 +1,35 @@
-// accessibility fom Bootstrap
-@import "../../node_modules/bootstrap/scss/mixins/visually-hidden";
-
 /* accessibility */
-.screen-reader-text {
-    @include visually-hidden;
-    @include visually-hidden-focusable;
+
+nav.accessible-skip-nav {
+    line-height: 2;
+    &:focus-within {
+        background-color: #fff;
+        padding: .5rem;
+    }
+}
+
+a.skip-link {
+
+
+    &:not(:focus):not(:focus-visible) {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    &:focus,
+    &:focus-visible {
+        
+        padding: .75em;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        position: relative;
+        background-color: #fff;
+        color: $col-link-hover;
+    }
 }

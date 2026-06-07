@@ -15,6 +15,11 @@
     &:hover {
       color: $col-masthead-hover;
     }
+    &:focus-visible {
+      color: $col-masthead-hover;
+      outline-color: $col-focus-border;
+      outline-width: 2px;
+    }
   }
 
   .menu-toggle {
