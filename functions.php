@@ -165,4 +165,4 @@ require get_template_directory() . '/inc/jetpack.php';
 */
 require get_template_directory() . '/inc/menu.php';
 require get_template_directory() . '/inc/class-aria-walker-nav-menu.php';
-
+require get_template_directory() . '/inc/class-disclosure-walker-nav-menu.php';
