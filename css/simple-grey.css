@@ -1507,6 +1507,44 @@ body {
   color: whitesmoke;
   background: #212121;
 }
+#navigation .menu-item-link-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+#navigation .menu-item-link-wrapper a {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+#navigation button.disclosure-toggle {
+  background: transparent;
+  border: none;
+  color: #212121;
+  padding: 0 0.75em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#navigation button.disclosure-toggle::after {
+  content: "";
+  border-bottom: 1px solid #212121;
+  border-right: 1px solid #212121;
+  height: 0.5em;
+  width: 0.5em;
+  transform: rotate(45deg);
+  margin-left: 0.25em;
+  margin-top: -0.25em;
+  display: inline-block;
+}
+#navigation button.disclosure-toggle:hover, #navigation button.disclosure-toggle:focus, #navigation button.disclosure-toggle[aria-expanded=true] {
+  color: whitesmoke;
+  background: #212121;
+}
+#navigation button.disclosure-toggle:hover::after, #navigation button.disclosure-toggle:focus::after, #navigation button.disclosure-toggle[aria-expanded=true]::after {
+  border-color: whitesmoke;
+}
 #navigation .nav-menu {
   display: none;
 }
@@ -1525,8 +1563,15 @@ body {
     position: relative;
     overflow: visible;
   }
-  #navigation ul.drop-down li ul {
+  #navigation ul.drop-down li ul.sub-menu {
     position: absolute;
+    left: -999em;
+    top: 100%;
+    z-index: 99999;
+    background: whitesmoke;
+  }
+  #navigation ul.drop-down li ul.sub-menu ul.sub-menu {
+    top: 0;
     left: -999em;
   }
   #navigation ul.drop-down ul li a {
@@ -1534,30 +1579,11 @@ body {
     width: 11em;
     word-wrap: auto;
   }
-  #navigation ul.drop-down .sub-menu .menu-item-has-children:focus > ul,
-#navigation ul.drop-down .sub-menu .menu-item-has-children:hover > ul,
-#navigation ul.drop-down .sub-menu .menu-item-has-children.focus > ul,
-#navigation ul.drop-down .sub-menu .menu-item-has-children.hover > ul,
-#navigation ul.drop-down .sub-menu .menu-item-has-children[aria-expanded=true] > ul,
-#navigation ul.drop-down li.menu-item-has-children.focus > ul,
-#navigation ul.drop-down li.menu-item-has-children:hover > ul,
-#navigation ul.drop-down li.menu-item-has-children:focus > ul,
-#navigation ul.drop-down li.menu-item-has-children[aria-expanded=true] > ul {
+  #navigation ul.drop-down .menu-item-has-children ul.sub-menu[aria-hidden=false] {
     left: 0;
-    top: 100%;
-    z-index: 99999;
   }
-  #navigation ul.drop-down .sub-menu .menu-item-has-children:focus > ul.menu-side,
-#navigation ul.drop-down .sub-menu .menu-item-has-children:hover > ul.menu-side,
-#navigation ul.drop-down .sub-menu .menu-item-has-children.focus > ul.menu-side,
-#navigation ul.drop-down .sub-menu .menu-item-has-children.hover > ul.menu-side,
-#navigation ul.drop-down .sub-menu .menu-item-has-children[aria-expanded=true] > ul.menu-side,
-#navigation ul.drop-down li.menu-item-has-children.focus > ul.menu-side,
-#navigation ul.drop-down li.menu-item-has-children:hover > ul.menu-side,
-#navigation ul.drop-down li.menu-item-has-children:focus > ul.menu-side,
-#navigation ul.drop-down li.menu-item-has-children[aria-expanded=true] > ul.menu-side {
+  #navigation ul.drop-down .menu-item-has-children ul.sub-menu[aria-hidden=false] ul.sub-menu {
     left: 100%;
-    top: 0;
   }
   #navigation .nav-menu.flat::after {
     display: block;

@@ -2,12 +2,14 @@
 
 #navigation {
   background: $col-menu-bg;
+  
   ul,
   li {
     list-style: none;
     margin: 0;
     padding: 0;
   }
+  
   a {
     display: block;
     background: $col-menu-bg;
@@ -19,15 +21,68 @@
       background: $col-menu-bg-focus;
     }
   }
+
+  // Layout wrapper from our custom Walker class
+  .menu-item-link-wrapper {
+    display: flex;
+    align-items: stretch; // Forces the link and button to be the exact same height
+    justify-content: space-between;
+    
+    a {
+      flex-grow: 1; // Ensures the text link takes up available space
+      display: flex;
+      align-items: center; // Vertically centers the text within the full-height container
+    }
+  }
+
+  // The disclosure toggle button style
+  button.disclosure-toggle {
+    background: transparent;
+    border: none;
+    color: $col-menu-text;
+    padding: 0 0.75em; // Removed vertical padding so it stretches cleanly
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // The static W3C pseudo-element downward arrow
+    &::after {
+      content: "";
+      border-bottom: 1px solid $col-menu-text; // Uses your menu text color variable
+      border-right: 1px solid $col-menu-text;
+      height: 0.5em;
+      width: 0.5em;
+      transform: rotate(45deg); // Static down arrow shape
+      margin-left: 0.25em; 
+      margin-top: -0.25em; // Visual alignment balance for the 45-degree angle
+      display: inline-block;
+    }
+
+    &:hover,
+    &:focus,
+    &[aria-expanded="true"] {
+      color: $col-menu-text-focus;
+      background: $col-menu-bg-focus;
+
+      // Forces the arrow to turn light when the button is active, hovered, or focused
+      &::after {
+        border-color: $col-menu-text-focus; 
+      }
+    }
+  }
+
   .nav-menu {
     display: none;
   }
+  
   &.toggled,
   &:focus {
     .nav-menu {
       display: block;
     }
   }
+  
   .nav-menu.hierarchical {
     ul { margin-left: 0.75em; }
   }
@@ -36,42 +91,49 @@
     .nav-menu {
       display: block;
     }
+
     ul.drop-down {
       li {
         display: inline-block;
         position: relative;
         overflow: visible;
       }
-      li ul {
+
+      // W3C Pattern: Hidden states are purely driven by aria-hidden="true"
+      li ul.sub-menu {
         position: absolute;
         left: -999em;
-      }
-      ul li {
-          a { display: inline-block; width: 11em; word-wrap: auto; }
+        top: 100%;
+        z-index: 99999;
+        background: $col-menu-bg; // Ensure background doesn't drop out
+        
+        // Deep sub-menus (Flyouts) position fix
+        ul.sub-menu {
+          top: 0;
+          left: -999em;
+        }
       }
 
-      .sub-menu .menu-item-has-children:focus,
-      .sub-menu .menu-item-has-children:hover,
-      .sub-menu .menu-item-has-children.focus,
-      .sub-menu .menu-item-has-children.hover,
-      .sub-menu .menu-item-has-children[aria-expanded="true"],
-      li.menu-item-has-children.focus,
-      li.menu-item-has-children:hover,
-      li.menu-item-has-children:focus,
-      li.menu-item-has-children[aria-expanded="true"] {
-        > ul {
+      ul li {
+        a { display: inline-block; width: 11em; word-wrap: auto; }
+      }
+
+      // W3C Pattern: Display submenus ONLY when the parent toggle is expanded
+      // Matches your walker markup perfectly
+      .menu-item-has-children {
+        
+        // Target immediate child submenu when this element's button is active
+        ul.sub-menu[aria-hidden="false"] {
           left: 0;
-          top: 100%;
-          z-index: 99999;
-         &.menu-side {
-           left: 100%;
-           top: 0;
+          
+          // If it's a deep sub-menu flying out to the side
+          ul.sub-menu {
+            left: 100%;
           }
         }
-
       }
-
     }
+
     .nav-menu.flat {
       @include clearfix;
       li { display: inline; line-height: 2; }

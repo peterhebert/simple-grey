@@ -45,4 +45,65 @@
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}
 	};
+
+
+	
 } )();
+
+
+// dropdown menu.
+document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.disclosure-toggle');
+
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            // Get the target sub-menu ID from the button's aria-controls attribute
+            const subMenuId = this.getAttribute('aria-controls');
+            const subMenu = document.getElementById(subMenuId);
+
+            if (!subMenu) return;
+
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+            // Toggle state attributes on the button and sub-menu
+            this.setAttribute('aria-expanded', !isExpanded);
+            subMenu.setAttribute('aria-hidden', isExpanded);
+
+            // Optional: Toggle helper classes for styling transitions
+            this.classList.toggle('is-open', !isExpanded);
+            subMenu.classList.toggle('is-open', !isExpanded);
+        });
+    });
+
+    // Close open menus when clicking outside of them
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.menu-item-has-children')) {
+            closeAllSubMenus();
+        }
+    });
+
+    // Close open menus when pressing the Escape key (Accessibility best practice)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeAllSubMenus();
+        }
+    });
+
+    // Helper function to reset all menus to a collapsed state
+    function closeAllSubMenus() {
+        toggles.forEach(toggle => {
+            const subMenuId = toggle.getAttribute('aria-controls');
+            const subMenu = document.getElementById(subMenuId);
+
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.classList.remove('is-open');
+            
+            if (subMenu) {
+                subMenu.setAttribute('aria-hidden', 'true');
+                subMenu.classList.remove('is-open');
+            }
+        });
+    }
+});
