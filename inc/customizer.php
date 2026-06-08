@@ -75,7 +75,7 @@ function simple_grey_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'simple_grey_nav_style',
 		array(
-			'default'           => 'menu-flat',
+			'default'           => 'flat',
 			'sanitize_callback' => 'simple_grey_sanitize_text',
 		)
 	);
