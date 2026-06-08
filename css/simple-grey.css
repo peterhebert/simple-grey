@@ -251,14 +251,6 @@ body {
 }
 
 /* accessibility */
-nav.accessible-skip-nav {
-  line-height: 2;
-}
-nav.accessible-skip-nav:focus-within {
-  background-color: #fff;
-  padding: 0.5rem;
-}
-
 a.skip-link:not(:focus):not(:focus-visible) {
   position: absolute;
   left: -10000px;
@@ -268,6 +260,7 @@ a.skip-link:not(:focus):not(:focus-visible) {
   overflow: hidden;
 }
 a.skip-link:focus, a.skip-link:focus-visible {
+  margin: 0.5rem;
   padding: 0.75em;
   left: auto;
   right: auto;
