@@ -77,8 +77,20 @@ The following tools and code libraries have ben used in the development of Simpl
 ## Development, Issues and Contributions
 All development of this theme is done on [GitHub](https://github.com/peterhebert/simple-grey). Please file any issues with the theme against the GitHub repository. Contributions are welcome, feel free to fork the project and make pull requests.
 
+### Build locally
+
+If you want to use the build tools, you'll need to clone the theme from Github. The build uses npm and gulp. Install dependencies via npm:
+
+`npm install`
+
+the build commands are `npm run dev` for development including watch, and `npm run build` for a production build. 
+
+To generate the .pot file for translations, you will need the `wp-cli/i18n` package for WP-CLI.
+
+`wp i18n make-pot . languages/simple-grey.pot`
+
 ## More information
-More information about this theme is available on the [Rex Rana](https://rexrana.ca/code/simple-grey-wordpress-theme) website.
+More information about this theme is available on my website: [Simple Grey](https://peterhebert.com/en/code/simple-grey)
 
 ## Changelog
 
