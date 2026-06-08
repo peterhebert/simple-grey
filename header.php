@@ -70,9 +70,9 @@ if ( has_nav_menu( 'primary' ) ) :
 </div>
 </header><!-- #masthead -->
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
-<div id="navigation" role="navigation">
+<div id="navigation">
 <div class="wrap">
-<nav class="row">
+<nav class="row" role="navigation">
 	<?php simple_grey_main_menu(); ?>
 </nav>
 </div>

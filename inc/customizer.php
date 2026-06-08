@@ -66,8 +66,9 @@ function simple_grey_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'simple_grey_navigation',
 		array(
-			'title'    => __( 'Navigation', 'simple-grey' ),
+			'title'    => __( 'Navigation Settings', 'simple-grey' ),
 			'priority' => 105,
+			'panel'    => 'nav_menus',
 		)
 	);
 

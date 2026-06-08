@@ -58,6 +58,7 @@ This theme includes a *Feature Page* template, which can be used for a front pag
 
 ## Complementary Plugins
 The following plugins are quite useful in conjunction with this theme:
+- [Classic Menu Accessible (A11y)](https://wordpress.org/plugins/classic-menu-accessible-a11y/) makes the native WordPress menu more inclusive and compliant with digital accessibility standards (WCAG 2.2 level AA, RGAA, Anysurfer).
 - [Widget CSS Classes](https://en-ca.wordpress.org/plugins/widget-css-classes/) - allows you to apply CSS classes to any widget. For example:
     - by applying the class 'icons' to widgets in the footer, the theme will allow you to style social media icons to match the footer (dark grey instead of the blue link color).
     - by applying the class 'columns' to widgets in the Featured widget area, you can have your widgets be in columns, instead of full width.
@@ -88,6 +89,8 @@ More information about this theme is available on the [Rex Rana](https://rexrana
 * consolidate theme supprt / setup into one function.
 * fixed logic for displaying categories and tags on posts.
 * removal of custom `.screen-reader-text` override (rely on WordPreess core CSS)
+* removal of outdated ARIA Walker class for menus.
+* move "navigation style" customizer section to menus panel
 
 1.8.1
 * tested with WordPress 6.9
