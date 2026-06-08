@@ -74,7 +74,7 @@
     }
     .nav-menu.flat {
       @include clearfix;
-      li { display: inline; line-height: 2.25; }
+      li { display: inline; line-height: 2; }
       a { display: inline; white-space: nowrap; }
     }
   }

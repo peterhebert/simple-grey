@@ -69,15 +69,8 @@ if ( has_nav_menu( 'primary' ) ) :
 <!-- .site-branding -->
 </div>
 </header><!-- #masthead -->
-<?php if ( has_nav_menu( 'primary' ) ) : ?>
-<div id="navigation">
-<div class="wrap">
-<nav class="row" role="navigation">
-	<?php simple_grey_main_menu(); ?>
-</nav>
-</div>
-</div>
-<?php endif; ?>
+
+<?php get_template_part( 'partials/nav', 'primary' ); ?>
 
 <div id="content" tabindex="-1">
 	<div class="wrap">

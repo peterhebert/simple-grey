@@ -72,27 +72,28 @@ function simple_grey_customize_register( $wp_customize ) {
 		)
 	);
 
-		$wp_customize->add_setting(
-			'simple_grey_nav_style',
-			array(
-				'default'           => 'menu-flat',
-				'sanitize_callback' => 'simple_grey_sanitize_text',
-			)
-		);
-		$wp_customize->add_control(
-			'simple_grey_nav_style',
-			array(
-				'type'        => 'select',
-				'label'       => __( 'Navigation Style', 'simple-grey' ),
-				'section'     => 'simple_grey_navigation',
-				'choices'     => array(
-					'flat'         => 'Flat',
-					'hierarchical' => 'Hierarchical (nested list)',
-					'drop-down'    => 'Drop Down',
-				),
-				'description' => __( 'Navigation style applied to the primary menu.', 'simple-grey' ),
-			)
-		);
+	$wp_customize->add_setting(
+		'simple_grey_nav_style',
+		array(
+			'default'           => 'menu-flat',
+			'sanitize_callback' => 'simple_grey_sanitize_text',
+		)
+	);
+
+	$wp_customize->add_control(
+		'simple_grey_nav_style',
+		array(
+			'type'        => 'select',
+			'label'       => __( 'Navigation Style', 'simple-grey' ),
+			'section'     => 'simple_grey_navigation',
+			'choices'     => array(
+				'flat'         => 'Flat',
+				'hierarchical' => 'Hierarchical (nested list)',
+				'drop-down'    => 'Drop Down',
+			),
+			'description' => __( 'Navigation style applied to the primary menu.', 'simple-grey' ),
+		)
+	);
 
 	// rename "Header Image' section to 'Header'.
 	$wp_customize->get_section( 'header_image' )->title = __( 'Header', 'simple-grey' );
