@@ -23,7 +23,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 	wp_body_open();
 }
 ?>
-<nav class="accessible-skip-nav"><a href="#content" class="screen-reader-text skip-link"><?php echo esc_html__( 'Skip to main content', 'simple-grey' ); ?></a></nav>
+<a href="#content" class="screen-reader-text skip-link"><?php echo esc_html__( 'Skip to main content', 'simple-grey' ); ?></a>
 <header id="masthead" class="site-header" role="banner">
 <div class="wrap">
 <?php

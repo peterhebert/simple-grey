@@ -1,13 +1,5 @@
 /* accessibility */
 
-nav.accessible-skip-nav {
-    line-height: 2;
-    &:focus-within {
-        background-color: #fff;
-        padding: .5rem;
-    }
-}
-
 a.skip-link {
 
 
@@ -22,7 +14,7 @@ a.skip-link {
 
     &:focus,
     &:focus-visible {
-        
+        margin: .5rem;
         padding: .75em;
         left: auto;
         right: auto;
