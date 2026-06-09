@@ -98,8 +98,11 @@ add_filter( 'get_the_excerpt', 'simple_grey_trim_excerpt' );
  * @param string $more The string shown within the more link.
  * @return string the custom read more link HTML.
  */
-function simple_grey_excerpt_more( $more ) {
-	return '&hellip; <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More', 'simple-grey' ) . '</a>';
+function simple_grey_excerpt_more( string $more ) {
+
+	$more = '&hellip; <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More', 'simple-grey' ) . '</a>';
+
+	return $more;
 }
 add_filter( 'excerpt_more', 'simple_grey_excerpt_more' );
 

@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<main id="main" role="main">
+	<main id="main" role="main" aria-label="<?php echo esc_html__( 'Main Content', 'simple-grey' ); ?>">
 		<header class="page-header">
 		<?php
 		the_archive_title( '<h1 class="page-title">', '</h1>' );

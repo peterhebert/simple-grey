@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-		<main id="main" class="site-main" role="main">
+		<main id="main" role="main" aria-label="<?php echo esc_html__( 'Main Content', 'simple-grey' ); ?>">
 
 		<?php if ( have_posts() ) : ?>
 
