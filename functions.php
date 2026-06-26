@@ -107,7 +107,7 @@ function simple_grey_scripts() {
 	}
 
 	// fix issues with oEmbeds.
-	wp_enqueue_script( 'simple-grey-oembed-adjust', get_theme_file_uri( 'js/oembed-adjust.js' ), array( 'jquery' ), SIMPLE_GREY_VERSION, true );
+	wp_enqueue_script( 'simple-grey-oembed-adjust', get_theme_file_uri( 'js/oembed-adjust.js' ), array(), SIMPLE_GREY_VERSION, true );
 
 	// and finally, enqueue theme stylesheet (style.css).
 	wp_enqueue_style( 'simple-grey-style', get_stylesheet_uri(), array(), SIMPLE_GREY_VERSION, true );
