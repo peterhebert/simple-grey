@@ -94,7 +94,7 @@ More information about this theme is available on my website: [Simple Grey](http
 
 ## Changelog
 
-1.9.0
+2.0.0
 * Changes to meet new WordPress standards for the `accessibility-ready` tag. See: [blog post](https://make.wordpress.org/accessibility/2026/05/06/accessibility-ready-requirements-updated/) and new [Guidelines](https://wpaccessibility.org/docs/topics/theme-guidelines/).
 * fixed skip link
 * fixed boolean display logic for footer credits.
@@ -103,6 +103,8 @@ More information about this theme is available on my website: [Simple Grey](http
 * removal of custom `.screen-reader-text` override (rely on WordPreess core CSS)
 * removal of outdated ARIA Walker class for menus.
 * move "navigation style" customizer section to menus panel
+* remove legacy skip link fix and accessibility focus fixes.
+* conversion of scripts to pure JavaScript to avoid dependency on JQuery.
 
 1.8.1
 * tested with WordPress 6.9
