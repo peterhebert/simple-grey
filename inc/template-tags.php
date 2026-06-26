@@ -277,43 +277,47 @@ if ( ! function_exists( 'simple_grey_post_taxonomy' ) ) :
 
 endif;
 
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-function simple_grey_categorized_blog() {
-
-	$all_the_categories = get_transient( 'simple_grey_categories' );
-
-	if ( false === $all_the_categories ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_categories = get_categories(
-			array(
-				'fields'     => 'ids',
-				'hide_empty' => 1,
-				// We only need to know if there is more than one category.
-				'number'     => 2,
-			)
-		);
-
-		// Count the number of categories that are attached to the posts.
-		$all_the_categories = count( $all_the_categories );
-
-		set_transient( 'simple_grey_categories', $all_the_categories );
+if ( ! function_exists( 'simple_grey_categorized_blog' ) ) :
+	
+	/**
+	 * Returns true if a blog has more than 1 category.
+	 *
+	 * @return bool
+	 */
+	function simple_grey_categorized_blog() {
+	
+		$all_the_categories = get_transient( 'simple_grey_categories' );
+	
+		if ( false === $all_the_categories ) {
+			// Create an array of all the categories that are attached to posts.
+			$all_the_categories = get_categories(
+				array(
+					'fields'     => 'ids',
+					'hide_empty' => 1,
+					// We only need to know if there is more than one category.
+					'number'     => 2,
+				)
+			);
+	
+			// Count the number of categories that are attached to the posts.
+			$all_the_categories = count( $all_the_categories );
+	
+			set_transient( 'simple_grey_categories', $all_the_categories );
+		}
+	
+		if ( $all_the_categories > 1 ) {
+			// This blog has more than 1 category so return true.
+			return true;
+		} else {
+			// This blog has only 1 category so return false.
+			return false;
+		}
 	}
 
-	if ( $all_the_categories > 1 ) {
-		// This blog has more than 1 category so simple_grey_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so simple_grey_categorized_blog should return false.
-		return false;
-	}
-}
+endif;
 
 /**
- * Flush out the transients used in simple_grey_categorized_blog.
+ * Flush out the transients used in previous function above.
  */
 function simple_grey_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {

@@ -146,6 +146,11 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
+ * Customize comments appearance for accesisbility.
+ */
+require get_template_directory() . '/inc/commenting.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';

@@ -1283,7 +1283,7 @@ body {
   margin-right: 0.5em;
 }
 #main article .entry-meta .comments-link:before {
-  font-family: "FontAwesome";
+  font-family: "ForkAwesome";
   content: "";
   margin: 0 0.75em;
 }
@@ -1670,6 +1670,10 @@ body {
 
 /* =Comments
 ----------------------------------------------- */
+.comment-content {
+  margin-block: 1rem;
+}
+
 .comment-content a {
   word-wrap: break-word;
 }
@@ -1680,7 +1684,7 @@ body {
   margin: 0 0 1em;
 }
 .comments-area .comments-title:before {
-  font-family: "FontAwesome";
+  font-family: "ForkAwesome";
   content: "";
   margin-right: 0.25em;
 }
@@ -1690,7 +1694,7 @@ body {
   margin: 0 0 1.2em;
 }
 .comments-area .comment-reply-title:before {
-  font-family: "FontAwesome";
+  font-family: "ForkAwesome";
   content: "";
   margin-right: 0.5em;
 }
