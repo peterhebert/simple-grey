@@ -17,11 +17,11 @@
 class Disclosure_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 	/**
-	 * Store the current item's ID so start_lvl can access it.
+	 * Store parent IDs in a stack for nested menus.
 	 *
-	 * @var integer Saved value for current menu item ID.
+	 * @var array Stack of parent menu item IDs.
 	 */
-	private $current_parent_id = 0;
+	private $parent_id_stack = array();
 
 	/**
 	 * Starts the list before the elements are added.
@@ -38,8 +38,9 @@ class Disclosure_Walker_Nav_Menu extends Walker_Nav_Menu {
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
 
-		// Dynamically use the saved parent ID to build the id attribute.
-		$menu_id = $this->current_parent_id ? ' id="sub-menu-' . esc_attr( $this->current_parent_id ) . '"' : '';
+		// Get the parent ID from the stack (last pushed ID is the current parent)
+		$parent_id = ! empty( $this->parent_id_stack ) ? end( $this->parent_id_stack ) : 0;
+		$menu_id = $parent_id ? ' id="sub-menu-' . esc_attr( $parent_id ) . '"' : '';
 
 		$output .= "\n{$indent}<ul{$menu_id} class=\"sub-menu\" aria-hidden=\"true\">\n";
 	}
@@ -67,9 +68,9 @@ class Disclosure_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 		$has_children = in_array( 'menu-item-has-children', $item->classes, true );
 
-		// Update the property so start_lvl() knows which ID belongs to this level's parent.
+		// Push parent ID onto the stack before rendering its children
 		if ( $has_children ) {
-			$this->current_parent_id = $item->ID;
+			$this->parent_id_stack[] = $item->ID;
 		}
 
 		$output .= "{$indent}<li id=\"menu-item-{$item->ID}\"{$class_names}>";
@@ -112,6 +113,15 @@ class Disclosure_Walker_Nav_Menu extends Walker_Nav_Menu {
 	}
 
 	/**
+	 * Destructor to clean up parent ID stack.
+	 *
+	 * @return void
+	 */
+	public function __destruct() {
+		$this->parent_id_stack = array();
+	}
+
+	/**
 	 * Ends the list of after the elements are added.
 	 *
 	 * @since 3.0.0
@@ -125,5 +135,10 @@ class Disclosure_Walker_Nav_Menu extends Walker_Nav_Menu {
 	public function end_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent  = str_repeat( "\t", $depth );
 		$output .= "{$indent}</ul>\n";
+		
+		// Pop the parent ID from the stack after closing its submenu
+		if ( ! empty( $this->parent_id_stack ) ) {
+			array_pop( $this->parent_id_stack );
+		}
 	}
 }
