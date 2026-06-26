@@ -102,17 +102,12 @@ function simple_grey_scripts() {
 	// load scripts.
 	wp_enqueue_script( 'simple-grey-navigation', get_theme_file_uri( 'js/navigation.js' ), array(), SIMPLE_GREY_VERSION, true );
 
-	wp_enqueue_script( 'simple-grey-skip-link-focus-fix', get_theme_file_uri( 'js/skip-link-focus-fix.js' ), array(), SIMPLE_GREY_VERSION, true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	// fix issues with oEmbeds.
 	wp_enqueue_script( 'simple-grey-oembed-adjust', get_theme_file_uri( 'js/oembed-adjust.js' ), array( 'jquery' ), SIMPLE_GREY_VERSION, true );
-
-	// accessibility features.
-	wp_enqueue_script( 'simple-grey-accessibility', get_theme_file_uri( 'js/accessibility.js' ), array( 'jquery' ), SIMPLE_GREY_VERSION, true );
 
 	// and finally, enqueue theme stylesheet (style.css).
 	wp_enqueue_style( 'simple-grey-style', get_stylesheet_uri(), array(), SIMPLE_GREY_VERSION, true );
