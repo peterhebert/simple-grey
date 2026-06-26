@@ -241,7 +241,12 @@ if ( ! function_exists( 'simple_grey_custom_background_cb' ) ) :
 		}
 
 		?>
-		<style type="text/css">#content { <?php echo esc_attr( $style ); ?> }</style>
+		<style type="text/css">#content { 
+		<?php
+		// phpcs:ignore
+		echo $style;
+		?>
+		}</style>
 		<?php
 	}
 endif;

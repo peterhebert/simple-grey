@@ -38,9 +38,9 @@ class Disclosure_Walker_Nav_Menu extends Walker_Nav_Menu {
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
 
-		// Get the parent ID from the stack (last pushed ID is the current parent)
+		// Get the parent ID from the stack (last pushed ID is the current parent).
 		$parent_id = ! empty( $this->parent_id_stack ) ? end( $this->parent_id_stack ) : 0;
-		$menu_id = $parent_id ? ' id="sub-menu-' . esc_attr( $parent_id ) . '"' : '';
+		$menu_id   = $parent_id ? ' id="sub-menu-' . esc_attr( $parent_id ) . '"' : '';
 
 		$output .= "\n{$indent}<ul{$menu_id} class=\"sub-menu\" aria-hidden=\"true\">\n";
 	}
@@ -68,7 +68,7 @@ class Disclosure_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 		$has_children = in_array( 'menu-item-has-children', $item->classes, true );
 
-		// Push parent ID onto the stack before rendering its children
+		// Push parent ID onto the stack before rendering its children.
 		if ( $has_children ) {
 			$this->parent_id_stack[] = $item->ID;
 		}
@@ -135,8 +135,8 @@ class Disclosure_Walker_Nav_Menu extends Walker_Nav_Menu {
 	public function end_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent  = str_repeat( "\t", $depth );
 		$output .= "{$indent}</ul>\n";
-		
-		// Pop the parent ID from the stack after closing its submenu
+
+		// Pop the parent ID from the stack after closing its submenu.
 		if ( ! empty( $this->parent_id_stack ) ) {
 			array_pop( $this->parent_id_stack );
 		}
