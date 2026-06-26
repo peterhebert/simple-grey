@@ -1534,15 +1534,14 @@ body {
   height: 0.5em;
   width: 0.5em;
   transform: rotate(45deg);
-  margin-left: 0.25em;
   margin-top: -0.25em;
   display: inline-block;
 }
-#navigation button.disclosure-toggle:hover, #navigation button.disclosure-toggle:focus, #navigation button.disclosure-toggle[aria-expanded=true] {
+#navigation button.disclosure-toggle:hover, #navigation button.disclosure-toggle:focus {
   color: whitesmoke;
   background: #212121;
 }
-#navigation button.disclosure-toggle:hover::after, #navigation button.disclosure-toggle:focus::after, #navigation button.disclosure-toggle[aria-expanded=true]::after {
+#navigation button.disclosure-toggle:hover::after, #navigation button.disclosure-toggle:focus::after {
   border-color: whitesmoke;
 }
 #navigation .nav-menu {
@@ -1558,33 +1557,6 @@ body {
   #navigation .nav-menu {
     display: block;
   }
-  #navigation ul.drop-down li {
-    display: inline-block;
-    position: relative;
-    overflow: visible;
-  }
-  #navigation ul.drop-down li ul.sub-menu {
-    position: absolute;
-    left: -999em;
-    top: 100%;
-    z-index: 99999;
-    background: whitesmoke;
-  }
-  #navigation ul.drop-down li ul.sub-menu ul.sub-menu {
-    top: 0;
-    left: -999em;
-  }
-  #navigation ul.drop-down ul li a {
-    display: inline-block;
-    width: 11em;
-    word-wrap: auto;
-  }
-  #navigation ul.drop-down .menu-item-has-children ul.sub-menu[aria-hidden=false] {
-    left: 0;
-  }
-  #navigation ul.drop-down .menu-item-has-children ul.sub-menu[aria-hidden=false] ul.sub-menu {
-    left: 100%;
-  }
   #navigation .nav-menu.flat::after {
     display: block;
     clear: both;
@@ -1598,6 +1570,34 @@ body {
     display: inline;
     white-space: nowrap;
   }
+}
+
+.nav-menu.drop-down li {
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+}
+.nav-menu.drop-down li ul.sub-menu {
+  position: absolute;
+  left: -999em;
+  top: 100%;
+  z-index: 99999;
+  background: whitesmoke;
+}
+.nav-menu.drop-down li ul.sub-menu ul.sub-menu {
+  top: 0;
+  left: -999em;
+}
+.nav-menu.drop-down ul li a {
+  display: inline-block;
+  width: 11em;
+  word-wrap: auto;
+}
+.nav-menu.drop-down .sub-menu.is-open {
+  left: 0;
+}
+.nav-menu.drop-down .sub-menu.is-open > li ul.sub-menu.is-open {
+  left: 100%;
 }
 
 /* =Widgets
