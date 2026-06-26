@@ -13,7 +13,7 @@
 function simple_grey_navigation_menus() {
 
 	$locations = array(
-		'primary' => __( 'Primary Navigation', 'simple-grey' ),
+		'primary' => __( 'Primary', 'simple-grey' ),
 	);
 	register_nav_menus( $locations );
 }
