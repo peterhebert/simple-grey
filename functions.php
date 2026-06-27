@@ -91,23 +91,23 @@ function simple_grey_scripts() {
 
 	// load theme stylesheets.
 	if ( is_rtl() ) {
-		wp_enqueue_style( 'simple-grey-main-rtl', get_theme_file_uri( 'css/simple-grey-rtl.css' ), array(), SIMPLE_GREY_VERSION );
+		wp_enqueue_style( 'simple-grey-main-rtl', get_theme_file_uri( 'css/simple-grey-rtl.css' ), array(), simple_grey_file_version( '/css/simple-grey-rtl.css' ) );
 	} else {
-		wp_enqueue_style( 'simple-grey-main', get_theme_file_uri( 'css/simple-grey.css' ), array(), SIMPLE_GREY_VERSION );
+		wp_enqueue_style( 'simple-grey-main', get_theme_file_uri( 'css/simple-grey.css' ), array(), simple_grey_file_version( '/css/simple-grey.css' ) );
 	}
 
 	// Fork Awesome web font.
 	wp_enqueue_style( 'fork-awesome-icons', get_theme_file_uri( 'css/fork-awesome.min.css' ), array(), '1.2.0' );
 
 	// load scripts.
-	wp_enqueue_script( 'simple-grey-navigation', get_theme_file_uri( 'js/navigation.js' ), array(), SIMPLE_GREY_VERSION, true );
+	wp_enqueue_script( 'simple-grey-navigation', get_theme_file_uri( 'js/navigation.js' ), array(), simple_grey_file_version( '/js/navigation.js' ), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	// fix issues with oEmbeds.
-	wp_enqueue_script( 'simple-grey-oembed-adjust', get_theme_file_uri( 'js/oembed-adjust.js' ), array(), SIMPLE_GREY_VERSION, true );
+	wp_enqueue_script( 'simple-grey-oembed-adjust', get_theme_file_uri( 'js/oembed-adjust.js' ), array(), simple_grey_file_version( 'js/oembed-adjust.js' ), true );
 
 	// and finally, enqueue theme stylesheet (style.css).
 	wp_enqueue_style( 'simple-grey-style', get_stylesheet_uri(), array(), SIMPLE_GREY_VERSION, true );
