@@ -189,3 +189,24 @@ function simple_grey_basic_allowed_html() {
 
 	return $allowed_tags;
 }
+
+/**
+ * Get the version string for a given file.
+ *
+ * @param string $file Path to the file relative to the theme.
+ * @return string version string.
+ */
+function simple_grey_file_version( string $file ) {
+
+	$file_path = get_template_directory() . $file;
+
+	// If the file exists, and on development or local,
+	// return its modification date and time.
+
+	if ( defined( 'WP_ENV' ) && in_array( WP_ENV, array( 'development', 'local' ), true ) && file_exists( $file_path ) ) {
+		return gmdate( 'Ymd-His', filemtime( $file_path ) );
+	}
+
+	// Otherwise return theme version.
+	return SIMPLE_GREY_VERSION;
+}
