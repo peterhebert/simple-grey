@@ -18,8 +18,8 @@
 
     &:hover,
     &:focus {
-      color: $col-menu-text-focus;
-      background: $col-menu-bg-focus;
+      color: $col-focus-menu-text;
+      background: $col-focus-menu-bg;
     }
   }
 
@@ -62,12 +62,12 @@
 
     &:hover,
     &:focus {
-      color: $col-menu-text-focus;
-      background: $col-menu-bg-focus;
+      color: $col-focus-menu-text;
+      background: $col-focus-menu-bg;
 
       // Forces the arrow to turn light when the button is active, hovered, or focused
       &::after {
-        border-color: $col-menu-text-focus;
+        border-color: $col-focus-menu-text;
       }
     }
   }

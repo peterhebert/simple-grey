@@ -32,6 +32,7 @@ $blue: hsl(210, 100%, 40%); // #06c
 $red: hsl(0, 100%, 40%); // #c00
 $dark-red : hsl(0, 100%, 20%); // #600
 $gold: hsl(48, 100%, 50%); // #fc0
+$green: #086118;
 
 // variables - color palette
 $col-bg: $white;
@@ -43,18 +44,16 @@ $col-link: $blue;
 $col-link-hover: $red;
 $col-link-active: $dark-red;
 $col-link-visited: darken($col-link, 10%);
+
 $col-masthead-bg: $gray-800;
 $col-masthead-txt: $gray-200;
 $col-masthead-hover: $gold;
 $col-menu-bg: $gray-100;
 $col-menu-text: $gray-900;
-$col-menu-bg-focus: $col-menu-text;
-$col-menu-text-focus: $col-menu-bg;
 $col-footer-bg: $col-menu-bg;
 $col-footer-text: $col-menu-text;
 $col-disabled-txt: $gray-500;
 $col-disabled-bg: $gray-200;
-$col-focus-border: $gray-500;
 $col-button-bg: $gray-200;
 $col-button-bg-hover: $gray-200;
 $col-button-txt: $gray-800;
@@ -71,7 +70,15 @@ $col-social-icons: $gray-800;
 $input-bg: $white;
 $input-color: $gray-600;
 $col-placeholder: $gray-500;
-$col-tab-focus: $gray-800;
+
+$col-focus-menu-bg: $col-menu-text;
+$col-focus-menu-text: $col-menu-bg;
+$col-focus-border: $gray-500;
+$col-outline: $blue;
+
+$col-focus-invalid: $red;
+$col-focus-valid: $green;
+$col-focus-tab: $gray-800;
 
 // font stacks 
 $fonts-serif: Cambria, Georgia, Times, 'Times New Roman', serif;

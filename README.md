@@ -106,6 +106,7 @@ More information about this theme is available on my website: [Simple Grey](http
 * remove legacy skip link fix and accessibility focus fixes.
 * conversion of scripts to pure JavaScript to avoid dependency on JQuery.
 * fixed broken ForkAwesome font references in CSS.
+* Accessibility fixes to forms and comments.
 
 1.8.1
 * tested with WordPress 6.9

@@ -618,6 +618,11 @@ label {
   margin-bottom: 0.3125em;
   font-weight: 600;
 }
+label .optional,
+label .required {
+  margin-inline-start: 0.25em;
+  font-weight: 400;
+}
 
 input[type=search] {
   box-sizing: border-box;
@@ -645,9 +650,9 @@ select optgroup {
   font-family: inherit;
 }
 
-input[type=file]:focus,
-input[type=radio]:focus,
-input[type=checkbox]:focus {
+input[type=file]:focus-visible,
+input[type=radio]:focus-visible,
+input[type=checkbox]:focus-visible {
   outline: thin dotted #333333;
   outline: 0.3125em auto -webkit-focus-ring-color;
 }
@@ -711,6 +716,64 @@ input[type=tel]:focus,
 input[type=color]:focus {
   border-color: #666666;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 102, 102, 0.6);
+  outline-color: #0066cc;
+}
+.form-control:focus-visible, select:focus-visible,
+textarea:focus-visible,
+input[type=text]:focus-visible,
+input[type=password]:focus-visible,
+input[type=datetime]:focus-visible,
+input[type=datetime-local]:focus-visible,
+input[type=date]:focus-visible,
+input[type=month]:focus-visible,
+input[type=time]:focus-visible,
+input[type=week]:focus-visible,
+input[type=number]:focus-visible,
+input[type=email]:focus-visible,
+input[type=url]:focus-visible,
+input[type=search]:focus-visible,
+input[type=tel]:focus-visible,
+input[type=color]:focus-visible {
+  outline-style: solid;
+  outline-color: #666666;
+  outline-width: 3px;
+  outline-offset: 4px;
+}
+.form-control:focus-visible:invalid:required, select:focus-visible:invalid:required,
+textarea:focus-visible:invalid:required,
+input[type=text]:focus-visible:invalid:required,
+input[type=password]:focus-visible:invalid:required,
+input[type=datetime]:focus-visible:invalid:required,
+input[type=datetime-local]:focus-visible:invalid:required,
+input[type=date]:focus-visible:invalid:required,
+input[type=month]:focus-visible:invalid:required,
+input[type=time]:focus-visible:invalid:required,
+input[type=week]:focus-visible:invalid:required,
+input[type=number]:focus-visible:invalid:required,
+input[type=email]:focus-visible:invalid:required,
+input[type=url]:focus-visible:invalid:required,
+input[type=search]:focus-visible:invalid:required,
+input[type=tel]:focus-visible:invalid:required,
+input[type=color]:focus-visible:invalid:required {
+  outline-color: #cc0000;
+}
+.form-control:focus-visible:valid, select:focus-visible:valid,
+textarea:focus-visible:valid,
+input[type=text]:focus-visible:valid,
+input[type=password]:focus-visible:valid,
+input[type=datetime]:focus-visible:valid,
+input[type=datetime-local]:focus-visible:valid,
+input[type=date]:focus-visible:valid,
+input[type=month]:focus-visible:valid,
+input[type=time]:focus-visible:valid,
+input[type=week]:focus-visible:valid,
+input[type=number]:focus-visible:valid,
+input[type=email]:focus-visible:valid,
+input[type=url]:focus-visible:valid,
+input[type=search]:focus-visible:valid,
+input[type=tel]:focus-visible:valid,
+input[type=color]:focus-visible:valid {
+  outline-color: #086118;
 }
 .form-control::placeholder, select::placeholder,
 textarea::placeholder,
@@ -850,6 +913,28 @@ button:focus,
 input[type=submit]:focus {
   border-color: #666666;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 102, 102, 0.6);
+  outline-color: #0066cc;
+}
+button:focus-visible,
+input[type=submit]:focus-visible {
+  outline-style: solid;
+  outline-color: #666666;
+  outline-width: 3px;
+  outline-offset: 4px;
+}
+button:focus-visible:invalid:required,
+input[type=submit]:focus-visible:invalid:required {
+  outline-color: #cc0000;
+}
+button:focus-visible:valid,
+input[type=submit]:focus-visible:valid {
+  outline-color: #086118;
+}
+button:focus-visible, button:focus-visible:invalid:required, button:focus-visible:valid,
+input[type=submit]:focus-visible,
+input[type=submit]:focus-visible:invalid:required,
+input[type=submit]:focus-visible:valid {
+  outline-color: #0066cc;
 }
 
 .search-form input {
@@ -1879,6 +1964,22 @@ fieldset[disabled] .paging-navigation .nav-links a {
 .paging-navigation .nav-links a:focus {
   border-color: #666666;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 102, 102, 0.6);
+  outline-color: #0066cc;
+}
+.post-navigation .nav-links a:focus-visible,
+.paging-navigation .nav-links a:focus-visible {
+  outline-style: solid;
+  outline-color: #666666;
+  outline-width: 3px;
+  outline-offset: 4px;
+}
+.post-navigation .nav-links a:focus-visible:invalid:required,
+.paging-navigation .nav-links a:focus-visible:invalid:required {
+  outline-color: #cc0000;
+}
+.post-navigation .nav-links a:focus-visible:valid,
+.paging-navigation .nav-links a:focus-visible:valid {
+  outline-color: #086118;
 }
 .post-navigation .nav-links .nav-previous a .meta-nav,
 .paging-navigation .nav-links .nav-previous a .meta-nav {
