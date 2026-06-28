@@ -1403,11 +1403,6 @@ body {
   line-height: 1.7142857143em;
   margin: 0 0 1.7142857143em;
 }
-#main article .entry-meta .edit-link:before {
-  font-family: "dashicons";
-  content: "";
-  margin-right: 0.5em;
-}
 #main article .entry-meta .comments-link:before {
   font-family: "ForkAwesome";
   content: "";
@@ -1418,6 +1413,11 @@ body {
 }
 #main article .entry-footer .cat-links, #main article .entry-footer .tags-links {
   margin-right: 0.75em;
+}
+#main article .post-edit-link:before {
+  font-family: "dashicons";
+  content: "";
+  margin-inline-end: 0.25em;
 }
 
 @media only screen and (min-width: 24em) and (max-width: 48em) {
@@ -1449,6 +1449,13 @@ body {
   #secondary .widget:nth-of-type(3n+1) {
     clear: left;
   }
+}
+
+.widget-title,
+.widget_block h2.wp-block-heading {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin: 0 0 1em;
 }
 
 @media only screen and (min-width: 60em) {
@@ -1731,10 +1738,10 @@ body {
 .widget {
   margin-bottom: 1.5em;
 }
-.widget .widget-title {
-  font-size: 1.5em;
-  line-height: 1em;
-  margin: 0 0 1em;
+.widget h2.widget-title {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin: 0 0 1.2em;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
 }
@@ -1794,6 +1801,11 @@ body {
   width: 100%;
 }
 
+.wp-block-latest-posts li,
+.wp-block-latest-comments li {
+  margin-block: 0.5em;
+}
+
 /* =Comments
 ----------------------------------------------- */
 .comment-content {
@@ -1809,20 +1821,10 @@ body {
   line-height: 1em;
   margin: 0 0 1em;
 }
-.comments-area .comments-title:before {
-  font-family: "ForkAwesome";
-  content: "";
-  margin-right: 0.25em;
-}
 .comments-area .comment-reply-title {
   font-size: 1.25em;
   line-height: 1.2em;
   margin: 0 0 1.2em;
-}
-.comments-area .comment-reply-title:before {
-  font-family: "ForkAwesome";
-  content: "";
-  margin-right: 0.5em;
 }
 .comments-area ol {
   list-style-type: none;

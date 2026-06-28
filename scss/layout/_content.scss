@@ -87,28 +87,29 @@ body {
     }
     .entry-meta {
       @include baseline-size(0.875);
-      .edit-link:before {
-        font-family: 'dashicons';
-        content: "\f327";
-        margin-right: 0.5em;
-      }
-      //.edit-link:before
       .comments-link:before {
         font-family: 'ForkAwesome';
         content: "\f0e5";
         margin: 0 .75em;
       }
-      // .comments-link:before
     }
     .post-thumbnail {
       margin-bottom: 1.5em;
     }
-    // .post-thumbnail
+
+
     .entry-footer {
       .cat-links, .tags-links {
         margin-right: .75em;
       }
     }
+
+          .post-edit-link:before {
+        font-family: 'dashicons';
+        content: "\f327";
+        margin-inline-end: 0.25em;
+      }
+
     @include mg-bottom();
   }
 }
@@ -117,6 +118,12 @@ body {
   .widget {
       @include even-columns(3, $widget-breakpoints);
   }
+}
+
+// widget headings (classic and block)
+.widget-title,
+.widget_block h2.wp-block-heading {
+  @include baseline-size(1.5);
 }
 
 // move secondary sidebar to second column if active
