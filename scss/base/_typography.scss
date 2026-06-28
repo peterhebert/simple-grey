@@ -43,7 +43,8 @@ h3,
 h4,
 h5,
 h6 {
-    @include headlines;
+    font-weight: 600;
+    font-style: normal;
 }
 
 h1 {
@@ -75,7 +76,6 @@ p,
 ol,
 ul,
 blockquote,
-pre,
 td,
 th,
 label {
@@ -124,3 +124,54 @@ var,
 address {
     font-style: normal
 }
+
+// Code - based on Bootstrap 5 Reboot
+// https://getbootstrap.com/docs/5.3/content/reboot/
+
+pre,
+code,
+kbd,
+samp {
+  font-family: $fonts-mono;
+  font-size: 1em;
+}
+
+pre {
+  display: block;
+  overflow: auto; 
+  @include baseline-size(1);
+  color: $col-code;
+  // allow wrapping.
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+  }
+}
+
+code {
+  color: $col-code;
+  word-wrap: break-word;
+
+  // Streamline the style when inside anchors to avoid broken underline and more
+  a > & {
+    color: inherit;
+  }
+}
+
+kbd {
+  padding: .1875rem .375rem;
+  color: $col-code;
+  background-color: $col-code-bg;
+
+  kbd {
+    padding: 0;
+  }
+}
+

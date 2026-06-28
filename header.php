@@ -52,11 +52,11 @@ if ( ! empty( $site_title ) || ! empty( $site_description ) ) :
 	?>
 <div class="site-info">
 	<?php if ( ! empty( $site_title ) ) : ?>
-		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
 	<?php endif; ?>
 
 	<?php if ( ! empty( $site_description ) ) : ?>
-		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 	<?php endif; ?>
 </div>
 	<?php

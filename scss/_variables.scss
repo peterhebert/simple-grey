@@ -80,9 +80,13 @@ $col-focus-invalid: $red;
 $col-focus-valid: $green;
 $col-focus-tab: $gray-800;
 
+$col-code: $gray-800;
+$col-code-bg: $gray-200;
+
 // font stacks 
 $fonts-serif: Cambria, Georgia, Times, 'Times New Roman', serif;
 $fonts-sans: 'Open Sans', Arial, Helvetica, sans-serif;
+$fonts-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
 // responsive breakpoints
 $bp-00: 20em; // based upon 320px most portrait phones
