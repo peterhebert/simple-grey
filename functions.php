@@ -28,8 +28,8 @@ function simple_grey_widgets_init() {
 			'description'   => '',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h1 class="widget-title">',
-			'after_title'   => '</h1>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		)
 	);
 
@@ -39,8 +39,8 @@ function simple_grey_widgets_init() {
 			'id'            => 'sidebar-featured',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h1 class="widget-title">',
-			'after_title'   => '</h1>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		)
 	);
 
@@ -50,8 +50,8 @@ function simple_grey_widgets_init() {
 			'id'            => 'sidebar-footer',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h1 class="widget-title">',
-			'after_title'   => '</h1>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		)
 	);
 }

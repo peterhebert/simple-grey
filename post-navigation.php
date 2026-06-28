@@ -11,7 +11,7 @@ $next     = get_adjacent_post( false, '', false );
 if ( $next || $previous ) :
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'simple-grey' ); ?></h1>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'simple-grey' ); ?></h2>
 		<div class="nav-links">
 		<?php
 			previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">&larr;</span>%title' );
