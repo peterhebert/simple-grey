@@ -97,7 +97,7 @@ class Disclosure_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 		if ( $has_children ) {
 			// Translators: Current menu item title.
-			$aria_label = sprintf( __( 'Expand %s' ), $item->title );
+			$aria_label = sprintf( __( 'Expand %s', 'simple-grey' ), $item->title );
 			// Disclosure Button referencing the exact sub-menu id attribute.
 			$item_output .= sprintf(
 				'<button class="disclosure-toggle" type="button" aria-expanded="false" aria-controls="sub-menu-%1$s" aria-label="%2$s">',
