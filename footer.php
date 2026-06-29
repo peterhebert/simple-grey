@@ -16,7 +16,7 @@ $show_credits  = simple_grey_show_footer_credits();
 </div>
 </div>
 
-<footer id="footer" class="site-footer" role="contentinfo" aria-label="<?php echo esc_html__( 'Footer', 'simple-grey' ); ?>">
+<footer id="footer" class="site-footer" role="contentinfo" aria-label="<?php echo esc_attr__( 'Footer', 'simple-grey' ); ?>">
 <?php if ( get_theme_mod( 'simple_grey_footer_text_top' ) ) : ?>
 		<div class="footer-text"><?php echo esc_html( get_theme_mod( 'simple_grey_footer_text_top' ) ); ?></div>
 		<?php endif; ?>

@@ -24,7 +24,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 }
 ?>
 <a href="#content" class="screen-reader-text skip-link"><?php echo esc_html__( 'Skip to main content', 'simple-grey' ); ?></a>
-<header id="masthead" class="site-header" role="banner" aria-label="<?php echo esc_html__( 'Header', 'simple-grey' ); ?>">
+<header id="masthead" class="site-header" role="banner" aria-label="<?php echo esc_attr__( 'Header', 'simple-grey' ); ?>">
 <div class="wrap">
 <?php
 $brand_class = '';

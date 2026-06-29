@@ -10,7 +10,7 @@
 
 get_header(); ?>
 
-	<main id="main" role="main" aria-label="<?php echo esc_html__( 'Main Content', 'simple-grey' ); ?>">
+	<main id="main" role="main" aria-label="<?php echo esc_attr__( 'Main Content', 'simple-grey' ); ?>">
 	<?php
 	if ( have_posts() ) :
 
