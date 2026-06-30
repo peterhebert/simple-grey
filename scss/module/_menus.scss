@@ -1,6 +1,6 @@
 /* main navigation menu */
 
-#navigation {
+.main-navigation {
   background: $col-menu-bg;
 
   ul,
@@ -110,45 +110,79 @@
   }
 }
 
-
-.nav-menu.drop-down {
+// drop-down menu style
+.main-navigation .nav-menu.drop-down {
+  width: 100%;
 
   li {
-    display: inline-block;
-    position: relative;
     overflow: visible;
   }
 
   li ul.sub-menu {
-    position: absolute;
-    left: -999em;
-    top: 100%;
-    z-index: 99999;
-    // Ensure background doesn't drop out
     background: $col-menu-bg;
-
-    // Deep sub-menus (Flyouts) position fix
-    ul.sub-menu {
-      top: 0;
-      left: -999em;
-    }
+    display: none;
   }
 
-  ul li {
-    a {
+
+  @media screen and (max-width: $bp-full-menu) {
+    .menu-item {
+      display: block;
+    }
+
+    >.menu-item:not(:last-child) {
+      border-bottom: 1px solid $col-border;
+    }
+
+    .sub-menu.is-open {
+      display: block;
+      padding-inline-start: $margin;
+    }
+
+
+  }
+
+  @media screen and (min-width: $bp-full-menu) {
+
+    li {
       display: inline-block;
-      width: 11em;
-      word-wrap: auto;
+      position: relative;
     }
+
+    li ul.sub-menu {
+      position: absolute;
+      left: -999em;
+      top: 100%;
+      z-index: 99999;
+
+      // Deep sub-menus (Flyouts)
+        ul.sub-menu {
+        position: absolute;
+        top: 0;
+        left: -999em;
+      }
+    }
+
+
+    ul li {
+      a {
+        display: inline-block;
+        width: 11em;
+        word-wrap: auto;
+      }
+    }
+
+    .sub-menu.is-open {
+      display: block;
+      left: 0;
+
+      >li ul.sub-menu.is-open {
+        left: 100%;
+      }
+    }
+
+
+
   }
 
-  .sub-menu.is-open {
-    left: 0;
 
-    // Only show nested submenus if they ALSO have is-open class
-    >li ul.sub-menu.is-open {
-      left: 100%;
-    }
-  }
-  
 }
