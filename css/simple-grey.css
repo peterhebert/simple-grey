@@ -1022,6 +1022,8 @@ input[type=submit]:focus-visible:valid {
 .archive .content-inner,
 .single .content-inner,
 .page-template-default .content-inner {
+    max-width: 75rem;
+    margin-inline: auto;
     display: flex;
     gap: 2rem;
     flex-direction: row;
@@ -1069,16 +1071,12 @@ input[type=submit]:focus-visible:valid {
   margin: 0;
 }
 
-.page-template-feature-page #content .wrap {
-  max-width: 100%;
-}
-.page-template-feature-page #content .content-inner {
+.page-template-feature-page .content-inner {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-.page-template-feature-page #content #main,
-.page-template-feature-page #content #secondary {
+.page-template-feature-page #main {
   flex-basis: auto;
   max-width: 75rem;
   margin-block: 0;
@@ -1104,6 +1102,8 @@ input[type=submit]:focus-visible:valid {
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 }
 .page-template-feature-page #secondary .sidebar-inner {
+  max-width: 75rem;
+  margin-inline: auto;
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));

@@ -73,4 +73,4 @@ if ( has_nav_menu( 'primary' ) ) :
 <?php get_template_part( 'partials/nav', 'primary' ); ?>
 
 <div id="content" class="content-outer" tabindex="-1">
-	<div class="wrap content-inner">
+	<div class="content-inner">

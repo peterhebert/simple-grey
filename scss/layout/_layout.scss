@@ -22,6 +22,9 @@
     }
 
     .content-inner {
+        max-width: $bp-max-container-width;
+  margin-inline: auto;
+
       @include row;
     }
 
@@ -74,27 +77,20 @@
 // feature page
 .page-template-feature-page {
 
-  #content {
 
-    .wrap {
-      max-width: 100%;
-    }
-
-    .content-inner {
+   .content-inner {
       display: flex;
       flex-direction: column;
       gap: $gutter;
     }
 
-    #main,
-  #secondary {
+    #main {
       flex-basis: auto;
       max-width: $bp-max-container-width;
       margin-block: 0;
       margin-inline: auto;
     }
 
-  }
 
   #featured,
   #secondary {
@@ -118,12 +114,16 @@
       @include even-columns();
     }
 
-    
+
   }
+
   #secondary {
 
     // sidebars / widget areas.
     .sidebar-inner {
+      max-width: $bp-max-container-width;
+      margin-inline: auto;
+
       @include even-columns();
     }
 
