@@ -1,21 +1,9 @@
-// Centered container element
-@mixin container {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: ($basepx * 1px);
-    padding-left: $margin;
-    padding-right: ($basepx * 1px);
-    padding-right: $margin;
-    @include clearfix;
-}
 
 // Creates a wrapper for a series of columns
 @mixin row {
-    margin-left: ($basepx * -1px);
-    margin-left: $margin-negative;
-    margin-right: ($basepx * -1px);
-    margin-right: $margin-negative;
-    @include clearfix;
+  display: flex;
+  flex-direction: row;
+  gap: $gutter;
 }
 
 @mixin column($width: 1) {

@@ -6,12 +6,11 @@ body {
 #content {
   color: $col-txt;
   background-color: $col-bg;
-  @include clearfix;
   padding: 1.5em 0;
 }
 
-#main,
-#secondary,
+// #main,
+// #secondary,
 #featured {
   @include column();
 }
@@ -41,23 +40,23 @@ body {
   }
 }
 
-@media only screen and (min-width: $bp-01) {
-  #secondary,
-  #featured {
-    .sidebar-row {
-      @include row;
-    }
-  }
-  #featured .featured .widget-title {
-    @include column();
-  }
-}
+// @media only screen and (min-width: $bp-01) {
+//   #secondary,
+//   #featured {
+//     .sidebar-inner {
+//       @include row;
+//     }
+//   }
+//   #featured .featured .widget-title {
+//     @include column();
+//   }
+// }
 
-@media only screen and (max-width: $bp-float-sidebar) {
-  #secondary {
-    margin-top: $margin-baseline;
-  }
-}
+// @media only screen and (max-width: $bp-enable-sidebar) {
+//   #secondary {
+//     margin-top: $margin-baseline;
+//   }
+// }
 
 #main {
   article {
@@ -114,11 +113,11 @@ body {
   }
 }
 
-#secondary {
-  .widget {
-      @include even-columns(3, $widget-breakpoints);
-  }
-}
+// #secondary {
+//   .widget {
+//       @include even-columns(3, $widget-breakpoints);
+//   }
+// }
 
 // widget headings (classic and block)
 .widget-title,
@@ -127,23 +126,23 @@ body {
 }
 
 // move secondary sidebar to second column if active
-@media only screen and (min-width: $bp-float-sidebar) {
-  .blog.has-sidebar-secondary,
-  .archive.has-sidebar-secondary,
-  .single.has-sidebar-secondary,
-  .page-template-default.has-sidebar-secondary {
-    #main {
-      @include column($ga);
-    }
-    #secondary {
-      @include column($gb);
-      .widget {
-        float: none;
-        @include column(1);
-      }
-    }
-  }
-}
+// @media only screen and (min-width: $bp-enable-sidebar) {
+//   .blog.has-sidebar-secondary,
+//   .archive.has-sidebar-secondary,
+//   .single.has-sidebar-secondary,
+//   .page-template-default.has-sidebar-secondary {
+//     #main {
+//       @include column($ga);
+//     }
+//     #secondary {
+//       @include column($gb);
+//       .widget {
+//         float: none;
+//         @include column(1);
+//       }
+//     }
+//   }
+// }
 
 .page-template-feature-page {
   #secondary {
@@ -154,16 +153,6 @@ body {
 .page-template-p-single-column-narrow-php,
 .page-template-page-single-column-narrow,
 .page-template-p-single-column-narrow {
-  
-  .wrap {
-    max-width: $bp-max-column-width;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #secondary {
-    margin-top: $margin-baseline;
-  }
   
   @media screen and (min-width: $bp-max-column-width) {
     

@@ -89,13 +89,13 @@ $fonts-sans: 'Open Sans', Arial, Helvetica, sans-serif;
 $fonts-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
 // responsive breakpoints
-$bp-00: 20em; // based upon 320px most portrait phones
-$bp-01: 24em; // content shows floated post-thumbnail, 2 widget columns
-$bp-02: 30em; // max width for showing mobile style menu
-$bp-03: 36em; // max width for any 1 column, 3 widget columns
-$bp-04: 48em;
-$bp-05: 60em;
-$bp-06: 75em;
+$bp-00: 20rem; // based upon 320px most portrait phones
+$bp-01: 24rem; // content shows floated post-thumbnail, 2 widget columns
+$bp-02: 30rem; // max width for showing mobile style menu
+$bp-03: 36rem; // max width for any 1 column, 3 widget columns
+$bp-04: 48rem;
+$bp-05: 60rem;
+$bp-06: 75rem;
 
 // named breakpoints, to make things easier to read
 $bp-float-menu-toggle: $bp-02;
@@ -113,7 +113,7 @@ $bp-container-1col: ($bp-max-column-width + 2);
 $bp-max-container-width: $bp-06;
 
 // move sidebar to 2nd column in main content
-$bp-float-sidebar: $bp-05;
+$bp-enable-sidebar: $bp-05;
 
 // enlarge text size for larger screens
 $bp-text-125: 1600px;

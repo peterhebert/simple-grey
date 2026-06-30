@@ -1,0 +1,110 @@
+// Layouts
+.wrap {
+  max-width: $bp-max-container-width;
+  margin-inline: auto;
+}
+
+.row {
+  @include row;
+}
+
+@media only screen and (min-width: $bp-enable-sidebar) {
+  // move secondary sidebar to second column if active
+
+  .blog,
+  .archive,
+  .single,
+  .page-template-default {
+    &.has-sidebar-secondary {
+
+
+
+      #main {
+        flex-basis: percentage($ga);
+        max-width: percentage($ga);
+
+      }
+
+      #secondary {
+        flex-basis: percentage($gb);
+        max-width: percentage($gb);
+        margin-top: $margin-baseline;
+
+
+        // sidebars / widget areas.
+        .sidebar-inner {
+          display: flex;
+          gap: $margin-baseline;
+          flex-direction: column;
+        }
+
+      }
+    }
+  }
+
+
+}
+
+
+// single column narrow template
+.page-template-p-single-column-narrow-php,
+.page-template-page-single-column-narrow,
+.page-template-p-single-column-narrow {
+
+
+  #content {
+    .wrap {
+      max-width: $bp-max-column-width;
+
+    }
+
+    .row {
+      flex-direction: column;
+    }
+  }
+
+  #main,
+  #secondary {
+    flex-basis: auto;
+    margin: 0;
+  }
+
+}
+
+// feature page
+.page-template-feature-page {
+
+  #content {
+
+    .wrap {
+      max-width: 100%;
+    }
+
+    .row {
+      flex-direction: column;
+    }
+
+    #main,
+    #secondary {
+      flex-basis: auto;
+      margin: 0;
+    }
+
+  }
+
+  #featured,
+  #secondary {
+    padding-inline: $margin;
+  }
+
+  .sidebar-inner {
+    display: grid;
+    gap: $gutter;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+
+    @media screen and (min-width: $bp-max-container-width) {
+      grid-template-columns: repeat(4, 1fr);
+
+    }
+  }
+}

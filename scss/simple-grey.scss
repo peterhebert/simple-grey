@@ -40,6 +40,7 @@ body {
 @import "module/forms";
 
 // layout
+@import "layout/layout";
 @import "layout/header";
 @import "layout/content";
 @import "layout/footer";
@@ -56,6 +57,7 @@ body {
 
 // media
 @import "module/media";
+// classic editor gallery
 @import "module/gallery";
 
 // required WordPress classes
