@@ -42,7 +42,7 @@
   .site-branding {
     display: flex;
     flex-direction: column;
-    gap: $margin;
+    gap: $gutter;
 
 
     position: relative;
@@ -77,7 +77,8 @@
   }
 
   .site-description {
-    @include baseline-size(1);
+    font-size: 1.25rem;
+    margin-block: 0;
     font-weight: normal;
   }
 

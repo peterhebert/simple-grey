@@ -1182,7 +1182,7 @@ input[type=submit]:focus-visible:valid {
 .site-header .site-branding {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   position: relative;
   z-index: 2;
 }
@@ -1208,9 +1208,8 @@ input[type=submit]:focus-visible:valid {
   margin-bottom: 0.5em;
 }
 .site-header .site-description {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin: 0 0 1.5em;
+  font-size: 1.25rem;
+  margin-block: 0;
   font-weight: normal;
 }
 .site-header .site-logo,
