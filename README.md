@@ -100,7 +100,6 @@ More information about this theme is available on my website: [Simple Grey](http
 * fixed boolean display logic for footer credits.
 * consolidate theme supprt / setup into one function.
 * fixed logic for displaying categories and tags on posts.
-* removal of custom `.screen-reader-text` override (rely on WordPreess core CSS)
 * removal of outdated ARIA Walker class for menus.
 * move "navigation style" customizer section to menus panel
 * remove legacy skip link fix and accessibility focus fixes.
@@ -109,6 +108,7 @@ More information about this theme is available on my website: [Simple Grey](http
 * Accessibility fixes to forms and comments.
 * Removed icons from comment headings.
 * convert classic editor galleries to CSS grid layout.
+* replace float based layouts with flex and grid.
 
 1.8.1
 * tested with WordPress 6.9

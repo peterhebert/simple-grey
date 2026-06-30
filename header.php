@@ -39,7 +39,7 @@ if ( get_theme_mod( 'simple_grey_header_drop_shadow' ) ) :
 	$brand_class .= ' drop-shadow';
 endif;
 ?>
-<div class="site-branding row<?php echo esc_attr( $brand_class ); ?>">
+<div class="site-branding <?php echo esc_attr( $brand_class ); ?>">
 <?php
 if ( function_exists( 'has_custom_logo' ) ) {
 	the_custom_logo();
