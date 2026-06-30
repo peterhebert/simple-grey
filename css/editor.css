@@ -11,22 +11,6 @@ body {
   margin: 0;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
-}
-
 audio,
 canvas,
 progress,
@@ -732,6 +716,11 @@ figure {
     margin-left: 1rem;
   }
 }
+img:is([sizes=auto i],[sizes^="auto," i]) {
+  contain-intrinsic-width: none;
+  contain-intrinsic-height: none;
+}
+
 /*!
 Fork Awesome 1.2.0
 License - https://forkaweso.me/Fork-Awesome/license
@@ -4908,8 +4897,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 .glyph-demo ul {
   display: flex;
-  flex-direction: row;
   gap: 2rem;
+  flex-direction: row;
   list-style: none;
 }
 .glyph-demo ul li {
