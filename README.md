@@ -108,6 +108,7 @@ More information about this theme is available on my website: [Simple Grey](http
 * fixed broken ForkAwesome font references in CSS.
 * Accessibility fixes to forms and comments.
 * Removed icons from comment headings.
+* convert classic editor galleries to CSS grid layout.
 
 1.8.1
 * tested with WordPress 6.9

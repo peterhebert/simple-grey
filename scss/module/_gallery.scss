@@ -1,10 +1,13 @@
 // GALLERIES
 
 .gallery {
-    @include row;
+
+    display: grid;
+    gap: $gutter;
+    margin-block: $margin-baseline;
+
     figure.gallery-item {
-        //@include column();
-        margin-bottom: $margin-baseline;
+
         img {
             @include thumbnail();
             background-color: $col-bg;
@@ -25,12 +28,7 @@
 @for $i from 1 through 9 {
     $width: ( $i / 9 );
     .gallery-columns-#{$i} {
-        figure.gallery-item {
-            @include column($width);
-            &:nth-of-type(#{$i}n+1) {
-                clear: left;
-            }
-        }
+        grid-template-columns: repeat($i, 1fr);
     }
 
 }
