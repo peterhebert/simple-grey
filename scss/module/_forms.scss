@@ -24,7 +24,7 @@ label {
 
     .optional,
     .required {
-        margin-inline-start: 0.25em;
+        margin-inline-start: 0.125em;
         font-weight: 400;
     }
 }
@@ -174,7 +174,19 @@ input[type="submit"] {
 }
 
 .search-form {
-    input {
-        display: inline;
+    margin: 0;
+    .search-label {
+        display: block;
+        margin-bottom: $margin-baseline * 0.5;
     }
+    .search-input-wrap {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+        input[type=search] {
+            flex-grow: 1;
+        }
+    }
+
 }

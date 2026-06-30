@@ -22,3 +22,9 @@
 .image-left { float: left; margin-right: $margin; }
 .image-right { float: right; margin-left: $margin; }
 }
+
+// contain intrincic sizes
+img:is([sizes=auto i],[sizes^="auto," i]) {
+    contain-intrinsic-width: none;
+    contain-intrinsic-height: none;
+}

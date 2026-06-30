@@ -4,8 +4,9 @@
   margin-inline: auto;
 }
 
+
 .row {
-  @include row;
+  @include row()
 }
 
 @media only screen and (min-width: $bp-enable-sidebar) {
@@ -15,27 +16,29 @@
   .archive,
   .single,
   .page-template-default {
+
+    .content-outer {
+      padding: $margin;
+    }
+
+    .content-inner {
+      @include row;
+    }
+
     &.has-sidebar-secondary {
 
 
-
       #main {
-        flex-basis: percentage($ga);
-        max-width: percentage($ga);
-
+        @include column($ga);
       }
 
       #secondary {
-        flex-basis: percentage($gb);
-        max-width: percentage($gb);
-        margin-top: $margin-baseline;
-
+        @include column($gb);
 
         // sidebars / widget areas.
         .sidebar-inner {
-          display: flex;
+          display: grid;
           gap: $margin-baseline;
-          flex-direction: column;
         }
 
       }
@@ -46,21 +49,18 @@
 }
 
 
-// single column narrow template
+// single narrow column
+.search-results,
 .page-template-p-single-column-narrow-php,
 .page-template-page-single-column-narrow,
 .page-template-p-single-column-narrow {
 
 
-  #content {
-    .wrap {
-      max-width: $bp-max-column-width;
-
-    }
-
-    .row {
-      flex-direction: column;
-    }
+  .content-inner {
+    display: flex;
+    flex-direction: column;
+    max-width: $bp-max-column-width;
+    margin-inline: auto;
   }
 
   #main,
@@ -80,14 +80,18 @@
       max-width: 100%;
     }
 
-    .row {
+    .content-inner {
+      display: flex;
       flex-direction: column;
+      gap: $gutter;
     }
 
     #main,
-    #secondary {
+  #secondary {
       flex-basis: auto;
-      margin: 0;
+      max-width: $bp-max-container-width;
+      margin-block: 0;
+      margin-inline: auto;
     }
 
   }
@@ -97,14 +101,31 @@
     padding-inline: $margin;
   }
 
-  .sidebar-inner {
-    display: grid;
-    gap: $gutter;
-    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  #featured {
 
-    @media screen and (min-width: $bp-max-container-width) {
-      grid-template-columns: repeat(4, 1fr);
+    .featured,
+    .cards {
+      @include even-columns();
 
+      article {
+        .article-title {
+          margin-bottom: 0;
+        }
+      }
     }
+
+    .widget.columns {
+      @include even-columns();
+    }
+
+    
+  }
+  #secondary {
+
+    // sidebars / widget areas.
+    .sidebar-inner {
+      @include even-columns();
+    }
+
   }
 }

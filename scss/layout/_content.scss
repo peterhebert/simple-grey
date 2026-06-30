@@ -3,60 +3,10 @@ body {
   background-color: $col-footer-bg;
 }
 
-#content {
+.content-outer {
   color: $col-txt;
   background-color: $col-bg;
-  padding: 1.5em 0;
 }
-
-// #main,
-// #secondary,
-#featured {
-  @include column();
-}
-
-#featured {
-  .featured {
-    article {
-      @include even-columns();
-      .article-title {
-        margin-bottom: 0;
-      }
-    }
-  }
-  .cards {
-    @include clearfix;
-    margin: 0 ($basepx * -1px);
-    margin: 0 ($margin * -1);
-    article {
-      @include even-columns();
-      .article-title {
-        margin-bottom: 0;
-      }
-    }
-  }
-  .widget.columns {
-      @include even-columns();
-  }
-}
-
-// @media only screen and (min-width: $bp-01) {
-//   #secondary,
-//   #featured {
-//     .sidebar-inner {
-//       @include row;
-//     }
-//   }
-//   #featured .featured .widget-title {
-//     @include column();
-//   }
-// }
-
-// @media only screen and (max-width: $bp-enable-sidebar) {
-//   #secondary {
-//     margin-top: $margin-baseline;
-//   }
-// }
 
 #main {
   article {
@@ -112,37 +62,6 @@ body {
     margin-bottom: $margin-baseline;
   }
 }
-
-// #secondary {
-//   .widget {
-//       @include even-columns(3, $widget-breakpoints);
-//   }
-// }
-
-// widget headings (classic and block)
-.widget-title,
-.widget_block h2.wp-block-heading {
-  @include baseline-size(1.5);
-}
-
-// move secondary sidebar to second column if active
-// @media only screen and (min-width: $bp-enable-sidebar) {
-//   .blog.has-sidebar-secondary,
-//   .archive.has-sidebar-secondary,
-//   .single.has-sidebar-secondary,
-//   .page-template-default.has-sidebar-secondary {
-//     #main {
-//       @include column($ga);
-//     }
-//     #secondary {
-//       @include column($gb);
-//       .widget {
-//         float: none;
-//         @include column(1);
-//       }
-//     }
-//   }
-// }
 
 .page-template-feature-page {
   #secondary {

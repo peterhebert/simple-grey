@@ -1,14 +1,14 @@
 
 /* = Footer Layout
 ----------------------------------------------- */
-#footer {
+.site-footer {
+
     color: $col-footer-text;
     background-color: $col-footer-bg;
     margin: 0;
-    padding-top: .75em;
-    padding-bottom: .75em;
+    padding: $margin;
+
     .footer-text { 
-        // @include column(); 
        margin-block: $margin-baseline *.75; 
         text-align: center; 
         &:last-child {
@@ -32,19 +32,12 @@
         vertical-align: middle;
     }
 
-
-}
-
-.site-footer {
-
     .widget-area {
             margin-block: $margin-baseline *.75; 
-            @include clearfix;
-            margin: 0 ($basepx * -1px);
-            margin: 0 ($margin * -1);
         
-        .widget {
             @include even-columns();
+            
+        .widget {
 
             .widget-title { @include baseline-size( 1.5 ); }
        }
