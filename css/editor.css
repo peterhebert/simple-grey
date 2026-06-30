@@ -216,13 +216,6 @@ th {
   padding: 0;
 }
 
-.pad-sides {
-  padding-left: 16px;
-  padding-left: 1rem;
-  padding-right: 16px;
-  padding-right: 1rem;
-}
-
 /* BASE CSS */
 /* apply a natural box layout model to all elements */
 *,
@@ -723,7 +716,7 @@ figure {
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 24em) {
+@media screen and (min-width: 24rem) {
   .image-left, .image-right {
     max-width: 48%;
     height: auto;
@@ -4914,16 +4907,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 .glyph-demo ul {
-  margin-left: -16px;
-  margin-left: -1rem;
-  margin-right: -16px;
-  margin-right: -1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
   list-style: none;
-}
-.glyph-demo ul::after {
-  display: block;
-  clear: both;
-  content: "";
 }
 .glyph-demo ul li {
   position: relative;
