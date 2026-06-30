@@ -7,7 +7,7 @@
  */
 
 if ( has_nav_menu( 'primary' ) ) : ?>
-<div id="navigation">
+<div id="navigation" class="main-navigation">
 	<div class="wrap">
 		<?php simple_grey_main_menu(); ?>
 	</div>
