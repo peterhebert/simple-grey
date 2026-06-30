@@ -4,7 +4,7 @@
     @include row;
     figure.gallery-item {
         //@include column();
-        @include mg-bottom();
+        margin-bottom: $margin-baseline;
         img {
             @include thumbnail();
             background-color: $col-bg;
@@ -14,7 +14,7 @@
     }
     .gallery-icon {
         text-align: center;
-        @include mg-bottom(.25);
+        margin-bottom: $margin-baseline * .25;
     }
     figcaption.gallery-caption {
         @include baseline-size( .75, 1);

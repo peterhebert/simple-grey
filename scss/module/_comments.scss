@@ -19,7 +19,7 @@
   ol {
       list-style-type: none; 
       li { 
-          @include mg-both(.75);
+          margin-block: $margin-baseline *.75;
       }
    }
  

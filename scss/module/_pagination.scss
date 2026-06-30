@@ -165,6 +165,6 @@
 
 // pagination within posts
 .page-links {
-    @include mg-bottom();
+    margin-bottom: $margin-baseline;
     a { margin: 0 .25em; }
 }

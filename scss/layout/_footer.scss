@@ -9,7 +9,7 @@
     padding-bottom: .75em;
     .footer-text { 
         // @include column(); 
-       @include mg-both(.75); 
+       margin-block: $margin-baseline *.75; 
         text-align: center; 
         &:last-child {
             margin-bottom: 0;
@@ -18,7 +18,7 @@
     .footer-credits {
         text-align: center; 
         font-size: .875em;
-        @include mg-top();
+        margin-top: $margin-baseline;
     }
 
 
@@ -38,7 +38,7 @@
 .site-footer {
 
     .widget-area {
-            @include mg-both(.75); 
+            margin-block: $margin-baseline *.75; 
             @include clearfix;
             margin: 0 ($basepx * -1px);
             margin: 0 ($margin * -1);

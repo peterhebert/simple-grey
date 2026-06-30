@@ -24,7 +24,7 @@
 
   .menu-toggle {
     @include column();
-    @include mg-bottom();
+    margin-bottom: $margin-baseline;
     text-align: center;
     button {
       @include button;
