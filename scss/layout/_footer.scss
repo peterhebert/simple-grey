@@ -44,7 +44,7 @@
             margin: 0 ($margin * -1);
         
         .widget {
-            @include even-columns(4, $widget-breakpoints);
+            @include even-columns();
 
             .widget-title { @include baseline-size( 1.5 ); }
        }

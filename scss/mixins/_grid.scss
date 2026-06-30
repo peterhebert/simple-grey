@@ -7,14 +7,8 @@
 }
 
 @mixin column($width: 1) {
-    position: relative;
-    float: left;
-    width: percentage($width);
-    min-height: 1px;
-    padding-left: ($basepx * 1px);
-    padding-left: $margin;
-    padding-right: ($basepx * 1px);
-    padding-right: $margin;
+    $width-pct: percentage($width);
+    flex-basis: $width-pct;
 }
 
 // generic column float with no width specification
@@ -48,34 +42,17 @@
     @include column($colw);
 }
 
-//  For each key in the map, create a grid breakpoint 
+//  grid with even columns 
 
-@mixin even-columns( $cols: 4, $colmap: $widget-breakpoints ) {
+@mixin even-columns( $cols: 4 ) {
     
 
-    @for $i from 2 through $cols {
+    display: grid;
+    gap: $gutter;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 
-        $bp-min: map-get($colmap, $i);
-
-        @if $i < $cols {
-            $bp-max: map-get( $colmap, $i+1 );
-            @media only screen and (min-width: $bp-min) and (max-width: $bp-max) {
-                @include percentColumn(1, $i);
-                &:nth-of-type(#{$i}n+1) {
-                    clear: left;
-                }
-            }
-
-        }
-        @else {
-            @media only screen and (min-width: $bp-min) {
-                @include percentColumn(1, $i);
-                &:nth-of-type(#{$i}n+1) {
-                    clear: left;
-                }
-            }
-        }
-
+    @media screen and (min-width: $bp-max-container-width) {
+      grid-template-columns: repeat($cols, 1fr);
 
     }
 

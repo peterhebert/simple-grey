@@ -18,7 +18,7 @@ body {
 #featured {
   .featured {
     article {
-      @include even-columns(4, $widget-breakpoints);
+      @include even-columns();
       .article-title {
         margin-bottom: 0;
       }
@@ -29,14 +29,14 @@ body {
     margin: 0 ($basepx * -1px);
     margin: 0 ($margin * -1);
     article {
-      @include even-columns(4, $widget-breakpoints);
+      @include even-columns();
       .article-title {
         margin-bottom: 0;
       }
     }
   }
   .widget.columns {
-      @include even-columns(4, $widget-breakpoints);
+      @include even-columns();
   }
 }
 
