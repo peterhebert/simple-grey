@@ -21,17 +21,18 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-
-				printf(
-					// translators: 1. Number of comments. 2. Post title.
-					_nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'simple-grey' ) ,
-					esc_html( number_format_i18n( get_comments_number() ) ),
-					'<span>' . esc_html( get_the_title() ) . '</span>'
-				);
-			?>
-		</h2>
+	<h2 class="comments-title">
+		<?php
+		echo wp_kses_post(
+			sprintf(
+				// translators: 1. Number of comments. 2. Post title.
+				_nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'simple-grey' ),
+				number_format_i18n( get_comments_number() ),
+				'<span>' . get_the_title() . '</span>'
+			)
+		);
+		?>
+	</h2>
 
 		<?php
 		// are there comments to navigate through?
@@ -73,6 +74,17 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php echo esc_html__( 'Comments are closed.', 'simple-grey' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php
+	comment_form(
+		array(
+			'title_reply_tag' => 'h2',
+		)
+	);
+	?>
 
-</div><!-- #comments -->
+
+
+
+</div>
+<!-- #comments -->
+
