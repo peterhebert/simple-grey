@@ -33,9 +33,25 @@ img.alignright {
 	vertical-align: text-top;
 }
 
-// align wide and full
+/* 1. Mobile Default (0px to 768px): Ensure it fills the viewport cleanly */
 .alignfull {
-	margin: $margin calc(50% - 50vw);
-	max-width: 100vw;
-	width: 100vw;
+    width: 100vw;
+    max-width: 100vw;
+    margin-inline: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
 }
+
+/* 2. Tablet & Desktop (769px and up): Break out mathematically from the central content container */
+@media (min-width: 769px) {
+    .alignfull {
+        /* Forces edges out to screen boundaries from a centered parent */
+        margin-inline: calc((50vw - 50%) * -1);
+        
+        /* Reset widths to allow the negative margins to dictate the edge expansion */
+        width: auto;
+        max-width: none;
+    }
+}
+

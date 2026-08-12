@@ -50,7 +50,6 @@
 	
 } )();
 
-
 // dropdown menu.
 document.addEventListener('DOMContentLoaded', () => {
     const toggles = document.querySelectorAll('.disclosure-toggle');

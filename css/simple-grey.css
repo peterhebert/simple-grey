@@ -10,6 +10,12 @@ body {
   margin: 0;
 }
 
+/* Eliminate the desktop vertical scrollbar calculation bug */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 audio,
 canvas,
 progress,
@@ -1308,7 +1314,8 @@ body {
 #main article .post-thumbnail {
   margin-bottom: 1.5em;
 }
-#main article .entry-footer .cat-links, #main article .entry-footer .tags-links {
+#main article .entry-footer .cat-links,
+#main article .entry-footer .tags-links {
   margin-right: 0.75em;
 }
 #main article .post-edit-link:before {
@@ -1322,14 +1329,12 @@ body {
 }
 
 @media screen and (min-width: 48rem) {
-  .page-template-p-single-column-narrow-php .wp-block-cover-image.alignwide, .page-template-p-single-column-narrow-php .wp-block-cover.alignwide,
-.page-template-page-single-column-narrow .wp-block-cover-image.alignwide,
+  .page-template-p-single-column-narrow-php .wp-block-cover.alignwide,
 .page-template-page-single-column-narrow .wp-block-cover.alignwide,
-.page-template-p-single-column-narrow .wp-block-cover-image.alignwide,
 .page-template-p-single-column-narrow .wp-block-cover.alignwide {
-    width: 150%;
-    max-width: 100vw;
-    margin-left: -25%;
+    width: var(--wp--style--global--wide-size);
+    margin-inline: calc(((var(--wp--style--global--wide-size) / 2) - 50%) * -1);
+    padding-inline: 0;
   }
 }
 
@@ -2694,12 +2699,26 @@ img.alignright {
   vertical-align: text-top;
 }
 
+/* 1. Mobile Default (0px to 768px): Ensure it fills the viewport cleanly */
 .alignfull {
-  margin: 1rem calc(50% - 50vw);
-  max-width: 100vw;
   width: 100vw;
+  max-width: 100vw;
+  margin-inline: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
 }
 
+/* 2. Tablet & Desktop (769px and up): Break out mathematically from the central content container */
+@media (min-width: 769px) {
+  .alignfull {
+    /* Forces edges out to screen boundaries from a centered parent */
+    margin-inline: calc((50vw - 50%) * -1);
+    /* Reset widths to allow the negative margins to dictate the edge expansion */
+    width: auto;
+    max-width: none;
+  }
+}
 /* PRINT */
 @media print {
   * {

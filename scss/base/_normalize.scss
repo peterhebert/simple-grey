@@ -20,6 +20,12 @@ body {
   margin: 0;
 }
 
+/* Eliminate the desktop vertical scrollbar calculation bug */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 // HTML5 display definitions
 // ==========================================================================
 
