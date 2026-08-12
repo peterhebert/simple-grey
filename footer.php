@@ -43,7 +43,7 @@ $show_credits  = simple_grey_show_footer_credits();
 		<a href="<?php echo esc_url( 'https://github.com/peterhebert/simple-grey' ); ?>"><?php esc_html_e( 'Theme development on GitHub', 'simple-grey' ); ?></a>
 	</p>
 
-	<p><i class="mv mv-wordpress icon-large"></i> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" rel="generator"><?php esc_html_e( 'Proudly powered by WordPress', 'simple-grey' ); ?></a></p>
+	<p><i class="mv mv-wordpress icon-large" aria-hidden="true"></i> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" rel="generator"><?php esc_html_e( 'Proudly powered by WordPress', 'simple-grey' ); ?></a></p>
 
 </div>
 <?php endif; ?>
