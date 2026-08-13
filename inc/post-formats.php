@@ -35,4 +35,3 @@ if ( ! function_exists( 'simple_grey_pf_quote' ) ) :
 	add_filter( 'the_content', 'simple_grey_pf_quote' );
 
 endif;
-

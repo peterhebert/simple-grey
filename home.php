@@ -14,6 +14,12 @@
 get_header(); ?>
 
 	<main id="main" aria-label="<?php echo esc_attr__( 'Content', 'simple-grey' ); ?>">
+		<?php if ( get_option( 'show_on_front' ) === 'page' ) : ?>
+		<h1 class="page-title"><?php single_post_title(); ?></h1>
+		<?php else : ?>
+			<div class="page-title"><?php echo esc_html__( 'Latest Posts', 'simple-grey' ); ?></div>
+		<?php endif; ?>
+
 		<?php if ( have_posts() ) : ?>
 			<?php /* Start the Loop */ ?>
 			<?php

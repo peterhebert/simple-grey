@@ -98,8 +98,11 @@ add_filter( 'get_the_excerpt', 'simple_grey_trim_excerpt' );
  * @param string $more The string shown within the more link.
  * @return string the custom read more link HTML.
  */
-function simple_grey_excerpt_more( $more ) {
-	return '&hellip; <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More', 'simple-grey' ) . '</a>';
+function simple_grey_excerpt_more( string $more ) {
+
+	$more = '&hellip; <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More', 'simple-grey' ) . '</a>';
+
+	return $more;
 }
 add_filter( 'excerpt_more', 'simple_grey_excerpt_more' );
 
@@ -185,4 +188,25 @@ function simple_grey_basic_allowed_html() {
 	);
 
 	return $allowed_tags;
+}
+
+/**
+ * Get the version string for a given file.
+ *
+ * @param string $file Path to the file relative to the theme.
+ * @return string version string.
+ */
+function simple_grey_file_version( string $file ) {
+
+	$file_path = get_template_directory() . $file;
+
+	// If the file exists, and on development or local,
+	// return its modification date and time.
+
+	if ( defined( 'WP_ENV' ) && in_array( WP_ENV, array( 'development', 'local' ), true ) && file_exists( $file_path ) ) {
+		return gmdate( 'Ymd-His', filemtime( $file_path ) );
+	}
+
+	// Otherwise return theme version.
+	return SIMPLE_GREY_VERSION;
 }

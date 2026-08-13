@@ -5,7 +5,8 @@
  * @package Simple Grey
  */
 
-define( 'SIMPLE_GREY_VERSION', '1.6.1' );
+$theme = wp_get_theme();
+define( 'SIMPLE_GREY_VERSION', $theme->get( 'Version' ) );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -13,46 +14,6 @@ define( 'SIMPLE_GREY_VERSION', '1.6.1' );
 if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
-
-if ( ! function_exists( 'simple_grey_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
-	function simple_grey_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on simple_grey, use a find and replace
-		 * to change 'simple-grey' to the name of your theme in all the template files
-		 */
-		load_theme_textdomain( 'simple-grey', get_template_directory() . '/languages' );
-
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-		 */
-		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 220, 220 );
-	}
-
-endif;
-add_action( 'after_setup_theme', 'simple_grey_setup' );
 
 /**
  * Register widget area.
@@ -67,8 +28,8 @@ function simple_grey_widgets_init() {
 			'description'   => '',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h1 class="widget-title">',
-			'after_title'   => '</h1>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		)
 	);
 
@@ -78,8 +39,8 @@ function simple_grey_widgets_init() {
 			'id'            => 'sidebar-featured',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h1 class="widget-title">',
-			'after_title'   => '</h1>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		)
 	);
 
@@ -89,8 +50,8 @@ function simple_grey_widgets_init() {
 			'id'            => 'sidebar-footer',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h1 class="widget-title">',
-			'after_title'   => '</h1>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		)
 	);
 }
@@ -130,28 +91,26 @@ function simple_grey_scripts() {
 
 	// load theme stylesheets.
 	if ( is_rtl() ) {
-		wp_enqueue_style( 'simple-grey-main-rtl', get_theme_file_uri( 'css/simple-grey-rtl.css' ), array(), SIMPLE_GREY_VERSION );
+		wp_enqueue_style( 'simple-grey-main-rtl', get_theme_file_uri( 'css/simple-grey-rtl.css' ), array(), simple_grey_file_version( '/css/simple-grey-rtl.css' ) );
 	} else {
-		wp_enqueue_style( 'simple-grey-main', get_theme_file_uri( 'css/simple-grey.css' ), array(), SIMPLE_GREY_VERSION );
+		wp_enqueue_style( 'simple-grey-main', get_theme_file_uri( 'css/simple-grey.css' ), array(), simple_grey_file_version( '/css/simple-grey.css' ) );
 	}
 
-	wp_enqueue_script( 'simple-grey-navigation', get_theme_file_uri( 'js/navigation.js' ), array(), SIMPLE_GREY_VERSION, true );
+	// Fork Awesome web font.
+	wp_enqueue_style( 'fork-awesome-icons', get_theme_file_uri( 'css/fork-awesome.min.css' ), array(), '1.2.0' );
 
-	wp_enqueue_script( 'simple-grey-skip-link-focus-fix', get_theme_file_uri( 'js/skip-link-focus-fix.js' ), array(), SIMPLE_GREY_VERSION, true );
+	// load scripts.
+	wp_enqueue_script( 'simple-grey-navigation', get_theme_file_uri( 'js/navigation.js' ), array(), simple_grey_file_version( '/js/navigation.js' ), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	// fix issues with oEmbeds.
-	wp_enqueue_script( 'simple-grey-oembed-adjust', get_theme_file_uri( 'js/oembed-adjust.js' ), array( 'jquery' ), SIMPLE_GREY_VERSION, true );
-
-	// accessibility features.
-	wp_enqueue_script( 'simple-grey-accessibility', get_theme_file_uri( 'js/accessibility.js' ), array( 'jquery' ), SIMPLE_GREY_VERSION, true );
+	wp_enqueue_script( 'simple-grey-oembed-adjust', get_theme_file_uri( 'js/oembed-adjust.js' ), array(), simple_grey_file_version( 'js/oembed-adjust.js' ), true );
 
 	// and finally, enqueue theme stylesheet (style.css).
 	wp_enqueue_style( 'simple-grey-style', get_stylesheet_uri(), array(), SIMPLE_GREY_VERSION, true );
-
 }
 add_action( 'wp_enqueue_scripts', 'simple_grey_scripts' );
 
@@ -172,9 +131,9 @@ add_action( 'init', 'simple_grey_add_editor_styles' );
 require get_template_directory() . '/inc/post-formats.php';
 
 /**
- * Implement the Custom Header and Custom Background features.
+ * Theme setup, Custom Header and Custom Background features.
  */
-require get_template_directory() . '/inc/custom-theme-features.php';
+require get_template_directory() . '/inc/theme-setup.php';
 
 /**
  * Custom template tags for this theme.
@@ -185,6 +144,11 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+
+/**
+ * Customize form and comments appearance for accesisbility.
+ */
+require get_template_directory() . '/inc/forms-commenting.php';
 
 /**
  * Customizer additions.
@@ -201,3 +165,4 @@ require get_template_directory() . '/inc/jetpack.php';
 */
 require get_template_directory() . '/inc/menu.php';
 require get_template_directory() . '/inc/class-aria-walker-nav-menu.php';
+require get_template_directory() . '/inc/class-disclosure-walker-nav-menu.php';

@@ -50,7 +50,7 @@ The footer has two text fields (Top and Bottom), for displaying credits, copyrig
 
 ### Web fonts
 This theme uses the [Open Sans](https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans) web font via Google Fonts. In addition, it includes the following icon fonts:
-- [Fork Awesome](https://forkawesome.github.io/Fork-Awesome/) - a forked version of Font Awesome 4.x series with updated icons. [Read why they forked the project](https://forkawesome.github.io/Fork-Awesome/whats-new/) - I have similar reasons for switching in this theme,
+- [Fork Awesome](https://forkawesome.github.io/Fork-Awesome/) - a forked version of Font Awesome 4.x series with updated icons. [Read why they forked the project](https://forkawesome.github.io/Fork-Awesome/whats-new/) - I have similar reasons for switching in this theme. Note this library is now deprecated, and I may remove it in a 2.0 version of this theme.
 - [More Vectors](https://github.com/peterhebert/More-Vectors-Icon-Font)
 
 ### Feature Page Template
@@ -58,8 +58,9 @@ This theme includes a *Feature Page* template, which can be used for a front pag
 
 ## Complementary Plugins
 The following plugins are quite useful in conjunction with this theme:
+- [Classic Menu Accessible (A11y)](https://wordpress.org/plugins/classic-menu-accessible-a11y/) makes the native WordPress menu more inclusive and compliant with digital accessibility standards (WCAG 2.2 level AA, RGAA, Anysurfer).
 - [Widget CSS Classes](https://en-ca.wordpress.org/plugins/widget-css-classes/) - allows you to apply CSS classes to any widget. For example:
-    - by applying the class 'icons' to widgets in the footer, the theme will allow you to style social media icons to match the footer (dark grey instead of the blue link color). See this in action at [my personal site](https://peterhebert.com/)
+    - by applying the class 'icons' to widgets in the footer, the theme will allow you to style social media icons to match the footer (dark grey instead of the blue link color).
     - by applying the class 'columns' to widgets in the Featured widget area, you can have your widgets be in columns, instead of full width.
 - [Display Widgets](https://wordpress.org/plugins/display-widgets/) - allows you to choose which posts or pages your widgets are displayed on.
 - [Custom Query Shortcode](https://wordpress.org/plugins/custom-query-shortcode/) - provides a shortcode for using custom queries in your page or post. Simple Grey includes support for using shortcodes within Widgets, so you could use this to generate complex layouts or featured content areas, slideshows, etc.
@@ -76,10 +77,38 @@ The following tools and code libraries have ben used in the development of Simpl
 ## Development, Issues and Contributions
 All development of this theme is done on [GitHub](https://github.com/peterhebert/simple-grey). Please file any issues with the theme against the GitHub repository. Contributions are welcome, feel free to fork the project and make pull requests.
 
+### Build locally
+
+If you want to use the build tools, you'll need to clone the theme from Github. The build uses npm and gulp. Install dependencies via npm:
+
+`npm install`
+
+the build commands are `npm run dev` for development including watch, and `npm run build` for a production build. 
+
+To generate the .pot file for translations, you will need the `wp-cli/i18n` package for WP-CLI.
+
+`wp i18n make-pot . languages/simple-grey.pot`
+
 ## More information
-More information about this theme is available on the [Rex Rana](https://rexrana.ca/code/simple-grey-wordpress-theme) website.
+More information about this theme is available on my website: [Simple Grey](https://peterhebert.com/en/code/simple-grey)
 
 ## Changelog
+
+2.0.0
+* Changes to meet new WordPress standards for the `accessibility-ready` tag. See: [blog post](https://make.wordpress.org/accessibility/2026/05/06/accessibility-ready-requirements-updated/) and new [Guidelines](https://wpaccessibility.org/docs/topics/theme-guidelines/).
+* fixed skip link
+* fixed boolean display logic for footer credits.
+* consolidate theme supprt / setup into one function.
+* fixed logic for displaying categories and tags on posts.
+* removal of outdated ARIA Walker class for menus.
+* move "navigation style" customizer section to menus panel
+* remove legacy skip link fix and accessibility focus fixes.
+* conversion of scripts to pure JavaScript to avoid dependency on JQuery.
+* fixed broken ForkAwesome font references in CSS.
+* Accessibility fixes to forms and comments.
+* Removed icons from comment headings.
+* convert classic editor galleries to CSS grid layout.
+* replace float based layouts with flex and grid.
 
 1.8.1
 * tested with WordPress 6.9

@@ -18,15 +18,13 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php 
+<?php
 if ( function_exists( 'wp_body_open' ) ) {
 	wp_body_open();
 }
 ?>
-<nav role="navigation">
-<a href="#content" class="screen-reader-text" aria-role="navigation"><?php echo esc_html__( 'Skip to Content', 'simple-grey' ); ?></a>
-</nav>
-<header id="masthead" class="site-header" role="banner">
+<a href="#content" class="screen-reader-text skip-link"><?php echo esc_html__( 'Skip to main content', 'simple-grey' ); ?></a>
+<header id="masthead" class="site-header" role="banner" aria-label="<?php echo esc_attr__( 'Header', 'simple-grey' ); ?>">
 <div class="wrap">
 <?php
 $brand_class = '';
@@ -41,33 +39,38 @@ if ( get_theme_mod( 'simple_grey_header_drop_shadow' ) ) :
 	$brand_class .= ' drop-shadow';
 endif;
 ?>
-<div class="site-branding row<?php echo esc_attr( $brand_class ); ?>">
-<?php 
+<div class="site-branding <?php echo esc_attr( $brand_class ); ?>">
+<?php
 if ( function_exists( 'has_custom_logo' ) ) {
-	the_custom_logo(); 
+	the_custom_logo();
 }
-?>
+
+$site_title       = get_bloginfo( 'name' );
+$site_description = get_bloginfo( 'description' );
+
+if ( ! empty( $site_title ) || ! empty( $site_description ) ) :
+	?>
 <div class="site-info">
-<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	<?php if ( ! empty( $site_title ) ) : ?>
+		<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+	<?php endif; ?>
+
+	<?php if ( ! empty( $site_description ) ) : ?>
+		<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+	<?php endif; ?>
 </div>
-<?php if ( has_nav_menu( 'primary' ) ) : ?>
+	<?php
+endif;
+if ( has_nav_menu( 'primary' ) ) :
+	?>
 <div id="menu-toggle" class="menu-toggle"><button aria-controls="navigation" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i><?php echo esc_html__( 'Menu', 'simple-grey' ); ?></button></div>
 <?php endif; ?>
 </div>
 <!-- .site-branding -->
 </div>
 </header><!-- #masthead -->
-<?php if ( has_nav_menu( 'primary' ) ) : ?>
-<div id="navigation" role="navigation">
-<div class="wrap">
-<nav class="row">
-	<?php simple_grey_main_menu(); ?>
-</nav>
-</div>
-</div>
-<?php endif; ?>
 
-<div id="content">
-	<div class="wrap">
-		<div class="row">
+<?php get_template_part( 'partials/nav', 'primary' ); ?>
+
+<div id="content" class="content-outer" tabindex="-1">
+	<div class="content-inner">

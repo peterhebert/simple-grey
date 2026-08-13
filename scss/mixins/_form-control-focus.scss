@@ -1,8 +1,26 @@
-@mixin form-control-focus($color: $col-focus-border) {
-    $color-rgba: rgba(red($color), green($color), blue($color), .6);
+@mixin form-control-focus() {
+    $color-rgba: rgba(red($col-focus-border), green($col-focus-border), blue($col-focus-border), .6);
+
     &:focus {
-        border-color: desaturate($color, 25%);
-        outline: 0;
+        border-color: desaturate($col-focus-border, 25%);
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px $color-rgba;
+        outline-color: $col-outline;
     }
+
+    &:focus-visible {
+        outline-style: solid;
+        outline-color: $col-focus-border;
+        outline-width: 3px;
+        outline-offset: 4px;
+        
+        &:invalid:required {
+            outline-color: $col-focus-invalid;
+        }
+
+        &:valid {
+            outline-color: $col-focus-valid;
+        }
+
+    }
+
 }

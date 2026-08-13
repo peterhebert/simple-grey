@@ -7,12 +7,11 @@
 // @import '../node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
 @import "mixins/grid";
 
-@import "mixins/typography";
 @import "mixins/borders";
 @import "mixins/tab-focus";
 @import "mixins/form-control-focus";
 @import "mixins/buttons";
 @import "mixins/pagination";
 @import "mixins/media";
-@import "mixins/margin";
-@import "mixins/padding";
+@import "mixins/screen-reader";
+

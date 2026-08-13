@@ -1,0 +1,48 @@
+# Accessibility Profile
+
+Theme Name: Simple Grey
+Theme URI: https://github.com/peterhebert/simple-grey
+Author: Peter Hebert
+Author URI: https://peterhebert.com/
+Version: 2.0.0
+Last Reviewed: 2026-08-12
+
+## Audit Status
+
+Status: Self-Audited
+Guidelines: WCAG 2.1 AA
+Report URL: https://example.com
+
+## Testing Methodology
+
+The theme has been tested using the following methodologies to ensure full compliance:
+* Manual keyboard navigation testing using Tab, Shift+Tab, and Enter keys.
+* Screen reader testing performed via NVDA on Windows and VoiceOver on macOS.
+* Automated evaluations completed using axe DevTools and WAVE evaluation tools.
+* Color contrast verification checking that all background/foreground text ratios hit a minimum of 4.5:1.
+
+## Screen Reader Text Class
+
+Class: .screen-reader-text
+
+The theme utilizes the standard WordPress `.screen-reader-text` class to visually hide helper content while keeping it completely accessible to screen reader users.
+
+## Accessibility Features
+
+The theme natively integrates the following accessibility features:
+* Skip-to-content links positioned at the absolute top of the page architecture.
+* Full keyboard navigation support featuring highly visible `:focus` indicator states.
+* Semantic HTML5 landmark structure including main, header, footer, nav, and aside.
+* Properly nested heading hierarchy restriction ensuring only one H1 tag per page view.
+* Explicit ARIA labels, roles, and states integrated into mobile dropdown navigation menus.
+* Underlined links inside general text bodies to distinguish them without relying on color.
+* Enable a disclosure menu pattern in theme customizer settings. Inspired by the [W3C Disclosure Navigation Menu with Top-Level Links](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation-hybrid/) pattern example.
+
+## Reporting Issues
+
+If you identify an accessibility barrier or bug within this theme, please report it:
+* Contact Page: https://peterhebert.com/en/contact
+* Issue Tracker: https://github.com/peterhebert/simple-grey/issues
+* Email: peter@peterhebert.com
+
+We strive to review and acknowledge all submitted accessibility issues within 2 weeks. This is a free theme and I do the best I can, but no guarantees on response time for accessibility fixes.

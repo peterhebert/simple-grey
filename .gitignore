@@ -99,3 +99,5 @@ typings/
 # Users Environment Variables
 .brackets.json
 
+# temp html files
+partials/*.html

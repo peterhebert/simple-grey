@@ -14,18 +14,12 @@ a {
         color: $col-link-hover;
         text-decoration: underline
     }
-    &:focus {
-        outline: thin dotted;
-        color: $col-link-hover
+    &:focus-visible {
+        outline-style: solid;
+        color: $col-link-hover;
+        padding-inline: .25em;
     }
     &:active {
         color: $col-link-active
     }
-}
-
-/* Better CSS Outline Suppression */
-
-a:hover,
-a:active {
-    outline: none
 }

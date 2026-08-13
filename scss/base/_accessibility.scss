@@ -1,8 +1,57 @@
-// accessibility fom Bootstrap
-@import "../../node_modules/bootstrap/scss/mixins/visually-hidden";
-
 /* accessibility */
+
+a.skip-link {
+
+
+    &:not(:focus):not(:focus-visible) {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    &:focus,
+    &:focus-visible {
+        margin: .5rem;
+        padding: .75em;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        position: relative;
+        background-color: #fff;
+        color: $col-link-hover;
+    }
+}
+
+// Screen reader text - from WordPress core
 .screen-reader-text {
-    @include visually-hidden;
-    @include visually-hidden-focusable;
+    border: 0;
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+    word-break: normal !important;
+}
+
+.screen-reader-text:focus {
+    background-color: $gray-100;
+    clip-path: none;
+    color: $gray-700;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
 }

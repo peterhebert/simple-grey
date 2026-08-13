@@ -66,32 +66,34 @@ function simple_grey_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'simple_grey_navigation',
 		array(
-			'title'    => __( 'Navigation', 'simple-grey' ),
+			'title'    => __( 'Navigation Settings', 'simple-grey' ),
 			'priority' => 105,
+			'panel'    => 'nav_menus',
 		)
 	);
 
-		$wp_customize->add_setting(
-			'simple_grey_nav_style',
-			array(
-				'default'           => 'menu-flat',
-				'sanitize_callback' => 'simple_grey_sanitize_text',
-			)
-		);
-		$wp_customize->add_control(
-			'simple_grey_nav_style',
-			array(
-				'type'        => 'select',
-				'label'       => __( 'Navigation Style', 'simple-grey' ),
-				'section'     => 'simple_grey_navigation',
-				'choices'     => array(
-					'flat'         => 'Flat',
-					'hierarchical' => 'Hierarchical (nested list)',
-					'drop-down'    => 'Drop Down',
-				),
-				'description' => __( 'Navigation style applied to the primary menu.', 'simple-grey' ),
-			)
-		);
+	$wp_customize->add_setting(
+		'simple_grey_nav_style',
+		array(
+			'default'           => 'flat',
+			'sanitize_callback' => 'simple_grey_sanitize_text',
+		)
+	);
+
+	$wp_customize->add_control(
+		'simple_grey_nav_style',
+		array(
+			'type'        => 'select',
+			'label'       => __( 'Navigation Style', 'simple-grey' ),
+			'section'     => 'simple_grey_navigation',
+			'choices'     => array(
+				'flat'         => 'Flat',
+				'hierarchical' => 'Hierarchical (nested list)',
+				'drop-down'    => 'Drop Down',
+			),
+			'description' => __( 'Navigation style applied to the primary menu.', 'simple-grey' ),
+		)
+	);
 
 	// rename "Header Image' section to 'Header'.
 	$wp_customize->get_section( 'header_image' )->title = __( 'Header', 'simple-grey' );
@@ -298,6 +300,7 @@ function simple_grey_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Footer credits for theme and WordPress.
 	$wp_customize->add_setting(
 		'simple_grey_show_footer_credits',
 		array(
@@ -314,7 +317,6 @@ function simple_grey_customize_register( $wp_customize ) {
 			'type'     => 'checkbox',
 		)
 	);
-
 }
 add_action( 'customize_register', 'simple_grey_customize_register' );
 
@@ -322,7 +324,7 @@ add_action( 'customize_register', 'simple_grey_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function simple_grey_customize_preview_js() {
-	wp_enqueue_script( 'simple_grey_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+	wp_enqueue_script( 'simple_grey_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), SIMPLE_GREY_VERSION, true );
 }
 add_action( 'customize_preview_init', 'simple_grey_customize_preview_js' );
 
@@ -339,11 +341,11 @@ function simple_grey_sanitize_text( $str ) {
 /**
  * Sanitizer function for integer.
  *
- * @param mixed $int Input variable to sanitize.
+ * @param mixed $input Input variable to sanitize.
  * @return int sanitized to an integer value.
  */
-function simple_grey_sanitize_int( $int ) {
-	return absint( $int );
+function simple_grey_sanitize_int( $input ) {
+	return absint( $input );
 }
 
 /**
@@ -403,3 +405,16 @@ function simple_grey_customizer_css() {
 	}
 }
 add_action( 'wp_head', 'simple_grey_customizer_css' );
+
+/**
+ * Retrieval function for customizer setting - to show or hide footer credits.
+ *
+ * Defaults to true if theme mod not present in database.
+ *
+ * @return boolean True or false to show or hide credits.
+ */
+function simple_grey_show_footer_credits() {
+	$show = boolval( get_theme_mod( 'simple_grey_show_footer_credits', true ) );
+
+	return $show;
+}

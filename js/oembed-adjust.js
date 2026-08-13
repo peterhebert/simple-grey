@@ -1,15 +1,12 @@
-jQuery(document).ready(function($){
+document.addEventListener( 'DOMContentLoaded', function () {
+	var iframes = document.querySelectorAll( 'iframe[src*="youtube.com"]' );
 
-  // make Twitter embeds responsive
-  setInterval( function() {
-    $( '.twitter-tweet-rendered' ).removeAttr( 'width' );
-    $( '.twitter-tweet-rendered' ).css({ "width": "100%" });
-  }, 100 );
+	// add wmode=transparent to YouTube iframes to fix z-index issue.
+	Array.prototype.forEach.call( iframes, function ( iframe ) {
+		var src = iframe.getAttribute( 'src' );
 
-  // add wmode=transparent to YouTube iframes to fix z-index issue
-  $('iframe[src*="youtube.com"]').each(function() {
-      var url = $(this).attr("src")
-      $(this).attr("src",url+"&amp;wmode=transparent")
-  }); 
-
-});
+		if ( src && src.indexOf( 'wmode=transparent' ) === -1 ) {
+			iframe.setAttribute( 'src', src + ( src.indexOf( '?' ) === -1 ? '?' : '&' ) + 'wmode=transparent' );
+		}
+	} );
+} );

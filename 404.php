@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<main id="main" role="main">
+	<main id="main" role="main" aria-label="<?php echo esc_attr__( 'Main Content', 'simple-grey' ); ?>">
 
 			<section class="error-404 not-found">
 				<header class="page-header">

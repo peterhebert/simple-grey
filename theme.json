@@ -1,0 +1,123 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "settings": {
+        "appearanceTools": true,
+        "layout": {
+            "contentSize": "768px",
+            "wideSize": "1200px"
+        },
+        "color": {
+            "defaultPalette": false,
+            "palette": [{
+                    "color": "#fff",
+                    "name": "White",
+                    "slug": "white"
+                },
+                {
+                    "color": "hsl(0, 0%, 96%)",
+                    "name": "Gray 100",
+                    "slug": "gray-100"
+                },
+                {
+                    "color": "hsl(0, 0%, 93%)",
+                    "name": "Gray 200",
+                    "slug": "gray-200"
+                },
+                {
+                    "color": "hsl(0, 0%, 80%)",
+                    "name": "Gray 300",
+                    "slug": "gray-300"
+                },
+                {
+                    "color": "hsl(0, 0%, 60%)",
+                    "name": "Gray 400",
+                    "slug": "gray-400"
+                },
+                {
+                    "color": "hsl(0, 0%, 40%)",
+                    "name": "Gray 500",
+                    "slug": "gray-500"
+                },
+                {
+                    "color": "hsl(0, 0%, 33%)",
+                    "name": "Gray 600",
+                    "slug": "gray-600"
+                },
+                {
+                    "color": "hsl(0, 0%, 27%)",
+                    "name": "Gray 700",
+                    "slug": "gray-700"
+                },
+                {
+                    "color": "hsl(0, 0%, 20%)",
+                    "name": "Gray 800",
+                    "slug": "gray-800"
+                },
+                {
+                    "color": "hsl(0, 0%, 13%)",
+                    "name": "Gray 900",
+                    "slug": "gray-900"
+                },
+                {
+                    "color": "#000",
+                    "name": "Black",
+                    "slug": "black"
+                },
+                {
+                    "color": "hsl(210, 100%, 40%)",
+                    "name": "Blue",
+                    "slug": "blue"
+                },
+                {
+                    "color": "hsl(0, 100%, 40%)",
+                    "name": "Red",
+                    "slug": "red"
+                },
+                {
+                    "color": "hsl(0, 100%, 20%)",
+                    "name": "Dark Red",
+                    "slug": "dark-red"
+                },
+                {
+                    "color": "hsl(48, 100%, 50%)",
+                    "name": "Gold",
+                    "slug": "gold"
+                },
+                {
+                    "color": "#086118",
+                    "name": "Green",
+                    "slug": "green"
+                }
+            ]
+        },
+        "typography": {
+            "fontFamilies": [{
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+                    "name": "System Font",
+                    "slug": "system-font"
+                },
+                {
+                    "fontFamily": "Cambria, Georgia, Times, 'Times New Roman', serif",
+                    "name": "Serif",
+                    "slug": "serif"
+                },
+                {
+                    "fontFamily": "'Open Sans', Arial, Helvetica, sans-serif",
+                    "name": "Sans Serif",
+                    "slug": "sans-serif"
+                },
+                {
+                    "fontFamily": "SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace",
+                    "name": "Monospace",
+                    "slug": "monospace"
+                }
+            ]
+        }
+    },
+    "styles": {
+        "typography": {
+            "fontFamily": "var(--wp--preset--font-family--sans-serif)"
+        }
+    }
+}

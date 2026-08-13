@@ -1,15 +1,15 @@
 
 /* = Footer Layout
 ----------------------------------------------- */
-#footer {
+.site-footer {
+
     color: $col-footer-text;
     background-color: $col-footer-bg;
     margin: 0;
-    padding-top: .75em;
-    padding-bottom: .75em;
+    padding: $margin;
+
     .footer-text { 
-        // @include column(); 
-       @include mg-both(.75); 
+       margin-block: $margin-baseline *.75; 
         text-align: center; 
         &:last-child {
             margin-bottom: 0;
@@ -18,7 +18,7 @@
     .footer-credits {
         text-align: center; 
         font-size: .875em;
-        @include mg-top();
+        margin-top: $margin-baseline;
     }
 
 
@@ -32,19 +32,12 @@
         vertical-align: middle;
     }
 
-
-}
-
-.site-footer {
-
     .widget-area {
-            @include mg-both(.75); 
-            @include clearfix;
-            margin: 0 ($basepx * -1px);
-            margin: 0 ($margin * -1);
+            margin-block: $margin-baseline *.75; 
         
+            @include even-columns();
+            
         .widget {
-            @include even-columns(4, $widget-breakpoints);
 
             .widget-title { @include baseline-size( 1.5 ); }
        }

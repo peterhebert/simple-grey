@@ -1,9 +1,8 @@
-/* =Widgets
------------------------------------------------ */
+/* Classic Widgets */
 
 .widget {
-  .widget-title { 
-      @include baseline-size(1.5);
+  h2.widget-title { 
+      @include baseline-size(1.25);
       -ms-word-wrap: break-word;
       word-wrap: break-word;
   }
@@ -31,7 +30,7 @@
   .icons { 
     text-align: center; 
   }
-  margin-bottom: 1.5em;
+
 }
 
 /* Wordpress calendar widget */
@@ -52,7 +51,6 @@
   }
   .wp-calendar-nav { text-align: center;}
 }
-.widget_search input.search-field { width: 12em; } 
 
 /* rss widget */
 .widget_rss {
@@ -62,3 +60,17 @@
   }
 }
 
+/* Block widgets */
+
+// block widget headings
+.widget_block h2.wp-block-heading {
+  @include baseline-size(1.25);
+}
+
+// latest posts, latest comments block widgets
+.wp-block-latest-posts,
+.wp-block-latest-comments {
+  li {
+    margin-block: 0.5em;
+  }
+}

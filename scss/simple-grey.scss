@@ -40,6 +40,7 @@ body {
 @import "module/forms";
 
 // layout
+@import "layout/layout";
 @import "layout/header";
 @import "layout/content";
 @import "layout/footer";
@@ -51,12 +52,12 @@ body {
 @import "module/pagination";
 
 // icons
-@import "../node_modules/fork-awesome/scss/fork-awesome";
 @import "module/morevectors";
 @import "module/icons";
 
 // media
 @import "module/media";
+// classic editor gallery
 @import "module/gallery";
 
 // required WordPress classes

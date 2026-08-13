@@ -1,81 +1,189 @@
 /* main navigation menu */
 
-#navigation {
+.main-navigation {
   background: $col-menu-bg;
+
   ul,
   li {
     list-style: none;
     margin: 0;
     padding: 0;
   }
+
   a {
     display: block;
     background: $col-menu-bg;
     color: $col-menu-text;
     padding: 0.25em 0.5em;
+
     &:hover,
     &:focus {
-      color: $col-menu-text-focus;
-      background: $col-menu-bg-focus;
+      color: $col-focus-menu-text;
+      background: $col-focus-menu-bg;
     }
   }
+
+  // Layout wrapper from our custom Walker class
+  .menu-item-link-wrapper {
+    display: flex;
+    align-items: stretch; // Forces the link and button to be the exact same height
+    justify-content: space-between;
+
+    a {
+      flex-grow: 1; // Ensures the text link takes up available space
+      display: flex;
+      align-items: center; // Vertically centers the text within the full-height container
+    }
+  }
+
+  // The disclosure toggle button style
+  button.disclosure-toggle {
+    background: transparent;
+    border: none;
+    color: $col-menu-text;
+    padding: 0 0.75em; // Removed vertical padding so it stretches cleanly
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // The static W3C pseudo-element downward arrow
+    &::after {
+      content: "";
+      border-bottom: 1px solid $col-menu-text;
+      border-right: 1px solid $col-menu-text;
+      height: 0.5em;
+      width: 0.5em;
+      transform: rotate(45deg);
+      // Visual alignment balance for the 45-degree angle.
+      margin-top: -0.25em;
+      display: inline-block;
+    }
+
+    &:hover,
+    &:focus {
+      color: $col-focus-menu-text;
+      background: $col-focus-menu-bg;
+
+      // Forces the arrow to turn light when the button is active, hovered, or focused
+      &::after {
+        border-color: $col-focus-menu-text;
+      }
+    }
+  }
+
   .nav-menu {
     display: none;
   }
+
   &.toggled,
   &:focus {
     .nav-menu {
       display: block;
     }
   }
+
   .nav-menu.hierarchical {
-    ul { margin-left: 0.75em; }
+    ul {
+      margin-left: 0.75em;
+    }
   }
 
   @media screen and (min-width: $bp-full-menu) {
     .nav-menu {
       display: block;
     }
-    ul.drop-down {
-      li {
-        display: inline-block;
-        position: relative;
-        overflow: visible;
-      }
-      li ul {
-        position: absolute;
-        left: -999em;
-      }
-      ul li {
-          a { display: inline-block; width: 11em; word-wrap: auto; }
-      }
 
-      .sub-menu .menu-item-has-children:focus,
-      .sub-menu .menu-item-has-children:hover,
-      .sub-menu .menu-item-has-children.focus,
-      .sub-menu .menu-item-has-children.hover,
-      .sub-menu .menu-item-has-children[aria-expanded="true"],
-      li.menu-item-has-children.focus,
-      li.menu-item-has-children:hover,
-      li.menu-item-has-children:focus,
-      li.menu-item-has-children[aria-expanded="true"] {
-        > ul {
-          left: 0;
-          top: 100%;
-          z-index: 99999;
-         &.menu-side {
-           left: 100%;
-           top: 0;
-          }
-        }
-
-      }
-
-    }
     .nav-menu.flat {
       @include clearfix;
-      li { display: inline; line-height: 2.25; }
-      a { display: inline; white-space: nowrap; }
+
+      li {
+        display: inline;
+        line-height: 2;
+      }
+
+      a {
+        display: inline;
+        white-space: nowrap;
+      }
     }
   }
+}
+
+// drop-down menu style
+.main-navigation .nav-menu.drop-down {
+  width: 100%;
+
+  li {
+    overflow: visible;
+  }
+
+  li ul.sub-menu {
+    background: $col-menu-bg;
+    display: none;
+  }
+
+
+  @media screen and (max-width: $bp-full-menu) {
+    .menu-item {
+      display: block;
+    }
+
+    >.menu-item:not(:last-child) {
+      border-bottom: 1px solid $col-border;
+    }
+
+    .sub-menu.is-open {
+      display: block;
+      padding-inline-start: $margin;
+    }
+
+
+  }
+
+  // full menu bar.
+  @media screen and (min-width: $bp-full-menu) {
+
+    li {
+      display: inline-block;
+      position: relative;
+    }
+
+    li ul.sub-menu {
+      position: absolute;
+      left: -999em;
+      top: 100%;
+      z-index: 99999;
+
+      // Deep sub-menus (Flyouts)
+        ul.sub-menu {
+        position: absolute;
+        top: 0;
+        left: -999em;
+      }
+    }
+
+
+    ul li {
+      a {
+        display: inline-block;
+        width: 11em;
+        word-wrap: auto;
+      }
+    }
+
+    .sub-menu.is-open {
+      display: block;
+      left: 0;
+
+      >li ul.sub-menu.is-open {
+        left: 100%;
+      }
+    }
+
+
+
+  }
+
+
 }
